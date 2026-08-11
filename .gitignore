@@ -14,8 +14,12 @@ build/
 !.env.example
 
 # Imágenes de productos: se regeneran con scripts/download-images.js
-# (pesan ~40MB y salen de S3, no tiene sentido versionarlas)
-data/images/
+# (~13MB desde S3, no tiene sentido versionarlas)
+public/products/
+
+# Copias de los datos para que Vite las sirva; la fuente es data/
+public/products.json
+public/wildcards.json
 
 # Salidas intermedias de la curación (regenerables con los scripts)
 data/_raw_*.json
@@ -31,3 +35,6 @@ npm-debug.log*
 # Editor
 .vscode/
 .idea/
+
+# Build
+dist/

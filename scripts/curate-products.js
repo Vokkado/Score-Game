@@ -78,6 +78,7 @@ function baseKey(p) {
     .replace(/[^a-záéíóúñ ]/g, '')
     .split(/\s+/)
     .filter((w) => w.length > 2)
+    .map((w) => w.replace(/es$/, '').replace(/s$/, '')) // "cereales"→"cereal", "caseras"→"casera"
     .sort() // el orden de palabras varía entre cargas: "Jugo Dairyco Naranja"
     .slice(0, 4) // y "Jugo Naranja Dairyco" son el mismo producto
     .join(' ');
@@ -143,6 +144,52 @@ const MUST_INCLUDE = [
 /** Topes para que una partida no repita marca ni categoría. */
 const MAX_PER_BRAND = 3;
 const MAX_PER_CATEGORY = 6;
+
+/**
+ * Tope por combinación marca+categoría. Sin esto entraban tres masas de empanada
+ * de La Especialista, casi idénticas y las tres en 19 puntos: el dedupe por
+ * nombre no las juntaba porque varían en singular/plural y una trae un typo.
+ */
+const MAX_PER_BRAND_CATEGORY = 2;
+
+/**
+ * Categorías excluidas del juego por decisión de producto.
+ *
+ * Yerbas: la etiqueta declara los valores de la hoja seca (50 g de fibra y
+ * 850 mg de calcio por 100 g). Es correcto, pero nadie consume 100 g de yerba y
+ * la infusión extrae una fracción mínima, así que el puntaje alto se apoya en
+ * nutrientes que en la práctica no se ingieren. Con un público de nutricionistas
+ * es la discusión más difícil de ganar del pool.
+ */
+const EXCLUDED_CATEGORIES = new Set(['Yerbas']);
+
+/**
+ * Correcciones de nombre para pantalla. La base tiene typos y nombres sin
+ * traducir que, proyectados en grande frente a profesionales, se leen como
+ * descuido. No se corrige la base desde acá: es sólo la etiqueta del juego.
+ */
+const NAME_FIXES = [
+  { from: /^BISCOITO INTEGRAL COM MORANGO E CEREAIS$/i, to: 'Galletitas Integrales con Frutilla y Cereales' },
+  { from: /^Alimento Achocolatado\s+/i, to: 'Vascolet Alimento Achocolatado ' },
+  { from: /Conapole/g, to: 'Conaprole' },
+  { from: /La Especilista/g, to: 'La Especialista' },
+  { from: /Rio De La Pla /g, to: 'Río de la Plata ' },
+  { from: /Natanja/g, to: 'Naranja' },
+];
+
+/** Marcas mal asignadas en la base. Igual que arriba: sólo para pantalla. */
+const BRAND_FIXES = [
+  // "Galletas Cracker Finitas La Celestina" figura con marca Fini, que es de gomitas.
+  { nameMatch: /La Celestina/i, brand: 'La Celestina' },
+];
+
+function fixNames(p) {
+  let name = p.name;
+  for (const f of NAME_FIXES) name = name.replace(f.from, f.to);
+  let brand = p.brand;
+  for (const f of BRAND_FIXES) if (f.nameMatch.test(name)) brand = f.brand;
+  return { ...p, name: name.replace(/\s{2,}/g, ' ').trim(), brand };
+}
 
 // ─── Capa 1: calidad de datos ────────────────────────────────────────────────
 
@@ -244,13 +291,17 @@ function classify(p) {
 function select(pool) {
   const byBrand = new Map();
   const byCategory = new Map();
+  const byBrandCategory = new Map();
   const chosen = [];
+
+  const brandCat = (p) => `${norm(p.brand)}|${p.category}`;
 
   const fits = (p) => {
     const b = norm(p.brand);
     return (
       (byBrand.get(b) || 0) < MAX_PER_BRAND &&
-      (byCategory.get(p.category) || 0) < MAX_PER_CATEGORY
+      (byCategory.get(p.category) || 0) < MAX_PER_CATEGORY &&
+      (byBrandCategory.get(brandCat(p)) || 0) < MAX_PER_BRAND_CATEGORY
     );
   };
 
@@ -258,6 +309,7 @@ function select(pool) {
     const b = norm(p.brand);
     byBrand.set(b, (byBrand.get(b) || 0) + 1);
     byCategory.set(p.category, (byCategory.get(p.category) || 0) + 1);
+    byBrandCategory.set(brandCat(p), (byBrandCategory.get(brandCat(p)) || 0) + 1);
     chosen.push({ ...p, quota });
   };
 
@@ -347,8 +399,14 @@ function select(pool) {
 
   console.log(`Pool tras filtros de calidad: ${rows.length}`);
 
-  let pool = rows.filter((p) => p.brand && !BRAND_BLACKLIST.has(norm(p.brand)));
+  let pool = rows
+    .filter((p) => p.brand && !BRAND_BLACKLIST.has(norm(p.brand)))
+    .map(fixNames);
   console.log(`Pool tras descartar marcas inválidas: ${pool.length}`);
+
+  const beforeCats = pool.length;
+  pool = pool.filter((p) => !EXCLUDED_CATEGORIES.has(p.category));
+  console.log(`Pool tras excluir categorías vetadas: ${pool.length} (-${beforeCats - pool.length})`);
 
   // Ultra-procesado mal asignado en alimentos simples → -20 indefendibles.
   const beforeUP = pool.length;
@@ -357,14 +415,26 @@ function select(pool) {
 
   // Un solo formato por producto base: se queda el de score más extremo, que
   // es el que mejor juega.
+  //
+  // Se deduplica por dos claves distintas porque ninguna alcanza sola:
+  //   - baseKey: nombre normalizado. Falla cuando el mismo producto se cargó con
+  //     palabras distintas ("Cocoa Copacabana Intenso" vs "Cocoa Nestle Copacabana").
+  //   - firma marca+categoría+score: dos productos de la misma marca y categoría
+  //     con exactamente el mismo puntaje son, en la práctica, el mismo producto
+  //     en otro formato. Verificado: sus desgloses salían idénticos hasta el decimal.
   const seen = new Map();
-  for (const p of pool) {
-    const k = baseKey(p);
-    const prev = seen.get(k);
-    if (!prev || Math.abs(p.score - 50) > Math.abs(prev.score - 50)) seen.set(k, p);
-  }
+  const keysOf = (p) => [baseKey(p), `${norm(p.brand)}|${p.category}|${p.score}`];
   const beforeDedupe = pool.length;
-  pool = [...seen.values()].map(classify);
+
+  for (const p of pool) {
+    const keys = keysOf(p);
+    const prev = keys.map((k) => seen.get(k)).find(Boolean);
+    if (prev && Math.abs(prev.score - 50) >= Math.abs(p.score - 50)) continue;
+    if (prev) for (const k of keysOf(prev)) seen.delete(k);
+    for (const k of keys) seen.set(k, p);
+  }
+
+  pool = [...new Set(seen.values())].map(classify);
   console.log(`Pool tras deduplicar por producto base: ${pool.length} (-${beforeDedupe - pool.length})`);
 
   const counts = {};

@@ -11,7 +11,9 @@ const path = require('path');
 const https = require('https');
 
 const DATA_DIR = path.join(__dirname, '..', 'data');
-const IMG_DIR = path.join(DATA_DIR, 'images');
+// Van a public/ porque Vite las sirve desde ahí y terminan en el bundle: en el
+// evento no se le pide una sola imagen a S3.
+const IMG_DIR = path.join(__dirname, '..', 'public', 'products');
 
 const get = (url, dest) =>
   new Promise((resolve, reject) => {

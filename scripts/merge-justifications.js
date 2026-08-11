@@ -67,6 +67,21 @@ if (problems.length) {
 
 fs.writeFileSync(path.join(DATA_DIR, 'products.json'), JSON.stringify(out, null, 2));
 
+// Los comodines pasan por el mismo normalizado de `image`: la pantalla nunca
+// debe construir la ruta a mano. Hoy los 11 son .jpg, pero el pool tiene .webp
+// y .png, y una ruta hardcodeada se rompería recién en el stand.
+const wildcards = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'wildcards.json'), 'utf8'));
+const wildcardsOut = wildcards.map((w) => ({
+  ...w,
+  image: `${w.id}${path.extname(new URL(w.image).pathname) || '.jpg'}`,
+}));
+
+// Copias que sirve Vite desde public/. La fuente sigue siendo data/.
+const PUBLIC_DIR = path.join(__dirname, '..', 'public');
+fs.mkdirSync(PUBLIC_DIR, { recursive: true });
+fs.writeFileSync(path.join(PUBLIC_DIR, 'products.json'), JSON.stringify(out));
+fs.writeFileSync(path.join(PUBLIC_DIR, 'wildcards.json'), JSON.stringify(wildcardsOut));
+
 const sinJust = out.filter((p) => !p.justification).length;
 console.log(`Productos: ${out.length}`);
 console.log(`Con justificación: ${out.length - sinJust}`);

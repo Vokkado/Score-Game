@@ -1020,34 +1020,6 @@
     ]
   },
   {
-    "id": "7496af3f-57d1-48ad-a118-83f1c7fdd3d4",
-    "name": "Anana Congelada Cambay 500 G",
-    "brand": "Cambay",
-    "category": "Congelados",
-    "score": 96,
-    "image": "7496af3f-57d1-48ad-a118-83f1c7fdd3d4.jpg",
-    "quota": "sorpresa",
-    "justification": "Ananá congelada y nada más. Sin azúcar agregado, sin conservantes y con 1,9 g de fibra por 100 g. Como todas las frutas congeladas del catálogo, se queda muy arriba porque no hay nada que descontar.",
-    "breakdown": [
-      {
-        "label": "Calidad de los ingredientes",
-        "value": 3
-      },
-      {
-        "label": "Calorías vacías",
-        "value": -7
-      }
-    ],
-    "excesses": [],
-    "beneficials": [
-      {
-        "name": "Fibra alimentaria",
-        "value": 1.9,
-        "unit": "g"
-      }
-    ]
-  },
-  {
     "id": "26af1470-4711-4100-896c-3fa4f7797ee8",
     "name": "Jugo Citric Naranja Tetra 250 Ml",
     "brand": "Citric",
@@ -1450,13 +1422,13 @@
   },
   {
     "id": "9ebe2f87-281f-4eba-8628-6519318a1076",
-    "name": "Aceite De Oliva Rio De La Pla 250 Ml",
+    "name": "Aceite De Oliva Río de la Plata 250 Ml",
     "brand": "Rio De La Plata",
     "category": "Aceites y Vinagres",
     "score": 80,
     "image": "9ebe2f87-281f-4eba-8628-6519318a1076.jpg",
     "quota": "sorpresa",
-    "justification": "Aceite de oliva, aunque no declarado extra virgen, lo que le baja algo el puntaje de ingrediente frente a sus pares. Mantiene el perfil de grasas monoinsaturadas alto y no lleva aditivos, así que queda apenas por debajo del resto de los aceites de oliva.",
+    "justification": "Aceite de oliva sin la mención de extra virgen, lo que le baja algo el puntaje del ingrediente frente a sus pares. Mantiene el perfil alto de grasas monoinsaturadas y no lleva ningún aditivo. Pierde 12 puntos por la densidad calórica, inevitable en cualquier aceite.",
     "breakdown": [
       {
         "label": "Calidad de los ingredientes",
@@ -1720,6 +1692,55 @@
     ]
   },
   {
+    "id": "f9e692b0-aa34-4766-94d0-d6daec1c597c",
+    "name": "Crema Vegetal Soya Pote 500 G",
+    "brand": "Soya",
+    "category": "Mantecas y Grasas",
+    "score": 13,
+    "image": "f9e692b0-aa34-4766-94d0-d6daec1c597c.jpg",
+    "quota": "sorpresa",
+    "justification": "Agua y aceite vegetal como base, con emulsionantes, benzoato de sodio y aromatizante sin especificar. Descuenta 24 puntos por grasas, 20 por ultraprocesado y otros 15 por no aportar ningún nutriente acreditable.",
+    "breakdown": [
+      {
+        "label": "Calidad de los ingredientes",
+        "value": -17.2
+      },
+      {
+        "label": "Ingredientes cuestionados",
+        "value": -10.4
+      },
+      {
+        "label": "Alertas puntuales",
+        "value": -2.6
+      },
+      {
+        "label": "Excesos",
+        "value": -24
+      },
+      {
+        "label": "Ultraprocesado",
+        "value": -20
+      },
+      {
+        "label": "Calorías vacías",
+        "value": -15
+      }
+    ],
+    "excesses": [
+      {
+        "name": "Grasas saturadas",
+        "value": 7,
+        "unit": "g"
+      },
+      {
+        "name": "Sodio",
+        "value": 1030,
+        "unit": "mg"
+      }
+    ],
+    "beneficials": []
+  },
+  {
     "id": "79837503-512b-4dc0-a4a1-7d2ac7f8f9dc",
     "name": "Galletas Al Agua Famosa Pack 420 G",
     "brand": "Famosa",
@@ -1959,7 +1980,7 @@
   {
     "id": "10757f2b-de6d-4129-9911-2a8f03f48384",
     "name": "Galletas Cracker Finitas La Celestina 300 G",
-    "brand": "Fini",
+    "brand": "La Celestina",
     "category": "Galletitas Saladas",
     "score": 25,
     "image": "10757f2b-de6d-4129-9911-2a8f03f48384.jpg",
@@ -2211,56 +2232,6 @@
     "beneficials": []
   },
   {
-    "id": "6cd297ae-816f-49a5-9fa7-b363108514b5",
-    "name": "Jugo Citric Natanja 3 L",
-    "brand": "Citric",
-    "category": "Jugos",
-    "score": 34,
-    "image": "6cd297ae-816f-49a5-9fa7-b363108514b5.jpg",
-    "quota": "trampa",
-    "justification": "Parte de jugo de naranja exprimido, igual que la versión chica que puntúa 79, pero acá se agregan sorbato de potasio, benzoato de sodio y ácido ascórbico como conservantes. Esos tres aditivos explican los 45 puntos de diferencia entre un formato y otro.",
-    "breakdown": [
-      {
-        "label": "Calidad de los ingredientes",
-        "value": -27
-      },
-      {
-        "label": "Ingredientes cuestionados",
-        "value": -10.8
-      },
-      {
-        "label": "Alertas puntuales",
-        "value": -3.5
-      },
-      {
-        "label": "Excesos",
-        "value": -15
-      },
-      {
-        "label": "Aportes buenos",
-        "value": 0.1
-      },
-      {
-        "label": "Calorías vacías",
-        "value": -10
-      }
-    ],
-    "excesses": [
-      {
-        "name": "Azúcares",
-        "value": 8.5,
-        "unit": "g"
-      }
-    ],
-    "beneficials": [
-      {
-        "name": "Fibra alimentaria",
-        "value": 0.6,
-        "unit": "g"
-      }
-    ]
-  },
-  {
     "id": "d84b4c9e-3835-4d95-811b-1578fa985da6",
     "name": "Helado Crufi Diet Frutilla con Frutilla en Trozos 1 L",
     "brand": "Crufi",
@@ -2368,13 +2339,13 @@
   },
   {
     "id": "e3bd5c78-f2ad-4257-85ed-ba2d0beb98cb",
-    "name": "BISCOITO INTEGRAL COM MORANGO E CEREAIS",
+    "name": "Galletitas Integrales con Frutilla y Cereales",
     "brand": "Nesfit",
     "category": "Galletitas Dulces",
     "score": 28,
     "image": "e3bd5c78-f2ad-4257-85ed-ba2d0beb98cb.jpg",
     "quota": "trampa",
-    "justification": "Se presenta como integral y con cereales, y efectivamente aporta 4,7 g de fibra por 100 g. Pero el azúcar es el segundo ingrediente, tiene 460 kcal por 100 g y el preparado de frutilla suma colorantes, conservantes y estabilizantes por dentro.",
+    "justification": "Se presenta como integral y con cereales, y efectivamente aporta 4,7 g de fibra por 100 g. Pero el azúcar es el segundo ingrediente, tiene 460 kcal por 100 g y el preparado de frutilla suma colorantes, conservantes y estabilizantes dentro de su propia lista.",
     "breakdown": [
       {
         "label": "Calidad de los ingredientes",
@@ -2514,36 +2485,6 @@
     "beneficials": []
   },
   {
-    "id": "6a9c5671-7481-48a7-abcf-7c1abdc1679b",
-    "name": "Jugo Dairyco Naranja/Ma Light 3 L",
-    "brand": "Dairyco",
-    "category": "Jugos",
-    "score": 38,
-    "image": "6a9c5671-7481-48a7-abcf-7c1abdc1679b.jpg",
-    "quota": "trampa",
-    "justification": "Jugos reconstituidos de naranja y mango con benzoato de sodio, sorbato de potasio y sucralosa. Sin azúcar no hay descuento nutricional, pero la carga de conservantes y la ausencia total de nutrientes acreditables lo dejan abajo.",
-    "breakdown": [
-      {
-        "label": "Calidad de los ingredientes",
-        "value": -32.4
-      },
-      {
-        "label": "Ingredientes cuestionados",
-        "value": -11
-      },
-      {
-        "label": "Alertas puntuales",
-        "value": -4
-      },
-      {
-        "label": "Calorías vacías",
-        "value": -15
-      }
-    ],
-    "excesses": [],
-    "beneficials": []
-  },
-  {
     "id": "ae59c410-4cca-430e-ba24-14a063c5720e",
     "name": "Queso Para Untar Requesón Conaprole Light 250 G",
     "brand": "Conaprole",
@@ -2620,50 +2561,6 @@
       {
         "label": "Calidad de los ingredientes",
         "value": -17.8
-      },
-      {
-        "label": "Ingredientes cuestionados",
-        "value": -9.2
-      },
-      {
-        "label": "Alertas puntuales",
-        "value": -3.1
-      },
-      {
-        "label": "Excesos",
-        "value": -15
-      },
-      {
-        "label": "Ultraprocesado",
-        "value": -20
-      },
-      {
-        "label": "Calorías vacías",
-        "value": -15
-      }
-    ],
-    "excesses": [
-      {
-        "name": "Azúcares",
-        "value": 6,
-        "unit": "g"
-      }
-    ],
-    "beneficials": []
-  },
-  {
-    "id": "ff3c9a95-7d79-42b0-a5cc-825250ce11ee",
-    "name": "Refresco Gatorade Naranja 1.25 L",
-    "brand": "Gatorade",
-    "category": "Energizantes",
-    "score": 20,
-    "image": "ff3c9a95-7d79-42b0-a5cc-825250ce11ee.jpg",
-    "quota": "trampa",
-    "justification": "Misma fórmula que las otras isotónicas: jarabe de maíz de alta fructosa arriba, azúcar después y amarillo ocaso como colorante. Sello de exceso de azúcares, ultraprocesado y ningún nutriente acreditable.",
-    "breakdown": [
-      {
-        "label": "Calidad de los ingredientes",
-        "value": -17.7
       },
       {
         "label": "Ingredientes cuestionados",
@@ -2803,22 +2700,194 @@
     ]
   },
   {
-    "id": "46d8629d-46a7-41b0-9af7-b5684ba563c5",
-    "name": "Agua Mineral Nativa Sin Gas Full Sport 1 L",
-    "brand": "Nativa",
-    "category": "Aguas",
-    "score": 100,
-    "image": "46d8629d-46a7-41b0-9af7-b5684ba563c5.jpg",
-    "quota": "ancla_buena",
-    "justification": "Agua mineral pura, un solo ingrediente, sin nada agregado. El envase deportivo no cambia el contenido: sigue siendo el 100 de la escala.",
+    "id": "9e12e3b1-364f-4833-984b-850d33dcad39",
+    "name": "CEREAL MIX LIGHT MANZANA & AVENA",
+    "brand": "Arcor",
+    "category": "Snacks saludables",
+    "score": 37,
+    "image": "9e12e3b1-364f-4833-984b-850d33dcad39.webp",
+    "quota": "trampa",
+    "justification": "Aporta 11,7 g de fibra por 100 g, un valor alto de verdad, y tiene manzana deshidratada, arroz y avena reales. Pero el primer ingrediente es jarabe de maltitol y lleva sorbitol, y está clasificado como ultraprocesado. El rótulo light es sobre el azúcar, no sobre el procesamiento.",
     "breakdown": [
       {
         "label": "Calidad de los ingredientes",
-        "value": 3
+        "value": -18
+      },
+      {
+        "label": "Ingredientes cuestionados",
+        "value": -9.7
+      },
+      {
+        "label": "Alertas puntuales",
+        "value": -2
+      },
+      {
+        "label": "Excesos",
+        "value": -18
+      },
+      {
+        "label": "Aportes buenos",
+        "value": 4.8
+      },
+      {
+        "label": "Ultraprocesado",
+        "value": -20
+      }
+    ],
+    "excesses": [
+      {
+        "name": "Azúcares",
+        "value": 18.26,
+        "unit": "g"
+      },
+      {
+        "name": "Polialcoholes",
+        "value": 31.74,
+        "unit": "g"
+      }
+    ],
+    "beneficials": [
+      {
+        "name": "Fibra alimentaria",
+        "value": 11.74,
+        "unit": "g"
+      },
+      {
+        "name": "Grasas monoinsaturadas",
+        "value": 1.3,
+        "unit": "g"
+      },
+      {
+        "name": "Proteínas",
+        "value": 2.61,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "id": "e5d0b376-36ef-4704-8257-37e6a50e8d34",
+    "name": "Jugo Naranja Zug 1.5 L",
+    "brand": "Zug",
+    "category": "Jugos",
+    "score": 49,
+    "image": "e5d0b376-36ef-4704-8257-37e6a50e8d34.jpg",
+    "quota": "trampa",
+    "justification": "Casi todo el castigo viene de los ingredientes: jugo reconstituido en vez de exprimido, jarabe de fructosa como endulzante y dos conservantes, benzoato de sodio y sorbato de potasio. No declara ningún nutriente por encima del umbral, así que se lleva además la penalización completa por no aportar nada.",
+    "breakdown": [
+      {
+        "label": "Calidad de los ingredientes",
+        "value": -22.6
+      },
+      {
+        "label": "Ingredientes cuestionados",
+        "value": -10
+      },
+      {
+        "label": "Alertas puntuales",
+        "value": -3.3
+      },
+      {
+        "label": "Calorías vacías",
+        "value": -15
       }
     ],
     "excesses": [],
     "beneficials": []
+  },
+  {
+    "id": "358a3779-c0ee-4e7c-8b02-7462fa21813d",
+    "name": "Cereal De Chocolate Nesquik Nestle 90 G",
+    "brand": "Nesquik",
+    "category": "Cereales",
+    "score": 48,
+    "image": "358a3779-c0ee-4e7c-8b02-7462fa21813d.jpg",
+    "quota": "trampa",
+    "justification": "El caso más interesante del catálogo. Está fortificado con calcio, hierro, niacina, zinc, riboflavina y ácido fólico, y suma el máximo posible de bonificación por nutrientes: 20 puntos, el tope del modelo. Pero el azúcar es el tercer ingrediente, lleva jarabe de glucosa y aceite de palma, y es ultraprocesado. La fortificación levanta el número, no cambia lo que hay adentro.",
+    "breakdown": [
+      {
+        "label": "Calidad de los ingredientes",
+        "value": -16.9
+      },
+      {
+        "label": "Ingredientes cuestionados",
+        "value": -7.9
+      },
+      {
+        "label": "Alertas puntuales",
+        "value": -3.8
+      },
+      {
+        "label": "Excesos",
+        "value": -23
+      },
+      {
+        "label": "Aportes buenos",
+        "value": 20
+      },
+      {
+        "label": "Ultraprocesado",
+        "value": -20
+      }
+    ],
+    "excesses": [
+      {
+        "name": "Azúcares",
+        "value": 30,
+        "unit": "g"
+      }
+    ],
+    "beneficials": [
+      {
+        "name": "Calcio",
+        "value": 693.33,
+        "unit": "mg"
+      },
+      {
+        "name": "Fibra alimentaria",
+        "value": 5.67,
+        "unit": "g"
+      },
+      {
+        "name": "Grasas monoinsaturadas",
+        "value": 1.67,
+        "unit": "g"
+      },
+      {
+        "name": "Grasas poliinsaturadas",
+        "value": 1.67,
+        "unit": "g"
+      },
+      {
+        "name": "Hierro",
+        "value": 14,
+        "unit": "mg"
+      },
+      {
+        "name": "Niacina",
+        "value": 15,
+        "unit": "mg"
+      },
+      {
+        "name": "Proteínas",
+        "value": 6.33,
+        "unit": "g"
+      },
+      {
+        "name": "Riboflavina",
+        "value": 1.3,
+        "unit": "mg"
+      },
+      {
+        "name": "Zinc",
+        "value": 4.33,
+        "unit": "mg"
+      },
+      {
+        "name": "Ácido fólico",
+        "value": 230,
+        "unit": "µg"
+      }
+    ]
   },
   {
     "id": "d51ba8bf-ab4d-4f61-827e-51e90e54e014",
@@ -2924,51 +2993,6 @@
       {
         "name": "Proteínas",
         "value": 15,
-        "unit": "g"
-      }
-    ]
-  },
-  {
-    "id": "e1609953-8672-494f-8bee-0c9939a279de",
-    "name": "Fideos Trigo Duro Barilla Spaghettoni 500 G",
-    "brand": "Barilla",
-    "category": "Pastas",
-    "score": 84,
-    "image": "e1609953-8672-494f-8bee-0c9939a279de.jpg",
-    "quota": "ancla_buena",
-    "justification": "Sémola de trigo duro y agua, nada más. Mismo perfil que el resto de las pastas secas de trigo duro: buena proteína, algo de fibra, sin aditivos y sin clasificación de ultraprocesado.",
-    "breakdown": [
-      {
-        "label": "Calidad de los ingredientes",
-        "value": -6.2
-      },
-      {
-        "label": "Ingredientes cuestionados",
-        "value": -4.1
-      },
-      {
-        "label": "Alertas puntuales",
-        "value": -1
-      },
-      {
-        "label": "Aportes buenos",
-        "value": 0.3
-      },
-      {
-        "label": "Calorías vacías",
-        "value": -5
-      }
-    ],
-    "excesses": [],
-    "beneficials": [
-      {
-        "name": "Fibra alimentaria",
-        "value": 3,
-        "unit": "g"
-      },
-      {
-        "name": "Proteínas",
-        "value": 11.37,
         "unit": "g"
       }
     ]
@@ -3094,129 +3118,6 @@
     "beneficials": []
   },
   {
-    "id": "d491b2f6-f764-40c9-8d7c-02b81991d2d2",
-    "name": "Yerba Mate Armiño 1 Kg",
-    "brand": "Armiño",
-    "category": "Yerbas",
-    "score": 81,
-    "image": "d491b2f6-f764-40c9-8d7c-02b81991d2d2.jpg",
-    "quota": "ancla_buena",
-    "justification": "Ingrediente único y sin aditivos. Declara mucho menos que otras yerbas del catálogo, así que solo alcanza a acreditar la proteína, y eso le cuesta puntos por bajo aporte nutricional declarado.",
-    "breakdown": [
-      {
-        "label": "Calidad de los ingredientes",
-        "value": -2.2
-      },
-      {
-        "label": "Ingredientes cuestionados",
-        "value": -5.6
-      },
-      {
-        "label": "Alertas puntuales",
-        "value": -1
-      },
-      {
-        "label": "Calorías vacías",
-        "value": -10
-      }
-    ],
-    "excesses": [],
-    "beneficials": [
-      {
-        "name": "Proteínas",
-        "value": 3,
-        "unit": "g"
-      }
-    ]
-  },
-  {
-    "id": "f1a3765a-c835-449e-a9aa-92065ea0906c",
-    "name": "Yerba Mate Compuesta Serena Canaria 1 Kg",
-    "brand": "Canarias",
-    "category": "Yerbas",
-    "score": 97,
-    "image": "f1a3765a-c835-449e-a9aa-92065ea0906c.jpg",
-    "quota": "ancla_buena",
-    "justification": "Yerba mate con toronjil, mburucuyá, menta y tilo, todas hierbas con puntaje perfecto y sin un solo aditivo. Los valores de la etiqueta son los de la hoja seca, con mucha fibra y calcio, lo que la deja muy arriba.",
-    "breakdown": [
-      {
-        "label": "Calidad de los ingredientes",
-        "value": 1.1
-      },
-      {
-        "label": "Ingredientes cuestionados",
-        "value": -3.2
-      },
-      {
-        "label": "Alertas puntuales",
-        "value": -1
-      }
-    ],
-    "excesses": [],
-    "beneficials": [
-      {
-        "name": "Calcio",
-        "value": 850,
-        "unit": "mg"
-      },
-      {
-        "name": "Fibra alimentaria",
-        "value": 50,
-        "unit": "g"
-      },
-      {
-        "name": "Proteínas",
-        "value": 8,
-        "unit": "g"
-      }
-    ]
-  },
-  {
-    "id": "35b56109-f370-40f2-b591-ac894e76c008",
-    "name": "Fideos Foratti Al Huevo Adria 500 G",
-    "brand": "Adria",
-    "category": "Pastas",
-    "score": 78,
-    "image": "35b56109-f370-40f2-b591-ac894e76c008.jpg",
-    "quota": "ancla_buena",
-    "justification": "Harina fortificada y huevo, que suma como ingrediente de puntaje perfecto, con 12,5 g de proteína por 100 g. El betacaroteno sintético usado como colorante es lo único que descuenta más allá de los carbohidratos.",
-    "breakdown": [
-      {
-        "label": "Calidad de los ingredientes",
-        "value": -13.5
-      },
-      {
-        "label": "Ingredientes cuestionados",
-        "value": -4.4
-      },
-      {
-        "label": "Alertas puntuales",
-        "value": -1.5
-      },
-      {
-        "label": "Aportes buenos",
-        "value": 2.1
-      },
-      {
-        "label": "Calorías vacías",
-        "value": -5
-      }
-    ],
-    "excesses": [],
-    "beneficials": [
-      {
-        "name": "Fibra alimentaria",
-        "value": 1.75,
-        "unit": "g"
-      },
-      {
-        "name": "Proteínas",
-        "value": 12.5,
-        "unit": "g"
-      }
-    ]
-  },
-  {
     "id": "860d3c85-9863-4cc0-a2b9-05f6ace7245c",
     "name": "Lasagna Facil Las Acacias 200 G",
     "brand": "Las Acacias",
@@ -3262,60 +3163,65 @@
     ]
   },
   {
-    "id": "f48e843c-d4f2-4414-99e5-3fe81aff79b0",
-    "name": "Yerba Mate Canarias Té Rojo Y Centella 1 Kg",
-    "brand": "Canarias",
-    "category": "Yerbas",
-    "score": 93,
-    "image": "f48e843c-d4f2-4414-99e5-3fe81aff79b0.jpg",
+    "id": "4a14ed83-b096-41ed-a5d6-a47151b980be",
+    "name": "Harina De Coco Terra Verde 300 Gr",
+    "brand": "Terra Verde",
+    "category": "Harina y Polenta",
+    "score": 80,
+    "image": "4a14ed83-b096-41ed-a5d6-a47151b980be.jpg",
     "quota": "ancla_buena",
-    "justification": "Mezcla de yerba mate con té rojo y otras hierbas, todas de puntaje alto y sin ningún aditivo agregado. Los valores declarados de la hoja seca aportan fibra, calcio y proteína por encima del umbral.",
+    "justification": "Ingrediente único con 29,2 g de fibra y 18,8 g de proteína por cada 100 g, valores altísimos que suman casi el máximo acreditable. Pierde 15 puntos por las grasas saturadas propias del coco, pero sin aditivos ni azúcar agregado se queda bien arriba.",
     "breakdown": [
       {
         "label": "Calidad de los ingredientes",
-        "value": -2.2
+        "value": -4.8
       },
       {
-        "label": "Ingredientes cuestionados",
-        "value": -3.8
+        "label": "Excesos",
+        "value": -15
       },
       {
-        "label": "Alertas puntuales",
-        "value": -1.4
+        "label": "Aportes buenos",
+        "value": 4.7
+      },
+      {
+        "label": "Calorías vacías",
+        "value": -5
       }
     ],
-    "excesses": [],
+    "excesses": [
+      {
+        "name": "Grasas saturadas",
+        "value": 11.4,
+        "unit": "g"
+      }
+    ],
     "beneficials": [
       {
-        "name": "Calcio",
-        "value": 787,
-        "unit": "mg"
-      },
-      {
         "name": "Fibra alimentaria",
-        "value": 50,
+        "value": 29.2,
         "unit": "g"
       },
       {
         "name": "Proteínas",
-        "value": 12,
+        "value": 18.8,
         "unit": "g"
       }
     ]
   },
   {
-    "id": "7fdc351b-fe85-4e40-ba45-d9315fcffddb",
-    "name": "Yerba Mate Canarias Edición Especial 1 Kg",
-    "brand": "Canarias",
-    "category": "Yerbas",
-    "score": 91,
-    "image": "7fdc351b-fe85-4e40-ba45-d9315fcffddb.jpg",
+    "id": "fbcee36c-0c05-46a0-b50b-cd40477b834b",
+    "name": "Polenta Presto Pronta 500 G",
+    "brand": "Presto Pronta",
+    "category": "Harina y Polenta",
+    "score": 80,
+    "image": "fbcee36c-0c05-46a0-b50b-cd40477b834b.jpg",
     "quota": "ancla_buena",
-    "justification": "Yerba mate sola, sin agregados. Acredita fibra, calcio y proteína según los valores de la hoja seca. Está algo por debajo de la compuesta porque no suma el puntaje de las hierbas adicionales.",
+    "justification": "Harina de maíz precocida y nada más. Sin aditivos, sin azúcar y sin sal agregada, con algo de fibra y 7 g de proteína por 100 g. El precocido es lo único que le descuenta frente a una polenta común.",
     "breakdown": [
       {
         "label": "Calidad de los ingredientes",
-        "value": -2.2
+        "value": -10
       },
       {
         "label": "Ingredientes cuestionados",
@@ -3324,18 +3230,115 @@
       {
         "label": "Alertas puntuales",
         "value": -1
+      },
+      {
+        "label": "Aportes buenos",
+        "value": 1.1
+      },
+      {
+        "label": "Calorías vacías",
+        "value": -5
       }
     ],
     "excesses": [],
     "beneficials": [
       {
-        "name": "Calcio",
-        "value": 810,
-        "unit": "mg"
+        "name": "Fibra alimentaria",
+        "value": 2.2,
+        "unit": "g"
       },
       {
+        "name": "Proteínas",
+        "value": 7,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "id": "43e05543-32a2-4ac9-9702-bdcf1ef3769a",
+    "name": "Vascolet Alimento Achocolatado 500 G",
+    "brand": "Vascolet",
+    "category": "Bebidas calientes",
+    "score": 79,
+    "image": "43e05543-32a2-4ac9-9702-bdcf1ef3769a.jpg",
+    "quota": "ancla_buena",
+    "justification": "El cacao en polvo aporta 7,5 g de fibra y 5,5 g de proteína por 100 g, y son los dos ingredientes principales junto con el azúcar. No está clasificado como ultraprocesado y solo arrastra un aromatizante. Bastante más arriba de lo que sugiere el envase.",
+    "breakdown": [
+      {
+        "label": "Calidad de los ingredientes",
+        "value": -11.8
+      },
+      {
+        "label": "Ingredientes cuestionados",
+        "value": -4.6
+      },
+      {
+        "label": "Alertas puntuales",
+        "value": -1.8
+      },
+      {
+        "label": "Aportes buenos",
+        "value": 2.1
+      },
+      {
+        "label": "Calorías vacías",
+        "value": -5
+      }
+    ],
+    "excesses": [],
+    "beneficials": [
+      {
         "name": "Fibra alimentaria",
-        "value": 50,
+        "value": 7.5,
+        "unit": "g"
+      },
+      {
+        "name": "Proteínas",
+        "value": 5.5,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "id": "1d71a72e-fea7-4ce0-a7db-db8188939dcc",
+    "name": "Cocoa Copacabana Intenso 500 G",
+    "brand": "Copacabana",
+    "category": "Bebidas calientes",
+    "score": 75,
+    "image": "1d71a72e-fea7-4ce0-a7db-db8188939dcc.jpg",
+    "quota": "ancla_buena",
+    "justification": "El primer ingrediente es azúcar, pero el cacao aporta 14,5 g de fibra y 8 g de proteína por cada 100 g, valores que suman fuerte. Solo tres ingredientes, sin conservantes ni colorantes, y sin clasificación de ultraprocesado. El puntaje es del cacao, no del azúcar.",
+    "breakdown": [
+      {
+        "label": "Calidad de los ingredientes",
+        "value": -17.4
+      },
+      {
+        "label": "Ingredientes cuestionados",
+        "value": -4.4
+      },
+      {
+        "label": "Alertas puntuales",
+        "value": -1.5
+      },
+      {
+        "label": "Excesos",
+        "value": -2.7
+      },
+      {
+        "label": "Aportes buenos",
+        "value": 5.8
+      },
+      {
+        "label": "Calorías vacías",
+        "value": -5
+      }
+    ],
+    "excesses": [],
+    "beneficials": [
+      {
+        "name": "Fibra alimentaria",
+        "value": 14.5,
         "unit": "g"
       },
       {
@@ -3346,8 +3349,57 @@
     ]
   },
   {
+    "id": "cf08e3d3-d992-4cdc-ac1a-efcbecbb15b6",
+    "name": "Cacao En Polvo Nestle© 200 G",
+    "brand": "Nestle",
+    "category": "Bebidas calientes",
+    "score": 75,
+    "image": "cf08e3d3-d992-4cdc-ac1a-efcbecbb15b6.jpg",
+    "quota": "ancla_buena",
+    "justification": "Mismo perfil que las otras cocoas: azúcar primero, cacao después y un aromatizante. La fibra y la proteína del cacao son lo que sostiene el puntaje. Sin conservantes, sin colorantes y sin clasificación de ultraprocesado.",
+    "breakdown": [
+      {
+        "label": "Calidad de los ingredientes",
+        "value": -17.4
+      },
+      {
+        "label": "Ingredientes cuestionados",
+        "value": -4.4
+      },
+      {
+        "label": "Alertas puntuales",
+        "value": -1.5
+      },
+      {
+        "label": "Excesos",
+        "value": -4
+      },
+      {
+        "label": "Aportes buenos",
+        "value": 6.9
+      },
+      {
+        "label": "Calorías vacías",
+        "value": -5
+      }
+    ],
+    "excesses": [],
+    "beneficials": [
+      {
+        "name": "Fibra alimentaria",
+        "value": 14,
+        "unit": "g"
+      },
+      {
+        "name": "Proteínas",
+        "value": 11,
+        "unit": "g"
+      }
+    ]
+  },
+  {
     "id": "eb534176-6061-4f81-b57b-ded1400a2dee",
-    "name": "Queso Para Untar Conapole Cheddar 230 G",
+    "name": "Queso Para Untar Conaprole Cheddar 230 G",
     "brand": "Conaprole",
     "category": "Quesos",
     "score": 13,
@@ -3533,34 +3585,34 @@
     ]
   },
   {
-    "id": "c43f0079-7dd2-4c66-8eed-03228542f096",
-    "name": "Galletas Rellenas Lu Lu Frutilla 115 G",
-    "brand": "Lu Lu",
+    "id": "c1ebc83d-247f-4d20-81ac-32e448a9e5cf",
+    "name": "Galletitas Tortitas Arcor Chocola 125 G",
+    "brand": "Arcor",
     "category": "Galletitas Dulces",
-    "score": 6,
-    "image": "c43f0079-7dd2-4c66-8eed-03228542f096.jpg",
+    "score": 7,
+    "image": "c1ebc83d-247f-4d20-81ac-32e448a9e5cf.jpg",
     "quota": "ancla_mala",
-    "justification": "Idéntica a la versión chantilly: aceite vegetal hidrogenado, jarabe de maíz de alta fructosa, 480 kcal por 100 g y 73 g de carbohidratos. Ultraprocesada y sin ningún nutriente que acreditar más allá de algo de proteína del trigo.",
+    "justification": "Lleva aceite de soja hidrogenado, el peor puntaje posible de la tabla, más aceite de palma interesterificado y grasa bovina refinada, tres grasas de mala calidad en los primeros lugares. Con sello de exceso de azúcares y clasificación de ultraprocesado, la suma de penalizaciones supera el máximo teórico del modelo.",
     "breakdown": [
       {
         "label": "Calidad de los ingredientes",
-        "value": -26.3
+        "value": -25.2
       },
       {
         "label": "Ingredientes cuestionados",
-        "value": -10.6
+        "value": -12.5
       },
       {
         "label": "Alertas puntuales",
-        "value": -4.4
+        "value": -4.8
       },
       {
         "label": "Excesos",
-        "value": -37
+        "value": -40.1
       },
       {
         "label": "Aportes buenos",
-        "value": 2
+        "value": 3.7
       },
       {
         "label": "Ultraprocesado",
@@ -3568,30 +3620,35 @@
       },
       {
         "label": "Calorías vacías",
-        "value": -10
+        "value": -5
       }
     ],
     "excesses": [
       {
-        "name": "Azúcares",
-        "value": 31.67,
-        "unit": "g"
-      },
-      {
         "name": "Grasas saturadas",
-        "value": 8.33,
+        "value": 13.21,
         "unit": "g"
       },
       {
         "name": "Grasas trans",
-        "value": 1,
+        "value": 1.07,
         "unit": "g"
+      },
+      {
+        "name": "Azúcares",
+        "value": -1,
+        "unit": ""
       }
     ],
     "beneficials": [
       {
+        "name": "Fibra alimentaria",
+        "value": 2.14,
+        "unit": "g"
+      },
+      {
         "name": "Proteínas",
-        "value": 5.33,
+        "value": 7.86,
         "unit": "g"
       }
     ]
@@ -3690,50 +3747,6 @@
     "beneficials": []
   },
   {
-    "id": "46c0db12-4d07-4a0e-919b-a419188468a1",
-    "name": "Refresco Fanta Naranja Retornable 2 L - Incluye Envase",
-    "brand": "Fanta",
-    "category": "Refrescos",
-    "score": 16,
-    "image": "46c0db12-4d07-4a0e-919b-a419188468a1.png",
-    "quota": "ancla_mala",
-    "justification": "Misma fórmula que la Fanta en botella grande: amaranto y amarillo ocaso como colorantes, benzoato de sodio, EDTA cálcico disódico y sello de exceso de azúcares. Los colorantes son lo que la separa del resto de los refrescos.",
-    "breakdown": [
-      {
-        "label": "Calidad de los ingredientes",
-        "value": -20
-      },
-      {
-        "label": "Ingredientes cuestionados",
-        "value": -11
-      },
-      {
-        "label": "Alertas puntuales",
-        "value": -3.1
-      },
-      {
-        "label": "Excesos",
-        "value": -15
-      },
-      {
-        "label": "Ultraprocesado",
-        "value": -20
-      },
-      {
-        "label": "Calorías vacías",
-        "value": -15
-      }
-    ],
-    "excesses": [
-      {
-        "name": "Azúcares",
-        "value": 6,
-        "unit": "g"
-      }
-    ],
-    "beneficials": []
-  },
-  {
     "id": "10a1cba1-eb5b-4aec-a9d4-014902eb09c5",
     "name": "Masa Para Empanadas Hojaldrada La Especialista 12 U",
     "brand": "La Especialista",
@@ -3754,114 +3767,6 @@
       {
         "label": "Alertas puntuales",
         "value": -2.9
-      },
-      {
-        "label": "Excesos",
-        "value": -23.8
-      },
-      {
-        "label": "Aportes buenos",
-        "value": 2.6
-      },
-      {
-        "label": "Ultraprocesado",
-        "value": -20
-      },
-      {
-        "label": "Calorías vacías",
-        "value": -10
-      }
-    ],
-    "excesses": [
-      {
-        "name": "Grasas saturadas",
-        "value": 6,
-        "unit": "g"
-      }
-    ],
-    "beneficials": [
-      {
-        "name": "Proteínas",
-        "value": 7,
-        "unit": "g"
-      }
-    ]
-  },
-  {
-    "id": "0d7c51b6-c3b7-41d6-aec7-9dec432b61ab",
-    "name": "Masa Para Empanada Caseras La Especialista 20 U",
-    "brand": "La Especialista",
-    "category": "Masas",
-    "score": 19,
-    "image": "0d7c51b6-c3b7-41d6-aec7-9dec432b61ab.jpg",
-    "quota": "ancla_mala",
-    "justification": "El nombre dice casera pero la lista incluye margarina, cloruro de potasio, propionato de calcio y sorbato de potasio. Pierde 24 puntos por la tabla nutricional y 20 por ultraprocesado, exactamente igual que la versión hojaldrada.",
-    "breakdown": [
-      {
-        "label": "Calidad de los ingredientes",
-        "value": -19.9
-      },
-      {
-        "label": "Ingredientes cuestionados",
-        "value": -7.3
-      },
-      {
-        "label": "Alertas puntuales",
-        "value": -3
-      },
-      {
-        "label": "Excesos",
-        "value": -23.8
-      },
-      {
-        "label": "Aportes buenos",
-        "value": 2.6
-      },
-      {
-        "label": "Ultraprocesado",
-        "value": -20
-      },
-      {
-        "label": "Calorías vacías",
-        "value": -10
-      }
-    ],
-    "excesses": [
-      {
-        "name": "Grasas saturadas",
-        "value": 6,
-        "unit": "g"
-      }
-    ],
-    "beneficials": [
-      {
-        "name": "Proteínas",
-        "value": 7,
-        "unit": "g"
-      }
-    ]
-  },
-  {
-    "id": "6ac213c2-52b0-4ef4-a553-0a5313022a2f",
-    "name": "Masa Para Empanadas Casera La Especilista 12 Ud",
-    "brand": "La Especialista",
-    "category": "Masas",
-    "score": 19,
-    "image": "6ac213c2-52b0-4ef4-a553-0a5313022a2f.jpg",
-    "quota": "ancla_mala",
-    "justification": "Idéntica en composición y puntaje a las otras masas de la marca: margarina, conservantes y clasificación de ultraprocesado. Aporta algo de proteína del trigo y poco más.",
-    "breakdown": [
-      {
-        "label": "Calidad de los ingredientes",
-        "value": -19.9
-      },
-      {
-        "label": "Ingredientes cuestionados",
-        "value": -7.3
-      },
-      {
-        "label": "Alertas puntuales",
-        "value": -3
       },
       {
         "label": "Excesos",
@@ -4048,50 +3953,6 @@
     "beneficials": []
   },
   {
-    "id": "669ed96f-60ca-4743-b51b-00a92c672cf5",
-    "name": "Sazonador Jugoso Pollo Mediterraneo Maggi 25 G",
-    "brand": "Maggi",
-    "category": "Condimentos",
-    "score": 17,
-    "image": "669ed96f-60ca-4743-b51b-00a92c672cf5.jpg",
-    "quota": "ancla_mala",
-    "justification": "Arranca con una mezcla de vegetales deshidratados reales, pero incluye galato de propilo, un antioxidante sintético de toxicidad media-alta, y aceite de palma. Ultraprocesado y sin ningún nutriente acreditable pese al origen vegetal.",
-    "breakdown": [
-      {
-        "label": "Calidad de los ingredientes",
-        "value": -22.1
-      },
-      {
-        "label": "Ingredientes cuestionados",
-        "value": -10.6
-      },
-      {
-        "label": "Alertas puntuales",
-        "value": -4.2
-      },
-      {
-        "label": "Excesos",
-        "value": -12
-      },
-      {
-        "label": "Ultraprocesado",
-        "value": -20
-      },
-      {
-        "label": "Calorías vacías",
-        "value": -15
-      }
-    ],
-    "excesses": [
-      {
-        "name": "Sodio",
-        "value": 9420,
-        "unit": "mg"
-      }
-    ],
-    "beneficials": []
-  },
-  {
     "id": "2209879e-a057-41e6-8180-cf664c122542",
     "name": "Sopa Instantánea De Choclo Monte Cudine Sobre 15 G",
     "brand": "Monte Cudine",
@@ -4141,6 +4002,56 @@
       {
         "name": "Proteínas",
         "value": 8.28,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "id": "93fd2e4c-8f21-4a61-8416-5046dcc77504",
+    "name": "Jugo Citric Pomelo 1 L",
+    "brand": "Citric",
+    "category": "Jugos",
+    "score": 64,
+    "image": "93fd2e4c-8f21-4a61-8416-5046dcc77504.jpg",
+    "quota": "medio",
+    "justification": "Jugo de pomelo exprimido como único ingrediente, sin conservantes ni azúcar agregado. Descuenta 15 puntos por los azúcares propios de la fruta concentrados en el jugo, y no llega más arriba porque casi no declara nutrientes que superen el mínimo.",
+    "breakdown": [
+      {
+        "label": "Calidad de los ingredientes",
+        "value": -4.8
+      },
+      {
+        "label": "Ingredientes cuestionados",
+        "value": -5.6
+      },
+      {
+        "label": "Alertas puntuales",
+        "value": -1
+      },
+      {
+        "label": "Excesos",
+        "value": -15
+      },
+      {
+        "label": "Aportes buenos",
+        "value": 0.2
+      },
+      {
+        "label": "Calorías vacías",
+        "value": -10
+      }
+    ],
+    "excesses": [
+      {
+        "name": "Azúcares",
+        "value": 5.5,
+        "unit": "g"
+      }
+    ],
+    "beneficials": [
+      {
+        "name": "Fibra alimentaria",
+        "value": 0.9,
         "unit": "g"
       }
     ]
@@ -4333,36 +4244,6 @@
     ]
   },
   {
-    "id": "27ef0428-27b2-4602-92f2-952c7ba83db9",
-    "name": "Pulpa de Tomate Arcor Tetra 520 G",
-    "brand": "Arcor",
-    "category": "Salsas",
-    "score": 73,
-    "image": "27ef0428-27b2-4602-92f2-952c7ba83db9.jpg",
-    "quota": "medio",
-    "justification": "Tomate y ácido cítrico, nada más. Ningún descuento por nutrición ni por procesamiento. Lo que lo frena es que no declara ningún nutriente por encima del mínimo, algo esperable en un producto que es casi todo agua.",
-    "breakdown": [
-      {
-        "label": "Calidad de los ingredientes",
-        "value": -7.7
-      },
-      {
-        "label": "Ingredientes cuestionados",
-        "value": -3.4
-      },
-      {
-        "label": "Alertas puntuales",
-        "value": -0.7
-      },
-      {
-        "label": "Calorías vacías",
-        "value": -15
-      }
-    ],
-    "excesses": [],
-    "beneficials": []
-  },
-  {
     "id": "d921524a-b2cd-45ef-87ea-0eafd43b62e8",
     "name": "Agua Saborizada H2Oh! Limoneto 1.5 L",
     "brand": "H2O",
@@ -4492,13 +4373,257 @@
     "beneficials": []
   },
   {
+    "id": "8df866fd-6230-4703-b0aa-7d9f9df9083d",
+    "name": "Papas Kryzpo Original 280 G",
+    "brand": "KRYZPO",
+    "category": "Congelados",
+    "score": 48,
+    "image": "8df866fd-6230-4703-b0aa-7d9f9df9083d.jpg",
+    "quota": "medio",
+    "justification": "No son papas fritas en rodajas sino papa deshidratada reconstituida, con maltodextrina, fosfatos y emulsionantes. Aporta grasas monoinsaturadas del girasol alto oleico y algo de proteína, pero los 20 puntos de ultraprocesado son los que definen el resultado.",
+    "breakdown": [
+      {
+        "label": "Calidad de los ingredientes",
+        "value": -19
+      },
+      {
+        "label": "Ingredientes cuestionados",
+        "value": -6.5
+      },
+      {
+        "label": "Alertas puntuales",
+        "value": -2.4
+      },
+      {
+        "label": "Excesos",
+        "value": -10.1
+      },
+      {
+        "label": "Aportes buenos",
+        "value": 6.3
+      },
+      {
+        "label": "Ultraprocesado",
+        "value": -20
+      }
+    ],
+    "excesses": [],
+    "beneficials": [
+      {
+        "name": "Grasas monoinsaturadas",
+        "value": 20.38,
+        "unit": "g"
+      },
+      {
+        "name": "Grasas poliinsaturadas",
+        "value": 4.23,
+        "unit": "g"
+      },
+      {
+        "name": "Proteínas",
+        "value": 5.77,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "id": "26bc35c7-fd44-44de-b410-0043429778fa",
+    "name": "Pack Ravioles 5 Estrellas 1 Kg",
+    "brand": "5 Estrellas",
+    "category": "Pastas",
+    "score": 53,
+    "image": "26bc35c7-fd44-44de-b410-0043429778fa.jpg",
+    "quota": "medio",
+    "justification": "El relleno tiene acelga, ricotta y cebolla, todos ingredientes de buen puntaje, y aporta proteína. Lo que lo baja son los 20 puntos por ultraprocesado y el descuento nutricional por sodio y grasas. Una pasta rellena industrial arranca bastante por debajo de la pasta seca.",
+    "breakdown": [
+      {
+        "label": "Calidad de los ingredientes",
+        "value": -9.1
+      },
+      {
+        "label": "Ingredientes cuestionados",
+        "value": -3.6
+      },
+      {
+        "label": "Alertas puntuales",
+        "value": -1.6
+      },
+      {
+        "label": "Excesos",
+        "value": -10.4
+      },
+      {
+        "label": "Aportes buenos",
+        "value": 2.5
+      },
+      {
+        "label": "Ultraprocesado",
+        "value": -20
+      },
+      {
+        "label": "Calorías vacías",
+        "value": -5
+      }
+    ],
+    "excesses": [],
+    "beneficials": [
+      {
+        "name": "Fibra alimentaria",
+        "value": 1.7,
+        "unit": "g"
+      },
+      {
+        "name": "Proteínas",
+        "value": 7.7,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "id": "9239e2a0-e15e-47a8-96a6-96022a2727bb",
+    "name": "Tagliatelle De Albahaca 270 G",
+    "brand": "Avanti",
+    "category": "Pastas",
+    "score": 53,
+    "image": "9239e2a0-e15e-47a8-96a6-96022a2727bb.jpg",
+    "quota": "medio",
+    "justification": "Sémola de trigo duro con huevo en polvo, albahaca y espinaca molida, todos ingredientes limpios y sin conservantes. Aporta 8 g de proteína por 100 g. La clasificación de ultraprocesado es prácticamente lo único que lo separa de las pastas secas que puntúan más de 80.",
+    "breakdown": [
+      {
+        "label": "Calidad de los ingredientes",
+        "value": -6.6
+      },
+      {
+        "label": "Ingredientes cuestionados",
+        "value": -4
+      },
+      {
+        "label": "Alertas puntuales",
+        "value": -1.7
+      },
+      {
+        "label": "Excesos",
+        "value": -5.6
+      },
+      {
+        "label": "Aportes buenos",
+        "value": 1.2
+      },
+      {
+        "label": "Ultraprocesado",
+        "value": -20
+      },
+      {
+        "label": "Calorías vacías",
+        "value": -10
+      }
+    ],
+    "excesses": [],
+    "beneficials": [
+      {
+        "name": "Proteínas",
+        "value": 8,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "id": "e4d1426b-c9eb-42d4-9e58-2c1f26f5b62b",
+    "name": "Salsa Bolognesa Barilla 400 G",
+    "brand": "Barilla",
+    "category": "Salsas",
+    "score": 82,
+    "image": "e4d1426b-c9eb-42d4-9e58-2c1f26f5b62b.jpg",
+    "quota": "relleno",
+    "justification": "Pulpa de tomate, cebolla, zanahoria y apio, todos con puntaje casi perfecto, más carne vacuna y porcina. Casi no descuenta por ingredientes y no está clasificada como ultraprocesada. Los 9 puntos de descuento nutricional son por el sodio propio de una salsa lista.",
+    "breakdown": [
+      {
+        "label": "Calidad de los ingredientes",
+        "value": -0.9
+      },
+      {
+        "label": "Ingredientes cuestionados",
+        "value": -2.5
+      },
+      {
+        "label": "Alertas puntuales",
+        "value": -0.6
+      },
+      {
+        "label": "Excesos",
+        "value": -8.8
+      },
+      {
+        "label": "Aportes buenos",
+        "value": 0.2
+      },
+      {
+        "label": "Calorías vacías",
+        "value": -5
+      }
+    ],
+    "excesses": [],
+    "beneficials": [
+      {
+        "name": "Fibra alimentaria",
+        "value": 1.5,
+        "unit": "g"
+      },
+      {
+        "name": "Proteínas",
+        "value": 4.17,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "id": "8b4ba186-3ac1-49d0-8c91-a1efcf68bf06",
+    "name": "Manteca Calidad Extra La Serenisima 200 G",
+    "brand": "La Serenisima",
+    "category": "Mantecas y Grasas",
+    "score": 55,
+    "image": "8b4ba186-3ac1-49d0-8c91-a1efcf68bf06.jpg",
+    "quota": "relleno",
+    "justification": "Un solo ingrediente, crema de leche, sin aditivos ni conservantes. Descuenta 13 puntos por las grasas saturadas y otros 15 por no declarar ningún nutriente que supere el umbral. Que una manteca quede en el medio de la tabla sorprende, pero es lo que da un producto de un ingrediente sin agregados.",
+    "breakdown": [
+      {
+        "label": "Calidad de los ingredientes",
+        "value": -10
+      },
+      {
+        "label": "Ingredientes cuestionados",
+        "value": -5.6
+      },
+      {
+        "label": "Alertas puntuales",
+        "value": -1
+      },
+      {
+        "label": "Excesos",
+        "value": -13.2
+      },
+      {
+        "label": "Calorías vacías",
+        "value": -15
+      }
+    ],
+    "excesses": [
+      {
+        "name": "Grasas saturadas",
+        "value": 52,
+        "unit": "g"
+      }
+    ],
+    "beneficials": []
+  },
+  {
     "id": "8254023a-2dd0-4731-8c2d-de9541c617ef",
     "name": "Jamón Cocido Del Campo a la Mesa 200 G",
     "brand": "Del Campo A La Mesa",
     "category": "Embutidos",
     "score": 40,
     "image": "8254023a-2dd0-4731-8c2d-de9541c617ef.jpg",
-    "quota": "medio",
+    "quota": "relleno",
     "justification": "Carne porcina con buen puntaje y 12 g de proteína por 100 g, con solo 103 kcal. Pierde por la clasificación de ultraprocesado y por los aditivos de curado: difosfato de sodio, carragenina y nitritos.",
     "breakdown": [
       {
@@ -4552,7 +4677,7 @@
     "category": "Embutidos",
     "score": 39,
     "image": "f227b8e1-09ea-4c55-a5df-7dd33db52265.jpg",
-    "quota": "medio",
+    "quota": "relleno",
     "justification": "Solo cuatro ingredientes, pero uno es nitrito de sodio, con la toxicidad más alta de la tabla. Descuenta 24 puntos por grasas saturadas y sodio. A favor tiene 22 g de proteína por 100 g y no estar clasificado como ultraprocesado.",
     "breakdown": [
       {
@@ -4601,131 +4726,127 @@
     ]
   },
   {
-    "id": "782d3c6e-bb86-4ecb-ae87-8f1a8e6dab40",
-    "name": "Masa Para Empanada Avanti Casera 20 U",
-    "brand": "Avanti",
-    "category": "Masas",
-    "score": 21,
-    "image": "782d3c6e-bb86-4ecb-ae87-8f1a8e6dab40.jpg",
-    "quota": "medio",
-    "justification": "Margarina como tercer ingrediente, más gluten de trigo, propionato de calcio y ácido sórbico. Pierde 23 puntos por la tabla nutricional y 20 por ultraprocesado, en línea con el resto de las masas industriales.",
+    "id": "30e7cbae-98b4-47f1-97df-12df1df0fe83",
+    "name": "Pan Tortuga Con Sesamo Bimbo 6 U",
+    "brand": "Bimbo",
+    "category": "Panes",
+    "score": 62,
+    "image": "30e7cbae-98b4-47f1-97df-12df1df0fe83.jpg",
+    "quota": "relleno",
+    "justification": "Las semillas de sésamo son el segundo ingrediente y aportan grasas buenas, con 9,4 g de proteína por 100 g. Pierde sobre todo por los 20 puntos de ultraprocesado y por los conservantes propionato de calcio y ácido sórbico, habituales en el pan de molde industrial.",
     "breakdown": [
       {
         "label": "Calidad de los ingredientes",
-        "value": -18.1
+        "value": -8.3
       },
       {
         "label": "Ingredientes cuestionados",
-        "value": -7.3
+        "value": -3.7
       },
       {
         "label": "Alertas puntuales",
-        "value": -3.1
+        "value": -1.7
       },
       {
         "label": "Excesos",
-        "value": -23
+        "value": -7.4
       },
       {
         "label": "Aportes buenos",
-        "value": 2.4
+        "value": 2.9
       },
       {
         "label": "Ultraprocesado",
         "value": -20
-      },
-      {
-        "label": "Calorías vacías",
-        "value": -10
       }
     ],
     "excesses": [],
     "beneficials": [
       {
+        "name": "Fibra alimentaria",
+        "value": 2.2,
+        "unit": "g"
+      },
+      {
+        "name": "Grasas monoinsaturadas",
+        "value": 1.6,
+        "unit": "g"
+      },
+      {
+        "name": "Grasas poliinsaturadas",
+        "value": 2,
+        "unit": "g"
+      },
+      {
         "name": "Proteínas",
-        "value": 6.33,
+        "value": 9.4,
         "unit": "g"
       }
     ]
   },
   {
-    "id": "f9e692b0-aa34-4766-94d0-d6daec1c597c",
-    "name": "Crema Vegetal Soya Pote 500 G",
-    "brand": "Soya",
-    "category": "Mantecas y Grasas",
-    "score": 13,
-    "image": "f9e692b0-aa34-4766-94d0-d6daec1c597c.jpg",
+    "id": "ba301cc9-f7c6-4d5d-b1ea-67e49b00ea63",
+    "name": "Anana En Almibar Equador 825 G",
+    "brand": "EQUADOR",
+    "category": "Conservas",
+    "score": 66,
+    "image": "ba301cc9-f7c6-4d5d-b1ea-67e49b00ea63.jpg",
     "quota": "relleno",
-    "justification": "Agua y aceite vegetal como base, con emulsionantes, benzoato de sodio y aromatizante sin especificar. Descuenta 24 puntos por grasas, 20 por ultraprocesado y otros 15 por no aportar ningún nutriente acreditable.",
+    "justification": "La fruta está bien puntuada, pero el almíbar agrega azúcar y eso descuenta 10 puntos por nutrición. Se lleva además la penalización completa por no declarar ningún nutriente acreditable: la fruta en conserva pierde buena parte de lo que aporta la fresca.",
     "breakdown": [
       {
         "label": "Calidad de los ingredientes",
-        "value": -17.2
+        "value": -4.6
       },
       {
         "label": "Ingredientes cuestionados",
-        "value": -10.4
+        "value": -3.1
       },
       {
         "label": "Alertas puntuales",
-        "value": -2.6
+        "value": -0.8
       },
       {
         "label": "Excesos",
-        "value": -24
-      },
-      {
-        "label": "Ultraprocesado",
-        "value": -20
+        "value": -10.5
       },
       {
         "label": "Calorías vacías",
         "value": -15
       }
     ],
-    "excesses": [
-      {
-        "name": "Grasas saturadas",
-        "value": 7,
-        "unit": "g"
-      },
-      {
-        "name": "Sodio",
-        "value": 1030,
-        "unit": "mg"
-      }
-    ],
+    "excesses": [],
     "beneficials": []
   },
   {
-    "id": "9e12e3b1-364f-4833-984b-850d33dcad39",
-    "name": "CEREAL MIX LIGHT MANZANA & AVENA",
-    "brand": "Arcor",
-    "category": "Snacks saludables",
-    "score": 37,
-    "image": "9e12e3b1-364f-4833-984b-850d33dcad39.webp",
+    "id": "44d34759-69de-4b7a-a9fb-48e77cef40d3",
+    "name": "Cereales Zucosos Matinal 230 G",
+    "brand": "Zucosos",
+    "category": "Cereales",
+    "score": 56,
+    "image": "44d34759-69de-4b7a-a9fb-48e77cef40d3.jpg",
     "quota": "relleno",
-    "justification": "Aporta 11,7 g de fibra por 100 g, un valor alto de verdad, y tiene manzana deshidratada, arroz y avena reales. Pero el primer ingrediente es jarabe de maltitol y lleva sorbitol, y está clasificado como ultraprocesado. El rótulo light es sobre el azúcar, no sobre el procesamiento.",
+    "justification": "Fortificado con calcio, hierro, niacina, riboflavina y ácido fólico, suma 18 puntos por nutrientes beneficiosos. Pero el azúcar es el tercer ingrediente y también lleva jarabe de azúcar invertido y jarabe de glucosa, tres endulzantes distintos, con clasificación de ultraprocesado.",
     "breakdown": [
       {
         "label": "Calidad de los ingredientes",
-        "value": -18
+        "value": -8.8
       },
       {
         "label": "Ingredientes cuestionados",
-        "value": -9.7
+        "value": -6.7
       },
       {
         "label": "Alertas puntuales",
-        "value": -2
+        "value": -2.7
       },
       {
         "label": "Excesos",
-        "value": -18
+        "value": -24.4
       },
       {
         "label": "Aportes buenos",
-        "value": 4.8
+        "value": 18.4
       },
       {
         "label": "Ultraprocesado",
@@ -4735,29 +4856,103 @@
     "excesses": [
       {
         "name": "Azúcares",
-        "value": 18.26,
-        "unit": "g"
-      },
-      {
-        "name": "Polialcoholes",
-        "value": 31.74,
+        "value": 25,
         "unit": "g"
       }
     ],
     "beneficials": [
       {
+        "name": "Calcio",
+        "value": 633.33,
+        "unit": "mg"
+      },
+      {
         "name": "Fibra alimentaria",
-        "value": 11.74,
+        "value": 4.33,
         "unit": "g"
       },
       {
         "name": "Grasas monoinsaturadas",
-        "value": 1.3,
+        "value": 0.67,
+        "unit": "g"
+      },
+      {
+        "name": "Grasas poliinsaturadas",
+        "value": 1,
+        "unit": "g"
+      },
+      {
+        "name": "Hierro",
+        "value": 20,
+        "unit": "mg"
+      },
+      {
+        "name": "Niacina",
+        "value": 18,
+        "unit": "mg"
+      },
+      {
+        "name": "Proteínas",
+        "value": 5.67,
+        "unit": "g"
+      },
+      {
+        "name": "Riboflavina",
+        "value": 2,
+        "unit": "mg"
+      },
+      {
+        "name": "Ácido fólico",
+        "value": 246.67,
+        "unit": "µg"
+      }
+    ]
+  },
+  {
+    "id": "54762dc6-e4b5-4a03-a8bc-1f98e5400619",
+    "name": "Pan Rallado MultiCereales Rallopan 450 G",
+    "brand": "Rallopan",
+    "category": "Panes",
+    "score": 60,
+    "image": "54762dc6-e4b5-4a03-a8bc-1f98e5400619.jpg",
+    "quota": "relleno",
+    "justification": "Semillas de sésamo y lino, salvado de trigo y avena entre los primeros ingredientes: 15,7 g de fibra y 9,3 g de proteína por 100 g. Sin sal agregada, así que no descuenta por sodio. Los 20 puntos de ultraprocesado son lo único que lo frena.",
+    "breakdown": [
+      {
+        "label": "Calidad de los ingredientes",
+        "value": -7.7
+      },
+      {
+        "label": "Ingredientes cuestionados",
+        "value": -7.8
+      },
+      {
+        "label": "Alertas puntuales",
+        "value": -2
+      },
+      {
+        "label": "Aportes buenos",
+        "value": 2.9
+      },
+      {
+        "label": "Ultraprocesado",
+        "value": -20
+      },
+      {
+        "label": "Calorías vacías",
+        "value": -5
+      }
+    ],
+    "excesses": [],
+    "beneficials": [
+      {
+        "name": "Fibra alimentaria",
+        "value": 15.67,
         "unit": "g"
       },
       {
         "name": "Proteínas",
-        "value": 2.61,
+        "value": 9.33,
         "unit": "g"
       }
     ]

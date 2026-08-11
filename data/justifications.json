@@ -1,102 +1,502 @@
 [
-  { "n": 1, "match": "Agua Mineral Nativa Sin Gas 2.25", "texto": "Agua mineral y nada más. Un único ingrediente con puntaje perfecto, sin aditivos, sin azúcar y sin sodio agregado. No hay absolutamente nada que penalizar: es el 100 de la escala." },
-  { "n": 2, "match": "MATUTINA SIN GAS", "texto": "Agua mineral con bicarbonato de sodio naturalmente presente, un mineral sin objeciones. Sin azúcares, sin aditivos y sin calorías. Igual que cualquier agua sin gas, se queda con el puntaje máximo." },
-  { "n": 3, "match": "Coca Cola Retornable 2 L", "texto": "Lleva sello de exceso de azúcares, que descuenta 15 puntos, y la clasificación como ultraprocesado otros 20. A eso se suman el caramelo amónico de sulfito y el ácido fosfórico, dos aditivos de toxicidad media, y 15 puntos más por no aportar ningún nutriente beneficioso. Es azúcar disuelta en agua carbonatada." },
-  { "n": 4, "match": "Pepsi No Retornable", "texto": "Prácticamente idéntica a la Coca-Cola en composición y en puntaje: mismo sello de azúcares, mismo caramelo amónico, mismo ácido fosfórico y la misma ausencia total de nutrientes que aporten algo. Los 26 puntos que quedan son casi todo el agua." },
-  { "n": 5, "match": "Sprite Original 3L", "texto": "Un punto por debajo de la Coca-Cola. Comparte el sello de azúcares y el ultraprocesado, y agrega benzoato de sodio y EDTA cálcico disódico, dos conservantes que el modelo puntúa duro. Sin color caramelo, pero la carga de aditivos termina siendo equivalente." },
-  { "n": 6, "match": "Fanta Original 3L", "texto": "Diez puntos por debajo de la Coca-Cola, y la diferencia son los colorantes: amarillo ocaso y amaranto, este último con la toxicidad más alta de la tabla. Sumados al sello de azúcares, al ultraprocesado y al benzoato de sodio, la dejan entre los refrescos peor puntuados." },
-  { "n": 7, "match": "Lentejones Río De La Plata", "texto": "Un solo ingrediente y de los mejores posibles. Aporta 21,7 g de proteína y 3,5 g de fibra por cada 100 g, ambos muy por encima del umbral, sin aditivos ni azúcar agregado. Una legumbre seca es lo más cerca del ideal que hay en una góndola." },
-  { "n": 8, "match": "Maracuya Congelado Cambay", "texto": "Fruta congelada, ingrediente único, sin azúcar agregado ni conservantes. Declara justo el mínimo de fibra y proteína para que cuenten como aporte, así que casi no suma por ese lado, pero tampoco tiene nada que restar." },
-  { "n": 9, "match": "Alfajor Milka Oreo", "texto": "El golpe fuerte viene de la tabla nutricional: 42,5 puntos de descuento por exceso, sobre todo azúcares y grasas saturadas. A eso se suman los 20 del ultraprocesado y el jarabe de maíz de alta fructosa entre los primeros ingredientes. Ni la fibra ni la proteína del cacao alcanzan a compensar." },
-  { "n": 10, "match": "Alfajor Bon O Bon Mini", "texto": "Tiene aceite de soja hidrogenado, el peor puntaje posible en la tabla de ingredientes, más aceite de palma interesterificado y jarabe de glucosa. Con 500 kcal por cada 100 g, ultraprocesado y una lista de 19 ingredientes, los 13 puntos que quedan salen del maní y la leche." },
-  { "n": 11, "match": "Alfajor De Maicena Conaprole", "texto": "El más benigno de los tres alfajores, y aun así queda en 17. Lleva sello de exceso de azúcares, que descuenta 15 puntos de una, más los 20 del ultraprocesado. Suma algo por la proteína y por tener huevo y vainilla natural en vez de sustitutos, pero el dulce de leche y el azúcar impalpable mandan." },
-  { "n": 12, "match": "Goma Mogul Oso Extreme", "texto": "Azúcar y jarabe de glucosa como base, y encima tres colorantes duros: azul brillante, rojo allura y dióxido de titanio, este último con la toxicidad máxima. Con 80 g de carbohidratos por 100 g y ultraprocesado, es de los productos más castigados del catálogo." },
-  { "n": 13, "match": "Gomitas Haribo Worms", "texto": "Sello de exceso de azúcares, 80 g de carbohidratos por cada 100 g y una lista larga de aditivos: almidón modificado, hidróxido de sodio, aceite mineral y rojo allura. La proteína de la gelatina es lo único que suma, y suma poco." },
-  { "n": 14, "match": "Gomas Gelatina Beijos Fini", "texto": "85 g de carbohidratos por 100 g, casi todo azúcar y jarabe de glucosa. Lleva rojo allura y dióxido de titanio, dos colorantes de toxicidad alta, más aromatizante sin especificar. Ultraprocesado y sin ningún aporte nutricional que compense." },
-  { "n": 15, "match": "Hamburguesa Congelada Schneck 12 U", "texto": "Sorprende lo bajo para ser carne. La tabla nutricional descuenta 38 puntos por grasas y sodio, y el ultraprocesado otros 20. Pesan los aditivos: glutamato monosódico, tripolifosfato de sodio y polifosfato potásico. Los 18 g de proteína por 100 g no alcanzan a rescatarla." },
-  { "n": 16, "match": "Hamburguesas Sarubbi Gigante", "texto": "Mismo caso que las otras hamburguesas congeladas: buena proteína, pero 34 puntos de descuento por la tabla nutricional y 20 por ultraprocesado. Los polifosfatos y el difosfato de tetrasodio, usados para retener agua, arrastran el puntaje hacia abajo." },
-  { "n": 17, "match": "Galletas Dulces Sin Azúcar El Trigal 150", "texto": "La sorpresa del catálogo. Sin sello de exceso y con 22 g de fibra por 100 g gracias a la polidextrosa, más grasas monoinsaturadas del girasol alto oleico. La sucralosa descuenta algo, pero al no estar clasificada como ultraprocesada se salva de los 20 puntos que hunden a casi toda su categoría." },
-  { "n": 18, "match": "Hamburguesa Congelada Chori Schneck", "texto": "Mezcla de carne vacuna y porcina con buen puntaje de base, pero 30 puntos de descuento nutricional por grasas y sodio, más los 20 del ultraprocesado. El tripolifosfato de sodio es el aditivo que más pesa." },
-  { "n": 19, "match": "SAMAN Mini Galletas de Arroz", "texto": "Dos ingredientes: arroz y sal. No está clasificada como ultraprocesada, no tiene aditivos y aporta 8,3 g de proteína y 4 g de fibra por 100 g. Los carbohidratos son altos y por eso no llega más arriba, pero es de lo mejor que hay en su categoría." },
-  { "n": 20, "match": "Bizcochos Dulces Hojalmar Palmeras", "texto": "Sello de exceso de azúcares, 490 kcal por cada 100 g y margarina vegetal como segundo ingrediente. Sumado al ultraprocesado y al aromatizante sabor manteca, queda entre los productos más castigados de la panadería industrial." },
-  { "n": 21, "match": "Mango Congelado Cambay", "texto": "Fruta congelada sin nada agregado: un solo ingrediente con puntaje perfecto y sin aditivos. Aporta 1,4 g de fibra por 100 g, suficiente para contar. Lo único que lo separa del 100 es que no declara otros nutrientes." },
-  { "n": 22, "match": "Anana Congelada Cambay", "texto": "Ananá congelada y nada más. Sin azúcar agregado, sin conservantes y con 1,9 g de fibra por 100 g. Como todas las frutas congeladas del catálogo, se queda muy arriba porque no hay nada que descontar." },
-  { "n": 23, "match": "Jugo Citric Naranja Tetra 250", "texto": "Un jugo con 79 puntos llama la atención, y la razón es que tiene un solo ingrediente: jugo de naranja exprimido, sin conservantes ni azúcar agregado. No suma más porque no declara vitamina C ni otros nutrientes que superen el umbral." },
-  { "n": 24, "match": "Aceite De Oliva Sibarita", "texto": "Aceite de oliva extra virgen puro, sin refinados ni antioxidantes sintéticos. Las grasas monoinsaturadas, 65 g por cada 100 ml, suman el máximo posible. Pierde 12 puntos por la densidad calórica, inevitable en cualquier aceite, pero se queda entre los mejor puntuados." },
-  { "n": 25, "match": "ACEITE OLIVA EXTRA VIRGEN RIO DE LA PLATA", "texto": "Extra virgen de un solo ingrediente, con 61 g de grasas monoinsaturadas y 14 g de poliinsaturadas por 100 ml. El único descuento serio son las 823 kcal por 100 ml, que todo aceite arrastra por definición." },
-  { "n": 26, "match": "Aceite De Oliva Seleccion Natura", "texto": "Mismo perfil que los otros extra vírgenes: ingrediente único, sin aditivos, con el máximo de puntos por grasas monoinsaturadas. El contraste con los aceites de semilla del catálogo lo da la ausencia de antioxidantes sintéticos." },
-  { "n": 27, "match": "Aderezo Mostaza Dijon Maille", "texto": "Base simple de agua, semillas de mostaza y vinagre, todos con buen puntaje. Pierde por el metabisulfito de potasio, un conservante de toxicidad media, por el sodio y por no aportar casi ningún nutriente más allá de la proteína de la semilla." },
-  { "n": 28, "match": "Masa Para Tarta Con Semillas Avanti", "texto": "Las semillas de lino, chía y sésamo levantan bastante: aportan fibra y grasas buenas, y tienen puntajes de ingrediente muy altos. Lo que la frena son los 20 puntos de ultraprocesado y los conservantes propionato de calcio y cloruro de potasio." },
-  { "n": 29, "match": "Leche Conaprole UHT Descremada", "texto": "Un solo ingrediente y 113 mg de calcio por cada 100 ml, que suma el máximo por ese nutriente, más proteína suficiente. Sin aditivos ni azúcar agregado. El descuento viene del procesamiento de la leche sin lactosa, no de su composición." },
-  { "n": 30, "match": "Almendras Peladas Rio De La Plata", "texto": "Ingrediente único con 12 g de fibra y 20,7 g de proteína por cada 100 g, ambos cerca del máximo que el modelo puede acreditar. Las 613 kcal por 100 g son altas pero provienen de grasas buenas, así que el impacto es mínimo." },
-  { "n": 31, "match": "Galletas De Arroz Cerealitas", "texto": "Cuatro ingredientes simples y ningún aditivo, lo que la salva de la clasificación de ultraprocesado que hunde a casi toda su categoría. Descuenta por los 81 g de carbohidratos por 100 g, pero aporta 8 g de proteína y algo de fibra." },
-  { "n": 32, "match": "Aceite De Oliva Rio De La Pla 250", "texto": "Aceite de oliva, aunque no declarado extra virgen, lo que le baja algo el puntaje de ingrediente frente a sus pares. Mantiene el perfil de grasas monoinsaturadas alto y no lleva aditivos, así que queda apenas por debajo del resto de los aceites de oliva." },
-  { "n": 33, "match": "Masa Para Tarta Integral Avanti", "texto": "El salvado y la harina integral aportan 5 g de fibra por 100 g, el doble que la versión común. Aun así pierde 20 puntos por ultraprocesado y arrastra conservantes: propionato de calcio, ácido sórbico y mono y diglicéridos." },
-  { "n": 34, "match": "Leche Entera La Serenísima", "texto": "Leche entera fortificada con vitaminas A y D. Suma por calcio, proteína y las dos vitaminas agregadas, cuatro nutrientes por encima del umbral. Descuenta apenas por las grasas saturadas propias de la leche entera." },
-  { "n": 35, "match": "Leche Descremada La Serenísima", "texto": "Sin descuento nutricional alguno: al ser descremada no tiene grasas saturadas que penalizar. Suma calcio, proteína y las vitaminas A y D agregadas. Queda un punto por debajo de la entera solo por el mayor procesamiento del descremado." },
-  { "n": 36, "match": "Galletas Dulce Sin Azúcar El Trigal Chocolate", "texto": "Tiene 23 g de fibra por 100 g, incluso más que su hermana de vainilla, y suma el máximo posible por nutrientes beneficiosos. La diferencia de 20 puntos entre ambas es que esta sí está clasificada como ultraprocesada, con una lista de ingredientes casi idéntica." },
-  { "n": 37, "match": "Galletas Al Agua Famosa", "texto": "La galleta de agua tiene fama de liviana, pero acá pierde 32 puntos por la tabla nutricional: 430 kcal y 70 g de carbohidratos por 100 g, con grasa vacuna refinada como segundo ingrediente. Los 20 del ultraprocesado terminan de hundirla." },
-  { "n": 38, "match": "Snack Saladix Arcor Jamon", "texto": "Se vende como snack horneado, pero encabeza la lista el aceite y sigue el azúcar. Pierde 25 puntos por la tabla nutricional, 20 por ultraprocesado y arrastra metabisulfito de sodio y jarabe de glucosa. Aporta algo de proteína del queso en polvo, nada más." },
-  { "n": 39, "match": "Refresco En Polvo Tang", "texto": "El primer ingrediente es azúcar y aun así lleva aspartamo y acesulfamo K, o sea que combina azúcar con edulcorantes. Con 66 g de carbohidratos por 100 g de polvo y 14 ingredientes, lo único que suma es la vitamina D agregada." },
-  { "n": 40, "match": "Snack Saladix Arcor Calabre", "texto": "Idéntico a su hermano de jamón en composición y puntaje: aceite y azúcar arriba de la lista, ultraprocesado, metabisulfito de sodio y 440 kcal por 100 g. La categoría entera de snacks salados se ubica en este rango." },
-  { "n": 41, "match": "Galletas Cracker Finitas La Celestina", "texto": "Cracker salada con grasa vacuna refinada como segundo ingrediente y 427 kcal por 100 g. Pierde 24 puntos por la tabla nutricional y 20 por ultraprocesado. La proteína del trigo es lo único que rescata." },
-  { "n": 42, "match": "Jugo Dairyco Naranja Light 500", "texto": "Casi todo el castigo viene de los ingredientes, no del azúcar: benzoato de sodio, sorbato de potasio y sucralosa sobre un jugo reconstituido, no exprimido. Sin azúcar no hay descuento nutricional, pero tampoco queda ningún nutriente que acreditar." },
-  { "n": 43, "match": "Agua Saborizada Salus Sin Gas Frutte Pomelo", "texto": "Parece agua, pero lleva azúcar invertido, acesulfamo K, benzoato de sodio y aromatizante sin especificar, doce ingredientes en total. Está clasificada como ultraprocesada y no aporta ningún nutriente. De agua tiene el nombre." },
-  { "n": 44, "match": "Galletas Cerealitas Avena Cacao", "texto": "La avena, el salvado y la harina integral aportan 4,4 g de fibra por 100 g y algo de proteína. Pero el azúcar es el segundo ingrediente, tiene 434 kcal por 100 g y está clasificada como ultraprocesada. El rótulo promete más de lo que entrega." },
-  { "n": 45, "match": "Jugo Dairyco Naranja 500", "texto": "Jugo reconstituido, no exprimido, con benzoato de sodio y sorbato de potasio. El descuento por ingredientes es de los más altos del catálogo, y como no declara ningún nutriente por encima del umbral, se lleva además la penalización completa por pobreza nutricional." },
-  { "n": 46, "match": "Agua Saborizada Salus Frutte Sin Gas Manzana", "texto": "Mismo caso que la versión de pomelo: azúcar invertido, benzoato de sodio, sorbato de potasio y aromatizante sin especificar, sobre una base de agua mineral. Ultraprocesada y sin ningún aporte nutricional." },
-  { "n": 47, "match": "Jugo Citric Natanja 3", "texto": "Parte de jugo de naranja exprimido, igual que la versión chica que puntúa 79, pero acá se agregan sorbato de potasio, benzoato de sodio y ácido ascórbico como conservantes. Esos tres aditivos explican los 45 puntos de diferencia entre un formato y otro." },
-  { "n": 48, "match": "Helado Crufi Diet Frutilla", "texto": "Sin azúcar agregado y con 6,5 g de fibra por 100 g gracias a la polidextrosa, además de solo 95 kcal. Lo que lo frena son los 20 puntos del ultraprocesado y la salsa de frutilla, que trae colorantes y conservantes en su propia lista." },
-  { "n": 49, "match": "Helado Crufi Diet Flan", "texto": "Diez gramos de fibra por 100 g y menos de 100 kcal, un perfil nutricional inusual para un helado. Pierde por el ultraprocesado y porque la salsa de dulce de leche incluye eritritol, colorantes y conservantes dentro del propio ingrediente." },
-  { "n": 50, "match": "BISCOITO INTEGRAL COM MORANGO", "texto": "Se presenta como integral y con cereales, y efectivamente aporta 4,7 g de fibra por 100 g. Pero el azúcar es el segundo ingrediente, tiene 460 kcal por 100 g y el preparado de frutilla suma colorantes, conservantes y estabilizantes por dentro." },
-  { "n": 51, "match": "Agua Saborizada H2Oh! Naranchello", "texto": "Sin azúcar agregado, lo que evita el descuento nutricional, pero con dieciocho ingredientes: acidulantes, aromatizantes, conservantes y vitaminas agregadas. Está clasificada como ultraprocesada y lo único que acredita es un poco de niacina." },
-  { "n": 52, "match": "Refresco Gatorade Manzana", "texto": "El segundo ingrediente es jarabe de maíz de alta fructosa y el tercero azúcar. Sello de exceso de azúcares, ultraprocesado y cero nutrientes acreditables. La bebida deportiva puntúa igual que un refresco común porque, en composición, lo es." },
-  { "n": 53, "match": "Jugo Dairyco Naranja/Ma Light 3", "texto": "Jugos reconstituidos de naranja y mango con benzoato de sodio, sorbato de potasio y sucralosa. Sin azúcar no hay descuento nutricional, pero la carga de conservantes y la ausencia total de nutrientes acreditables lo dejan abajo." },
-  { "n": 54, "match": "Queso Para Untar Requesón Conaprole Light", "texto": "Base láctea buena, con 13 g de proteína por 100 g. Pero pierde 25 puntos por la tabla nutricional, sobre todo sodio, y otros 20 por ultraprocesado, con fosfatos y estabilizantes en la lista. El light refiere a la grasa, no al resto." },
-  { "n": 55, "match": "Refresco Gatorade Cool Blue", "texto": "Jarabe de maíz de alta fructosa, azúcar, sello de exceso y colorante azul brillante. Ultraprocesado y sin ningún nutriente que acreditar. El aporte de electrolitos no compensa en una escala que mide qué tan saludable es el producto." },
-  { "n": 56, "match": "Refresco Gatorade Naranja 1.25", "texto": "Misma fórmula que las otras isotónicas: jarabe de maíz de alta fructosa arriba, azúcar después y amarillo ocaso como colorante. Sello de exceso de azúcares, ultraprocesado y ningún nutriente acreditable." },
-  { "n": 57, "match": "Yogurísimo Licuado Mango", "texto": "Aporta 100 mg de calcio por 100 g y algo de proteína, y casi no tiene descuento nutricional. Pero el preparado de frutas trae jarabe de maíz de alta fructosa, almidón modificado, colorantes y conservantes dentro del mismo ingrediente, y está clasificado como ultraprocesado." },
-  { "n": 58, "match": "Sopa Crema De Verduras Light Monte Cudine", "texto": "Tiene espinaca, cebolla y choclo reales entre sus ingredientes, todos con buen puntaje. Pero son veintitrés ingredientes en total, con proteína vegetal hidrolizada y extracto de levadura, 65 g de carbohidratos por 100 g y clasificación de ultraprocesado." },
-  { "n": 59, "match": "Agua Mineral Nativa Sin Gas Full Sport", "texto": "Agua mineral pura, un solo ingrediente, sin nada agregado. El envase deportivo no cambia el contenido: sigue siendo el 100 de la escala." },
-  { "n": 60, "match": "MATUTINA CON GAS", "texto": "Agua mineral con bicarbonato de sodio y dióxido de carbono, este último el único ingrediente que descuenta algo. Sin azúcares ni calorías. Los tres puntos que la separan de la versión sin gas son exactamente la carbonatación." },
-  { "n": 61, "match": "Barilla Angel Hair", "texto": "Dos ingredientes: sémola de trigo duro y agua. Sin aditivos, sin azúcar y con 11,4 g de proteína y 3 g de fibra por 100 g. Los carbohidratos son altos, propios de una pasta seca, pero no hay nada más que penalizar." },
-  { "n": 62, "match": "Fideos Espinaca Adria Vermicelli", "texto": "Espinaca deshidratada y espinaca fresca entre los ingredientes, ambas con puntaje casi perfecto, y 15 g de proteína por 100 g. Sin aditivos ni conservantes. La harina fortificada es lo único que descuenta algo." },
-  { "n": 63, "match": "Barilla Spaghettoni", "texto": "Sémola de trigo duro y agua, nada más. Mismo perfil que el resto de las pastas secas de trigo duro: buena proteína, algo de fibra, sin aditivos y sin clasificación de ultraprocesado." },
-  { "n": 64, "match": "Fideos Espinaca Adria Nido", "texto": "Harina fortificada con espinaca y ajo deshidratados, sin aditivos. Aporta 15 g de proteína por 100 g. Queda dos puntos por debajo de la versión vermicelli porque esta no incluye espinaca fresca en la lista." },
-  { "n": 65, "match": "Cous Cous Barilla", "texto": "Un único ingrediente, sémola de trigo duro, con 12 g de proteína y 3 g de fibra por 100 g. Sin aditivos ni azúcar. Los 71 g de carbohidratos por 100 g son lo que impide que suba más." },
-  { "n": 66, "match": "Tomate Pelado Perita Arcor", "texto": "Tomate pelado y jugo de tomate, ambos con puntaje casi perfecto, y solo ácido cítrico como aditivo. No descuenta nada por nutrición. Lo que lo frena es que la etiqueta declara apenas 0,6 g de fibra y 0,7 g de proteína por 100 g, por debajo del mínimo para acreditarlos: un tomate en lata es sobre todo agua." },
-  { "n": 67, "match": "Yerba Mate Armiño", "texto": "Ingrediente único y sin aditivos. Declara mucho menos que otras yerbas del catálogo, así que solo alcanza a acreditar la proteína, y eso le cuesta puntos por bajo aporte nutricional declarado." },
-  { "n": 68, "match": "Yerba Mate Compuesta Serena Canaria", "texto": "Yerba mate con toronjil, mburucuyá, menta y tilo, todas hierbas con puntaje perfecto y sin un solo aditivo. Los valores de la etiqueta son los de la hoja seca, con mucha fibra y calcio, lo que la deja muy arriba." },
-  { "n": 69, "match": "Fideos Foratti Al Huevo Adria", "texto": "Harina fortificada y huevo, que suma como ingrediente de puntaje perfecto, con 12,5 g de proteína por 100 g. El betacaroteno sintético usado como colorante es lo único que descuenta más allá de los carbohidratos." },
-  { "n": 70, "match": "Lasagna Facil Las Acacias", "texto": "Sémola de trigo duro como único ingrediente, sin aditivos ni conservantes. Aporta proteína y algo de fibra. Como toda pasta seca, los carbohidratos altos son lo único que la mantiene lejos del máximo." },
-  { "n": 71, "match": "Yerba Mate Canarias Té Rojo", "texto": "Mezcla de yerba mate con té rojo y otras hierbas, todas de puntaje alto y sin ningún aditivo agregado. Los valores declarados de la hoja seca aportan fibra, calcio y proteína por encima del umbral." },
-  { "n": 72, "match": "Yerba Mate Canarias Edición Especial", "texto": "Yerba mate sola, sin agregados. Acredita fibra, calcio y proteína según los valores de la hoja seca. Está algo por debajo de la compuesta porque no suma el puntaje de las hierbas adicionales." },
-  { "n": 73, "match": "Queso Para Untar Conapole Cheddar", "texto": "Pierde 34 puntos por la tabla nutricional, sobre todo grasas saturadas y sodio, más 20 por ultraprocesado. Tiene almidón modificado, aromatizante sabor cheddar, colorantes y tres fosfatos distintos. Del queso queda poco más que el nombre." },
-  { "n": 74, "match": "Postre Helado Crufi Suspiro", "texto": "Sello de exceso de azúcares, 24 puntos de descuento nutricional y ultraprocesado. La salsa de chocolate y el bizcochuelo traen jarabe de maíz de alta fructosa y emulsionantes dentro de su propia lista de ingredientes." },
-  { "n": 75, "match": "Galletas Rellenas Lu Lu Chantilly", "texto": "De lo más castigado del catálogo. Tiene aceite vegetal hidrogenado, el peor ingrediente posible en la tabla, más jarabe de maíz de alta fructosa y glucosa. Con 480 kcal y 70 g de carbohidratos por 100 g, ultraprocesada, la suma de penalizaciones supera el máximo teórico." },
-  { "n": 76, "match": "Galletas Rellenas Lu Lu Frutilla", "texto": "Idéntica a la versión chantilly: aceite vegetal hidrogenado, jarabe de maíz de alta fructosa, 480 kcal por 100 g y 73 g de carbohidratos. Ultraprocesada y sin ningún nutriente que acreditar más allá de algo de proteína del trigo." },
-  { "n": 77, "match": "Aderezo Mayonesa Mayoliva", "texto": "Tiene aceite de oliva extra virgen y huevo entre los ingredientes, pero también veintiún ingredientes en total y 467 kcal por 100 g. Pierde 25 puntos por la tabla nutricional, 20 por ultraprocesado y otros 15 por no acreditar ningún nutriente beneficioso." },
-  { "n": 78, "match": "Caldo Maggi Gallina", "texto": "Lleva butilhidroxianisol y butilhidroxitolueno, dos antioxidantes sintéticos con la toxicidad más alta de la tabla, más glutamato monosódico y aceite de palma. Con la sal como primer ingrediente, el descuento por sodio es máximo. Es de los puntajes más bajos del catálogo." },
-  { "n": 79, "match": "Fanta Naranja Retornable", "texto": "Misma fórmula que la Fanta en botella grande: amaranto y amarillo ocaso como colorantes, benzoato de sodio, EDTA cálcico disódico y sello de exceso de azúcares. Los colorantes son lo que la separa del resto de los refrescos." },
-  { "n": 80, "match": "Masa Para Empanadas Hojaldrada La Especialista", "texto": "Margarina como tercer ingrediente y 24 puntos de descuento por grasas y sodio, más los 20 del ultraprocesado. Los conservantes propionato de calcio y sorbato de potasio completan el cuadro. La masa comprada arranca muy por debajo de la casera." },
-  { "n": 81, "match": "Masa Para Empanada Caseras La Especialista 20", "texto": "El nombre dice casera pero la lista incluye margarina, cloruro de potasio, propionato de calcio y sorbato de potasio. Pierde 24 puntos por la tabla nutricional y 20 por ultraprocesado, exactamente igual que la versión hojaldrada." },
-  { "n": 82, "match": "Masa Para Empanadas Casera La Especilista", "texto": "Idéntica en composición y puntaje a las otras masas de la marca: margarina, conservantes y clasificación de ultraprocesado. Aporta algo de proteína del trigo y poco más." },
-  { "n": 83, "match": "Caldo De Carne Monte Cudine", "texto": "Sal como primer ingrediente y grasa vegetal hidrogenada como tercero, un ingrediente de toxicidad media-alta. Ultraprocesado, con proteína vegetal hidrolizada y extracto de levadura. El descuento por sodio es el máximo posible." },
-  { "n": 84, "match": "Salamin Schneck", "texto": "Pierde 24 puntos por la tabla nutricional, sobre todo grasas saturadas y sodio, con 430 kcal por 100 g, más 20 por ultraprocesado. Tiene buena proteína, pero los nitritos y la carga de sal son determinantes en un embutido curado." },
-  { "n": 85, "match": "Caldo Maggi Carne", "texto": "Sal como primer ingrediente, aceite de palma y una lista larga de aditivos. Descuento máximo por sodio, 20 puntos por ultraprocesado y otros 15 por no aportar ningún nutriente. Puntúa algo mejor que el de gallina porque no lleva los antioxidantes sintéticos más duros." },
-  { "n": 86, "match": "Sazonador Jugoso Pollo Mediterraneo", "texto": "Arranca con una mezcla de vegetales deshidratados reales, pero incluye galato de propilo, un antioxidante sintético de toxicidad media-alta, y aceite de palma. Ultraprocesado y sin ningún nutriente acreditable pese al origen vegetal." },
-  { "n": 87, "match": "Sopa Instantánea De Choclo Monte Cudine", "texto": "El primer ingrediente es almidón modificado y el segundo azúcar, antes que cualquier vegetal. Con dieciocho ingredientes, 69 g de carbohidratos por 100 g y clasificación de ultraprocesado, del choclo queda poco." },
-  { "n": 88, "match": "Pan Rallado Saborizado Sin Sal Rallopan", "texto": "Solo tres ingredientes, orégano, ajo y harina fortificada, sin sal agregada, lo que evita todo descuento por sodio. Aporta proteína y fibra. Lo único que lo baja son los 20 puntos por la clasificación de ultraprocesado." },
-  { "n": 89, "match": "Queso Casancrem Light Sin Sal", "texto": "Sin sal agregada, así que casi no descuenta por sodio, y aporta 8 g de proteína por 100 g. Pierde sobre todo por los 20 puntos del ultraprocesado, con almidón modificado, gelatina y tres gomas como estabilizantes." },
-  { "n": 90, "match": "Agua Mineral Salus Con Gas Pack", "texto": "Un agua mineralizada, no un agua mineral natural: la etiqueta declara calcio, magnesio y dos cloruros agregados. Esos aditivos son los que la separan de las aguas que puntúan 100. Aporta magnesio, pero poco." },
-  { "n": 91, "match": "Postre Viva Chocolate", "texto": "Aporta 94 mg de calcio por 100 g y algo de proteína, sin descuento nutricional. Los 20 puntos de ultraprocesado y los aditivos, almidón modificado, carragenina y sorbato de potasio, son lo que lo mantienen en el medio de la tabla." },
-  { "n": 92, "match": "Pulpa de Tomate Arcor Tetra", "texto": "Tomate y ácido cítrico, nada más. Ningún descuento por nutrición ni por procesamiento. Lo que lo frena es que no declara ningún nutriente por encima del mínimo, algo esperable en un producto que es casi todo agua." },
-  { "n": 93, "match": "Agua Saborizada H2Oh! Limoneto", "texto": "Sin azúcar agregado, y eso la deja bastante mejor que las saborizadas azucaradas. Aun así son quince ingredientes con acidulantes, aromatizantes y vitaminas agregadas, y está clasificada como ultraprocesada." },
-  { "n": 94, "match": "Pack Ser Postre Dulce De Leche", "texto": "Sin descuento nutricional y con cuatro nutrientes acreditados: calcio, fibra, proteína y zinc, gracias a la inulina y la fortificación. Los 20 puntos del ultraprocesado son prácticamente lo único que lo baja." },
-  { "n": 95, "match": "Tomates Perita Enteros Pelados Las Acacias", "texto": "Tomate y jugo de tomate con ácido cítrico como único aditivo. Sin descuento nutricional ni de procesamiento. Como el resto de los tomates en lata, no llega más arriba porque sus valores declarados quedan por debajo del mínimo acreditable." },
-  { "n": 96, "match": "Jamón Cocido Del Campo", "texto": "Carne porcina con buen puntaje y 12 g de proteína por 100 g, con solo 103 kcal. Pierde por la clasificación de ultraprocesado y por los aditivos de curado: difosfato de sodio, carragenina y nitritos." },
-  { "n": 97, "match": "Salame Del Campo", "texto": "Solo cuatro ingredientes, pero uno es nitrito de sodio, con la toxicidad más alta de la tabla. Descuenta 24 puntos por grasas saturadas y sodio. A favor tiene 22 g de proteína por 100 g y no estar clasificado como ultraprocesado." },
-  { "n": 98, "match": "Masa Para Empanada Avanti Casera", "texto": "Margarina como tercer ingrediente, más gluten de trigo, propionato de calcio y ácido sórbico. Pierde 23 puntos por la tabla nutricional y 20 por ultraprocesado, en línea con el resto de las masas industriales." },
-  { "n": 99, "match": "Crema Vegetal Soya Pote", "texto": "Agua y aceite vegetal como base, con emulsionantes, benzoato de sodio y aromatizante sin especificar. Descuenta 24 puntos por grasas, 20 por ultraprocesado y otros 15 por no aportar ningún nutriente acreditable." },
-  { "n": 100, "match": "CEREAL MIX LIGHT MANZANA", "texto": "Aporta 11,7 g de fibra por 100 g, un valor alto de verdad, y tiene manzana deshidratada, arroz y avena reales. Pero el primer ingrediente es jarabe de maltitol y lleva sorbitol, y está clasificado como ultraprocesado. El rótulo light es sobre el azúcar, no sobre el procesamiento." }
+  {
+    "n": 1,
+    "match": "Agua Mineral Nativa Sin Gas 2.25",
+    "texto": "Agua mineral y nada más. Un único ingrediente con puntaje perfecto, sin aditivos, sin azúcar y sin sodio agregado. No hay absolutamente nada que penalizar: es el 100 de la escala."
+  },
+  {
+    "n": 2,
+    "match": "AGUA MINERAL MATUTINA SIN GAS",
+    "texto": "Agua mineral con bicarbonato de sodio naturalmente presente, un mineral sin objeciones. Sin azúcares, sin aditivos y sin calorías. Igual que cualquier agua sin gas, se queda con el puntaje máximo."
+  },
+  {
+    "n": 3,
+    "match": "Coca Cola Retornable 2 L -",
+    "texto": "Lleva sello de exceso de azúcares, que descuenta 15 puntos, y la clasificación como ultraprocesado otros 20. A eso se suman el caramelo amónico de sulfito y el ácido fosfórico, dos aditivos de toxicidad media, y 15 puntos más por no aportar ningún nutriente beneficioso. Es azúcar disuelta en agua carbonatada."
+  },
+  {
+    "n": 4,
+    "match": "Refresco Cola Pepsi No",
+    "texto": "Prácticamente idéntica a la Coca-Cola en composición y en puntaje: mismo sello de azúcares, mismo caramelo amónico, mismo ácido fosfórico y la misma ausencia total de nutrientes que aporten algo. Los 26 puntos que quedan son casi todo el agua."
+  },
+  {
+    "n": 5,
+    "match": "Sprite Original 3L",
+    "texto": "Un punto por debajo de la Coca-Cola. Comparte el sello de azúcares y el ultraprocesado, y agrega benzoato de sodio y EDTA cálcico disódico, dos conservantes que el modelo puntúa duro. Sin color caramelo, pero la carga de aditivos termina siendo equivalente."
+  },
+  {
+    "n": 6,
+    "match": "Fanta Original 3L",
+    "texto": "Diez puntos por debajo de la Coca-Cola, y la diferencia son los colorantes: amarillo ocaso y amaranto, este último con la toxicidad más alta de la tabla. Sumados al sello de azúcares, al ultraprocesado y al benzoato de sodio, la dejan entre los refrescos peor puntuados."
+  },
+  {
+    "n": 7,
+    "match": "Lentejones Río De La Plata 1 Kg",
+    "texto": "Un solo ingrediente y de los mejores posibles. Aporta 21,7 g de proteína y 3,5 g de fibra por cada 100 g, ambos muy por encima del umbral, sin aditivos ni azúcar agregado. Una legumbre seca es lo más cerca del ideal que hay en una góndola."
+  },
+  {
+    "n": 8,
+    "match": "Maracuya Congelado Cambay 500 G",
+    "texto": "Fruta congelada, ingrediente único, sin azúcar agregado ni conservantes. Declara justo el mínimo de fibra y proteína para que cuenten como aporte, así que casi no suma por ese lado, pero tampoco tiene nada que restar."
+  },
+  {
+    "n": 9,
+    "match": "Alfajor Milka Oreo Dulce De",
+    "texto": "El golpe fuerte viene de la tabla nutricional: 42,5 puntos de descuento por exceso, sobre todo azúcares y grasas saturadas. A eso se suman los 20 del ultraprocesado y el jarabe de maíz de alta fructosa entre los primeros ingredientes. Ni la fibra ni la proteína del cacao alcanzan a compensar."
+  },
+  {
+    "n": 10,
+    "match": "Alfajor Bon O Bon Mini 6 U 117G",
+    "texto": "Tiene aceite de soja hidrogenado, el peor puntaje posible en la tabla de ingredientes, más aceite de palma interesterificado y jarabe de glucosa. Con 500 kcal por cada 100 g, ultraprocesado y una lista de 19 ingredientes, los 13 puntos que quedan salen del maní y la leche."
+  },
+  {
+    "n": 11,
+    "match": "Alfajor De Maicena Conaprole 6",
+    "texto": "El más benigno de los tres alfajores, y aun así queda en 17. Lleva sello de exceso de azúcares, que descuenta 15 puntos de una, más los 20 del ultraprocesado. Suma algo por la proteína y por tener huevo y vainilla natural en vez de sustitutos, pero el dulce de leche y el azúcar impalpable mandan."
+  },
+  {
+    "n": 12,
+    "match": "Goma Mogul Oso Extreme 50 G",
+    "texto": "Azúcar y jarabe de glucosa como base, y encima tres colorantes duros: azul brillante, rojo allura y dióxido de titanio, este último con la toxicidad máxima. Con 80 g de carbohidratos por 100 g y ultraprocesado, es de los productos más castigados del catálogo."
+  },
+  {
+    "n": 13,
+    "match": "Gomitas Haribo Worms 80 G",
+    "texto": "Sello de exceso de azúcares, 80 g de carbohidratos por cada 100 g y una lista larga de aditivos: almidón modificado, hidróxido de sodio, aceite mineral y rojo allura. La proteína de la gelatina es lo único que suma, y suma poco."
+  },
+  {
+    "n": 14,
+    "match": "Gomas Gelatina Beijos Fini 100 G",
+    "texto": "85 g de carbohidratos por 100 g, casi todo azúcar y jarabe de glucosa. Lleva rojo allura y dióxido de titanio, dos colorantes de toxicidad alta, más aromatizante sin especificar. Ultraprocesado y sin ningún aporte nutricional que compense."
+  },
+  {
+    "n": 15,
+    "match": "Hamburguesa Congelada Schneck 12",
+    "texto": "Sorprende lo bajo para ser carne. La tabla nutricional descuenta 38 puntos por grasas y sodio, y el ultraprocesado otros 20. Pesan los aditivos: glutamato monosódico, tripolifosfato de sodio y polifosfato potásico. Los 18 g de proteína por 100 g no alcanzan a rescatarla."
+  },
+  {
+    "n": 16,
+    "match": "Hamburguesas Sarubbi Gigante",
+    "texto": "Mismo caso que las otras hamburguesas congeladas: buena proteína, pero 34 puntos de descuento por la tabla nutricional y 20 por ultraprocesado. Los polifosfatos y el difosfato de tetrasodio, usados para retener agua, arrastran el puntaje hacia abajo."
+  },
+  {
+    "n": 17,
+    "match": "Galletas Dulces Sin Azúcar El",
+    "texto": "La sorpresa del catálogo. Sin sello de exceso y con 22 g de fibra por 100 g gracias a la polidextrosa, más grasas monoinsaturadas del girasol alto oleico. La sucralosa descuenta algo, pero al no estar clasificada como ultraprocesada se salva de los 20 puntos que hunden a casi toda su categoría."
+  },
+  {
+    "n": 18,
+    "match": "Hamburguesa Congelada Chori",
+    "texto": "Mezcla de carne vacuna y porcina con buen puntaje de base, pero 30 puntos de descuento nutricional por grasas y sodio, más los 20 del ultraprocesado. El tripolifosfato de sodio es el aditivo que más pesa."
+  },
+  {
+    "n": 19,
+    "match": "SAMAN Mini Galletas de Arroz",
+    "texto": "Dos ingredientes: arroz y sal. No está clasificada como ultraprocesada, no tiene aditivos y aporta 8,3 g de proteína y 4 g de fibra por 100 g. Los carbohidratos son altos y por eso no llega más arriba, pero es de lo mejor que hay en su categoría."
+  },
+  {
+    "n": 20,
+    "match": "Bizcochos Dulces Hojalmar",
+    "texto": "Sello de exceso de azúcares, 490 kcal por cada 100 g y margarina vegetal como segundo ingrediente. Sumado al ultraprocesado y al aromatizante sabor manteca, queda entre los productos más castigados de la panadería industrial."
+  },
+  {
+    "n": 21,
+    "match": "Mango Congelado Cambay 500 G",
+    "texto": "Fruta congelada sin nada agregado: un solo ingrediente con puntaje perfecto y sin aditivos. Aporta 1,4 g de fibra por 100 g, suficiente para contar. Lo único que lo separa del 100 es que no declara otros nutrientes."
+  },
+  {
+    "n": 22,
+    "match": "Jugo Citric Naranja Tetra 250 Ml",
+    "texto": "Un jugo con 79 puntos llama la atención, y la razón es que tiene un solo ingrediente: jugo de naranja exprimido, sin conservantes ni azúcar agregado. No suma más porque no declara vitamina C ni otros nutrientes que superen el umbral."
+  },
+  {
+    "n": 23,
+    "match": "Aceite De Oliva Sibarita 500 Ml",
+    "texto": "Aceite de oliva extra virgen puro, sin refinados ni antioxidantes sintéticos. Las grasas monoinsaturadas, 65 g por cada 100 ml, suman el máximo posible. Pierde 12 puntos por la densidad calórica, inevitable en cualquier aceite, pero se queda entre los mejor puntuados."
+  },
+  {
+    "n": 24,
+    "match": "ACEITE OLIVA EXTRA VIRGEN RIO DE",
+    "texto": "Extra virgen de un solo ingrediente, con 61 g de grasas monoinsaturadas y 14 g de poliinsaturadas por 100 ml. El único descuento serio son las 823 kcal por 100 ml, que todo aceite arrastra por definición."
+  },
+  {
+    "n": 25,
+    "match": "Aceite De Oliva Seleccion Natura",
+    "texto": "Mismo perfil que los otros extra vírgenes: ingrediente único, sin aditivos, con el máximo de puntos por grasas monoinsaturadas. El contraste con los aceites de semilla del catálogo lo da la ausencia de antioxidantes sintéticos."
+  },
+  {
+    "n": 26,
+    "match": "Aderezo Mostaza Dijon Maille 215",
+    "texto": "Base simple de agua, semillas de mostaza y vinagre, todos con buen puntaje. Pierde por el metabisulfito de potasio, un conservante de toxicidad media, por el sodio y por no aportar casi ningún nutriente más allá de la proteína de la semilla."
+  },
+  {
+    "n": 27,
+    "match": "Masa Para Tarta Con Semillas",
+    "texto": "Las semillas de lino, chía y sésamo levantan bastante: aportan fibra y grasas buenas, y tienen puntajes de ingrediente muy altos. Lo que la frena son los 20 puntos de ultraprocesado y los conservantes propionato de calcio y cloruro de potasio."
+  },
+  {
+    "n": 28,
+    "match": "Leche Conaprole UHT Descremada",
+    "texto": "Un solo ingrediente y 113 mg de calcio por cada 100 ml, que suma el máximo por ese nutriente, más proteína suficiente. Sin aditivos ni azúcar agregado. El descuento viene del procesamiento de la leche sin lactosa, no de su composición."
+  },
+  {
+    "n": 29,
+    "match": "Almendras Peladas Rio De La",
+    "texto": "Ingrediente único con 12 g de fibra y 20,7 g de proteína por cada 100 g, ambos cerca del máximo que el modelo puede acreditar. Las 613 kcal por 100 g son altas pero provienen de grasas buenas, así que el impacto es mínimo."
+  },
+  {
+    "n": 30,
+    "match": "Galletas De Arroz Cerealitas 160",
+    "texto": "Cuatro ingredientes simples y ningún aditivo, lo que la salva de la clasificación de ultraprocesado que hunde a casi toda su categoría. Descuenta por los 81 g de carbohidratos por 100 g, pero aporta 8 g de proteína y algo de fibra."
+  },
+  {
+    "n": 31,
+    "match": "Aceite De Oliva Río de la Plata",
+    "texto": "Aceite de oliva sin la mención de extra virgen, lo que le baja algo el puntaje del ingrediente frente a sus pares. Mantiene el perfil alto de grasas monoinsaturadas y no lleva ningún aditivo. Pierde 12 puntos por la densidad calórica, inevitable en cualquier aceite."
+  },
+  {
+    "n": 32,
+    "match": "Masa Para Tarta Integral Avanti",
+    "texto": "El salvado y la harina integral aportan 5 g de fibra por 100 g, el doble que la versión común. Aun así pierde 20 puntos por ultraprocesado y arrastra conservantes: propionato de calcio, ácido sórbico y mono y diglicéridos."
+  },
+  {
+    "n": 33,
+    "match": "Leche Entera La Serenísima Bot",
+    "texto": "Leche entera fortificada con vitaminas A y D. Suma por calcio, proteína y las dos vitaminas agregadas, cuatro nutrientes por encima del umbral. Descuenta apenas por las grasas saturadas propias de la leche entera."
+  },
+  {
+    "n": 34,
+    "match": "Leche Descremada La Serenísima",
+    "texto": "Sin descuento nutricional alguno: al ser descremada no tiene grasas saturadas que penalizar. Suma calcio, proteína y las vitaminas A y D agregadas. Queda un punto por debajo de la entera solo por el mayor procesamiento del descremado."
+  },
+  {
+    "n": 35,
+    "match": "Galletas Dulce Sin Azúcar El",
+    "texto": "Tiene 23 g de fibra por 100 g, incluso más que su hermana de vainilla, y suma el máximo posible por nutrientes beneficiosos. La diferencia de 20 puntos entre ambas es que esta sí está clasificada como ultraprocesada, con una lista de ingredientes casi idéntica."
+  },
+  {
+    "n": 36,
+    "match": "Crema Vegetal Soya Pote 500 G",
+    "texto": "Agua y aceite vegetal como base, con emulsionantes, benzoato de sodio y aromatizante sin especificar. Descuenta 24 puntos por grasas, 20 por ultraprocesado y otros 15 por no aportar ningún nutriente acreditable."
+  },
+  {
+    "n": 37,
+    "match": "Galletas Al Agua Famosa Pack 420",
+    "texto": "La galleta de agua tiene fama de liviana, pero acá pierde 32 puntos por la tabla nutricional: 430 kcal y 70 g de carbohidratos por 100 g, con grasa vacuna refinada como segundo ingrediente. Los 20 del ultraprocesado terminan de hundirla."
+  },
+  {
+    "n": 38,
+    "match": "Snack Saladix Arcor Jamon Caja",
+    "texto": "Se vende como snack horneado, pero encabeza la lista el aceite y sigue el azúcar. Pierde 25 puntos por la tabla nutricional, 20 por ultraprocesado y arrastra metabisulfito de sodio y jarabe de glucosa. Aporta algo de proteína del queso en polvo, nada más."
+  },
+  {
+    "n": 39,
+    "match": "Refresco En Polvo Tang Naranja",
+    "texto": "El primer ingrediente es azúcar y aun así lleva aspartamo y acesulfamo K, o sea que combina azúcar con edulcorantes. Con 66 g de carbohidratos por 100 g de polvo y 14 ingredientes, lo único que suma es la vitamina D agregada."
+  },
+  {
+    "n": 40,
+    "match": "Snack Saladix Arcor Calabre",
+    "texto": "Idéntico a su hermano de jamón en composición y puntaje: aceite y azúcar arriba de la lista, ultraprocesado, metabisulfito de sodio y 440 kcal por 100 g. La categoría entera de snacks salados se ubica en este rango."
+  },
+  {
+    "n": 41,
+    "match": "Galletas Cracker Finitas La",
+    "texto": "Cracker salada con grasa vacuna refinada como segundo ingrediente y 427 kcal por 100 g. Pierde 24 puntos por la tabla nutricional y 20 por ultraprocesado. La proteína del trigo es lo único que rescata."
+  },
+  {
+    "n": 42,
+    "match": "Jugo Dairyco Naranja Light 500",
+    "texto": "Casi todo el castigo viene de los ingredientes, no del azúcar: benzoato de sodio, sorbato de potasio y sucralosa sobre un jugo reconstituido, no exprimido. Sin azúcar no hay descuento nutricional, pero tampoco queda ningún nutriente que acreditar."
+  },
+  {
+    "n": 43,
+    "match": "Agua Saborizada Salus Sin Gas",
+    "texto": "Parece agua, pero lleva azúcar invertido, acesulfamo K, benzoato de sodio y aromatizante sin especificar, doce ingredientes en total. Está clasificada como ultraprocesada y no aporta ningún nutriente. De agua tiene el nombre."
+  },
+  {
+    "n": 44,
+    "match": "Galletas Cerealitas Avena Cacao",
+    "texto": "La avena, el salvado y la harina integral aportan 4,4 g de fibra por 100 g y algo de proteína. Pero el azúcar es el segundo ingrediente, tiene 434 kcal por 100 g y está clasificada como ultraprocesada. El rótulo promete más de lo que entrega."
+  },
+  {
+    "n": 45,
+    "match": "Jugo Dairyco Naranja 500 Ml",
+    "texto": "Jugo reconstituido, no exprimido, con benzoato de sodio y sorbato de potasio. El descuento por ingredientes es de los más altos del catálogo, y como no declara ningún nutriente por encima del umbral, se lleva además la penalización completa por pobreza nutricional."
+  },
+  {
+    "n": 46,
+    "match": "Agua Saborizada Salus Frutte Sin",
+    "texto": "Mismo caso que la versión de pomelo: azúcar invertido, benzoato de sodio, sorbato de potasio y aromatizante sin especificar, sobre una base de agua mineral. Ultraprocesada y sin ningún aporte nutricional."
+  },
+  {
+    "n": 47,
+    "match": "Helado Crufi Diet Frutilla con",
+    "texto": "Sin azúcar agregado y con 6,5 g de fibra por 100 g gracias a la polidextrosa, además de solo 95 kcal. Lo que lo frena son los 20 puntos del ultraprocesado y la salsa de frutilla, que trae colorantes y conservantes en su propia lista."
+  },
+  {
+    "n": 48,
+    "match": "Helado Crufi Diet Flan Con Dulce",
+    "texto": "Diez gramos de fibra por 100 g y menos de 100 kcal, un perfil nutricional inusual para un helado. Pierde por el ultraprocesado y porque la salsa de dulce de leche incluye eritritol, colorantes y conservantes dentro del propio ingrediente."
+  },
+  {
+    "n": 49,
+    "match": "Galletitas Integrales con",
+    "texto": "Se presenta como integral y con cereales, y efectivamente aporta 4,7 g de fibra por 100 g. Pero el azúcar es el segundo ingrediente, tiene 460 kcal por 100 g y el preparado de frutilla suma colorantes, conservantes y estabilizantes dentro de su propia lista."
+  },
+  {
+    "n": 50,
+    "match": "Agua Saborizada H2Oh!",
+    "texto": "Sin azúcar agregado, lo que evita el descuento nutricional, pero con dieciocho ingredientes: acidulantes, aromatizantes, conservantes y vitaminas agregadas. Está clasificada como ultraprocesada y lo único que acredita es un poco de niacina."
+  },
+  {
+    "n": 51,
+    "match": "Refresco Gatorade Manzana 1.25 L",
+    "texto": "El segundo ingrediente es jarabe de maíz de alta fructosa y el tercero azúcar. Sello de exceso de azúcares, ultraprocesado y cero nutrientes acreditables. La bebida deportiva puntúa igual que un refresco común porque, en composición, lo es."
+  },
+  {
+    "n": 52,
+    "match": "Queso Para Untar Requesón",
+    "texto": "Base láctea buena, con 13 g de proteína por 100 g. Pero pierde 25 puntos por la tabla nutricional, sobre todo sodio, y otros 20 por ultraprocesado, con fosfatos y estabilizantes en la lista. El light refiere a la grasa, no al resto."
+  },
+  {
+    "n": 53,
+    "match": "Refresco Gatorade Cool Blue 500",
+    "texto": "Jarabe de maíz de alta fructosa, azúcar, sello de exceso y colorante azul brillante. Ultraprocesado y sin ningún nutriente que acreditar. El aporte de electrolitos no compensa en una escala que mide qué tan saludable es el producto."
+  },
+  {
+    "n": 54,
+    "match": "Yogurísimo Licuado Mango Coco Y",
+    "texto": "Aporta 100 mg de calcio por 100 g y algo de proteína, y casi no tiene descuento nutricional. Pero el preparado de frutas trae jarabe de maíz de alta fructosa, almidón modificado, colorantes y conservantes dentro del mismo ingrediente, y está clasificado como ultraprocesado."
+  },
+  {
+    "n": 55,
+    "match": "Sopa Crema De Verduras Light",
+    "texto": "Tiene espinaca, cebolla y choclo reales entre sus ingredientes, todos con buen puntaje. Pero son veintitrés ingredientes en total, con proteína vegetal hidrolizada y extracto de levadura, 65 g de carbohidratos por 100 g y clasificación de ultraprocesado."
+  },
+  {
+    "n": 56,
+    "match": "CEREAL MIX LIGHT MANZANA & AVENA",
+    "texto": "Aporta 11,7 g de fibra por 100 g, un valor alto de verdad, y tiene manzana deshidratada, arroz y avena reales. Pero el primer ingrediente es jarabe de maltitol y lleva sorbitol, y está clasificado como ultraprocesado. El rótulo light es sobre el azúcar, no sobre el procesamiento."
+  },
+  {
+    "n": 57,
+    "match": "Jugo Naranja Zug 1.5 L",
+    "texto": "Casi todo el castigo viene de los ingredientes: jugo reconstituido en vez de exprimido, jarabe de fructosa como endulzante y dos conservantes, benzoato de sodio y sorbato de potasio. No declara ningún nutriente por encima del umbral, así que se lleva además la penalización completa por no aportar nada."
+  },
+  {
+    "n": 58,
+    "match": "Cereal De Chocolate Nesquik",
+    "texto": "El caso más interesante del catálogo. Está fortificado con calcio, hierro, niacina, zinc, riboflavina y ácido fólico, y suma el máximo posible de bonificación por nutrientes: 20 puntos, el tope del modelo. Pero el azúcar es el tercer ingrediente, lleva jarabe de glucosa y aceite de palma, y es ultraprocesado. La fortificación levanta el número, no cambia lo que hay adentro."
+  },
+  {
+    "n": 59,
+    "match": "AGUA MINERAL MATUTINA CON GAS",
+    "texto": "Agua mineral con bicarbonato de sodio y dióxido de carbono, este último el único ingrediente que descuenta algo. Sin azúcares ni calorías. Los tres puntos que la separan de la versión sin gas son exactamente la carbonatación."
+  },
+  {
+    "n": 60,
+    "match": "Fideos Trigo Duro Barilla Angel",
+    "texto": "Dos ingredientes: sémola de trigo duro y agua. Sin aditivos, sin azúcar y con 11,4 g de proteína y 3 g de fibra por 100 g. Los carbohidratos son altos, propios de una pasta seca, pero no hay nada más que penalizar."
+  },
+  {
+    "n": 61,
+    "match": "Fideos Espinaca Adria Vermicelli",
+    "texto": "Espinaca deshidratada y espinaca fresca entre los ingredientes, ambas con puntaje casi perfecto, y 15 g de proteína por 100 g. Sin aditivos ni conservantes. La harina fortificada es lo único que descuenta algo."
+  },
+  {
+    "n": 62,
+    "match": "Fideos Espinaca Adria Nido 500",
+    "texto": "Harina fortificada con espinaca y ajo deshidratados, sin aditivos. Aporta 15 g de proteína por 100 g. Queda dos puntos por debajo de la versión vermicelli porque esta no incluye espinaca fresca en la lista."
+  },
+  {
+    "n": 63,
+    "match": "Cous Cous Barilla 500 G",
+    "texto": "Un único ingrediente, sémola de trigo duro, con 12 g de proteína y 3 g de fibra por 100 g. Sin aditivos ni azúcar. Los 71 g de carbohidratos por 100 g son lo que impide que suba más."
+  },
+  {
+    "n": 64,
+    "match": "Tomate Pelado Perita Arcor Lata",
+    "texto": "Tomate pelado y jugo de tomate, ambos con puntaje casi perfecto, y solo ácido cítrico como aditivo. No descuenta nada por nutrición. Lo que lo frena es que la etiqueta declara apenas 0,6 g de fibra y 0,7 g de proteína por 100 g, por debajo del mínimo para acreditarlos: un tomate en lata es sobre todo agua."
+  },
+  {
+    "n": 65,
+    "match": "Lasagna Facil Las Acacias 200 G",
+    "texto": "Sémola de trigo duro como único ingrediente, sin aditivos ni conservantes. Aporta proteína y algo de fibra. Como toda pasta seca, los carbohidratos altos son lo único que la mantiene lejos del máximo."
+  },
+  {
+    "n": 66,
+    "match": "Harina De Coco Terra Verde 300",
+    "texto": "Ingrediente único con 29,2 g de fibra y 18,8 g de proteína por cada 100 g, valores altísimos que suman casi el máximo acreditable. Pierde 15 puntos por las grasas saturadas propias del coco, pero sin aditivos ni azúcar agregado se queda bien arriba."
+  },
+  {
+    "n": 67,
+    "match": "Polenta Presto Pronta 500 G",
+    "texto": "Harina de maíz precocida y nada más. Sin aditivos, sin azúcar y sin sal agregada, con algo de fibra y 7 g de proteína por 100 g. El precocido es lo único que le descuenta frente a una polenta común."
+  },
+  {
+    "n": 68,
+    "match": "Vascolet Alimento Achocolatado",
+    "texto": "El cacao en polvo aporta 7,5 g de fibra y 5,5 g de proteína por 100 g, y son los dos ingredientes principales junto con el azúcar. No está clasificado como ultraprocesado y solo arrastra un aromatizante. Bastante más arriba de lo que sugiere el envase."
+  },
+  {
+    "n": 69,
+    "match": "Cocoa Copacabana Intenso 500 G",
+    "texto": "El primer ingrediente es azúcar, pero el cacao aporta 14,5 g de fibra y 8 g de proteína por cada 100 g, valores que suman fuerte. Solo tres ingredientes, sin conservantes ni colorantes, y sin clasificación de ultraprocesado. El puntaje es del cacao, no del azúcar."
+  },
+  {
+    "n": 70,
+    "match": "Cacao En Polvo Nestle© 200 G",
+    "texto": "Mismo perfil que las otras cocoas: azúcar primero, cacao después y un aromatizante. La fibra y la proteína del cacao son lo que sostiene el puntaje. Sin conservantes, sin colorantes y sin clasificación de ultraprocesado."
+  },
+  {
+    "n": 71,
+    "match": "Queso Para Untar Conaprole",
+    "texto": "Pierde 34 puntos por la tabla nutricional, sobre todo grasas saturadas y sodio, más 20 por ultraprocesado. Tiene almidón modificado, aromatizante sabor cheddar, colorantes y tres fosfatos distintos. Del queso queda poco más que el nombre."
+  },
+  {
+    "n": 72,
+    "match": "Postre Helado Crufi Suspiro De",
+    "texto": "Sello de exceso de azúcares, 24 puntos de descuento nutricional y ultraprocesado. La salsa de chocolate y el bizcochuelo traen jarabe de maíz de alta fructosa y emulsionantes dentro de su propia lista de ingredientes."
+  },
+  {
+    "n": 73,
+    "match": "Galletas Rellenas Lu Lu",
+    "texto": "De lo más castigado del catálogo. Tiene aceite vegetal hidrogenado, el peor ingrediente posible en la tabla, más jarabe de maíz de alta fructosa y glucosa. Con 480 kcal y 70 g de carbohidratos por 100 g, ultraprocesada, la suma de penalizaciones supera el máximo teórico."
+  },
+  {
+    "n": 74,
+    "match": "Galletitas Tortitas Arcor",
+    "texto": "Lleva aceite de soja hidrogenado, el peor puntaje posible de la tabla, más aceite de palma interesterificado y grasa bovina refinada, tres grasas de mala calidad en los primeros lugares. Con sello de exceso de azúcares y clasificación de ultraprocesado, la suma de penalizaciones supera el máximo teórico del modelo."
+  },
+  {
+    "n": 75,
+    "match": "Aderezo Mayonesa Mayoliva 237 G",
+    "texto": "Tiene aceite de oliva extra virgen y huevo entre los ingredientes, pero también veintiún ingredientes en total y 467 kcal por 100 g. Pierde 25 puntos por la tabla nutricional, 20 por ultraprocesado y otros 15 por no acreditar ningún nutriente beneficioso."
+  },
+  {
+    "n": 76,
+    "match": "Caldo Maggi Gallina 6U",
+    "texto": "Lleva butilhidroxianisol y butilhidroxitolueno, dos antioxidantes sintéticos con la toxicidad más alta de la tabla, más glutamato monosódico y aceite de palma. Con la sal como primer ingrediente, el descuento por sodio es máximo. Es de los puntajes más bajos del catálogo."
+  },
+  {
+    "n": 77,
+    "match": "Masa Para Empanadas Hojaldrada",
+    "texto": "Margarina como tercer ingrediente y 24 puntos de descuento por grasas y sodio, más los 20 del ultraprocesado. Los conservantes propionato de calcio y sorbato de potasio completan el cuadro. La masa comprada arranca muy por debajo de la casera."
+  },
+  {
+    "n": 78,
+    "match": "Caldo De Carne Monte Cudine 9G",
+    "texto": "Sal como primer ingrediente y grasa vegetal hidrogenada como tercero, un ingrediente de toxicidad media-alta. Ultraprocesado, con proteína vegetal hidrolizada y extracto de levadura. El descuento por sodio es el máximo posible."
+  },
+  {
+    "n": 79,
+    "match": "Salamin Schneck Al Vacio 190 Gr",
+    "texto": "Pierde 24 puntos por la tabla nutricional, sobre todo grasas saturadas y sodio, con 430 kcal por 100 g, más 20 por ultraprocesado. Tiene buena proteína, pero los nitritos y la carga de sal son determinantes en un embutido curado."
+  },
+  {
+    "n": 80,
+    "match": "Caldo Maggi Carne 6U",
+    "texto": "Sal como primer ingrediente, aceite de palma y una lista larga de aditivos. Descuento máximo por sodio, 20 puntos por ultraprocesado y otros 15 por no aportar ningún nutriente. Puntúa algo mejor que el de gallina porque no lleva los antioxidantes sintéticos más duros."
+  },
+  {
+    "n": 81,
+    "match": "Sopa Instantánea De Choclo Monte",
+    "texto": "El primer ingrediente es almidón modificado y el segundo azúcar, antes que cualquier vegetal. Con dieciocho ingredientes, 69 g de carbohidratos por 100 g y clasificación de ultraprocesado, del choclo queda poco."
+  },
+  {
+    "n": 82,
+    "match": "Jugo Citric Pomelo 1 L",
+    "texto": "Jugo de pomelo exprimido como único ingrediente, sin conservantes ni azúcar agregado. Descuenta 15 puntos por los azúcares propios de la fruta concentrados en el jugo, y no llega más arriba porque casi no declara nutrientes que superen el mínimo."
+  },
+  {
+    "n": 83,
+    "match": "Pan Rallado Saborizado Sin Sal",
+    "texto": "Solo tres ingredientes, orégano, ajo y harina fortificada, sin sal agregada, lo que evita todo descuento por sodio. Aporta proteína y fibra. Lo único que lo baja son los 20 puntos por la clasificación de ultraprocesado."
+  },
+  {
+    "n": 84,
+    "match": "Queso Casancrem Light Sin Sal",
+    "texto": "Sin sal agregada, así que casi no descuenta por sodio, y aporta 8 g de proteína por 100 g. Pierde sobre todo por los 20 puntos del ultraprocesado, con almidón modificado, gelatina y tres gomas como estabilizantes."
+  },
+  {
+    "n": 85,
+    "match": "Agua Mineral Salus Con Gas Pack",
+    "texto": "Un agua mineralizada, no un agua mineral natural: la etiqueta declara calcio, magnesio y dos cloruros agregados. Esos aditivos son los que la separan de las aguas que puntúan 100. Aporta magnesio, pero poco."
+  },
+  {
+    "n": 86,
+    "match": "Postre Viva Chocolate 2 U 110 G",
+    "texto": "Aporta 94 mg de calcio por 100 g y algo de proteína, sin descuento nutricional. Los 20 puntos de ultraprocesado y los aditivos, almidón modificado, carragenina y sorbato de potasio, son lo que lo mantienen en el medio de la tabla."
+  },
+  {
+    "n": 87,
+    "match": "Agua Saborizada H2Oh! Limoneto",
+    "texto": "Sin azúcar agregado, y eso la deja bastante mejor que las saborizadas azucaradas. Aun así son quince ingredientes con acidulantes, aromatizantes y vitaminas agregadas, y está clasificada como ultraprocesada."
+  },
+  {
+    "n": 88,
+    "match": "Pack Ser Postre Dulce De Leche 2",
+    "texto": "Sin descuento nutricional y con cuatro nutrientes acreditados: calcio, fibra, proteína y zinc, gracias a la inulina y la fortificación. Los 20 puntos del ultraprocesado son prácticamente lo único que lo baja."
+  },
+  {
+    "n": 89,
+    "match": "Tomates Perita Enteros Pelados",
+    "texto": "Tomate y jugo de tomate con ácido cítrico como único aditivo. Sin descuento nutricional ni de procesamiento. Como el resto de los tomates en lata, no llega más arriba porque sus valores declarados quedan por debajo del mínimo acreditable."
+  },
+  {
+    "n": 90,
+    "match": "Papas Kryzpo Original 280 G",
+    "texto": "No son papas fritas en rodajas sino papa deshidratada reconstituida, con maltodextrina, fosfatos y emulsionantes. Aporta grasas monoinsaturadas del girasol alto oleico y algo de proteína, pero los 20 puntos de ultraprocesado son los que definen el resultado."
+  },
+  {
+    "n": 91,
+    "match": "Pack Ravioles 5 Estrellas 1 Kg",
+    "texto": "El relleno tiene acelga, ricotta y cebolla, todos ingredientes de buen puntaje, y aporta proteína. Lo que lo baja son los 20 puntos por ultraprocesado y el descuento nutricional por sodio y grasas. Una pasta rellena industrial arranca bastante por debajo de la pasta seca."
+  },
+  {
+    "n": 92,
+    "match": "Tagliatelle De Albahaca 270 G",
+    "texto": "Sémola de trigo duro con huevo en polvo, albahaca y espinaca molida, todos ingredientes limpios y sin conservantes. Aporta 8 g de proteína por 100 g. La clasificación de ultraprocesado es prácticamente lo único que lo separa de las pastas secas que puntúan más de 80."
+  },
+  {
+    "n": 93,
+    "match": "Salsa Bolognesa Barilla 400 G",
+    "texto": "Pulpa de tomate, cebolla, zanahoria y apio, todos con puntaje casi perfecto, más carne vacuna y porcina. Casi no descuenta por ingredientes y no está clasificada como ultraprocesada. Los 9 puntos de descuento nutricional son por el sodio propio de una salsa lista."
+  },
+  {
+    "n": 94,
+    "match": "Manteca Calidad Extra La",
+    "texto": "Un solo ingrediente, crema de leche, sin aditivos ni conservantes. Descuenta 13 puntos por las grasas saturadas y otros 15 por no declarar ningún nutriente que supere el umbral. Que una manteca quede en el medio de la tabla sorprende, pero es lo que da un producto de un ingrediente sin agregados."
+  },
+  {
+    "n": 95,
+    "match": "Jamón Cocido Del Campo a la Mesa",
+    "texto": "Carne porcina con buen puntaje y 12 g de proteína por 100 g, con solo 103 kcal. Pierde por la clasificación de ultraprocesado y por los aditivos de curado: difosfato de sodio, carragenina y nitritos."
+  },
+  {
+    "n": 96,
+    "match": "Salame Del Campo a la Mesa 200 G",
+    "texto": "Solo cuatro ingredientes, pero uno es nitrito de sodio, con la toxicidad más alta de la tabla. Descuenta 24 puntos por grasas saturadas y sodio. A favor tiene 22 g de proteína por 100 g y no estar clasificado como ultraprocesado."
+  },
+  {
+    "n": 97,
+    "match": "Pan Tortuga Con Sesamo Bimbo 6 U",
+    "texto": "Las semillas de sésamo son el segundo ingrediente y aportan grasas buenas, con 9,4 g de proteína por 100 g. Pierde sobre todo por los 20 puntos de ultraprocesado y por los conservantes propionato de calcio y ácido sórbico, habituales en el pan de molde industrial."
+  },
+  {
+    "n": 98,
+    "match": "Anana En Almibar Equador 825 G",
+    "texto": "La fruta está bien puntuada, pero el almíbar agrega azúcar y eso descuenta 10 puntos por nutrición. Se lleva además la penalización completa por no declarar ningún nutriente acreditable: la fruta en conserva pierde buena parte de lo que aporta la fresca."
+  },
+  {
+    "n": 99,
+    "match": "Cereales Zucosos Matinal 230 G",
+    "texto": "Fortificado con calcio, hierro, niacina, riboflavina y ácido fólico, suma 18 puntos por nutrientes beneficiosos. Pero el azúcar es el tercer ingrediente y también lleva jarabe de azúcar invertido y jarabe de glucosa, tres endulzantes distintos, con clasificación de ultraprocesado."
+  },
+  {
+    "n": 100,
+    "match": "Pan Rallado MultiCereales",
+    "texto": "Semillas de sésamo y lino, salvado de trigo y avena entre los primeros ingredientes: 15,7 g de fibra y 9,3 g de proteína por 100 g. Sin sal agregada, así que no descuenta por sodio. Los 20 puntos de ultraprocesado son lo único que lo frena."
+  }
 ]

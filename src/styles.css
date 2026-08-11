@@ -1,0 +1,512 @@
+/* Vokkado Score Challenge — pensado para iPad en vertical, a un brazo de distancia.
+   Todo grande: en un stand se juega parado y con gente mirando por encima. */
+
+:root {
+  --verde: #0b3d2e;
+  --verde-claro: #1a6b4f;
+  --lima: #a8e05f;
+  --crema: #f7f4ec;
+  --gris: #6b7280;
+  --rojo: #dc2626;
+  --naranja: #f59e0b;
+  --sombra: 0 4px 24px rgba(11, 61, 46, 0.12);
+  --radio: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overscroll-behavior: none;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  background: var(--crema);
+  color: var(--verde);
+  -webkit-font-smoothing: antialiased;
+  /* Nadie debería poder seleccionar texto con el dedo durante una partida. */
+  user-select: none;
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.pantalla {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 28px calc(32px + env(safe-area-inset-bottom));
+  max-width: 820px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 1.1;
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 28px;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+
+.sub {
+  color: var(--gris);
+  font-size: 18px;
+  margin: 0 0 28px;
+  line-height: 1.45;
+}
+
+/* ── Botones ─────────────────────────────────────────────────────────── */
+
+button {
+  font-family: inherit;
+  font-size: 21px;
+  font-weight: 600;
+  border: none;
+  border-radius: 16px;
+  padding: 20px 28px;
+  cursor: pointer;
+  transition: transform 0.08s ease, opacity 0.15s ease;
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.primario {
+  background: var(--verde);
+  color: var(--crema);
+  width: 100%;
+}
+
+.secundario {
+  background: transparent;
+  color: var(--gris);
+  font-size: 17px;
+  padding: 12px;
+}
+
+/* ── Formulario ──────────────────────────────────────────────────────── */
+
+label {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--verde-claro);
+}
+
+input[type='text'],
+input[type='email'],
+textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 20px;
+  padding: 16px 18px;
+  border: 2px solid #e3ded2;
+  border-radius: 14px;
+  background: #fff;
+  color: var(--verde);
+  margin-bottom: 18px;
+  user-select: text;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--verde-claro);
+}
+
+.checkbox {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--gris);
+}
+
+.checkbox input {
+  width: 26px;
+  height: 26px;
+  margin: 0;
+  flex-shrink: 0;
+  accent-color: var(--verde);
+}
+
+.error {
+  color: var(--rojo);
+  font-size: 16px;
+  margin: -8px 0 16px;
+}
+
+/* ── Juego ───────────────────────────────────────────────────────────── */
+
+.barra-superior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--gris);
+  margin-bottom: 20px;
+}
+
+.timer {
+  font-variant-numeric: tabular-nums;
+  font-size: 20px;
+}
+
+.timer.urgente {
+  color: var(--rojo);
+}
+
+.progreso {
+  height: 6px;
+  background: #e3ded2;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.progreso > div {
+  height: 100%;
+  background: var(--lima);
+  transition: width 0.25s linear;
+}
+
+.foto {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  margin-bottom: 20px;
+}
+
+.nombre-producto {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 4px;
+  text-align: center;
+}
+
+.marca {
+  color: var(--gris);
+  font-size: 17px;
+  text-align: center;
+  margin: 0 0 24px;
+}
+
+.valor-slider {
+  font-size: 76px;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 4px;
+}
+
+.escala {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--gris);
+  margin-top: 6px;
+  margin-bottom: 28px;
+}
+
+input[type='range'] {
+  width: 100%;
+  height: 44px;
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  height: 14px;
+  border-radius: 7px;
+  background: linear-gradient(90deg, var(--rojo), var(--naranja), var(--lima));
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid var(--verde);
+  margin-top: -19px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ── Feedback ────────────────────────────────────────────────────────── */
+
+.comparacion {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.caja {
+  flex: 1;
+  background: #fff;
+  border-radius: var(--radio);
+  padding: 20px;
+  text-align: center;
+  box-shadow: var(--sombra);
+}
+
+.caja .etiqueta {
+  font-size: 14px;
+  color: var(--gris);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.caja .numero {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.caja.real {
+  background: var(--verde);
+  color: var(--crema);
+}
+
+.caja.real .etiqueta {
+  color: var(--lima);
+}
+
+.veredicto {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.puntos-ganados {
+  text-align: center;
+  font-size: 19px;
+  color: var(--gris);
+  margin-bottom: 26px;
+}
+
+.justificacion {
+  background: #fff;
+  border-left: 5px solid var(--lima);
+  border-radius: 12px;
+  padding: 20px 22px;
+  font-size: 18px;
+  line-height: 1.55;
+  margin-bottom: 22px;
+}
+
+/* Cascada del desglose: de 100 hacia abajo, un renglón por paso. */
+.desglose {
+  background: #fff;
+  border-radius: var(--radio);
+  padding: 20px 22px;
+  margin-bottom: 24px;
+  box-shadow: var(--sombra);
+}
+
+.desglose h3 {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gris);
+  margin: 0 0 14px;
+}
+
+.paso {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+
+.paso .etiqueta-paso {
+  flex: 1;
+}
+
+.paso .barra {
+  height: 10px;
+  border-radius: 5px;
+  min-width: 4px;
+}
+
+.paso .valor {
+  width: 62px;
+  text-align: right;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.paso.resta .barra {
+  background: var(--rojo);
+}
+
+.paso.resta .valor {
+  color: var(--rojo);
+}
+
+.paso.suma .barra {
+  background: var(--verde-claro);
+}
+
+.paso.suma .valor {
+  color: var(--verde-claro);
+}
+
+.nutrientes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #eee7da;
+}
+
+.chip {
+  font-size: 15px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: #f2ede1;
+  color: var(--gris);
+}
+
+.chip.exceso {
+  background: #fdeaea;
+  color: var(--rojo);
+}
+
+.chip.bueno {
+  background: #eaf6dd;
+  color: #3f6b1c;
+}
+
+/* ── Comodín ─────────────────────────────────────────────────────────── */
+
+.comodin {
+  background: var(--verde);
+  color: var(--crema);
+  border-radius: var(--radio);
+  padding: 26px;
+  margin-bottom: 24px;
+}
+
+.comodin h2 {
+  color: var(--lima);
+}
+
+.comodin p {
+  font-size: 18px;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── Resultado y ranking ─────────────────────────────────────────────── */
+
+.total {
+  text-align: center;
+  font-size: 88px;
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  margin: 10px 0 2px;
+}
+
+.fila-ranking {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin-bottom: 10px;
+  font-size: 19px;
+}
+
+.fila-ranking.yo {
+  background: var(--verde);
+  color: var(--crema);
+}
+
+.fila-ranking .puesto {
+  font-weight: 800;
+  font-size: 22px;
+  width: 44px;
+  font-variant-numeric: tabular-nums;
+}
+
+.fila-ranking .quien {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fila-ranking .pts {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.premio {
+  font-size: 24px;
+}
+
+/* ── Encuesta ────────────────────────────────────────────────────────── */
+
+.nps {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.nps button {
+  padding: 16px 0;
+  font-size: 20px;
+  background: #fff;
+  color: var(--verde);
+  border: 2px solid #e3ded2;
+}
+
+.nps button.elegido {
+  background: var(--verde);
+  color: var(--crema);
+  border-color: var(--verde);
+}
+
+.espaciador {
+  flex: 1;
+  min-height: 20px;
+}

@@ -1,0 +1,121 @@
+/**
+ * Persistencia local. IndexedDB nativo, sin librerías.
+ *
+ * El iPad tiene que poder jugar con la red caída, así que esta capa es la fuente
+ * de verdad durante el evento: toda partida se guarda acá primero y recién
+ * después se intenta subir. Si el backend no responde, queda en cola.
+ */
+
+const DB_NAME = 'vokkado-score-game';
+const DB_VERSION = 1;
+const STORE_GAMES = 'games';
+
+export interface StoredGame {
+  id: string;
+  email: string;
+  nombre: string;
+  apellido: string;
+  profesion: string;
+  consent: boolean;
+  points: number;
+  ms: number;
+  playedAt: number;
+  rounds: { productId: string; guess: number; realScore: number; points: number; ms: number }[];
+  survey: { nps: number | null; comentario: string } | null;
+  /** false mientras no se haya confirmado la subida al backend. */
+  synced: boolean;
+}
+
+function openDb(): Promise<IDBDatabase> {
+  return new Promise((resolve, reject) => {
+    const req = indexedDB.open(DB_NAME, DB_VERSION);
+    req.onupgradeneeded = () => {
+      const db = req.result;
+      if (!db.objectStoreNames.contains(STORE_GAMES)) {
+        const store = db.createObjectStore(STORE_GAMES, { keyPath: 'id' });
+        // Un intento por email: el índice hace la validación local barata.
+        store.createIndex('email', 'email', { unique: true });
+        store.createIndex('synced', 'synced', { unique: false });
+      }
+    };
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+}
+
+function tx<T>(mode: IDBTransactionMode, fn: (store: IDBObjectStore) => IDBRequest<T>): Promise<T> {
+  return openDb().then(
+    (db) =>
+      new Promise<T>((resolve, reject) => {
+        const t = db.transaction(STORE_GAMES, mode);
+        const req = fn(t.objectStore(STORE_GAMES));
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = () => reject(req.error);
+        t.oncomplete = () => db.close();
+      }),
+  );
+}
+
+export async function saveGame(game: StoredGame): Promise<void> {
+  await tx('readwrite', (s) => s.put(game));
+}
+
+export async function allGames(): Promise<StoredGame[]> {
+  const games = await tx<StoredGame[]>('readonly', (s) => s.getAll());
+  return games;
+}
+
+/**
+ * Busca una partida ya jugada por ese email. Hay premios de por medio, así que
+ * un intento por persona. El servidor valida lo mismo cuando hay red: esto es
+ * sólo la primera barrera, la que funciona sin conexión.
+ */
+export async function findByEmail(email: string): Promise<StoredGame | null> {
+  const db = await openDb();
+  return new Promise((resolve, reject) => {
+    const t = db.transaction(STORE_GAMES, 'readonly');
+    const req = t.objectStore(STORE_GAMES).index('email').get(email.trim().toLowerCase());
+    req.onsuccess = () => resolve(req.result ?? null);
+    req.onerror = () => reject(req.error);
+    t.oncomplete = () => db.close();
+  });
+}
+
+export async function pendingSync(): Promise<StoredGame[]> {
+  const games = await allGames();
+  return games.filter((g) => !g.synced);
+}
+
+/**
+ * Exporta todo a CSV. Es la red de seguridad del evento: si el iPad se resetea
+ * o IndexedDB se vacía, lo único que queda son los CSV que se hayan bajado.
+ * Conviene exportar cada hora durante el stand.
+ */
+export function toCsv(games: StoredGame[]): string {
+  const headers = [
+    'nombre', 'apellido', 'email', 'profesion', 'consent',
+    'puntos', 'segundos', 'jugado', 'nps', 'comentario', 'sincronizado',
+  ];
+  const esc = (v: unknown) => {
+    const s = String(v ?? '');
+    return /[",;\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+  };
+  const rows = games.map((g) =>
+    [
+      g.nombre, g.apellido, g.email, g.profesion, g.consent ? 'sí' : 'no',
+      g.points, Math.round(g.ms / 1000), new Date(g.playedAt).toISOString(),
+      g.survey?.nps ?? '', g.survey?.comentario ?? '', g.synced ? 'sí' : 'no',
+    ].map(esc).join(';'),
+  );
+  return '﻿' + headers.join(';') + '\n' + rows.join('\n') + '\n';
+}
+
+export function downloadCsv(games: StoredGame[]): void {
+  const blob = new Blob([toCsv(games)], { type: 'text/csv;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `score-game-${new Date().toISOString().slice(0, 16).replace(/[:T]/g, '-')}.csv`;
+  a.click();
+  URL.revokeObjectURL(url);
+}

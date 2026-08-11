@@ -132,23 +132,26 @@ Coca-Cola se quedaba afuera porque Fanta (16) está más lejos de 50.
 propósito (no hay nivel de consumo libre de riesgo, posición de la OMS). En el
 juego son producto extra que no suma ni resta.
 
-## 6. Rarezas detectadas — pendientes de decisión
+## 6. Rarezas detectadas
 
 Encontradas leyendo los 100 productos uno por uno.
 
-**Para decidir antes del evento:**
+**Ya resueltas (2026-08-11):**
 
-1. **Yerbas (97, 93, 91)** — los valores son de la hoja seca: 50 g de fibra y
-   850 mg de calcio por 100 g. Correcto técnicamente, pero nadie consume 100 g de
-   yerba y la infusión extrae una fracción mínima. **Es lo más discutible del pool
-   con este público.** Recomendación: sacarlas.
-2. **Tres masas de empanada La Especialista**, casi idénticas, las tres en 19. El
-   dedupe no las juntó. Una tiene el nombre mal escrito: "La Especilista".
-3. **Gomitas Mogul con sello de exceso de grasas saturadas (−12)** — sus
+1. ~~**Yerbas (97, 93, 91)**~~ — valores de la hoja seca (50 g de fibra, 850 mg de
+   calcio por 100 g). Correctos, pero nadie consume 100 g de yerba y la infusión
+   extrae una fracción mínima. **Categoría excluida** vía `EXCLUDED_CATEGORIES`.
+2. ~~**Tres masas de empanada La Especialista**~~ — resuelto con el tope
+   `MAX_PER_BRAND_CATEGORY = 2` más el stemming de plurales en `baseKey`.
+3. ~~**Nombres sucios**~~ — `NAME_FIXES` y `BRAND_FIXES` en `curate-products.js`
+   corrigen el nombre en portugués, "La Especilista", "Conapole" y la marca mal
+   asignada de La Celestina. Sólo para pantalla; la base no se toca.
+
+**Pendiente de decisión tuya:**
+
+4. **Gomitas Mogul con sello de exceso de grasas saturadas (−12)** — sus
    ingredientes son azúcar, glucosa, jugo de manzana y colorantes. No tiene grasa.
-   Dato de etiqueta mal cargado que sí afecta el score.
-4. **Nombres a corregir:** "BISCOITO INTEGRAL COM MORANGO E CEREAIS" (portugués),
-   Galletas Cracker La Celestina figuran con marca "Fini" (es marca de gomitas).
+   Dato de etiqueta mal cargado que sí afecta el score. Sigue en el pool.
 
 **Del motor, para mirar después del evento (no bloquean el juego):**
 
@@ -169,6 +172,24 @@ Encontradas leyendo los 100 productos uno por uno.
    umbrales mínimos. Valores sospechosamente redondos, probablemente placeholders.
 10. **Ultraprocesado en alimentos base.** Aceites refinados marcados NOVA 4; por
     NOVA son ingrediente culinario procesado (grupo 2). Vale 20 puntos.
+
+## 6b. Reglas del juego, ya implementadas
+
+`src/game/engine.ts` — lógica pura, sin React, con 16 tests.
+
+- **5 productos** por partida, **18 segundos** cada uno. Al vencer el timer se
+  envía lo que haya en el slider: no se castiga con cero, pero tampoco se espera
+  indefinidamente con fila en el stand.
+- **Puntos = max(0, 100 − |error| × 2)**, tope 500. El ×2 es deliberado: entre
+  nutricionistas casi todos caen cerca y con ×1 se empataban cinco personas en el
+  podio. Errar por 15 cuesta 30, que alcanza para ordenar.
+- **Desempate:** puntos → tiempo total → quién jugó primero. Determinístico y
+  explicable, porque hay premios.
+- **Sorteo no uniforme:** se fuerzan al menos 2 productos "sorpresa" o "trampa" y
+  no se repite categoría dentro de una partida. Con random puro a alguien le
+  tocaban 5 obvios y el juego perdía la gracia.
+- **Un intento por email**, validado contra IndexedDB (índice único). Case
+  insensitive: `ANA@Test.uy` y `ana@test.uy` son la misma persona.
 
 ## 7. Estado del pool
 

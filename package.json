@@ -1,14 +1,29 @@
 {
-  "name": "vokkado-event-game",
+  "name": "vokkado-score-game",
   "version": "0.1.0",
   "private": true,
   "description": "Minijuego de stand: adiviná el Score Vokkado",
   "type": "commonjs",
   "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
     "curate": "node scripts/curate-products.js",
-    "images": "node scripts/download-images.js"
+    "images": "node scripts/download-images.js",
+    "data": "node scripts/merge-justifications.js && node scripts/build-review.js"
   },
   "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^6.0.5",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.1",
+    "vitest": "^4.1.10",
     "pg": "^8.16.3"
   }
 }

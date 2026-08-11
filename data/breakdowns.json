@@ -2032,66 +2032,6 @@
     ]
   },
   {
-    "id": "7496af3f-57d1-48ad-a118-83f1c7fdd3d4",
-    "name": "Anana Congelada Cambay 500 G",
-    "brand": "Cambay",
-    "category": "Congelados",
-    "quota": "sorpresa",
-    "scoreGuardado": 96,
-    "scoreRecalculado": 96,
-    "delta": 0,
-    "breakdown": {
-      "scoreFinal": 96,
-      "penaltyIngredientes": -3,
-      "penaltyToxicidad": 0,
-      "penaltyRedFlags": 0,
-      "nutritionNegativeImpact": 0,
-      "nutritionPositiveImpact": 0,
-      "penaltyUltraProcessed": 0,
-      "penaltyPobrezaNutricional": 7,
-      "penaltyAmortiguacion": 0
-    },
-    "highlights": {
-      "beneficials": [
-        {
-          "name": "Fibra alimentaria",
-          "valuePer100": 1.9,
-          "unit": "g"
-        }
-      ],
-      "notBeneficials": [],
-      "excesses": [],
-      "neutrals": [],
-      "neutralExcesses": []
-    },
-    "logs": [
-      "\n══════════════════════════════════════════════════",
-      "📊 SCORING V2: Anana Congelada Cambay 500 G (7496af3f-57d1-48ad-a118-83f1c7fdd3d4)",
-      "   Ingredientes: 1 | Nutrition Facts: 6 | Tipo: SÓLIDO",
-      "══════════════════════════════════════════════════",
-      "     [0] anana: score=10.00 def=0.000 weight=1.000 → 0.0000 ✓",
-      "     Deficiencia promedio: 0.0000 → penalty: 0.00",
-      "     Proporción buenos: 100.0% → ajuste: -3.00",
-      "     Resultado Paso 1: +3.00",
-      "   PASO 1 - Ingredientes & Proporción: +3.00 → Score: 103.00",
-      "     Toxicidad ponderada: avg=0.00 max=0 final=0.00 → -0.00",
-      "   PASO 2 - Toxicidad promedio: -0.00 → Score: 103.00",
-      "   PASO 3 - Red flags: -0.00 → Score: 103.00",
-      "     ── Carbohidratos: valor=10.0000/100g < min=15.0000 → sin impacto",
-      "     ✅ Fibra alimentaria: valor=1.9000/100g | min=1.0000 max_score=5 → +0.63",
-      "     ⏭️  Grasas totales: TOTAL_FATS → ignorado",
-      "     ── Proteínas: valor=0.4000/100g < min=2.0000 → sin impacto",
-      "     ── Sodio: valor=10.0000/100g ≤ min=100.0000 → sin impacto",
-      "     ── Valor energético (calorías): valor=50.0000/100g < min=80.0000 → sin impacto",
-      "   PASO 4 - Nutrition Facts: negativos=-0.00 positivos=+0.63 × 0% = +0.00 (atenuación 70-90) → Score: 103.00",
-      "   PASO 6 - Pobreza nutricional: 1 beneficioso(s) (limpio) → -7 → Score: 96.00",
-      "   ────────────────────────────────────────",
-      "   🏆 SCORE FINAL: 96/100",
-      "   📋 Desglose: ingredientes=+3.0 toxicidad=-0.0 redFlags=-0.0 nutri-=0.0 nutri+=0.0 ultraProc=-0.0 pobreza=-7.0",
-      "══════════════════════════════════════════════════\n"
-    ]
-  },
-  {
     "id": "26af1470-4711-4100-896c-3fa4f7797ee8",
     "name": "Jugo Citric Naranja Tetra 250 Ml",
     "brand": "Citric",
@@ -2857,7 +2797,7 @@
   },
   {
     "id": "9ebe2f87-281f-4eba-8628-6519318a1076",
-    "name": "Aceite De Oliva Rio De La Pla 250 Ml",
+    "name": "Aceite De Oliva Río de la Plata 250 Ml",
     "brand": "Rio De La Plata",
     "category": "Aceites y Vinagres",
     "quota": "sorpresa",
@@ -3348,6 +3288,111 @@
     ]
   },
   {
+    "id": "f9e692b0-aa34-4766-94d0-d6daec1c597c",
+    "name": "Crema Vegetal Soya Pote 500 G",
+    "brand": "Soya",
+    "category": "Mantecas y Grasas",
+    "quota": "sorpresa",
+    "scoreGuardado": 13,
+    "scoreRecalculado": 13,
+    "delta": 0,
+    "breakdown": {
+      "scoreFinal": 13,
+      "penaltyIngredientes": 17.185151721568623,
+      "penaltyToxicidad": 10.442059692030982,
+      "penaltyRedFlags": 2.6498860739956873,
+      "nutritionNegativeImpact": 24,
+      "nutritionPositiveImpact": 0,
+      "penaltyUltraProcessed": 20,
+      "penaltyPobrezaNutricional": 15,
+      "penaltyAmortiguacion": 2.027868273629987
+    },
+    "highlights": {
+      "beneficials": [],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "valuePer100": 7,
+          "unit": "g"
+        },
+        {
+          "name": "Sodio",
+          "valuePer100": 1030,
+          "unit": "mg"
+        }
+      ],
+      "excesses": [
+        {
+          "name": "Grasas saturadas",
+          "valuePer100": 7,
+          "unit": "g"
+        },
+        {
+          "name": "Sodio",
+          "valuePer100": 1030,
+          "unit": "mg"
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Valor energético (calorías)",
+          "valuePer100": 180,
+          "unit": "kcal"
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "logs": [
+      "\n══════════════════════════════════════════════════",
+      "📊 SCORING V2: Crema Vegetal Soya Pote 500 G (f9e692b0-aa34-4766-94d0-d6daec1c597c)",
+      "   Ingredientes: 13 | Nutrition Facts: 4 | Tipo: SÓLIDO",
+      "══════════════════════════════════════════════════",
+      "     [0] agua mineral: score=10.00 def=0.000 weight=1.000 → 0.0000 ✓",
+      "     [1] aceite vegetal: score=5.50 def=0.450 weight=0.705 → 0.3171 ~10%",
+      "     [2] sal: score=7.00 def=0.300 weight=0.497 → 0.1490 ~40%",
+      "     [3] mono y diglicéridos de ácidos grasos (origen animal) - ins 471: score=3.50 def=0.650 weight=0.350 → 0.2275",
+      "     [4] ésteres acéticos de monoglicéridos y diglicéridos de ácidos grasos (origen vegetal) - ins 472a: score=3.50 def=0.650 weight=0.247 → 0.1603",
+      "     [5] aromatizante (sabor no especificado): score=2.00 def=0.800 weight=0.174 → 0.1390",
+      "     [6] benzoato de sodio - ins 211: score=0.00 def=1.000 weight=0.122 → 0.1225",
+      "     [7] extracto de annatto - ins 160b: score=7.00 def=0.300 weight=0.086 → 0.0259 ~40%",
+      "     [8] cúrcuma: score=10.00 def=0.000 weight=0.061 → 0.0000 ✓",
+      "     [9] ácido láctico - ins 270: score=6.00 def=0.400 weight=0.043 → 0.0171 ~20%",
+      "     [10] calcium disodium EDTA - ins 385: score=1.50 def=0.850 weight=0.030 → 0.0257",
+      "     [11] butilhidroxitolueno - ins 321: score=0.00 def=1.000 weight=0.021 → 0.0213",
+      "     [12] ácido cítrico - ins 330: score=5.00 def=0.500 weight=0.015 → 0.0075",
+      "     Deficiencia promedio: 0.3620 → penalty: 14.48",
+      "     Proporción buenos: 41.0% → ajuste: +2.71",
+      "     Resultado Paso 1: -17.19",
+      "   PASO 1 - Ingredientes & Proporción: -17.19 → Score: 82.81",
+      "     Toxicidad ponderada: avg=0.78 max=4 final=2.78 → -10.44",
+      "   PASO 2 - Toxicidad promedio: -10.44 → Score: 72.37",
+      "     🚩 [1] aceite vegetal: toxicidad=LOW → -1 * 0.705 = -0.70",
+      "     🚩 [2] sal: toxicidad=LOW → -1 * 0.497 = -0.50",
+      "     🚩 [3] mono y diglicéridos de ácidos grasos (origen animal) - ins 471: toxicidad=LOW → -1 * 0.350 = -0.35",
+      "     🚩 [4] ésteres acéticos de monoglicéridos y diglicéridos de ácidos grasos (origen vegetal) - ins 472a: toxicidad=LOW → -1 * 0.247 = -0.25",
+      "     🚩 [5] aromatizante (sabor no especificado): toxicidad=LOW → -1 * 0.174 = -0.17",
+      "     🚩 [6] benzoato de sodio - ins 211: toxicidad=MEDIUM_HIGH → -3 * 0.122 = -0.37",
+      "     🚩 [7] extracto de annatto - ins 160b: toxicidad=LOW → -1 * 0.086 = -0.09",
+      "     🚩 [9] ácido láctico - ins 270: toxicidad=LOW → -1 * 0.043 = -0.04",
+      "     🚩 [10] calcium disodium EDTA - ins 385: toxicidad=MEDIUM → -2 * 0.030 = -0.06",
+      "     🚩 [11] butilhidroxitolueno - ins 321: toxicidad=HIGH → -5 * 0.021 = -0.11",
+      "     🚩 [12] ácido cítrico - ins 330: toxicidad=LOW → -1 * 0.015 = -0.01",
+      "   PASO 3 - Red flags: -2.65 → Score: 69.72",
+      "     ⛔ Grasas saturadas: valor=7.0000/100g | min=1.5000 max_score=12 limit=6.0000 → -12.00 [EXCESO]",
+      "     ⏭️  Grasas totales: TOTAL_FATS → ignorado",
+      "     ⛔ Sodio: valor=1030.0000/100g | min=100.0000 max_score=12 limit=500.0000 → -12.00 [EXCESO]",
+      "     ℹ️  Valor energético (calorías): valor=180.0000/100g | min=80.0000 → NEUTRAL (solo highlight)",
+      "   PASO 4 - Nutrition Facts: negativos=-24.00 positivos=+0.00 neto=-24.00 → Score: 45.72",
+      "   PASO 5 - Ultra-procesado: -20 → Score: 25.72",
+      "   PASO 6 - Pobreza nutricional: 0 beneficioso(s) → -15 → Score: 10.72",
+      "   PASO 8 - Amortiguación: exceso=9.28 → amortiguado=7.25 → +2.03 pts ahorrados → Score: 12.75",
+      "   ────────────────────────────────────────",
+      "   🏆 SCORE FINAL: 13/100",
+      "   📋 Desglose: ingredientes=-17.2 toxicidad=-10.4 redFlags=-2.6 nutri-=24.0 nutri+=0.0 ultraProc=-20.0 pobreza=-15.0 amort=+2.0",
+      "══════════════════════════════════════════════════\n"
+    ]
+  },
+  {
     "id": "79837503-512b-4dc0-a4a1-7d2ac7f8f9dc",
     "name": "Galletas Al Agua Famosa Pack 420 G",
     "brand": "Famosa",
@@ -3831,7 +3876,7 @@
   {
     "id": "10757f2b-de6d-4129-9911-2a8f03f48384",
     "name": "Galletas Cracker Finitas La Celestina 300 G",
-    "brand": "Fini",
+    "brand": "La Celestina",
     "category": "Galletitas Saladas",
     "quota": "trampa",
     "scoreGuardado": 25,
@@ -4358,97 +4403,6 @@
     ]
   },
   {
-    "id": "6cd297ae-816f-49a5-9fa7-b363108514b5",
-    "name": "Jugo Citric Natanja 3 L",
-    "brand": "Citric",
-    "category": "Jugos",
-    "quota": "trampa",
-    "scoreGuardado": 34,
-    "scoreRecalculado": 34,
-    "delta": 0,
-    "breakdown": {
-      "scoreFinal": 34,
-      "penaltyIngredientes": 26.983522428581225,
-      "penaltyToxicidad": 10.83485164309407,
-      "penaltyRedFlags": 3.5443817502040975,
-      "nutritionNegativeImpact": 15,
-      "nutritionPositiveImpact": 0.07444030198468676,
-      "penaltyUltraProcessed": 0,
-      "penaltyPobrezaNutricional": 10,
-      "penaltyAmortiguacion": 0
-    },
-    "highlights": {
-      "beneficials": [
-        {
-          "name": "Fibra alimentaria",
-          "valuePer100": 0.6,
-          "unit": "g"
-        }
-      ],
-      "notBeneficials": [
-        {
-          "name": "Azúcares",
-          "valuePer100": 8.5,
-          "unit": "g"
-        }
-      ],
-      "excesses": [
-        {
-          "name": "Azúcares",
-          "valuePer100": 8.5,
-          "unit": "g"
-        }
-      ],
-      "neutrals": [
-        {
-          "name": "Carbohidratos",
-          "valuePer100": 9.5,
-          "unit": "g"
-        },
-        {
-          "name": "Valor energético (calorías)",
-          "valuePer100": 41,
-          "unit": "kcal"
-        }
-      ],
-      "neutralExcesses": []
-    },
-    "logs": [
-      "\n══════════════════════════════════════════════════",
-      "📊 SCORING V2: Jugo Citric Natanja 3 L (6cd297ae-816f-49a5-9fa7-b363108514b5)",
-      "   Ingredientes: 4 | Nutrition Facts: 6 | Tipo: LÍQUIDO",
-      "══════════════════════════════════════════════════",
-      "     [0] jugo de naranja exprimido: score=8.50 def=0.150 weight=1.000 → 0.1500 ~70%",
-      "     [1] sorbato de potasio - ins 202: score=1.50 def=0.850 weight=0.705 → 0.5990",
-      "     [2] benzoato de sodio - ins 211: score=0.00 def=1.000 weight=0.497 → 0.4966",
-      "     [3] ácido ascórbico - ins 300: score=6.50 def=0.350 weight=0.350 → 0.1225 ~30%",
-      "     Deficiencia promedio: 0.5362 → penalty: 21.45",
-      "     Proporción buenos: 31.6% → ajuste: +5.53",
-      "     Resultado Paso 1: -26.98",
-      "   PASO 1 - Ingredientes & Proporción: -26.98 → Score: 73.02",
-      "     Toxicidad ponderada: avg=1.39 max=3 final=2.89 → -10.83",
-      "   PASO 2 - Toxicidad promedio: -10.83 → Score: 62.18",
-      "     🚩 [0] jugo de naranja exprimido: toxicidad=LOW → -1 * 1.000 = -1.00",
-      "     🚩 [1] sorbato de potasio - ins 202: toxicidad=LOW → -1 * 0.705 = -0.70",
-      "     🚩 [2] benzoato de sodio - ins 211: toxicidad=MEDIUM_HIGH → -3 * 0.497 = -1.49",
-      "     🚩 [3] ácido ascórbico - ins 300: toxicidad=LOW → -1 * 0.350 = -0.35",
-      "   PASO 3 - Red flags: -3.54 → Score: 58.64",
-      "     ⛔ Azúcares: valor=8.5000/100ml | min=1.5000 max_score=15 limit=3.0000 → -15.00 [EXCESO]",
-      "     ℹ️  Carbohidratos: valor=9.5000/100ml | min=5.0000 → NEUTRAL (solo highlight)",
-      "     ✅ Fibra alimentaria: valor=0.6000/100ml | min=0.5000 max_score=5 → +0.07",
-      "     ── Proteínas: valor=0.7000/100ml < min=1.0000 → sin impacto",
-      "     ℹ️  Valor energético (calorías): valor=41.0000/100ml | min=20.0000 → NEUTRAL (solo highlight)",
-      "     🔄 Vitamina C: conversión de unidad: 70.0000 ug → 0.0700 mg",
-      "     ── Vitamina C: valor=0.0350/100ml < min=1.0000 → sin impacto",
-      "   PASO 4 - Nutrition Facts: negativos=-15.00 positivos=+0.07 neto=-14.93 → Score: 43.71",
-      "   PASO 6 - Pobreza nutricional: 1 beneficioso(s) → -10 → Score: 33.71",
-      "   ────────────────────────────────────────",
-      "   🏆 SCORE FINAL: 34/100",
-      "   📋 Desglose: ingredientes=-27.0 toxicidad=-10.8 redFlags=-3.5 nutri-=15.0 nutri+=0.1 ultraProc=-0.0 pobreza=-10.0",
-      "══════════════════════════════════════════════════\n"
-    ]
-  },
-  {
     "id": "d84b4c9e-3835-4d95-811b-1578fa985da6",
     "name": "Helado Crufi Diet Frutilla con Frutilla en Trozos 1 L",
     "brand": "Crufi",
@@ -4664,7 +4618,7 @@
   },
   {
     "id": "e3bd5c78-f2ad-4257-85ed-ba2d0beb98cb",
-    "name": "BISCOITO INTEGRAL COM MORANGO E CEREAIS",
+    "name": "Galletitas Integrales con Frutilla y Cereales",
     "brand": "Nesfit",
     "category": "Galletitas Dulces",
     "quota": "trampa",
@@ -4989,78 +4943,6 @@
     ]
   },
   {
-    "id": "6a9c5671-7481-48a7-abcf-7c1abdc1679b",
-    "name": "Jugo Dairyco Naranja/Ma Light 3 L",
-    "brand": "Dairyco",
-    "category": "Jugos",
-    "quota": "trampa",
-    "scoreGuardado": 38,
-    "scoreRecalculado": 38,
-    "delta": 0,
-    "breakdown": {
-      "scoreFinal": 38,
-      "penaltyIngredientes": 32.39541490707663,
-      "penaltyToxicidad": 11.036703811033725,
-      "penaltyRedFlags": 4.03757567808731,
-      "nutritionNegativeImpact": 0,
-      "nutritionPositiveImpact": 0,
-      "penaltyUltraProcessed": 0,
-      "penaltyPobrezaNutricional": 15,
-      "penaltyAmortiguacion": 0
-    },
-    "highlights": {
-      "beneficials": [],
-      "notBeneficials": [],
-      "excesses": [],
-      "neutrals": [
-        {
-          "name": "Carbohidratos",
-          "valuePer100": 6,
-          "unit": "g"
-        },
-        {
-          "name": "Valor energético (calorías)",
-          "valuePer100": 23.5,
-          "unit": "kcal"
-        }
-      ],
-      "neutralExcesses": []
-    },
-    "logs": [
-      "\n══════════════════════════════════════════════════",
-      "📊 SCORING V2: Jugo Dairyco Naranja/Ma Light 3 L (6a9c5671-7481-48a7-abcf-7c1abdc1679b)",
-      "   Ingredientes: 5 | Nutrition Facts: 4 | Tipo: LÍQUIDO",
-      "══════════════════════════════════════════════════",
-      "     [0] jugo reconstituido de naranja: score=6.50 def=0.350 weight=1.000 → 0.3500 ~30%",
-      "     [1] jugo reconstituido de mango: score=6.50 def=0.350 weight=0.705 → 0.2466 ~30%",
-      "     [2] benzoato de sodio - ins 211: score=0.00 def=1.000 weight=0.497 → 0.4966",
-      "     [3] sorbato de potasio - ins 202: score=1.50 def=0.850 weight=0.350 → 0.2974",
-      "     [4] sucralosa - ins 955: score=1.50 def=0.850 weight=0.247 → 0.2096",
-      "     Deficiencia promedio: 0.5720 → penalty: 22.88",
-      "     Proporción buenos: 18.3% → ajuste: +9.52",
-      "     Resultado Paso 1: -32.40",
-      "   PASO 1 - Ingredientes & Proporción: -32.40 → Score: 67.60",
-      "     Toxicidad ponderada: avg=1.44 max=3 final=2.94 → -11.04",
-      "   PASO 2 - Toxicidad promedio: -11.04 → Score: 56.57",
-      "     🚩 [0] jugo reconstituido de naranja: toxicidad=LOW → -1 * 1.000 = -1.00",
-      "     🚩 [1] jugo reconstituido de mango: toxicidad=LOW → -1 * 0.705 = -0.70",
-      "     🚩 [2] benzoato de sodio - ins 211: toxicidad=MEDIUM_HIGH → -3 * 0.497 = -1.49",
-      "     🚩 [3] sorbato de potasio - ins 202: toxicidad=LOW → -1 * 0.350 = -0.35",
-      "     🚩 [4] sucralosa - ins 955: toxicidad=MEDIUM → -2 * 0.247 = -0.49",
-      "   PASO 3 - Red flags: -4.04 → Score: 52.53",
-      "     ℹ️  Carbohidratos: valor=6.0000/100ml | min=5.0000 → NEUTRAL (solo highlight)",
-      "     ── Proteínas: valor=0.3500/100ml < min=1.0000 → sin impacto",
-      "     ── Sodio: valor=12.0000/100ml ≤ min=50.0000 → sin impacto",
-      "     ℹ️  Valor energético (calorías): valor=23.5000/100ml | min=20.0000 → NEUTRAL (solo highlight)",
-      "   PASO 4 - Nutrition Facts: negativos=-0.00 positivos=+0.00 neto=+0.00 → Score: 52.53",
-      "   PASO 6 - Pobreza nutricional: 0 beneficioso(s) → -15 → Score: 37.53",
-      "   ────────────────────────────────────────",
-      "   🏆 SCORE FINAL: 38/100",
-      "   📋 Desglose: ingredientes=-32.4 toxicidad=-11.0 redFlags=-4.0 nutri-=0.0 nutri+=0.0 ultraProc=-0.0 pobreza=-15.0",
-      "══════════════════════════════════════════════════\n"
-    ]
-  },
-  {
     "id": "ae59c410-4cca-430e-ba24-14a063c5720e",
     "name": "Queso Para Untar Requesón Conaprole Light 250 G",
     "brand": "Conaprole",
@@ -5277,97 +5159,6 @@
     ]
   },
   {
-    "id": "ff3c9a95-7d79-42b0-a5cc-825250ce11ee",
-    "name": "Refresco Gatorade Naranja 1.25 L",
-    "brand": "Gatorade",
-    "category": "Energizantes",
-    "quota": "trampa",
-    "scoreGuardado": 20,
-    "scoreRecalculado": 20,
-    "delta": 0,
-    "breakdown": {
-      "scoreFinal": 20,
-      "penaltyIngredientes": 17.699780123748155,
-      "penaltyToxicidad": 9.230292543219555,
-      "penaltyRedFlags": 3.057607327483137,
-      "nutritionNegativeImpact": 15,
-      "nutritionPositiveImpact": 0,
-      "penaltyUltraProcessed": 20,
-      "penaltyPobrezaNutricional": 15,
-      "penaltyAmortiguacion": 0
-    },
-    "highlights": {
-      "beneficials": [],
-      "notBeneficials": [
-        {
-          "name": "Azúcares",
-          "valuePer100": 6,
-          "unit": "g"
-        }
-      ],
-      "excesses": [
-        {
-          "name": "Azúcares",
-          "valuePer100": 6,
-          "unit": "g"
-        }
-      ],
-      "neutrals": [
-        {
-          "name": "Carbohidratos",
-          "valuePer100": 6,
-          "unit": "g"
-        },
-        {
-          "name": "Valor energético (calorías)",
-          "valuePer100": 24,
-          "unit": "kcal"
-        }
-      ],
-      "neutralExcesses": []
-    },
-    "logs": [
-      "\n══════════════════════════════════════════════════",
-      "📊 SCORING V2: Refresco Gatorade Naranja 1.25 L (ff3c9a95-7d79-42b0-a5cc-825250ce11ee)",
-      "   Ingredientes: 8 | Nutrition Facts: 5 | Tipo: LÍQUIDO",
-      "══════════════════════════════════════════════════",
-      "     [0] agua mineral: score=10.00 def=0.000 weight=1.000 → 0.0000 ✓",
-      "     [1] jarabe de maiz de alta fructosa: score=2.50 def=0.750 weight=0.705 → 0.5285",
-      "     [2] azúcar: score=7.00 def=0.300 weight=0.497 → 0.1490 ~40%",
-      "     [3] cloruro de sodio: score=7.00 def=0.300 weight=0.350 → 0.1050 ~40%",
-      "     [4] ácido cítrico - ins 330: score=5.00 def=0.500 weight=0.247 → 0.1233",
-      "     [5] aromatizante (sabor naranja): score=2.00 def=0.800 weight=0.174 → 0.1390",
-      "     [6] fosfato monopotásico - ins 340: score=2.50 def=0.750 weight=0.122 → 0.0918",
-      "     [7] amarillo ocaso - ins 110: score=0.50 def=0.950 weight=0.086 → 0.0820",
-      "     Deficiencia promedio: 0.3832 → penalty: 15.33",
-      "     Proporción buenos: 42.1% → ajuste: +2.37",
-      "     Resultado Paso 1: -17.70",
-      "   PASO 1 - Ingredientes & Proporción: -17.70 → Score: 82.30",
-      "     Toxicidad ponderada: avg=0.96 max=3 final=2.46 → -9.23",
-      "   PASO 2 - Toxicidad promedio: -9.23 → Score: 73.07",
-      "     🚩 [1] jarabe de maiz de alta fructosa: toxicidad=MEDIUM → -2 * 0.705 = -1.41",
-      "     🚩 [2] azúcar: toxicidad=LOW → -1 * 0.497 = -0.50",
-      "     🚩 [3] cloruro de sodio: toxicidad=LOW → -1 * 0.350 = -0.35",
-      "     🚩 [4] ácido cítrico - ins 330: toxicidad=LOW → -1 * 0.247 = -0.25",
-      "     🚩 [5] aromatizante (sabor naranja): toxicidad=LOW → -1 * 0.174 = -0.17",
-      "     🚩 [6] fosfato monopotásico - ins 340: toxicidad=LOW → -1 * 0.122 = -0.12",
-      "     🚩 [7] amarillo ocaso - ins 110: toxicidad=MEDIUM_HIGH → -3 * 0.086 = -0.26",
-      "   PASO 3 - Red flags: -3.06 → Score: 70.01",
-      "     ⛔ Azúcares: valor=6.0000/100ml | min=1.5000 max_score=15 limit=3.0000 → -15.00 [EXCESO]",
-      "     ℹ️  Carbohidratos: valor=6.0000/100ml | min=5.0000 → NEUTRAL (solo highlight)",
-      "     ── Potasio: valor=13.0000/100ml < min=25.0000 → sin impacto",
-      "     ── Sodio: valor=46.0000/100ml ≤ min=50.0000 → sin impacto",
-      "     ℹ️  Valor energético (calorías): valor=24.0000/100ml | min=20.0000 → NEUTRAL (solo highlight)",
-      "   PASO 4 - Nutrition Facts: negativos=-15.00 positivos=+0.00 neto=-15.00 → Score: 55.01",
-      "   PASO 5 - Ultra-procesado: -20 → Score: 35.01",
-      "   PASO 6 - Pobreza nutricional: 0 beneficioso(s) → -15 → Score: 20.01",
-      "   ────────────────────────────────────────",
-      "   🏆 SCORE FINAL: 20/100",
-      "   📋 Desglose: ingredientes=-17.7 toxicidad=-9.2 redFlags=-3.1 nutri-=15.0 nutri+=0.0 ultraProc=-20.0 pobreza=-15.0",
-      "══════════════════════════════════════════════════\n"
-    ]
-  },
-  {
     "id": "8e43699a-1426-4e6d-8e19-d380a690c75f",
     "name": "Yogurísimo Licuado Mango Coco Y Sésamo 250 Ml",
     "brand": "Yogurísimo",
@@ -5574,42 +5365,392 @@
     ]
   },
   {
-    "id": "46d8629d-46a7-41b0-9af7-b5684ba563c5",
-    "name": "Agua Mineral Nativa Sin Gas Full Sport 1 L",
-    "brand": "Nativa",
-    "category": "Aguas",
-    "quota": "ancla_buena",
-    "scoreGuardado": 100,
-    "scoreRecalculado": 100,
+    "id": "9e12e3b1-364f-4833-984b-850d33dcad39",
+    "name": "CEREAL MIX LIGHT MANZANA & AVENA",
+    "brand": "Arcor",
+    "category": "Snacks saludables",
+    "quota": "trampa",
+    "scoreGuardado": 37,
+    "scoreRecalculado": 37,
     "delta": 0,
     "breakdown": {
-      "scoreFinal": 100,
-      "penaltyIngredientes": -3,
-      "penaltyToxicidad": 0,
-      "penaltyRedFlags": 0,
-      "nutritionNegativeImpact": 0,
-      "nutritionPositiveImpact": 0,
-      "penaltyUltraProcessed": 0,
+      "scoreFinal": 37,
+      "penaltyIngredientes": 17.971681821692744,
+      "penaltyToxicidad": 9.704762706449815,
+      "penaltyRedFlags": 1.9985343080933595,
+      "nutritionNegativeImpact": 18.043478260869566,
+      "nutritionPositiveImpact": 4.7787046405682565,
+      "penaltyUltraProcessed": 20,
       "penaltyPobrezaNutricional": 0,
       "penaltyAmortiguacion": 0
     },
-    "highlights": null,
+    "highlights": {
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "valuePer100": 11.74,
+          "unit": "g"
+        },
+        {
+          "name": "Grasas monoinsaturadas",
+          "valuePer100": 1.3,
+          "unit": "g"
+        },
+        {
+          "name": "Proteínas",
+          "valuePer100": 2.61,
+          "unit": "g"
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "valuePer100": 18.26,
+          "unit": "g"
+        },
+        {
+          "name": "Polialcoholes",
+          "valuePer100": 31.74,
+          "unit": "g"
+        },
+        {
+          "name": "Sodio",
+          "valuePer100": 134.78,
+          "unit": "mg"
+        }
+      ],
+      "excesses": [
+        {
+          "name": "Azúcares",
+          "valuePer100": 18.26,
+          "unit": "g"
+        },
+        {
+          "name": "Polialcoholes",
+          "valuePer100": 31.74,
+          "unit": "g"
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Valor energético (calorías)",
+          "valuePer100": 278.26,
+          "unit": "kcal"
+        }
+      ],
+      "neutralExcesses": []
+    },
     "logs": [
       "\n══════════════════════════════════════════════════",
-      "📊 SCORING V2: Agua Mineral Nativa Sin Gas Full Sport 1 L (46d8629d-46a7-41b0-9af7-b5684ba563c5)",
-      "   Ingredientes: 1 | Nutrition Facts: 0 | Tipo: LÍQUIDO",
+      "📊 SCORING V2: CEREAL MIX LIGHT MANZANA & AVENA (9e12e3b1-364f-4833-984b-850d33dcad39)",
+      "   Ingredientes: 16 | Nutrition Facts: 7 | Tipo: SÓLIDO",
       "══════════════════════════════════════════════════",
-      "     [0] agua mineral: score=10.00 def=0.000 weight=1.000 → 0.0000 ✓",
-      "     Deficiencia promedio: 0.0000 → penalty: 0.00",
-      "     Proporción buenos: 100.0% → ajuste: -3.00",
-      "     Resultado Paso 1: +3.00",
-      "   PASO 1 - Ingredientes & Proporción: +3.00 → Score: 103.00",
-      "     Toxicidad ponderada: avg=0.00 max=0 final=0.00 → -0.00",
-      "   PASO 2 - Toxicidad promedio: -0.00 → Score: 103.00",
-      "   PASO 3 - Red flags: -0.00 → Score: 103.00",
+      "     [0] jarabe de maltitol - ins 965ii: score=3.50 def=0.650 weight=1.000 → 0.6500",
+      "     [1] manzana deshidratada: score=9.50 def=0.050 weight=0.705 → 0.0352 ~90%",
+      "     [2] arroz: score=9.00 def=0.100 weight=0.497 → 0.0497 ~80%",
+      "     [3] polidextrosa - ins 1200: score=3.50 def=0.650 weight=0.350 → 0.2275",
+      "     [4] avena laminada (sin certificación): score=8.50 def=0.150 weight=0.247 → 0.0370 ~70%",
+      "     [5] trigo inflado: score=6.50 def=0.350 weight=0.174 → 0.0608 ~30%",
+      "     [6] aceite de girasol alto oleico: score=6.50 def=0.350 weight=0.122 → 0.0429 ~30%",
+      "     [7] sal: score=7.00 def=0.300 weight=0.086 → 0.0259 ~40%",
+      "     [8] sorbitol - ins 420: score=2.50 def=0.750 weight=0.061 → 0.0456",
+      "     [9] ácido cítrico - ins 330: score=5.00 def=0.500 weight=0.043 → 0.0214",
+      "     [10] aromatizante (sabor manzana): score=2.00 def=0.800 weight=0.030 → 0.0242",
+      "     [11] lecitina de soja - ins 322: score=7.00 def=0.300 weight=0.021 → 0.0064 ~40%",
+      "     [12] butilhidroxitolueno - ins 321: score=0.00 def=1.000 weight=0.015 → 0.0150",
+      "     [13] extracto de annatto - ins 160b: score=7.00 def=0.300 weight=0.011 → 0.0032 ~40%",
+      "     [14] caramelo amónico de sulfito - ins 150d: score=1.00 def=0.900 weight=0.007 → 0.0067",
+      "     [15] sucralosa - ins 955: score=1.50 def=0.850 weight=0.005 → 0.0045",
+      "     Deficiencia promedio: 0.3722 → penalty: 14.89",
+      "     Proporción buenos: 39.7% → ajuste: +3.08",
+      "     Resultado Paso 1: -17.97",
+      "   PASO 1 - Ingredientes & Proporción: -17.97 → Score: 82.03",
+      "     Toxicidad ponderada: avg=0.59 max=4 final=2.59 → -9.70",
+      "   PASO 2 - Toxicidad promedio: -9.70 → Score: 72.32",
+      "     🚩 [0] jarabe de maltitol - ins 965ii: toxicidad=LOW → -1 * 1.000 = -1.00",
+      "     🚩 [3] polidextrosa - ins 1200: toxicidad=LOW → -1 * 0.350 = -0.35",
+      "     🚩 [5] trigo inflado: toxicidad=LOW → -1 * 0.174 = -0.17",
+      "     🚩 [6] aceite de girasol alto oleico: toxicidad=LOW → -1 * 0.122 = -0.12",
+      "     🚩 [7] sal: toxicidad=LOW → -1 * 0.086 = -0.09",
+      "     🚩 [8] sorbitol - ins 420: toxicidad=LOW → -1 * 0.061 = -0.06",
+      "     🚩 [9] ácido cítrico - ins 330: toxicidad=LOW → -1 * 0.043 = -0.04",
+      "     🚩 [10] aromatizante (sabor manzana): toxicidad=LOW → -1 * 0.030 = -0.03",
+      "     🚩 [11] lecitina de soja - ins 322: toxicidad=LOW → -1 * 0.021 = -0.02",
+      "     🚩 [12] butilhidroxitolueno - ins 321: toxicidad=HIGH → -5 * 0.015 = -0.07",
+      "     🚩 [13] extracto de annatto - ins 160b: toxicidad=LOW → -1 * 0.011 = -0.01",
+      "     🚩 [14] caramelo amónico de sulfito - ins 150d: toxicidad=MEDIUM → -2 * 0.007 = -0.01",
+      "     🚩 [15] sucralosa - ins 955: toxicidad=MEDIUM → -2 * 0.005 = -0.01",
+      "   PASO 3 - Red flags: -2.00 → Score: 70.33",
+      "     ⛔ Azúcares: valor=18.2609/100g | min=3.0000 max_score=15 limit=13.0000 → -15.00 [EXCESO]",
+      "     ✅ Fibra alimentaria: valor=11.7391/100g | min=1.0000 max_score=5 → +4.00",
+      "     ✅ Grasas monoinsaturadas: valor=1.3043/100g | min=0.5000 max_score=3 → +0.34",
+      "     ⛔ Polialcoholes: valor=31.7391/100g | min=5.0000 max_score=2 limit=20.0000 → -2.00 [EXCESO]",
+      "     ✅ Proteínas: valor=2.6087/100g | min=2.0000 max_score=5 → +0.44",
+      "     ⛔ Sodio: valor=134.7826/100g | min=100.0000 max_score=12 limit=500.0000 → -1.04",
+      "     ℹ️  Valor energético (calorías): valor=278.2609/100g | min=80.0000 → NEUTRAL (solo highlight)",
+      "   PASO 4 - Nutrition Facts: negativos=-18.04 positivos=+4.78 neto=-13.26 → Score: 57.06",
+      "   PASO 5 - Ultra-procesado: -20 → Score: 37.06",
+      "   PASO 6 - Pobreza nutricional: 3 beneficioso(s) → sin penalización",
       "   ────────────────────────────────────────",
-      "   🏆 SCORE FINAL: 100/100",
-      "   📋 Desglose: ingredientes=+3.0 toxicidad=-0.0 redFlags=-0.0 nutri-=0.0 nutri+=0.0 ultraProc=-0.0 pobreza=-0.0",
+      "   🏆 SCORE FINAL: 37/100",
+      "   📋 Desglose: ingredientes=-18.0 toxicidad=-9.7 redFlags=-2.0 nutri-=18.0 nutri+=4.8 ultraProc=-20.0 pobreza=-0.0",
+      "══════════════════════════════════════════════════\n"
+    ]
+  },
+  {
+    "id": "e5d0b376-36ef-4704-8257-37e6a50e8d34",
+    "name": "Jugo Naranja Zug 1.5 L",
+    "brand": "Zug",
+    "category": "Jugos",
+    "quota": "trampa",
+    "scoreGuardado": 49,
+    "scoreRecalculado": 49,
+    "delta": 0,
+    "breakdown": {
+      "scoreFinal": 49,
+      "penaltyIngredientes": 22.555458543084537,
+      "penaltyToxicidad": 10.03414015574564,
+      "penaltyRedFlags": 3.289580818857891,
+      "nutritionNegativeImpact": 0,
+      "nutritionPositiveImpact": 0,
+      "penaltyUltraProcessed": 0,
+      "penaltyPobrezaNutricional": 15,
+      "penaltyAmortiguacion": 0
+    },
+    "highlights": {
+      "beneficials": [],
+      "notBeneficials": [],
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "valuePer100": 10.5,
+          "unit": "g"
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "valuePer100": 42,
+          "unit": "kcal"
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "logs": [
+      "\n══════════════════════════════════════════════════",
+      "📊 SCORING V2: Jugo Naranja Zug 1.5 L (e5d0b376-36ef-4704-8257-37e6a50e8d34)",
+      "   Ingredientes: 5 | Nutrition Facts: 4 | Tipo: LÍQUIDO",
+      "══════════════════════════════════════════════════",
+      "     [0] jugo reconstituido de naranja: score=6.50 def=0.350 weight=1.000 → 0.3500 ~30%",
+      "     [1] agua mineral: score=10.00 def=0.000 weight=0.705 → 0.0000 ✓",
+      "     [2] jarabe de fructosa: score=2.50 def=0.750 weight=0.497 → 0.3724",
+      "     [3] benzoato de sodio - ins 211: score=0.00 def=1.000 weight=0.350 → 0.3499",
+      "     [4] sorbato de potasio - ins 202: score=1.50 def=0.850 weight=0.247 → 0.2096",
+      "     Deficiencia promedio: 0.4582 → penalty: 18.33",
+      "     Proporción buenos: 35.9% → ajuste: +4.23",
+      "     Resultado Paso 1: -22.56",
+      "   PASO 1 - Ingredientes & Proporción: -22.56 → Score: 77.44",
+      "     Toxicidad ponderada: avg=1.18 max=3 final=2.68 → -10.03",
+      "   PASO 2 - Toxicidad promedio: -10.03 → Score: 67.41",
+      "     🚩 [0] jugo reconstituido de naranja: toxicidad=LOW → -1 * 1.000 = -1.00",
+      "     🚩 [2] jarabe de fructosa: toxicidad=MEDIUM → -2 * 0.497 = -0.99",
+      "     🚩 [3] benzoato de sodio - ins 211: toxicidad=MEDIUM_HIGH → -3 * 0.350 = -1.05",
+      "     🚩 [4] sorbato de potasio - ins 202: toxicidad=LOW → -1 * 0.247 = -0.25",
+      "   PASO 3 - Red flags: -3.29 → Score: 64.12",
+      "     ℹ️  Carbohidratos: valor=10.5000/100ml | min=5.0000 → NEUTRAL (solo highlight)",
+      "     ── Proteínas: valor=0.3500/100ml < min=1.0000 → sin impacto",
+      "     ── Sodio: valor=14.0000/100ml ≤ min=50.0000 → sin impacto",
+      "     ℹ️  Valor energético (calorías): valor=42.0000/100ml | min=20.0000 → NEUTRAL (solo highlight)",
+      "   PASO 4 - Nutrition Facts: negativos=-0.00 positivos=+0.00 neto=+0.00 → Score: 64.12",
+      "   PASO 6 - Pobreza nutricional: 0 beneficioso(s) → -15 → Score: 49.12",
+      "   ────────────────────────────────────────",
+      "   🏆 SCORE FINAL: 49/100",
+      "   📋 Desglose: ingredientes=-22.6 toxicidad=-10.0 redFlags=-3.3 nutri-=0.0 nutri+=0.0 ultraProc=-0.0 pobreza=-15.0",
+      "══════════════════════════════════════════════════\n"
+    ]
+  },
+  {
+    "id": "358a3779-c0ee-4e7c-8b02-7462fa21813d",
+    "name": "Cereal De Chocolate Nesquik Nestle 90 G",
+    "brand": "Nesquik",
+    "category": "Cereales",
+    "quota": "trampa",
+    "scoreGuardado": 48,
+    "scoreRecalculado": 48,
+    "delta": 0,
+    "breakdown": {
+      "scoreFinal": 48,
+      "penaltyIngredientes": 16.92062239734359,
+      "penaltyToxicidad": 7.924613024624279,
+      "penaltyRedFlags": 3.7672533615624006,
+      "nutritionNegativeImpact": 23,
+      "nutritionPositiveImpact": 20,
+      "penaltyUltraProcessed": 20,
+      "penaltyPobrezaNutricional": 0,
+      "penaltyAmortiguacion": 0
+    },
+    "highlights": {
+      "beneficials": [
+        {
+          "name": "Calcio",
+          "valuePer100": 693.33,
+          "unit": "mg"
+        },
+        {
+          "name": "Fibra alimentaria",
+          "valuePer100": 5.67,
+          "unit": "g"
+        },
+        {
+          "name": "Grasas monoinsaturadas",
+          "valuePer100": 1.67,
+          "unit": "g"
+        },
+        {
+          "name": "Grasas poliinsaturadas",
+          "valuePer100": 1.67,
+          "unit": "g"
+        },
+        {
+          "name": "Hierro",
+          "valuePer100": 14,
+          "unit": "mg"
+        },
+        {
+          "name": "Niacina",
+          "valuePer100": 15,
+          "unit": "mg"
+        },
+        {
+          "name": "Proteínas",
+          "valuePer100": 6.33,
+          "unit": "g"
+        },
+        {
+          "name": "Riboflavina",
+          "valuePer100": 1.3,
+          "unit": "mg"
+        },
+        {
+          "name": "Zinc",
+          "valuePer100": 4.33,
+          "unit": "mg"
+        },
+        {
+          "name": "Ácido fólico",
+          "valuePer100": 230,
+          "unit": "µg"
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "valuePer100": 30,
+          "unit": "g"
+        },
+        {
+          "name": "Sodio",
+          "valuePer100": 366.67,
+          "unit": "mg"
+        }
+      ],
+      "excesses": [
+        {
+          "name": "Azúcares",
+          "valuePer100": 30,
+          "unit": "g"
+        }
+      ],
+      "neutrals": [],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "valuePer100": 76.67,
+          "unit": "g"
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "valuePer100": 376.67,
+          "unit": "kcal"
+        }
+      ]
+    },
+    "logs": [
+      "\n══════════════════════════════════════════════════",
+      "📊 SCORING V2: Cereal De Chocolate Nesquik Nestle 90 G (358a3779-c0ee-4e7c-8b02-7462fa21813d)",
+      "   Ingredientes: 21 | Nutrition Facts: 18 | Tipo: SÓLIDO",
+      "══════════════════════════════════════════════════",
+      "     [0] harina de maiz: score=7.50 def=0.250 weight=1.000 → 0.2500 ~50%",
+      "     [1] sémola fina de maíz: score=7.00 def=0.300 weight=0.705 → 0.2114 ~40%",
+      "     [2] azúcar: score=7.00 def=0.300 weight=0.497 → 0.1490 ~40%",
+      "     [3] jarabe de glucosa: score=3.50 def=0.650 weight=0.350 → 0.2275",
+      "     [4] cacao en polvo: score=8.50 def=0.150 weight=0.247 → 0.0370 ~70%",
+      "     [5] aceite de palma: score=4.50 def=0.550 weight=0.174 → 0.0956",
+      "     [6] ascorbil palmitato - ins 304i: score=5.50 def=0.450 weight=0.122 → 0.0551 ~10%",
+      "     [7] carbonato de calcio - ins  170i: score=8.00 def=0.200 weight=0.086 → 0.0173 ~60%",
+      "     [8] extracto de malta (origen cebada): score=7.50 def=0.250 weight=0.061 → 0.0152 ~50%",
+      "     [9] maltodextrina (origen no especificado): score=3.00 def=0.700 weight=0.043 → 0.0300",
+      "     [10] B3 niacina: score=7.00 def=0.300 weight=0.030 → 0.0091 ~40%",
+      "     [11] zinc: score=8.50 def=0.150 weight=0.021 → 0.0032 ~70%",
+      "     [12] propionato de calcio - ins 282: score=0.50 def=0.950 weight=0.015 → 0.0142",
+      "     [13] hierro: score=7.50 def=0.250 weight=0.011 → 0.0026 ~50%",
+      "     [14] B1 tiamina: score=7.50 def=0.250 weight=0.007 → 0.0019 ~50%",
+      "     [15] B6 piridoxina: score=6.50 def=0.350 weight=0.005 → 0.0018 ~30%",
+      "     [16] B9 ácido fólico: score=6.00 def=0.400 weight=0.004 → 0.0015 ~20%",
+      "     [17] fosfato dicálcico - ins 341ii: score=3.50 def=0.650 weight=0.003 → 0.0017",
+      "     [18] aromatizante (sabor vainilla): score=2.00 def=0.800 weight=0.002 → 0.0015",
+      "     [19] caramelo - ins 150: score=2.50 def=0.750 weight=0.001 → 0.0010",
+      "     [20] fosfato trisódico - ins 339iii: score=5.00 def=0.500 weight=0.001 → 0.0005",
+      "     Deficiencia promedio: 0.3330 → penalty: 13.32",
+      "     Proporción buenos: 38.0% → ajuste: +3.60",
+      "     Resultado Paso 1: -16.92",
+      "   PASO 1 - Ingredientes & Proporción: -16.92 → Score: 83.08",
+      "     Toxicidad ponderada: avg=1.11 max=2 final=2.11 → -7.92",
+      "   PASO 2 - Toxicidad promedio: -7.92 → Score: 75.15",
+      "     🚩 [0] harina de maiz: toxicidad=LOW → -1 * 1.000 = -1.00",
+      "     🚩 [1] sémola fina de maíz: toxicidad=LOW → -1 * 0.705 = -0.70",
+      "     🚩 [2] azúcar: toxicidad=LOW → -1 * 0.497 = -0.50",
+      "     🚩 [3] jarabe de glucosa: toxicidad=MEDIUM → -2 * 0.350 = -0.70",
+      "     🚩 [5] aceite de palma: toxicidad=MEDIUM → -2 * 0.174 = -0.35",
+      "     🚩 [6] ascorbil palmitato - ins 304i: toxicidad=MEDIUM → -2 * 0.122 = -0.24",
+      "     🚩 [7] carbonato de calcio - ins  170i: toxicidad=LOW → -1 * 0.086 = -0.09",
+      "     🚩 [8] extracto de malta (origen cebada): toxicidad=LOW → -1 * 0.061 = -0.06",
+      "     🚩 [9] maltodextrina (origen no especificado): toxicidad=LOW → -1 * 0.043 = -0.04",
+      "     🚩 [10] B3 niacina: toxicidad=LOW → -1 * 0.030 = -0.03",
+      "     🚩 [11] zinc: toxicidad=LOW → -1 * 0.021 = -0.02",
+      "     🚩 [12] propionato de calcio - ins 282: toxicidad=LOW → -1 * 0.015 = -0.01",
+      "     🚩 [13] hierro: toxicidad=LOW → -1 * 0.011 = -0.01",
+      "     🚩 [17] fosfato dicálcico - ins 341ii: toxicidad=LOW → -1 * 0.003 = -0.00",
+      "     🚩 [18] aromatizante (sabor vainilla): toxicidad=LOW → -1 * 0.002 = -0.00",
+      "     🚩 [19] caramelo - ins 150: toxicidad=LOW → -1 * 0.001 = -0.00",
+      "     🚩 [20] fosfato trisódico - ins 339iii: toxicidad=LOW → -1 * 0.001 = -0.00",
+      "   PASO 3 - Red flags: -3.77 → Score: 71.39",
+      "     ⛔ Azúcares: valor=30.0000/100g | min=3.0000 max_score=15 limit=13.0000 → -15.00 [EXCESO]",
+      "     ✅ Calcio: valor=693.3333/100g | min=50.0000 max_score=4 → +4.00",
+      "     ℹ️⚠️ Carbohidratos: valor=76.6667/100g | min=15.0000 limit=60.0000 → NEUTRAL EXCESO",
+      "     ✅ Fibra alimentaria: valor=5.6667/100g | min=1.0000 max_score=5 → +2.52",
+      "     ✅ Grasas monoinsaturadas: valor=1.6667/100g | min=0.5000 max_score=3 → +0.48",
+      "     ✅ Grasas poliinsaturadas: valor=1.6667/100g | min=0.5000 max_score=3 → +0.48",
+      "     ── Grasas saturadas: valor=1.3333/100g ≤ min=1.5000 → sin impacto",
+      "     ⏭️  Grasas totales: TOTAL_FATS → ignorado",
+      "     ✅ Hierro: valor=14.0000/100g | min=0.7000 max_score=4 → +3.46",
+      "     ✅ Niacina: valor=15.0000/100g | min=1.0000 max_score=3 → +2.63",
+      "     ✅ Proteínas: valor=6.3333/100g | min=2.0000 max_score=5 → +2.39",
+      "     ✅ Riboflavina: valor=1.3000/100g | min=0.0600 max_score=2 → +0.34",
+      "     ⛔ Sodio: valor=366.6667/100g | min=100.0000 max_score=12 limit=500.0000 → -8.00",
+      "     ℹ️⚠️ Valor energético (calorías): valor=376.6667/100g | min=80.0000 limit=300.0000 → NEUTRAL EXCESO",
+      "     🔄 Vitamina B6: conversión de unidad: 0.3800 ug → 0.0004 mg",
+      "     ── Vitamina B6: valor=0.0013/100g < min=0.1000 → sin impacto",
+      "     ✅ Zinc: valor=4.3333/100g | min=0.3500 max_score=2 → +0.90",
+      "     ✅ Ácido fólico: valor=230.0000/100g | min=20.0000 max_score=3 → +3.00",
+      "     🔄 Ácido pantoténico: conversión de unidad: 1.5000 ug → 0.0015 mg",
+      "     ── Ácido pantoténico: valor=0.0050/100g < min=0.2500 → sin impacto",
+      "     ⚠️  Nutrientes positivos: +20.20 → cap: +20.00",
+      "   PASO 4 - Nutrition Facts: negativos=-23.00 positivos=+20.00 neto=-3.00 → Score: 68.39",
+      "   PASO 5 - Ultra-procesado: -20 → Score: 48.39",
+      "   PASO 6 - Pobreza nutricional: 10 beneficioso(s) → sin penalización",
+      "   ────────────────────────────────────────",
+      "   🏆 SCORE FINAL: 48/100",
+      "   📋 Desglose: ingredientes=-16.9 toxicidad=-7.9 redFlags=-3.8 nutri-=23.0 nutri+=20.0 ultraProc=-20.0 pobreza=-0.0",
       "══════════════════════════════════════════════════\n"
     ]
   },
@@ -5810,84 +5951,6 @@
       "   ────────────────────────────────────────",
       "   🏆 SCORE FINAL: 84/100",
       "   📋 Desglose: ingredientes=-5.9 toxicidad=-3.9 redFlags=-1.3 nutri-=0.0 nutri+=0.3 ultraProc=-0.0 pobreza=-5.0",
-      "══════════════════════════════════════════════════\n"
-    ]
-  },
-  {
-    "id": "e1609953-8672-494f-8bee-0c9939a279de",
-    "name": "Fideos Trigo Duro Barilla Spaghettoni 500 G",
-    "brand": "Barilla",
-    "category": "Pastas",
-    "quota": "ancla_buena",
-    "scoreGuardado": 84,
-    "scoreRecalculado": 84,
-    "delta": 0,
-    "breakdown": {
-      "scoreFinal": 84,
-      "penaltyIngredientes": 6.151234231110349,
-      "penaltyToxicidad": 4.0748159209399875,
-      "penaltyRedFlags": 1,
-      "nutritionNegativeImpact": 0,
-      "nutritionPositiveImpact": 0.31084087514716896,
-      "penaltyUltraProcessed": 0,
-      "penaltyPobrezaNutricional": 5,
-      "penaltyAmortiguacion": 0
-    },
-    "highlights": {
-      "beneficials": [
-        {
-          "name": "Fibra alimentaria",
-          "valuePer100": 3,
-          "unit": "g"
-        },
-        {
-          "name": "Proteínas",
-          "valuePer100": 11.37,
-          "unit": "g"
-        }
-      ],
-      "notBeneficials": [],
-      "excesses": [],
-      "neutrals": [],
-      "neutralExcesses": [
-        {
-          "name": "Carbohidratos",
-          "valuePer100": 72.5,
-          "unit": "g"
-        },
-        {
-          "name": "Valor energético (calorías)",
-          "valuePer100": 352.5,
-          "unit": "kcal"
-        }
-      ]
-    },
-    "logs": [
-      "\n══════════════════════════════════════════════════",
-      "📊 SCORING V2: Fideos Trigo Duro Barilla Spaghettoni 500 G (e1609953-8672-494f-8bee-0c9939a279de)",
-      "   Ingredientes: 2 | Nutrition Facts: 6 | Tipo: SÓLIDO",
-      "══════════════════════════════════════════════════",
-      "     [0] sémola de trigo duro: score=7.00 def=0.300 weight=1.000 → 0.3000 ~40%",
-      "     [1] agua mineral: score=10.00 def=0.000 weight=0.705 → 0.0000 ✓",
-      "     Deficiencia promedio: 0.1760 → penalty: 7.04",
-      "     Proporción buenos: 64.8% → ajuste: -0.89",
-      "     Resultado Paso 1: -6.15",
-      "   PASO 1 - Ingredientes & Proporción: -6.15 → Score: 93.85",
-      "     Toxicidad ponderada: avg=0.59 max=1 final=1.09 → -4.07",
-      "   PASO 2 - Toxicidad promedio: -4.07 → Score: 89.77",
-      "     🚩 [0] sémola de trigo duro: toxicidad=LOW → -1 * 1.000 = -1.00",
-      "   PASO 3 - Red flags: -1.00 → Score: 88.77",
-      "     ℹ️⚠️ Carbohidratos: valor=72.5000/100g | min=15.0000 limit=60.0000 → NEUTRAL EXCESO",
-      "     ✅ Fibra alimentaria: valor=3.0000/100g | min=1.0000 max_score=5 → +1.30",
-      "     ── Grasas saturadas: valor=0.5000/100g ≤ min=1.5000 → sin impacto",
-      "     ⏭️  Grasas totales: TOTAL_FATS → ignorado",
-      "     ✅ Proteínas: valor=11.3750/100g | min=2.0000 max_score=5 → +3.77",
-      "     ℹ️⚠️ Valor energético (calorías): valor=352.5000/100g | min=80.0000 limit=300.0000 → NEUTRAL EXCESO",
-      "   PASO 4 - Nutrition Facts: negativos=-0.00 positivos=+5.07 × 6% = +0.31 (atenuación 70-90) → Score: 89.08",
-      "   PASO 6 - Pobreza nutricional: 2 beneficioso(s) → -5 → Score: 84.08",
-      "   ────────────────────────────────────────",
-      "   🏆 SCORE FINAL: 84/100",
-      "   📋 Desglose: ingredientes=-6.2 toxicidad=-4.1 redFlags=-1.0 nutri-=0.0 nutri+=0.3 ultraProc=-0.0 pobreza=-5.0",
       "══════════════════════════════════════════════════\n"
     ]
   },
@@ -6105,232 +6168,6 @@
     ]
   },
   {
-    "id": "d491b2f6-f764-40c9-8d7c-02b81991d2d2",
-    "name": "Yerba Mate Armiño 1 Kg",
-    "brand": "Armiño",
-    "category": "Yerbas",
-    "quota": "ancla_buena",
-    "scoreGuardado": 81,
-    "scoreRecalculado": 81,
-    "delta": 0,
-    "breakdown": {
-      "scoreFinal": 81,
-      "penaltyIngredientes": 2.1999999999999997,
-      "penaltyToxicidad": 5.625,
-      "penaltyRedFlags": 1,
-      "nutritionNegativeImpact": 0,
-      "nutritionPositiveImpact": 0,
-      "penaltyUltraProcessed": 0,
-      "penaltyPobrezaNutricional": 10,
-      "penaltyAmortiguacion": 0
-    },
-    "highlights": {
-      "beneficials": [
-        {
-          "name": "Proteínas",
-          "valuePer100": 3,
-          "unit": "g"
-        }
-      ],
-      "notBeneficials": [],
-      "excesses": [],
-      "neutrals": [],
-      "neutralExcesses": []
-    },
-    "logs": [
-      "\n══════════════════════════════════════════════════",
-      "📊 SCORING V2: Yerba Mate Armiño 1 Kg (d491b2f6-f764-40c9-8d7c-02b81991d2d2)",
-      "   Ingredientes: 1 | Nutrition Facts: 4 | Tipo: SÓLIDO",
-      "══════════════════════════════════════════════════",
-      "     [0] yerba mate: score=9.00 def=0.100 weight=1.000 → 0.1000 ~80%",
-      "     Deficiencia promedio: 0.1000 → penalty: 4.00",
-      "     Proporción buenos: 80.0% → ajuste: -1.80",
-      "     Resultado Paso 1: -2.20",
-      "   PASO 1 - Ingredientes & Proporción: -2.20 → Score: 97.80",
-      "     Toxicidad ponderada: avg=1.00 max=1 final=1.50 → -5.63",
-      "   PASO 2 - Toxicidad promedio: -5.63 → Score: 92.17",
-      "     🚩 [0] yerba mate: toxicidad=LOW → -1 * 1.000 = -1.00",
-      "   PASO 3 - Red flags: -1.00 → Score: 91.17",
-      "     ── Carbohidratos: valor=3.0000/100g < min=15.0000 → sin impacto",
-      "     ✅ Proteínas: valor=3.0000/100g | min=2.0000 max_score=5 → +0.70",
-      "     ── Sodio: valor=23.0000/100g ≤ min=100.0000 → sin impacto",
-      "     ── Valor energético (calorías): valor=24.0000/100g < min=80.0000 → sin impacto",
-      "   PASO 4 - Nutrition Facts: negativos=-0.00 positivos=+0.70 × 0% = +0.00 (atenuación 70-90) → Score: 91.17",
-      "   PASO 6 - Pobreza nutricional: 1 beneficioso(s) → -10 → Score: 81.17",
-      "   ────────────────────────────────────────",
-      "   🏆 SCORE FINAL: 81/100",
-      "   📋 Desglose: ingredientes=-2.2 toxicidad=-5.6 redFlags=-1.0 nutri-=0.0 nutri+=0.0 ultraProc=-0.0 pobreza=-10.0",
-      "══════════════════════════════════════════════════\n"
-    ]
-  },
-  {
-    "id": "f1a3765a-c835-449e-a9aa-92065ea0906c",
-    "name": "Yerba Mate Compuesta Serena Canaria 1 Kg",
-    "brand": "Canarias",
-    "category": "Yerbas",
-    "quota": "ancla_buena",
-    "scoreGuardado": 97,
-    "scoreRecalculado": 97,
-    "delta": 0,
-    "breakdown": {
-      "scoreFinal": 97,
-      "penaltyIngredientes": -1.1414021970262236,
-      "penaltyToxicidad": 3.2153349540676275,
-      "penaltyRedFlags": 1,
-      "nutritionNegativeImpact": 0,
-      "nutritionPositiveImpact": 0,
-      "penaltyUltraProcessed": 0,
-      "penaltyPobrezaNutricional": 0,
-      "penaltyAmortiguacion": 0
-    },
-    "highlights": {
-      "beneficials": [
-        {
-          "name": "Calcio",
-          "valuePer100": 850,
-          "unit": "mg"
-        },
-        {
-          "name": "Fibra alimentaria",
-          "valuePer100": 50,
-          "unit": "g"
-        },
-        {
-          "name": "Proteínas",
-          "valuePer100": 8,
-          "unit": "g"
-        }
-      ],
-      "notBeneficials": [],
-      "excesses": [],
-      "neutrals": [
-        {
-          "name": "Carbohidratos",
-          "valuePer100": 27,
-          "unit": "g"
-        },
-        {
-          "name": "Valor energético (calorías)",
-          "valuePer100": 196,
-          "unit": "kcal"
-        }
-      ],
-      "neutralExcesses": []
-    },
-    "logs": [
-      "\n══════════════════════════════════════════════════",
-      "📊 SCORING V2: Yerba Mate Compuesta Serena Canaria 1 Kg (f1a3765a-c835-449e-a9aa-92065ea0906c)",
-      "   Ingredientes: 5 | Nutrition Facts: 7 | Tipo: SÓLIDO",
-      "══════════════════════════════════════════════════",
-      "     [0] yerba mate: score=9.00 def=0.100 weight=1.000 → 0.1000 ~80%",
-      "     [1] toronjil: score=10.00 def=0.000 weight=0.705 → 0.0000 ✓",
-      "     [2] mburucuyá: score=10.00 def=0.000 weight=0.497 → 0.0000 ✓",
-      "     [3] menta: score=10.00 def=0.000 weight=0.350 → 0.0000 ✓",
-      "     [4] tilo: score=10.00 def=0.000 weight=0.247 → 0.0000 ✓",
-      "     Deficiencia promedio: 0.0357 → penalty: 1.43",
-      "     Proporción buenos: 92.9% → ajuste: -2.57",
-      "     Resultado Paso 1: +1.14",
-      "   PASO 1 - Ingredientes & Proporción: +1.14 → Score: 101.14",
-      "     Toxicidad ponderada: avg=0.36 max=1 final=0.86 → -3.22",
-      "   PASO 2 - Toxicidad promedio: -3.22 → Score: 97.93",
-      "     🚩 [0] yerba mate: toxicidad=LOW → -1 * 1.000 = -1.00",
-      "   PASO 3 - Red flags: -1.00 → Score: 96.93",
-      "     ✅ Calcio: valor=850.0000/100g | min=50.0000 max_score=4 → +4.00",
-      "     ℹ️  Carbohidratos: valor=27.0000/100g | min=15.0000 → NEUTRAL (solo highlight)",
-      "     ✅ Fibra alimentaria: valor=50.0000/100g | min=1.0000 max_score=5 → +5.00",
-      "     ⏭️  Grasas totales: TOTAL_FATS → ignorado",
-      "     ✅ Proteínas: valor=8.0000/100g | min=2.0000 max_score=5 → +2.97",
-      "     ── Sodio: valor=9.0000/100g ≤ min=100.0000 → sin impacto",
-      "     ℹ️  Valor energético (calorías): valor=196.0000/100g | min=80.0000 → NEUTRAL (solo highlight)",
-      "   PASO 4 - Nutrition Facts: negativos=-0.00 positivos=+11.96 × 0% = +0.00 (atenuación 70-90) → Score: 96.93",
-      "   PASO 6 - Pobreza nutricional: 3 beneficioso(s) → sin penalización",
-      "   ────────────────────────────────────────",
-      "   🏆 SCORE FINAL: 97/100",
-      "   📋 Desglose: ingredientes=+1.1 toxicidad=-3.2 redFlags=-1.0 nutri-=0.0 nutri+=0.0 ultraProc=-0.0 pobreza=-0.0",
-      "══════════════════════════════════════════════════\n"
-    ]
-  },
-  {
-    "id": "35b56109-f370-40f2-b591-ac894e76c008",
-    "name": "Fideos Foratti Al Huevo Adria 500 G",
-    "brand": "Adria",
-    "category": "Pastas",
-    "quota": "ancla_buena",
-    "scoreGuardado": 78,
-    "scoreRecalculado": 78,
-    "delta": 0,
-    "breakdown": {
-      "scoreFinal": 78,
-      "penaltyIngredientes": 13.532928802707618,
-      "penaltyToxicidad": 4.424521974764184,
-      "penaltyRedFlags": 1.4965853037914094,
-      "nutritionNegativeImpact": 0,
-      "nutritionPositiveImpact": 2.1257284321749546,
-      "penaltyUltraProcessed": 0,
-      "penaltyPobrezaNutricional": 5,
-      "penaltyAmortiguacion": 0
-    },
-    "highlights": {
-      "beneficials": [
-        {
-          "name": "Fibra alimentaria",
-          "valuePer100": 1.75,
-          "unit": "g"
-        },
-        {
-          "name": "Proteínas",
-          "valuePer100": 12.5,
-          "unit": "g"
-        }
-      ],
-      "notBeneficials": [],
-      "excesses": [],
-      "neutrals": [],
-      "neutralExcesses": [
-        {
-          "name": "Carbohidratos",
-          "valuePer100": 75,
-          "unit": "g"
-        },
-        {
-          "name": "Valor energético (calorías)",
-          "valuePer100": 375,
-          "unit": "kcal"
-        }
-      ]
-    },
-    "logs": [
-      "\n══════════════════════════════════════════════════",
-      "📊 SCORING V2: Fideos Foratti Al Huevo Adria 500 G (35b56109-f370-40f2-b591-ac894e76c008)",
-      "   Ingredientes: 3 | Nutrition Facts: 6 | Tipo: SÓLIDO",
-      "══════════════════════════════════════════════════",
-      "     [0] harina de trigo fortificada con hierro y ácido fólico: score=6.50 def=0.350 weight=1.000 → 0.3500 ~30%",
-      "     [1] huevo: score=10.00 def=0.000 weight=0.705 → 0.0000 ✓",
-      "     [2] betacaroteno sintético - ins 160a(i): score=3.50 def=0.650 weight=0.497 → 0.3228",
-      "     Deficiencia promedio: 0.3056 → penalty: 12.23",
-      "     Proporción buenos: 45.6% → ajuste: +1.31",
-      "     Resultado Paso 1: -13.53",
-      "   PASO 1 - Ingredientes & Proporción: -13.53 → Score: 86.47",
-      "     Toxicidad ponderada: avg=0.68 max=1 final=1.18 → -4.42",
-      "   PASO 2 - Toxicidad promedio: -4.42 → Score: 82.04",
-      "     🚩 [0] harina de trigo fortificada con hierro y ácido fólico: toxicidad=LOW → -1 * 1.000 = -1.00",
-      "     🚩 [2] betacaroteno sintético - ins 160a(i): toxicidad=LOW → -1 * 0.497 = -0.50",
-      "   PASO 3 - Red flags: -1.50 → Score: 80.55",
-      "     ℹ️⚠️ Carbohidratos: valor=75.0000/100g | min=15.0000 limit=60.0000 → NEUTRAL EXCESO",
-      "     ✅ Fibra alimentaria: valor=1.7500/100g | min=1.0000 max_score=5 → +0.53",
-      "     ── Grasas saturadas: valor=0.5000/100g ≤ min=1.5000 → sin impacto",
-      "     ⏭️  Grasas totales: TOTAL_FATS → ignorado",
-      "     ✅ Proteínas: valor=12.5000/100g | min=2.0000 max_score=5 → +3.96",
-      "     ℹ️⚠️ Valor energético (calorías): valor=375.0000/100g | min=80.0000 limit=300.0000 → NEUTRAL EXCESO",
-      "   PASO 4 - Nutrition Facts: negativos=-0.00 positivos=+4.50 × 47% = +2.13 (atenuación 70-90) → Score: 82.67",
-      "   PASO 6 - Pobreza nutricional: 2 beneficioso(s) → -5 → Score: 77.67",
-      "   ────────────────────────────────────────",
-      "   🏆 SCORE FINAL: 78/100",
-      "   📋 Desglose: ingredientes=-13.5 toxicidad=-4.4 redFlags=-1.5 nutri-=0.0 nutri+=2.1 ultraProc=-0.0 pobreza=-5.0",
-      "══════════════════════════════════════════════════\n"
-    ]
-  },
-  {
     "id": "860d3c85-9863-4cc0-a2b9-05f6ace7245c",
     "name": "Lasagna Facil Las Acacias 200 G",
     "brand": "Las Acacias",
@@ -6408,124 +6245,282 @@
     ]
   },
   {
-    "id": "f48e843c-d4f2-4414-99e5-3fe81aff79b0",
-    "name": "Yerba Mate Canarias Té Rojo Y Centella 1 Kg",
-    "brand": "Canarias",
-    "category": "Yerbas",
+    "id": "4a14ed83-b096-41ed-a5d6-a47151b980be",
+    "name": "Harina De Coco Terra Verde 300 Gr",
+    "brand": "Terra Verde",
+    "category": "Harina y Polenta",
     "quota": "ancla_buena",
-    "scoreGuardado": 93,
-    "scoreRecalculado": 93,
+    "scoreGuardado": 80,
+    "scoreRecalculado": 80,
     "delta": 0,
     "breakdown": {
-      "scoreFinal": 93,
-      "penaltyIngredientes": 2.1999999999999997,
-      "penaltyToxicidad": 3.8156312490509436,
-      "penaltyRedFlags": 1.4478703574517295,
-      "nutritionNegativeImpact": 0,
-      "nutritionPositiveImpact": 0,
+      "scoreFinal": 80,
+      "penaltyIngredientes": 4.800000000000001,
+      "penaltyToxicidad": 0,
+      "penaltyRedFlags": 0,
+      "nutritionNegativeImpact": 15,
+      "nutritionPositiveImpact": 4.667220606620025,
       "penaltyUltraProcessed": 0,
-      "penaltyPobrezaNutricional": 0,
+      "penaltyPobrezaNutricional": 5,
       "penaltyAmortiguacion": 0
     },
     "highlights": {
       "beneficials": [
         {
-          "name": "Calcio",
-          "valuePer100": 787,
-          "unit": "mg"
-        },
-        {
           "name": "Fibra alimentaria",
-          "valuePer100": 50,
+          "valuePer100": 29.2,
           "unit": "g"
         },
         {
           "name": "Proteínas",
-          "valuePer100": 12,
+          "valuePer100": 18.8,
+          "unit": "g"
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "valuePer100": 11.4,
+          "unit": "g"
+        },
+        {
+          "name": "Sodio",
+          "valuePer100": 200,
+          "unit": "mg"
+        }
+      ],
+      "excesses": [
+        {
+          "name": "Grasas saturadas",
+          "valuePer100": 11.4,
+          "unit": "g"
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "valuePer100": 38.8,
+          "unit": "g"
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Valor energético (calorías)",
+          "valuePer100": 368,
+          "unit": "kcal"
+        }
+      ]
+    },
+    "logs": [
+      "\n══════════════════════════════════════════════════",
+      "📊 SCORING V2: Harina De Coco Terra Verde 300 Gr (4a14ed83-b096-41ed-a5d6-a47151b980be)",
+      "   Ingredientes: 1 | Nutrition Facts: 7 | Tipo: SÓLIDO",
+      "══════════════════════════════════════════════════",
+      "     [0] harina de coco: score=8.50 def=0.150 weight=1.000 → 0.1500 ~70%",
+      "     Deficiencia promedio: 0.1500 → penalty: 6.00",
+      "     Proporción buenos: 70.0% → ajuste: -1.20",
+      "     Resultado Paso 1: -4.80",
+      "   PASO 1 - Ingredientes & Proporción: -4.80 → Score: 95.20",
+      "     Toxicidad ponderada: avg=0.00 max=0 final=0.00 → -0.00",
+      "   PASO 2 - Toxicidad promedio: -0.00 → Score: 95.20",
+      "   PASO 3 - Red flags: -0.00 → Score: 95.20",
+      "     ℹ️  Carbohidratos: valor=38.8000/100g | min=15.0000 → NEUTRAL (solo highlight)",
+      "     ✅ Fibra alimentaria: valor=29.2000/100g | min=1.0000 max_score=5 → +4.93",
+      "     ⛔ Grasas saturadas: valor=11.4000/100g | min=1.5000 max_score=12 limit=6.0000 → -12.00 [EXCESO]",
+      "     ⏭️  Grasas totales: TOTAL_FATS → ignorado",
+      "     ✅ Proteínas: valor=18.8000/100g | min=2.0000 max_score=5 → +4.60",
+      "     ⛔ Sodio: valor=200.0000/100g | min=100.0000 max_score=12 limit=500.0000 → -3.00",
+      "     ℹ️⚠️ Valor energético (calorías): valor=368.0000/100g | min=80.0000 limit=300.0000 → NEUTRAL EXCESO",
+      "   PASO 4 - Nutrition Facts: negativos=-15.00 positivos=+9.52 × 49% = +4.67 (atenuación 70-90) → Score: 84.87",
+      "   PASO 6 - Pobreza nutricional: 2 beneficioso(s) → -5 → Score: 79.87",
+      "   ────────────────────────────────────────",
+      "   🏆 SCORE FINAL: 80/100",
+      "   📋 Desglose: ingredientes=-4.8 toxicidad=-0.0 redFlags=-0.0 nutri-=15.0 nutri+=4.7 ultraProc=-0.0 pobreza=-5.0",
+      "══════════════════════════════════════════════════\n"
+    ]
+  },
+  {
+    "id": "fbcee36c-0c05-46a0-b50b-cd40477b834b",
+    "name": "Polenta Presto Pronta 500 G",
+    "brand": "Presto Pronta",
+    "category": "Harina y Polenta",
+    "quota": "ancla_buena",
+    "scoreGuardado": 80,
+    "scoreRecalculado": 80,
+    "delta": 0,
+    "breakdown": {
+      "scoreFinal": 80,
+      "penaltyIngredientes": 10,
+      "penaltyToxicidad": 5.625,
+      "penaltyRedFlags": 1,
+      "nutritionNegativeImpact": 0,
+      "nutritionPositiveImpact": 1.1467266093727753,
+      "penaltyUltraProcessed": 0,
+      "penaltyPobrezaNutricional": 5,
+      "penaltyAmortiguacion": 0
+    },
+    "highlights": {
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "valuePer100": 2.2,
+          "unit": "g"
+        },
+        {
+          "name": "Proteínas",
+          "valuePer100": 7,
           "unit": "g"
         }
       ],
       "notBeneficials": [],
       "excesses": [],
-      "neutrals": [
+      "neutrals": [],
+      "neutralExcesses": [
         {
           "name": "Carbohidratos",
-          "valuePer100": 30,
+          "valuePer100": 78,
           "unit": "g"
         },
         {
           "name": "Valor energético (calorías)",
-          "valuePer100": 184,
+          "valuePer100": 340,
           "unit": "kcal"
         }
-      ],
-      "neutralExcesses": []
+      ]
     },
     "logs": [
       "\n══════════════════════════════════════════════════",
-      "📊 SCORING V2: Yerba Mate Canarias Té Rojo Y Centella 1 Kg (f48e843c-d4f2-4414-99e5-3fe81aff79b0)",
-      "   Ingredientes: 5 | Nutrition Facts: 7 | Tipo: SÓLIDO",
+      "📊 SCORING V2: Polenta Presto Pronta 500 G (fbcee36c-0c05-46a0-b50b-cd40477b834b)",
+      "   Ingredientes: 1 | Nutrition Facts: 4 | Tipo: SÓLIDO",
       "══════════════════════════════════════════════════",
-      "     [0] aquifoliaceae: score=9.00 def=0.100 weight=1.000 → 0.1000 ~80%",
-      "     [1] camellia sinensis l: score=9.00 def=0.100 weight=0.705 → 0.0705 ~80%",
-      "     [2] té rojo: score=9.00 def=0.100 weight=0.497 → 0.0497 ~80%",
-      "     [3] apiaceae: score=9.00 def=0.100 weight=0.350 → 0.0350 ~80%",
-      "     [4] yerba mate: score=9.00 def=0.100 weight=0.247 → 0.0247 ~80%",
-      "     Deficiencia promedio: 0.1000 → penalty: 4.00",
-      "     Proporción buenos: 80.0% → ajuste: -1.80",
-      "     Resultado Paso 1: -2.20",
-      "   PASO 1 - Ingredientes & Proporción: -2.20 → Score: 97.80",
-      "     Toxicidad ponderada: avg=0.52 max=1 final=1.02 → -3.82",
-      "   PASO 2 - Toxicidad promedio: -3.82 → Score: 93.98",
-      "     🚩 [1] camellia sinensis l: toxicidad=LOW → -1 * 0.705 = -0.70",
-      "     🚩 [2] té rojo: toxicidad=LOW → -1 * 0.497 = -0.50",
-      "     🚩 [4] yerba mate: toxicidad=LOW → -1 * 0.247 = -0.25",
-      "   PASO 3 - Red flags: -1.45 → Score: 92.54",
-      "     ✅ Calcio: valor=787.0000/100g | min=50.0000 max_score=4 → +4.00",
-      "     ℹ️  Carbohidratos: valor=30.0000/100g | min=15.0000 → NEUTRAL (solo highlight)",
-      "     ✅ Fibra alimentaria: valor=50.0000/100g | min=1.0000 max_score=5 → +5.00",
-      "     ⏭️  Grasas totales: TOTAL_FATS → ignorado",
-      "     ✅ Proteínas: valor=12.0000/100g | min=2.0000 max_score=5 → +3.88",
-      "     ── Sodio: valor=2.1000/100g ≤ min=100.0000 → sin impacto",
-      "     ℹ️  Valor energético (calorías): valor=184.0000/100g | min=80.0000 → NEUTRAL (solo highlight)",
-      "   PASO 4 - Nutrition Facts: negativos=-0.00 positivos=+12.88 × 0% = +0.00 (atenuación 70-90) → Score: 92.54",
-      "   PASO 6 - Pobreza nutricional: 3 beneficioso(s) → sin penalización",
+      "     [0] harina de maiz precocida: score=7.50 def=0.250 weight=1.000 → 0.2500 ~50%",
+      "     Deficiencia promedio: 0.2500 → penalty: 10.00",
+      "     Proporción buenos: 50.0% → ajuste: +0.00",
+      "     Resultado Paso 1: -10.00",
+      "   PASO 1 - Ingredientes & Proporción: -10.00 → Score: 90.00",
+      "     Toxicidad ponderada: avg=1.00 max=1 final=1.50 → -5.63",
+      "   PASO 2 - Toxicidad promedio: -5.63 → Score: 84.38",
+      "     🚩 [0] harina de maiz precocida: toxicidad=LOW → -1 * 1.000 = -1.00",
+      "   PASO 3 - Red flags: -1.00 → Score: 83.38",
+      "     ℹ️⚠️ Carbohidratos: valor=78.0000/100g | min=15.0000 limit=60.0000 → NEUTRAL EXCESO",
+      "     ✅ Fibra alimentaria: valor=2.2000/100g | min=1.0000 max_score=5 → +0.82",
+      "     ✅ Proteínas: valor=7.0000/100g | min=2.0000 max_score=5 → +2.64",
+      "     ℹ️⚠️ Valor energético (calorías): valor=340.0000/100g | min=80.0000 limit=300.0000 → NEUTRAL EXCESO",
+      "   PASO 4 - Nutrition Facts: negativos=-0.00 positivos=+3.46 × 33% = +1.15 (atenuación 70-90) → Score: 84.52",
+      "   PASO 6 - Pobreza nutricional: 2 beneficioso(s) → -5 → Score: 79.52",
       "   ────────────────────────────────────────",
-      "   🏆 SCORE FINAL: 93/100",
-      "   📋 Desglose: ingredientes=-2.2 toxicidad=-3.8 redFlags=-1.4 nutri-=0.0 nutri+=0.0 ultraProc=-0.0 pobreza=-0.0",
+      "   🏆 SCORE FINAL: 80/100",
+      "   📋 Desglose: ingredientes=-10.0 toxicidad=-5.6 redFlags=-1.0 nutri-=0.0 nutri+=1.1 ultraProc=-0.0 pobreza=-5.0",
       "══════════════════════════════════════════════════\n"
     ]
   },
   {
-    "id": "7fdc351b-fe85-4e40-ba45-d9315fcffddb",
-    "name": "Yerba Mate Canarias Edición Especial 1 Kg",
-    "brand": "Canarias",
-    "category": "Yerbas",
+    "id": "43e05543-32a2-4ac9-9702-bdcf1ef3769a",
+    "name": "Vascolet Alimento Achocolatado 500 G",
+    "brand": "Vascolet",
+    "category": "Bebidas calientes",
     "quota": "ancla_buena",
-    "scoreGuardado": 91,
-    "scoreRecalculado": 91,
+    "scoreGuardado": 79,
+    "scoreRecalculado": 79,
     "delta": 0,
     "breakdown": {
-      "scoreFinal": 91,
-      "penaltyIngredientes": 2.1999999999999997,
-      "penaltyToxicidad": 5.625,
-      "penaltyRedFlags": 1,
+      "scoreFinal": 79,
+      "penaltyIngredientes": 11.777670107268007,
+      "penaltyToxicidad": 4.589185953762331,
+      "penaltyRedFlags": 1.846523052902565,
       "nutritionNegativeImpact": 0,
-      "nutritionPositiveImpact": 0,
+      "nutritionPositiveImpact": 2.1175164886874023,
       "penaltyUltraProcessed": 0,
-      "penaltyPobrezaNutricional": 0,
+      "penaltyPobrezaNutricional": 5,
       "penaltyAmortiguacion": 0
     },
     "highlights": {
       "beneficials": [
         {
-          "name": "Calcio",
-          "valuePer100": 810,
-          "unit": "mg"
+          "name": "Fibra alimentaria",
+          "valuePer100": 7.5,
+          "unit": "g"
         },
         {
+          "name": "Proteínas",
+          "valuePer100": 5.5,
+          "unit": "g"
+        }
+      ],
+      "notBeneficials": [],
+      "excesses": [],
+      "neutrals": [],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "valuePer100": 80,
+          "unit": "g"
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "valuePer100": 370,
+          "unit": "kcal"
+        }
+      ]
+    },
+    "logs": [
+      "\n══════════════════════════════════════════════════",
+      "📊 SCORING V2: Alimento Achocolatado  500 G (43e05543-32a2-4ac9-9702-bdcf1ef3769a)",
+      "   Ingredientes: 4 | Nutrition Facts: 6 | Tipo: SÓLIDO",
+      "══════════════════════════════════════════════════",
+      "     [0] azúcar: score=7.00 def=0.300 weight=1.000 → 0.3000 ~40%",
+      "     [1] cacao en polvo: score=8.50 def=0.150 weight=0.705 → 0.1057 ~70%",
+      "     [2] almidón de maíz: score=8.50 def=0.150 weight=0.497 → 0.0745 ~70%",
+      "     [3] aromatizante idéntico al natural (sabor vainillina): score=3.00 def=0.700 weight=0.350 → 0.2450",
+      "     Deficiencia promedio: 0.2842 → penalty: 11.37",
+      "     Proporción buenos: 48.6% → ajuste: +0.41",
+      "     Resultado Paso 1: -11.78",
+      "   PASO 1 - Ingredientes & Proporción: -11.78 → Score: 88.22",
+      "     Toxicidad ponderada: avg=0.72 max=1 final=1.22 → -4.59",
+      "   PASO 2 - Toxicidad promedio: -4.59 → Score: 83.63",
+      "     🚩 [0] azúcar: toxicidad=LOW → -1 * 1.000 = -1.00",
+      "     🚩 [2] almidón de maíz: toxicidad=LOW → -1 * 0.497 = -0.50",
+      "     🚩 [3] aromatizante idéntico al natural (sabor vainillina): toxicidad=LOW → -1 * 0.350 = -0.35",
+      "   PASO 3 - Red flags: -1.85 → Score: 81.79",
+      "     ℹ️⚠️ Carbohidratos: valor=80.0000/100g | min=15.0000 limit=60.0000 → NEUTRAL EXCESO",
+      "     ✅ Fibra alimentaria: valor=7.5000/100g | min=1.0000 max_score=5 → +3.11",
+      "     ── Grasas saturadas: valor=1.5000/100g ≤ min=1.5000 → sin impacto",
+      "     ⏭️  Grasas totales: TOTAL_FATS → ignorado",
+      "     ✅ Proteínas: valor=5.5000/100g | min=2.0000 max_score=5 → +2.04",
+      "     ℹ️⚠️ Valor energético (calorías): valor=370.0000/100g | min=80.0000 limit=300.0000 → NEUTRAL EXCESO",
+      "   PASO 4 - Nutrition Facts: negativos=-0.00 positivos=+5.16 × 41% = +2.12 (atenuación 70-90) → Score: 83.90",
+      "   PASO 6 - Pobreza nutricional: 2 beneficioso(s) → -5 → Score: 78.90",
+      "   ────────────────────────────────────────",
+      "   🏆 SCORE FINAL: 79/100",
+      "   📋 Desglose: ingredientes=-11.8 toxicidad=-4.6 redFlags=-1.8 nutri-=0.0 nutri+=2.1 ultraProc=-0.0 pobreza=-5.0",
+      "══════════════════════════════════════════════════\n"
+    ]
+  },
+  {
+    "id": "1d71a72e-fea7-4ce0-a7db-db8188939dcc",
+    "name": "Cocoa Copacabana Intenso 500 G",
+    "brand": "Copacabana",
+    "category": "Bebidas calientes",
+    "quota": "ancla_buena",
+    "scoreGuardado": 75,
+    "scoreRecalculado": 75,
+    "delta": 0,
+    "breakdown": {
+      "scoreFinal": 75,
+      "penaltyIngredientes": 17.41696846526662,
+      "penaltyToxicidad": 4.424521974764184,
+      "penaltyRedFlags": 1.4965853037914094,
+      "nutritionNegativeImpact": 2.6666666666666665,
+      "nutritionPositiveImpact": 5.847478671229421,
+      "penaltyUltraProcessed": 0,
+      "penaltyPobrezaNutricional": 5,
+      "penaltyAmortiguacion": 0
+    },
+    "highlights": {
+      "beneficials": [
+        {
           "name": "Fibra alimentaria",
-          "valuePer100": 50,
+          "valuePer100": 14.5,
           "unit": "g"
         },
         {
@@ -6534,54 +6529,148 @@
           "unit": "g"
         }
       ],
-      "notBeneficials": [],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "valuePer100": 2.5,
+          "unit": "g"
+        }
+      ],
       "excesses": [],
-      "neutrals": [
+      "neutrals": [],
+      "neutralExcesses": [
         {
           "name": "Carbohidratos",
-          "valuePer100": 27,
+          "valuePer100": 75,
           "unit": "g"
         },
         {
           "name": "Valor energético (calorías)",
-          "valuePer100": 196,
+          "valuePer100": 370,
           "unit": "kcal"
         }
-      ],
-      "neutralExcesses": []
+      ]
     },
     "logs": [
       "\n══════════════════════════════════════════════════",
-      "📊 SCORING V2: Yerba Mate Canarias Edición Especial 1 Kg (7fdc351b-fe85-4e40-ba45-d9315fcffddb)",
-      "   Ingredientes: 1 | Nutrition Facts: 7 | Tipo: SÓLIDO",
+      "📊 SCORING V2: Cocoa Copacabana Intenso 500 G (1d71a72e-fea7-4ce0-a7db-db8188939dcc)",
+      "   Ingredientes: 3 | Nutrition Facts: 6 | Tipo: SÓLIDO",
       "══════════════════════════════════════════════════",
-      "     [0] yerba mate: score=9.00 def=0.100 weight=1.000 → 0.1000 ~80%",
-      "     Deficiencia promedio: 0.1000 → penalty: 4.00",
-      "     Proporción buenos: 80.0% → ajuste: -1.80",
-      "     Resultado Paso 1: -2.20",
-      "   PASO 1 - Ingredientes & Proporción: -2.20 → Score: 97.80",
-      "     Toxicidad ponderada: avg=1.00 max=1 final=1.50 → -5.63",
-      "   PASO 2 - Toxicidad promedio: -5.63 → Score: 92.17",
-      "     🚩 [0] yerba mate: toxicidad=LOW → -1 * 1.000 = -1.00",
-      "   PASO 3 - Red flags: -1.00 → Score: 91.17",
-      "     ✅ Calcio: valor=810.0000/100g | min=50.0000 max_score=4 → +4.00",
-      "     ℹ️  Carbohidratos: valor=27.0000/100g | min=15.0000 → NEUTRAL (solo highlight)",
-      "     ✅ Fibra alimentaria: valor=50.0000/100g | min=1.0000 max_score=5 → +5.00",
+      "     [0] azúcar: score=7.00 def=0.300 weight=1.000 → 0.3000 ~40%",
+      "     [1] cacao en polvo: score=8.50 def=0.150 weight=0.705 → 0.1057 ~70%",
+      "     [2] aromatizante (sabor vainilla): score=2.00 def=0.800 weight=0.497 → 0.3973",
+      "     Deficiencia promedio: 0.3648 → penalty: 14.59",
+      "     Proporción buenos: 40.6% → ajuste: +2.83",
+      "     Resultado Paso 1: -17.42",
+      "   PASO 1 - Ingredientes & Proporción: -17.42 → Score: 82.58",
+      "     Toxicidad ponderada: avg=0.68 max=1 final=1.18 → -4.42",
+      "   PASO 2 - Toxicidad promedio: -4.42 → Score: 78.16",
+      "     🚩 [0] azúcar: toxicidad=LOW → -1 * 1.000 = -1.00",
+      "     🚩 [2] aromatizante (sabor vainilla): toxicidad=LOW → -1 * 0.497 = -0.50",
+      "   PASO 3 - Red flags: -1.50 → Score: 76.66",
+      "     ℹ️⚠️ Carbohidratos: valor=75.0000/100g | min=15.0000 limit=60.0000 → NEUTRAL EXCESO",
+      "     ✅ Fibra alimentaria: valor=14.5000/100g | min=1.0000 max_score=5 → +4.34",
+      "     ⛔ Grasas saturadas: valor=2.5000/100g | min=1.5000 max_score=12 limit=6.0000 → -2.67",
       "     ⏭️  Grasas totales: TOTAL_FATS → ignorado",
       "     ✅ Proteínas: valor=8.0000/100g | min=2.0000 max_score=5 → +2.97",
-      "     ── Sodio: valor=6.1000/100g ≤ min=100.0000 → sin impacto",
-      "     ℹ️  Valor energético (calorías): valor=196.0000/100g | min=80.0000 → NEUTRAL (solo highlight)",
-      "   PASO 4 - Nutrition Facts: negativos=-0.00 positivos=+11.96 × 0% = +0.00 (atenuación 70-90) → Score: 91.17",
-      "   PASO 6 - Pobreza nutricional: 3 beneficioso(s) → sin penalización",
+      "     ℹ️⚠️ Valor energético (calorías): valor=370.0000/100g | min=80.0000 limit=300.0000 → NEUTRAL EXCESO",
+      "   PASO 4 - Nutrition Facts: negativos=-2.67 positivos=+7.31 × 80% = +5.85 (atenuación 70-90) → Score: 79.84",
+      "   PASO 6 - Pobreza nutricional: 2 beneficioso(s) → -5 → Score: 74.84",
       "   ────────────────────────────────────────",
-      "   🏆 SCORE FINAL: 91/100",
-      "   📋 Desglose: ingredientes=-2.2 toxicidad=-5.6 redFlags=-1.0 nutri-=0.0 nutri+=0.0 ultraProc=-0.0 pobreza=-0.0",
+      "   🏆 SCORE FINAL: 75/100",
+      "   📋 Desglose: ingredientes=-17.4 toxicidad=-4.4 redFlags=-1.5 nutri-=2.7 nutri+=5.8 ultraProc=-0.0 pobreza=-5.0",
+      "══════════════════════════════════════════════════\n"
+    ]
+  },
+  {
+    "id": "cf08e3d3-d992-4cdc-ac1a-efcbecbb15b6",
+    "name": "Cacao En Polvo Nestle© 200 G",
+    "brand": "Nestle",
+    "category": "Bebidas calientes",
+    "quota": "ancla_buena",
+    "scoreGuardado": 75,
+    "scoreRecalculado": 75,
+    "delta": 0,
+    "breakdown": {
+      "scoreFinal": 75,
+      "penaltyIngredientes": 17.41696846526662,
+      "penaltyToxicidad": 4.424521974764184,
+      "penaltyRedFlags": 1.4965853037914094,
+      "nutritionNegativeImpact": 4,
+      "nutritionPositiveImpact": 6.928666395792199,
+      "penaltyUltraProcessed": 0,
+      "penaltyPobrezaNutricional": 5,
+      "penaltyAmortiguacion": 0
+    },
+    "highlights": {
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "valuePer100": 14,
+          "unit": "g"
+        },
+        {
+          "name": "Proteínas",
+          "valuePer100": 11,
+          "unit": "g"
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "valuePer100": 3,
+          "unit": "g"
+        }
+      ],
+      "excesses": [],
+      "neutrals": [],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "valuePer100": 75,
+          "unit": "g"
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "valuePer100": 390,
+          "unit": "kcal"
+        }
+      ]
+    },
+    "logs": [
+      "\n══════════════════════════════════════════════════",
+      "📊 SCORING V2: Cacao En Polvo Nestle© 200 G (cf08e3d3-d992-4cdc-ac1a-efcbecbb15b6)",
+      "   Ingredientes: 3 | Nutrition Facts: 6 | Tipo: SÓLIDO",
+      "══════════════════════════════════════════════════",
+      "     [0] azúcar: score=7.00 def=0.300 weight=1.000 → 0.3000 ~40%",
+      "     [1] cacao en polvo: score=8.50 def=0.150 weight=0.705 → 0.1057 ~70%",
+      "     [2] aromatizante (sabor vainilla): score=2.00 def=0.800 weight=0.497 → 0.3973",
+      "     Deficiencia promedio: 0.3648 → penalty: 14.59",
+      "     Proporción buenos: 40.6% → ajuste: +2.83",
+      "     Resultado Paso 1: -17.42",
+      "   PASO 1 - Ingredientes & Proporción: -17.42 → Score: 82.58",
+      "     Toxicidad ponderada: avg=0.68 max=1 final=1.18 → -4.42",
+      "   PASO 2 - Toxicidad promedio: -4.42 → Score: 78.16",
+      "     🚩 [0] azúcar: toxicidad=LOW → -1 * 1.000 = -1.00",
+      "     🚩 [2] aromatizante (sabor vainilla): toxicidad=LOW → -1 * 0.497 = -0.50",
+      "   PASO 3 - Red flags: -1.50 → Score: 76.66",
+      "     ℹ️⚠️ Carbohidratos: valor=75.0000/100g | min=15.0000 limit=60.0000 → NEUTRAL EXCESO",
+      "     ✅ Fibra alimentaria: valor=14.0000/100g | min=1.0000 max_score=5 → +4.29",
+      "     ⛔ Grasas saturadas: valor=3.0000/100g | min=1.5000 max_score=12 limit=6.0000 → -4.00",
+      "     ⏭️  Grasas totales: TOTAL_FATS → ignorado",
+      "     ✅ Proteínas: valor=11.0000/100g | min=2.0000 max_score=5 → +3.70",
+      "     ℹ️⚠️ Valor energético (calorías): valor=390.0000/100g | min=80.0000 limit=300.0000 → NEUTRAL EXCESO",
+      "   PASO 4 - Nutrition Facts: negativos=-4.00 positivos=+7.99 × 87% = +6.93 (atenuación 70-90) → Score: 79.59",
+      "   PASO 6 - Pobreza nutricional: 2 beneficioso(s) → -5 → Score: 74.59",
+      "   ────────────────────────────────────────",
+      "   🏆 SCORE FINAL: 75/100",
+      "   📋 Desglose: ingredientes=-17.4 toxicidad=-4.4 redFlags=-1.5 nutri-=4.0 nutri+=6.9 ultraProc=-0.0 pobreza=-5.0",
       "══════════════════════════════════════════════════\n"
     ]
   },
   {
     "id": "eb534176-6061-4f81-b57b-ded1400a2dee",
-    "name": "Queso Para Untar Conapole Cheddar 230 G",
+    "name": "Queso Para Untar Conaprole Cheddar 230 G",
     "brand": "Conaprole",
     "category": "Quesos",
     "quota": "ancla_mala",
@@ -6957,131 +7046,148 @@
     ]
   },
   {
-    "id": "c43f0079-7dd2-4c66-8eed-03228542f096",
-    "name": "Galletas Rellenas Lu Lu Frutilla 115 G",
-    "brand": "Lu Lu",
+    "id": "c1ebc83d-247f-4d20-81ac-32e448a9e5cf",
+    "name": "Galletitas Tortitas Arcor Chocola 125 G",
+    "brand": "Arcor",
     "category": "Galletitas Dulces",
     "quota": "ancla_mala",
-    "scoreGuardado": 6,
-    "scoreRecalculado": 6,
+    "scoreGuardado": 7,
+    "scoreRecalculado": 7,
     "delta": 0,
     "breakdown": {
-      "scoreFinal": 6,
-      "penaltyIngredientes": 26.27986757196897,
-      "penaltyToxicidad": 10.585300027244504,
-      "penaltyRedFlags": 4.411983666110382,
-      "nutritionNegativeImpact": 37,
-      "nutritionPositiveImpact": 1.9673467014368335,
+      "scoreFinal": 7,
+      "penaltyIngredientes": 25.157411805809097,
+      "penaltyToxicidad": 12.534166859038178,
+      "penaltyRedFlags": 4.784102265460754,
+      "nutritionNegativeImpact": 40.10714285714286,
+      "nutritionPositiveImpact": 3.7108183811773587,
       "penaltyUltraProcessed": 20,
-      "penaltyPobrezaNutricional": 10,
-      "penaltyAmortiguacion": 12.483141535481716
+      "penaltyPobrezaNutricional": 5,
+      "penaltyAmortiguacion": 10.650613141643882
     },
     "highlights": {
       "beneficials": [
         {
+          "name": "Fibra alimentaria",
+          "valuePer100": 2.14,
+          "unit": "g"
+        },
+        {
           "name": "Proteínas",
-          "valuePer100": 5.33,
+          "valuePer100": 7.86,
           "unit": "g"
         }
       ],
       "notBeneficials": [
         {
-          "name": "Azúcares",
-          "valuePer100": 31.67,
-          "unit": "g"
-        },
-        {
           "name": "Grasas saturadas",
-          "valuePer100": 8.33,
+          "valuePer100": 13.21,
           "unit": "g"
         },
         {
           "name": "Grasas trans",
-          "valuePer100": 1,
+          "valuePer100": 1.07,
           "unit": "g"
+        },
+        {
+          "name": "Sodio",
+          "valuePer100": 203.57,
+          "unit": "mg"
         }
       ],
       "excesses": [
         {
-          "name": "Azúcares",
-          "valuePer100": 31.67,
-          "unit": "g"
-        },
-        {
           "name": "Grasas saturadas",
-          "valuePer100": 8.33,
+          "valuePer100": 13.21,
           "unit": "g"
         },
         {
           "name": "Grasas trans",
-          "valuePer100": 1,
+          "valuePer100": 1.07,
           "unit": "g"
+        },
+        {
+          "name": "Azúcares",
+          "valuePer100": -1,
+          "unit": ""
         }
       ],
       "neutrals": [],
       "neutralExcesses": [
         {
           "name": "Carbohidratos",
-          "valuePer100": 73.33,
+          "valuePer100": 60.71,
           "unit": "g"
         },
         {
           "name": "Valor energético (calorías)",
-          "valuePer100": 480,
+          "valuePer100": 503.57,
           "unit": "kcal"
         }
       ]
     },
     "logs": [
       "\n══════════════════════════════════════════════════",
-      "📊 SCORING V2: Galletas Rellenas Lu Lu Frutilla 115 G (c43f0079-7dd2-4c66-8eed-03228542f096)",
-      "   Ingredientes: 12 | Nutrition Facts: 8 | Tipo: SÓLIDO",
+      "📊 SCORING V2: Galletitas Tortitas Arcor Chocola 125 G (c1ebc83d-247f-4d20-81ac-32e448a9e5cf)",
+      "   Ingredientes: 18 | Nutrition Facts: 8 | Tipo: SÓLIDO",
       "══════════════════════════════════════════════════",
       "     [0] harina de trigo fortificada con hierro y ácido fólico: score=6.50 def=0.350 weight=1.000 → 0.3500 ~30%",
       "     [1] azúcar: score=7.00 def=0.300 weight=0.705 → 0.2114 ~40%",
-      "     [2] grasa vacuna refinada: score=5.50 def=0.450 weight=0.497 → 0.2235 ~10%",
-      "     [3] aceite vegetal hidrogenado: score=0.00 def=1.000 weight=0.350 → 0.3499",
-      "     [4] jarabe de maiz de alta fructosa: score=2.50 def=0.750 weight=0.247 → 0.1849",
-      "     [5] glucosa: score=6.00 def=0.400 weight=0.174 → 0.0695 ~20%",
-      "     [6] almidón (origen no especificado): score=6.50 def=0.350 weight=0.122 → 0.0429 ~30%",
-      "     [7] bicarbonato de sodio - ins 500ii: score=9.00 def=0.100 weight=0.086 → 0.0086 ~80%",
-      "     [8] bicarbonato amónico - ins 503ii: score=4.50 def=0.550 weight=0.061 → 0.0334",
-      "     [9] lecitina de soja - ins 322: score=7.00 def=0.300 weight=0.043 → 0.0129 ~40%",
-      "     [10] aromatizante (sabor no especificado): score=2.00 def=0.800 weight=0.030 → 0.0242",
-      "     [11] rojo punzó - ins 124: score=0.00 def=1.000 weight=0.021 → 0.0213",
-      "     Deficiencia promedio: 0.4595 → penalty: 18.38",
-      "     Proporción buenos: 23.7% → ajuste: +7.90",
-      "     Resultado Paso 1: -26.28",
-      "   PASO 1 - Ingredientes & Proporción: -26.28 → Score: 73.72",
-      "     Toxicidad ponderada: avg=1.32 max=3 final=2.82 → -10.59",
-      "   PASO 2 - Toxicidad promedio: -10.59 → Score: 63.13",
+      "     [2] aceite de palma interesterificado: score=3.00 def=0.700 weight=0.497 → 0.3476",
+      "     [3] aceite de girasol alto oleico: score=6.50 def=0.350 weight=0.350 → 0.1225 ~30%",
+      "     [4] aceite de soja hidrogenado: score=0.00 def=1.000 weight=0.247 → 0.2466",
+      "     [5] grasa bovina refinada: score=5.50 def=0.450 weight=0.174 → 0.0782 ~10%",
+      "     [6] leche descremada en polvo: score=6.50 def=0.350 weight=0.122 → 0.0429 ~30%",
+      "     [7] cacao en polvo: score=8.50 def=0.150 weight=0.086 → 0.0129 ~70%",
+      "     [8] jarabe de glucosa: score=3.50 def=0.650 weight=0.061 → 0.0395",
+      "     [9] masa de cacao: score=8.50 def=0.150 weight=0.043 → 0.0064 ~70%",
+      "     [10] permeado de suero en polvo: score=5.50 def=0.450 weight=0.030 → 0.0136 ~10%",
+      "     [11] sal: score=7.00 def=0.300 weight=0.021 → 0.0064 ~40%",
+      "     [12] bicarbonato amónico - ins 503ii: score=4.50 def=0.550 weight=0.015 → 0.0082",
+      "     [13] bicarbonato de sodio - ins 500ii: score=9.00 def=0.100 weight=0.011 → 0.0011 ~80%",
+      "     [14] lecitina (origen no especificado) - ins 322: score=7.00 def=0.300 weight=0.007 → 0.0022 ~40%",
+      "     [15] propilenglicol - ins 1520: score=1.50 def=0.850 weight=0.005 → 0.0045",
+      "     [16] aromatizante (sabor vainilla): score=2.00 def=0.800 weight=0.004 → 0.0030",
+      "     [17] aromatizante (sabor chocolate): score=2.00 def=0.800 weight=0.003 → 0.0021",
+      "     Deficiencia promedio: 0.4435 → penalty: 17.74",
+      "     Proporción buenos: 25.3% → ajuste: +7.42",
+      "     Resultado Paso 1: -25.16",
+      "   PASO 1 - Ingredientes & Proporción: -25.16 → Score: 74.84",
+      "     Toxicidad ponderada: avg=1.34 max=4 final=3.34 → -12.53",
+      "   PASO 2 - Toxicidad promedio: -12.53 → Score: 62.31",
       "     🚩 [0] harina de trigo fortificada con hierro y ácido fólico: toxicidad=LOW → -1 * 1.000 = -1.00",
       "     🚩 [1] azúcar: toxicidad=LOW → -1 * 0.705 = -0.70",
-      "     🚩 [2] grasa vacuna refinada: toxicidad=LOW → -1 * 0.497 = -0.50",
-      "     🚩 [3] aceite vegetal hidrogenado: toxicidad=MEDIUM_HIGH → -3 * 0.350 = -1.05",
-      "     🚩 [4] jarabe de maiz de alta fructosa: toxicidad=MEDIUM → -2 * 0.247 = -0.49",
-      "     🚩 [5] glucosa: toxicidad=MEDIUM → -2 * 0.174 = -0.35",
-      "     🚩 [6] almidón (origen no especificado): toxicidad=LOW → -1 * 0.122 = -0.12",
-      "     🚩 [8] bicarbonato amónico - ins 503ii: toxicidad=LOW → -1 * 0.061 = -0.06",
-      "     🚩 [9] lecitina de soja - ins 322: toxicidad=LOW → -1 * 0.043 = -0.04",
-      "     🚩 [10] aromatizante (sabor no especificado): toxicidad=LOW → -1 * 0.030 = -0.03",
-      "     🚩 [11] rojo punzó - ins 124: toxicidad=MEDIUM_HIGH → -3 * 0.021 = -0.06",
-      "   PASO 3 - Red flags: -4.41 → Score: 58.72",
-      "     ⛔ Azúcares: valor=31.6667/100g | min=3.0000 max_score=15 limit=13.0000 → -15.00 [EXCESO]",
-      "     ℹ️⚠️ Carbohidratos: valor=73.3333/100g | min=15.0000 limit=60.0000 → NEUTRAL EXCESO",
-      "     ⛔ Grasas saturadas: valor=8.3333/100g | min=1.5000 max_score=12 limit=6.0000 → -12.00 [EXCESO]",
+      "     🚩 [2] aceite de palma interesterificado: toxicidad=MEDIUM → -2 * 0.497 = -0.99",
+      "     🚩 [3] aceite de girasol alto oleico: toxicidad=LOW → -1 * 0.350 = -0.35",
+      "     🚩 [4] aceite de soja hidrogenado: toxicidad=HIGH → -5 * 0.247 = -1.23",
+      "     🚩 [5] grasa bovina refinada: toxicidad=LOW → -1 * 0.174 = -0.17",
+      "     🚩 [6] leche descremada en polvo: toxicidad=LOW → -1 * 0.122 = -0.12",
+      "     🚩 [8] jarabe de glucosa: toxicidad=MEDIUM → -2 * 0.061 = -0.12",
+      "     🚩 [10] permeado de suero en polvo: toxicidad=LOW → -1 * 0.030 = -0.03",
+      "     🚩 [11] sal: toxicidad=LOW → -1 * 0.021 = -0.02",
+      "     🚩 [12] bicarbonato amónico - ins 503ii: toxicidad=LOW → -1 * 0.015 = -0.01",
+      "     🚩 [14] lecitina (origen no especificado) - ins 322: toxicidad=LOW → -1 * 0.007 = -0.01",
+      "     🚩 [15] propilenglicol - ins 1520: toxicidad=LOW → -1 * 0.005 = -0.01",
+      "     🚩 [16] aromatizante (sabor vainilla): toxicidad=LOW → -1 * 0.004 = -0.00",
+      "     🚩 [17] aromatizante (sabor chocolate): toxicidad=LOW → -1 * 0.003 = -0.00",
+      "   PASO 3 - Red flags: -4.78 → Score: 57.52",
+      "     ℹ️⚠️ Carbohidratos: valor=60.7143/100g | min=15.0000 limit=60.0000 → NEUTRAL EXCESO",
+      "     ✅ Fibra alimentaria: valor=2.1429/100g | min=1.0000 max_score=5 → +0.79",
+      "     ⛔ Grasas saturadas: valor=13.2143/100g | min=1.5000 max_score=12 limit=6.0000 → -12.00 [EXCESO]",
       "     ⏭️  Grasas totales: TOTAL_FATS → ignorado",
-      "     ⛔ Grasas trans: valor=1.0000/100g | min=0.1000 max_score=10 limit=0.5000 → -10.00 [EXCESO]",
-      "     ✅ Proteínas: valor=5.3333/100g | min=2.0000 max_score=5 → +1.97",
-      "     ── Sodio: valor=63.3333/100g ≤ min=100.0000 → sin impacto",
-      "     ℹ️⚠️ Valor energético (calorías): valor=480.0000/100g | min=80.0000 limit=300.0000 → NEUTRAL EXCESO",
-      "   PASO 4 - Nutrition Facts: negativos=-37.00 positivos=+1.97 neto=-35.03 → Score: 23.69",
-      "   PASO 5 - Ultra-procesado: -20 → Score: 3.69",
-      "   PASO 6 - Pobreza nutricional: 1 beneficioso(s) → -10 → Score: -6.31",
-      "   PASO 8 - Amortiguación: exceso=26.31 → amortiguado=13.83 → +12.48 pts ahorrados → Score: 6.17",
+      "     ⛔ Grasas trans: valor=1.0714/100g | min=0.1000 max_score=10 limit=0.5000 → -10.00 [EXCESO]",
+      "     ✅ Proteínas: valor=7.8571/100g | min=2.0000 max_score=5 → +2.92",
+      "     ⛔ Sodio: valor=203.5714/100g | min=100.0000 max_score=12 limit=500.0000 → -3.11",
+      "     ℹ️⚠️ Valor energético (calorías): valor=503.5714/100g | min=80.0000 limit=300.0000 → NEUTRAL EXCESO",
+      "   PASO 4 - Nutrition Facts: negativos=-25.11 positivos=+3.71 neto=-21.40 → Score: 36.13",
+      "     🏷️ Sello Azúcares: sin nutrition fact → fallback -15 (max_score)",
+      "   PASO 4b - Fallback sellos: -15.00 (total negativo: 40.11) → Score: 21.13",
+      "   PASO 5 - Ultra-procesado: -20 → Score: 1.13",
+      "   PASO 6 - Pobreza nutricional: 2 beneficioso(s) → -5 → Score: -3.87",
+      "   PASO 8 - Amortiguación: exceso=23.87 → amortiguado=13.22 → +10.65 pts ahorrados → Score: 6.78",
       "   ────────────────────────────────────────",
-      "   🏆 SCORE FINAL: 6/100",
-      "   📋 Desglose: ingredientes=-26.3 toxicidad=-10.6 redFlags=-4.4 nutri-=37.0 nutri+=2.0 ultraProc=-20.0 pobreza=-10.0 amort=+12.5",
+      "   🏆 SCORE FINAL: 7/100",
+      "   📋 Desglose: ingredientes=-25.2 toxicidad=-12.5 redFlags=-4.8 nutri-=40.1 nutri+=3.7 ultraProc=-20.0 pobreza=-5.0 amort=+10.7",
       "══════════════════════════════════════════════════\n"
     ]
   },
@@ -7322,99 +7428,6 @@
     ]
   },
   {
-    "id": "46c0db12-4d07-4a0e-919b-a419188468a1",
-    "name": "Refresco Fanta Naranja Retornable 2 L - Incluye Envase",
-    "brand": "Fanta",
-    "category": "Refrescos",
-    "quota": "ancla_mala",
-    "scoreGuardado": 16,
-    "scoreRecalculado": 16,
-    "delta": 0,
-    "breakdown": {
-      "scoreFinal": 16,
-      "penaltyIngredientes": 19.97572775977465,
-      "penaltyToxicidad": 11.047550156980554,
-      "penaltyRedFlags": 3.126973866044385,
-      "nutritionNegativeImpact": 15,
-      "nutritionPositiveImpact": 0,
-      "penaltyUltraProcessed": 20,
-      "penaltyPobrezaNutricional": 15,
-      "penaltyAmortiguacion": 0.443713561075215
-    },
-    "highlights": {
-      "beneficials": [],
-      "notBeneficials": [
-        {
-          "name": "Azúcares",
-          "valuePer100": 6,
-          "unit": "g"
-        }
-      ],
-      "excesses": [
-        {
-          "name": "Azúcares",
-          "valuePer100": 6,
-          "unit": "g"
-        }
-      ],
-      "neutrals": [
-        {
-          "name": "Carbohidratos",
-          "valuePer100": 12,
-          "unit": "g"
-        },
-        {
-          "name": "Valor energético (calorías)",
-          "valuePer100": 24.75,
-          "unit": "kcal"
-        }
-      ],
-      "neutralExcesses": []
-    },
-    "logs": [
-      "\n══════════════════════════════════════════════════",
-      "📊 SCORING V2: Refresco Fanta Naranja Retornable 2 L - Incluye Envase (46c0db12-4d07-4a0e-919b-a419188468a1)",
-      "   Ingredientes: 9 | Nutrition Facts: 4 | Tipo: LÍQUIDO",
-      "══════════════════════════════════════════════════",
-      "     [0] agua carbonatada: score=10.00 def=0.000 weight=1.000 → 0.0000 ✓",
-      "     [1] azúcar: score=7.00 def=0.300 weight=0.705 → 0.2114 ~40%",
-      "     [2] aromatizante (sabor no especificado): score=2.00 def=0.800 weight=0.497 → 0.3973",
-      "     [3] ácido cítrico - ins 330: score=5.00 def=0.500 weight=0.350 → 0.1750",
-      "     [4] citrato trisódico - ins 331iii: score=3.50 def=0.650 weight=0.247 → 0.1603",
-      "     [5] benzoato de sodio - ins 211: score=0.00 def=1.000 weight=0.174 → 0.1738",
-      "     [6] calcium disodium EDTA - ins 385: score=1.50 def=0.850 weight=0.122 → 0.1041",
-      "     [7] amarillo ocaso - ins 110: score=0.50 def=0.950 weight=0.086 → 0.0820",
-      "     [8] amaranto - ins 123: score=0.00 def=1.000 weight=0.061 → 0.0608",
-      "     Deficiencia promedio: 0.4210 → penalty: 16.84",
-      "     Proporción buenos: 39.6% → ajuste: +3.13",
-      "     Resultado Paso 1: -19.98",
-      "   PASO 1 - Ingredientes & Proporción: -19.98 → Score: 80.02",
-      "     Toxicidad ponderada: avg=0.95 max=4 final=2.95 → -11.05",
-      "   PASO 2 - Toxicidad promedio: -11.05 → Score: 68.98",
-      "     🚩 [1] azúcar: toxicidad=LOW → -1 * 0.705 = -0.70",
-      "     🚩 [2] aromatizante (sabor no especificado): toxicidad=LOW → -1 * 0.497 = -0.50",
-      "     🚩 [3] ácido cítrico - ins 330: toxicidad=LOW → -1 * 0.350 = -0.35",
-      "     🚩 [4] citrato trisódico - ins 331iii: toxicidad=LOW → -1 * 0.247 = -0.25",
-      "     🚩 [5] benzoato de sodio - ins 211: toxicidad=MEDIUM_HIGH → -3 * 0.174 = -0.52",
-      "     🚩 [6] calcium disodium EDTA - ins 385: toxicidad=MEDIUM → -2 * 0.122 = -0.24",
-      "     🚩 [7] amarillo ocaso - ins 110: toxicidad=MEDIUM_HIGH → -3 * 0.086 = -0.26",
-      "     🚩 [8] amaranto - ins 123: toxicidad=HIGH → -5 * 0.061 = -0.30",
-      "   PASO 3 - Red flags: -3.13 → Score: 65.85",
-      "     ⛔ Azúcares: valor=6.0000/100ml | min=1.5000 max_score=15 limit=3.0000 → -15.00 [EXCESO]",
-      "     ℹ️  Carbohidratos: valor=12.0000/100ml | min=5.0000 → NEUTRAL (solo highlight)",
-      "     ── Sodio: valor=10.7500/100ml ≤ min=50.0000 → sin impacto",
-      "     ℹ️  Valor energético (calorías): valor=24.7500/100ml | min=20.0000 → NEUTRAL (solo highlight)",
-      "   PASO 4 - Nutrition Facts: negativos=-15.00 positivos=+0.00 neto=-15.00 → Score: 50.85",
-      "   PASO 5 - Ultra-procesado: -20 → Score: 30.85",
-      "   PASO 6 - Pobreza nutricional: 0 beneficioso(s) → -15 → Score: 15.85",
-      "   PASO 8 - Amortiguación: exceso=4.15 → amortiguado=3.71 → +0.44 pts ahorrados → Score: 16.29",
-      "   ────────────────────────────────────────",
-      "   🏆 SCORE FINAL: 16/100",
-      "   📋 Desglose: ingredientes=-20.0 toxicidad=-11.0 redFlags=-3.1 nutri-=15.0 nutri+=0.0 ultraProc=-20.0 pobreza=-15.0 amort=+0.4",
-      "══════════════════════════════════════════════════\n"
-    ]
-  },
-  {
     "id": "10a1cba1-eb5b-4aec-a9d4-014902eb09c5",
     "name": "Masa Para Empanadas Hojaldrada La Especialista 12 U",
     "brand": "La Especialista",
@@ -7514,216 +7527,6 @@
       "   ────────────────────────────────────────",
       "   🏆 SCORE FINAL: 19/100",
       "   📋 Desglose: ingredientes=-19.5 toxicidad=-7.2 redFlags=-2.9 nutri-=23.8 nutri+=2.6 ultraProc=-20.0 pobreza=-10.0 amort=+0.0",
-      "══════════════════════════════════════════════════\n"
-    ]
-  },
-  {
-    "id": "0d7c51b6-c3b7-41d6-aec7-9dec432b61ab",
-    "name": "Masa Para Empanada Caseras La Especialista 20 U",
-    "brand": "La Especialista",
-    "category": "Masas",
-    "quota": "ancla_mala",
-    "scoreGuardado": 19,
-    "scoreRecalculado": 19,
-    "delta": 0,
-    "breakdown": {
-      "scoreFinal": 19,
-      "penaltyIngredientes": 19.928698039070206,
-      "penaltyToxicidad": 7.254621394453385,
-      "penaltyRedFlags": 2.972229278838378,
-      "nutritionNegativeImpact": 23.8,
-      "nutritionPositiveImpact": 2.638167236294927,
-      "penaltyUltraProcessed": 20,
-      "penaltyPobrezaNutricional": 10,
-      "penaltyAmortiguacion": 0.0470532888155637
-    },
-    "highlights": {
-      "beneficials": [
-        {
-          "name": "Proteínas",
-          "valuePer100": 7,
-          "unit": "g"
-        }
-      ],
-      "notBeneficials": [
-        {
-          "name": "Grasas saturadas",
-          "valuePer100": 6,
-          "unit": "g"
-        },
-        {
-          "name": "Sodio",
-          "valuePer100": 493.33,
-          "unit": "mg"
-        }
-      ],
-      "excesses": [
-        {
-          "name": "Grasas saturadas",
-          "valuePer100": 6,
-          "unit": "g"
-        }
-      ],
-      "neutrals": [
-        {
-          "name": "Carbohidratos",
-          "valuePer100": 43.33,
-          "unit": "g"
-        }
-      ],
-      "neutralExcesses": [
-        {
-          "name": "Valor energético (calorías)",
-          "valuePer100": 303.33,
-          "unit": "kcal"
-        }
-      ]
-    },
-    "logs": [
-      "\n══════════════════════════════════════════════════",
-      "📊 SCORING V2: Masa Para Empanada Caseras La Especialista 20 U (0d7c51b6-c3b7-41d6-aec7-9dec432b61ab)",
-      "   Ingredientes: 8 | Nutrition Facts: 6 | Tipo: SÓLIDO",
-      "══════════════════════════════════════════════════",
-      "     [0] harina de trigo fortificada con hierro y ácido fólico: score=6.50 def=0.350 weight=1.000 → 0.3500 ~30%",
-      "     [1] agua mineral: score=10.00 def=0.000 weight=0.705 → 0.0000 ✓",
-      "     [2] margarina (origen no especificado): score=3.50 def=0.650 weight=0.497 → 0.3228",
-      "     [3] sal: score=7.00 def=0.300 weight=0.350 → 0.1050 ~40%",
-      "     [4] cloruro de potasio - ins 508: score=3.50 def=0.650 weight=0.247 → 0.1603",
-      "     [5] propionato de calcio - ins 282: score=0.50 def=0.950 weight=0.174 → 0.1651",
-      "     [6] sorbato de potasio - ins 202: score=1.50 def=0.850 weight=0.122 → 0.1041",
-      "     [7] ácido cítrico - ins 330: score=5.00 def=0.500 weight=0.086 → 0.0431",
-      "     Deficiencia promedio: 0.3932 → penalty: 15.73",
-      "     Proporción buenos: 36.0% → ajuste: +4.20",
-      "     Resultado Paso 1: -19.93",
-      "   PASO 1 - Ingredientes & Proporción: -19.93 → Score: 80.07",
-      "     Toxicidad ponderada: avg=0.93 max=2 final=1.93 → -7.25",
-      "   PASO 2 - Toxicidad promedio: -7.25 → Score: 72.82",
-      "     🚩 [0] harina de trigo fortificada con hierro y ácido fólico: toxicidad=LOW → -1 * 1.000 = -1.00",
-      "     🚩 [2] margarina (origen no especificado): toxicidad=MEDIUM → -2 * 0.497 = -0.99",
-      "     🚩 [3] sal: toxicidad=LOW → -1 * 0.350 = -0.35",
-      "     🚩 [4] cloruro de potasio - ins 508: toxicidad=LOW → -1 * 0.247 = -0.25",
-      "     🚩 [5] propionato de calcio - ins 282: toxicidad=LOW → -1 * 0.174 = -0.17",
-      "     🚩 [6] sorbato de potasio - ins 202: toxicidad=LOW → -1 * 0.122 = -0.12",
-      "     🚩 [7] ácido cítrico - ins 330: toxicidad=LOW → -1 * 0.086 = -0.09",
-      "   PASO 3 - Red flags: -2.97 → Score: 69.84",
-      "     ℹ️  Carbohidratos: valor=43.3333/100g | min=15.0000 → NEUTRAL (solo highlight)",
-      "     ⛔ Grasas saturadas: valor=6.0000/100g | min=1.5000 max_score=12 limit=6.0000 → -12.00 [EXCESO]",
-      "     ⏭️  Grasas totales: TOTAL_FATS → ignorado",
-      "     ✅ Proteínas: valor=7.0000/100g | min=2.0000 max_score=5 → +2.64",
-      "     ⛔ Sodio: valor=493.3333/100g | min=100.0000 max_score=12 limit=500.0000 → -11.80",
-      "     ℹ️⚠️ Valor energético (calorías): valor=303.3333/100g | min=80.0000 limit=300.0000 → NEUTRAL EXCESO",
-      "   PASO 4 - Nutrition Facts: negativos=-23.80 positivos=+2.64 neto=-21.16 → Score: 48.68",
-      "   PASO 5 - Ultra-procesado: -20 → Score: 28.68",
-      "   PASO 6 - Pobreza nutricional: 1 beneficioso(s) → -10 → Score: 18.68",
-      "   PASO 8 - Amortiguación: exceso=1.32 → amortiguado=1.27 → +0.05 pts ahorrados → Score: 18.73",
-      "   ────────────────────────────────────────",
-      "   🏆 SCORE FINAL: 19/100",
-      "   📋 Desglose: ingredientes=-19.9 toxicidad=-7.3 redFlags=-3.0 nutri-=23.8 nutri+=2.6 ultraProc=-20.0 pobreza=-10.0 amort=+0.0",
-      "══════════════════════════════════════════════════\n"
-    ]
-  },
-  {
-    "id": "6ac213c2-52b0-4ef4-a553-0a5313022a2f",
-    "name": "Masa Para Empanadas Casera La Especilista 12 Ud",
-    "brand": "La Especialista",
-    "category": "Masas",
-    "quota": "ancla_mala",
-    "scoreGuardado": 19,
-    "scoreRecalculado": 19,
-    "delta": 0,
-    "breakdown": {
-      "scoreFinal": 19,
-      "penaltyIngredientes": 19.928698039070206,
-      "penaltyToxicidad": 7.254621394453385,
-      "penaltyRedFlags": 2.972229278838378,
-      "nutritionNegativeImpact": 23.8,
-      "nutritionPositiveImpact": 2.638167236294927,
-      "penaltyUltraProcessed": 20,
-      "penaltyPobrezaNutricional": 10,
-      "penaltyAmortiguacion": 0.0470532888155637
-    },
-    "highlights": {
-      "beneficials": [
-        {
-          "name": "Proteínas",
-          "valuePer100": 7,
-          "unit": "g"
-        }
-      ],
-      "notBeneficials": [
-        {
-          "name": "Grasas saturadas",
-          "valuePer100": 6,
-          "unit": "g"
-        },
-        {
-          "name": "Sodio",
-          "valuePer100": 493.33,
-          "unit": "mg"
-        }
-      ],
-      "excesses": [
-        {
-          "name": "Grasas saturadas",
-          "valuePer100": 6,
-          "unit": "g"
-        }
-      ],
-      "neutrals": [
-        {
-          "name": "Carbohidratos",
-          "valuePer100": 43.33,
-          "unit": "g"
-        }
-      ],
-      "neutralExcesses": [
-        {
-          "name": "Valor energético (calorías)",
-          "valuePer100": 303.33,
-          "unit": "kcal"
-        }
-      ]
-    },
-    "logs": [
-      "\n══════════════════════════════════════════════════",
-      "📊 SCORING V2: Masa Para Empanadas Casera La Especilista 12 Ud (6ac213c2-52b0-4ef4-a553-0a5313022a2f)",
-      "   Ingredientes: 8 | Nutrition Facts: 6 | Tipo: SÓLIDO",
-      "══════════════════════════════════════════════════",
-      "     [0] harina de trigo fortificada con hierro y ácido fólico: score=6.50 def=0.350 weight=1.000 → 0.3500 ~30%",
-      "     [1] agua mineral: score=10.00 def=0.000 weight=0.705 → 0.0000 ✓",
-      "     [2] margarina (origen no especificado): score=3.50 def=0.650 weight=0.497 → 0.3228",
-      "     [3] sal: score=7.00 def=0.300 weight=0.350 → 0.1050 ~40%",
-      "     [4] cloruro de potasio - ins 508: score=3.50 def=0.650 weight=0.247 → 0.1603",
-      "     [5] propionato de calcio - ins 282: score=0.50 def=0.950 weight=0.174 → 0.1651",
-      "     [6] sorbato de potasio - ins 202: score=1.50 def=0.850 weight=0.122 → 0.1041",
-      "     [7] ácido cítrico - ins 330: score=5.00 def=0.500 weight=0.086 → 0.0431",
-      "     Deficiencia promedio: 0.3932 → penalty: 15.73",
-      "     Proporción buenos: 36.0% → ajuste: +4.20",
-      "     Resultado Paso 1: -19.93",
-      "   PASO 1 - Ingredientes & Proporción: -19.93 → Score: 80.07",
-      "     Toxicidad ponderada: avg=0.93 max=2 final=1.93 → -7.25",
-      "   PASO 2 - Toxicidad promedio: -7.25 → Score: 72.82",
-      "     🚩 [0] harina de trigo fortificada con hierro y ácido fólico: toxicidad=LOW → -1 * 1.000 = -1.00",
-      "     🚩 [2] margarina (origen no especificado): toxicidad=MEDIUM → -2 * 0.497 = -0.99",
-      "     🚩 [3] sal: toxicidad=LOW → -1 * 0.350 = -0.35",
-      "     🚩 [4] cloruro de potasio - ins 508: toxicidad=LOW → -1 * 0.247 = -0.25",
-      "     🚩 [5] propionato de calcio - ins 282: toxicidad=LOW → -1 * 0.174 = -0.17",
-      "     🚩 [6] sorbato de potasio - ins 202: toxicidad=LOW → -1 * 0.122 = -0.12",
-      "     🚩 [7] ácido cítrico - ins 330: toxicidad=LOW → -1 * 0.086 = -0.09",
-      "   PASO 3 - Red flags: -2.97 → Score: 69.84",
-      "     ℹ️  Carbohidratos: valor=43.3333/100g | min=15.0000 → NEUTRAL (solo highlight)",
-      "     ⛔ Grasas saturadas: valor=6.0000/100g | min=1.5000 max_score=12 limit=6.0000 → -12.00 [EXCESO]",
-      "     ⏭️  Grasas totales: TOTAL_FATS → ignorado",
-      "     ✅ Proteínas: valor=7.0000/100g | min=2.0000 max_score=5 → +2.64",
-      "     ⛔ Sodio: valor=493.3333/100g | min=100.0000 max_score=12 limit=500.0000 → -11.80",
-      "     ℹ️⚠️ Valor energético (calorías): valor=303.3333/100g | min=80.0000 limit=300.0000 → NEUTRAL EXCESO",
-      "   PASO 4 - Nutrition Facts: negativos=-23.80 positivos=+2.64 neto=-21.16 → Score: 48.68",
-      "   PASO 5 - Ultra-procesado: -20 → Score: 28.68",
-      "   PASO 6 - Pobreza nutricional: 1 beneficioso(s) → -10 → Score: 18.68",
-      "   PASO 8 - Amortiguación: exceso=1.32 → amortiguado=1.27 → +0.05 pts ahorrados → Score: 18.73",
-      "   ────────────────────────────────────────",
-      "   🏆 SCORE FINAL: 19/100",
-      "   📋 Desglose: ingredientes=-19.9 toxicidad=-7.3 redFlags=-3.0 nutri-=23.8 nutri+=2.6 ultraProc=-20.0 pobreza=-10.0 amort=+0.0",
       "══════════════════════════════════════════════════\n"
     ]
   },
@@ -8069,98 +7872,6 @@
     ]
   },
   {
-    "id": "669ed96f-60ca-4743-b51b-00a92c672cf5",
-    "name": "Sazonador Jugoso Pollo Mediterraneo Maggi 25 G",
-    "brand": "Maggi",
-    "category": "Condimentos",
-    "quota": "ancla_mala",
-    "scoreGuardado": 17,
-    "scoreRecalculado": 17,
-    "delta": 0,
-    "breakdown": {
-      "scoreFinal": 17,
-      "penaltyIngredientes": 22.076607310584404,
-      "penaltyToxicidad": 10.574055947306876,
-      "penaltyRedFlags": 4.197237685210496,
-      "nutritionNegativeImpact": 12,
-      "nutritionPositiveImpact": 0,
-      "penaltyUltraProcessed": 20,
-      "penaltyPobrezaNutricional": 15,
-      "penaltyAmortiguacion": 0.38348161731897523
-    },
-    "highlights": {
-      "beneficials": [],
-      "notBeneficials": [
-        {
-          "name": "Sodio",
-          "valuePer100": 9420,
-          "unit": "mg"
-        }
-      ],
-      "excesses": [
-        {
-          "name": "Sodio",
-          "valuePer100": 9420,
-          "unit": "mg"
-        }
-      ],
-      "neutrals": [
-        {
-          "name": "Carbohidratos",
-          "valuePer100": 52,
-          "unit": "g"
-        },
-        {
-          "name": "Valor energético (calorías)",
-          "valuePer100": 280,
-          "unit": "kcal"
-        }
-      ],
-      "neutralExcesses": []
-    },
-    "logs": [
-      "\n══════════════════════════════════════════════════",
-      "📊 SCORING V2: Sazonador Jugoso Pollo Mediterraneo Maggi 25 G (669ed96f-60ca-4743-b51b-00a92c672cf5)",
-      "   Ingredientes: 8 | Nutrition Facts: 4 | Tipo: SÓLIDO",
-      "══════════════════════════════════════════════════",
-      "     [0] mezcla de vegetales deshidratados (43,8%) (Tomate (30%), Papa. Cebolla (3,8%), Albahaca (1,5%)): score=6.50 def=0.350 weight=1.000 → 0.3500 ~30%",
-      "     [1] almidón de maíz: score=8.50 def=0.150 weight=0.705 → 0.1057 ~70%",
-      "     [2] sal: score=7.00 def=0.300 weight=0.497 → 0.1490 ~40%",
-      "     [3] aceite vegetal de palma (con Antioxidantes: Galato de Propilo, Palmitato de ascorbilo): score=3.50 def=0.650 weight=0.350 → 0.2275",
-      "     [4] galato de propilo - ins 310: score=0.00 def=1.000 weight=0.247 → 0.2466",
-      "     [5] ascorbil palmitato - ins 304i: score=5.50 def=0.450 weight=0.174 → 0.0782 ~10%",
-      "     [6] aromatizante (sabor no especificado): score=2.00 def=0.800 weight=0.122 → 0.0980",
-      "     [7] caramelo - ins 150: score=2.50 def=0.750 weight=0.086 → 0.0647",
-      "     Deficiencia promedio: 0.4149 → penalty: 16.60",
-      "     Proporción buenos: 31.7% → ajuste: +5.48",
-      "     Resultado Paso 1: -22.08",
-      "   PASO 1 - Ingredientes & Proporción: -22.08 → Score: 77.92",
-      "     Toxicidad ponderada: avg=1.32 max=3 final=2.82 → -10.57",
-      "   PASO 2 - Toxicidad promedio: -10.57 → Score: 67.35",
-      "     🚩 [0] mezcla de vegetales deshidratados (43,8%) (Tomate (30%), Papa. Cebolla (3,8%), Albahaca (1,5%)): toxicidad=LOW → -1 * 1.000 = -1.00",
-      "     🚩 [1] almidón de maíz: toxicidad=LOW → -1 * 0.705 = -0.70",
-      "     🚩 [2] sal: toxicidad=LOW → -1 * 0.497 = -0.50",
-      "     🚩 [3] aceite vegetal de palma (con Antioxidantes: Galato de Propilo, Palmitato de ascorbilo): toxicidad=MEDIUM → -2 * 0.350 = -0.70",
-      "     🚩 [4] galato de propilo - ins 310: toxicidad=MEDIUM_HIGH → -3 * 0.247 = -0.74",
-      "     🚩 [5] ascorbil palmitato - ins 304i: toxicidad=MEDIUM → -2 * 0.174 = -0.35",
-      "     🚩 [6] aromatizante (sabor no especificado): toxicidad=LOW → -1 * 0.122 = -0.12",
-      "     🚩 [7] caramelo - ins 150: toxicidad=LOW → -1 * 0.086 = -0.09",
-      "   PASO 3 - Red flags: -4.20 → Score: 63.15",
-      "     ℹ️  Carbohidratos: valor=52.0000/100g | min=15.0000 → NEUTRAL (solo highlight)",
-      "     ⏭️  Grasas totales: TOTAL_FATS → ignorado",
-      "     ⛔ Sodio: valor=9420.0000/100g | min=100.0000 max_score=12 limit=500.0000 → -12.00 [EXCESO]",
-      "     ℹ️  Valor energético (calorías): valor=280.0000/100g | min=80.0000 → NEUTRAL (solo highlight)",
-      "   PASO 4 - Nutrition Facts: negativos=-12.00 positivos=+0.00 neto=-12.00 → Score: 51.15",
-      "   PASO 5 - Ultra-procesado: -20 → Score: 31.15",
-      "   PASO 6 - Pobreza nutricional: 0 beneficioso(s) → -15 → Score: 16.15",
-      "   PASO 8 - Amortiguación: exceso=3.85 → amortiguado=3.46 → +0.38 pts ahorrados → Score: 16.54",
-      "   ────────────────────────────────────────",
-      "   🏆 SCORE FINAL: 17/100",
-      "   📋 Desglose: ingredientes=-22.1 toxicidad=-10.6 redFlags=-4.2 nutri-=12.0 nutri+=0.0 ultraProc=-20.0 pobreza=-15.0 amort=+0.4",
-      "══════════════════════════════════════════════════\n"
-    ]
-  },
-  {
     "id": "2209879e-a057-41e6-8180-cf664c122542",
     "name": "Sopa Instantánea De Choclo Monte Cudine Sobre 15 G",
     "brand": "Monte Cudine",
@@ -8266,6 +7977,91 @@
       "   ────────────────────────────────────────",
       "   🏆 SCORE FINAL: 27/100",
       "   📋 Desglose: ingredientes=-22.7 toxicidad=-7.9 redFlags=-3.8 nutri-=12.0 nutri+=3.0 ultraProc=-20.0 pobreza=-10.0",
+      "══════════════════════════════════════════════════\n"
+    ]
+  },
+  {
+    "id": "93fd2e4c-8f21-4a61-8416-5046dcc77504",
+    "name": "Jugo Citric Pomelo 1 L",
+    "brand": "Citric",
+    "category": "Jugos",
+    "quota": "medio",
+    "scoreGuardado": 64,
+    "scoreRecalculado": 64,
+    "delta": 0,
+    "breakdown": {
+      "scoreFinal": 64,
+      "penaltyIngredientes": 4.800000000000001,
+      "penaltyToxicidad": 5.625,
+      "penaltyRedFlags": 1,
+      "nutritionNegativeImpact": 15,
+      "nutritionPositiveImpact": 0.23912938396967864,
+      "penaltyUltraProcessed": 0,
+      "penaltyPobrezaNutricional": 10,
+      "penaltyAmortiguacion": 0
+    },
+    "highlights": {
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "valuePer100": 0.9,
+          "unit": "g"
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "valuePer100": 5.5,
+          "unit": "g"
+        }
+      ],
+      "excesses": [
+        {
+          "name": "Azúcares",
+          "valuePer100": 5.5,
+          "unit": "g"
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "valuePer100": 6.5,
+          "unit": "g"
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "valuePer100": 28.5,
+          "unit": "kcal"
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "logs": [
+      "\n══════════════════════════════════════════════════",
+      "📊 SCORING V2: Jugo Citric Pomelo 1 L (93fd2e4c-8f21-4a61-8416-5046dcc77504)",
+      "   Ingredientes: 1 | Nutrition Facts: 6 | Tipo: LÍQUIDO",
+      "══════════════════════════════════════════════════",
+      "     [0] jugo de pomelo exprimido: score=8.50 def=0.150 weight=1.000 → 0.1500 ~70%",
+      "     Deficiencia promedio: 0.1500 → penalty: 6.00",
+      "     Proporción buenos: 70.0% → ajuste: -1.20",
+      "     Resultado Paso 1: -4.80",
+      "   PASO 1 - Ingredientes & Proporción: -4.80 → Score: 95.20",
+      "     Toxicidad ponderada: avg=1.00 max=1 final=1.50 → -5.63",
+      "   PASO 2 - Toxicidad promedio: -5.63 → Score: 89.58",
+      "     🚩 [0] jugo de pomelo exprimido: toxicidad=LOW → -1 * 1.000 = -1.00",
+      "   PASO 3 - Red flags: -1.00 → Score: 88.58",
+      "     ⛔ Azúcares: valor=5.5000/100ml | min=1.5000 max_score=15 limit=3.0000 → -15.00 [EXCESO]",
+      "     ℹ️  Carbohidratos: valor=6.5000/100ml | min=5.0000 → NEUTRAL (solo highlight)",
+      "     ✅ Fibra alimentaria: valor=0.9000/100ml | min=0.5000 max_score=5 → +0.29",
+      "     ── Proteínas: valor=0.6000/100ml < min=1.0000 → sin impacto",
+      "     ℹ️  Valor energético (calorías): valor=28.5000/100ml | min=20.0000 → NEUTRAL (solo highlight)",
+      "     🔄 Vitamina C: conversión de unidad: 64.0000 ug → 0.0640 mg",
+      "     ── Vitamina C: valor=0.0320/100ml < min=1.0000 → sin impacto",
+      "   PASO 4 - Nutrition Facts: negativos=-15.00 positivos=+0.29 × 82% = +0.24 (atenuación 70-90) → Score: 73.81",
+      "   PASO 6 - Pobreza nutricional: 1 beneficioso(s) → -10 → Score: 63.81",
+      "   ────────────────────────────────────────",
+      "   🏆 SCORE FINAL: 64/100",
+      "   📋 Desglose: ingredientes=-4.8 toxicidad=-5.6 redFlags=-1.0 nutri-=15.0 nutri+=0.2 ultraProc=-0.0 pobreza=-10.0",
       "══════════════════════════════════════════════════\n"
     ]
   },
@@ -8599,61 +8395,6 @@
     ]
   },
   {
-    "id": "27ef0428-27b2-4602-92f2-952c7ba83db9",
-    "name": "Pulpa de Tomate Arcor Tetra 520 G",
-    "brand": "Arcor",
-    "category": "Salsas",
-    "quota": "medio",
-    "scoreGuardado": 73,
-    "scoreRecalculado": 73,
-    "delta": 0,
-    "breakdown": {
-      "scoreFinal": 73,
-      "penaltyIngredientes": 7.747942948149419,
-      "penaltyToxicidad": 3.4251840790600125,
-      "penaltyRedFlags": 0.7046880897187134,
-      "nutritionNegativeImpact": 0,
-      "nutritionPositiveImpact": 0,
-      "penaltyUltraProcessed": 0,
-      "penaltyPobrezaNutricional": 15,
-      "penaltyAmortiguacion": 0
-    },
-    "highlights": {
-      "beneficials": [],
-      "notBeneficials": [],
-      "excesses": [],
-      "neutrals": [],
-      "neutralExcesses": []
-    },
-    "logs": [
-      "\n══════════════════════════════════════════════════",
-      "📊 SCORING V2: Pulpa de Tomate Arcor Tetra 520 G (27ef0428-27b2-4602-92f2-952c7ba83db9)",
-      "   Ingredientes: 2 | Nutrition Facts: 5 | Tipo: SÓLIDO",
-      "══════════════════════════════════════════════════",
-      "     [0] tomate: score=10.00 def=0.000 weight=1.000 → 0.0000 ✓",
-      "     [1] ácido cítrico - ins 330: score=5.00 def=0.500 weight=0.705 → 0.3523",
-      "     Deficiencia promedio: 0.2067 → penalty: 8.27",
-      "     Proporción buenos: 58.7% → ajuste: -0.52",
-      "     Resultado Paso 1: -7.75",
-      "   PASO 1 - Ingredientes & Proporción: -7.75 → Score: 92.25",
-      "     Toxicidad ponderada: avg=0.41 max=1 final=0.91 → -3.43",
-      "   PASO 2 - Toxicidad promedio: -3.43 → Score: 88.83",
-      "     🚩 [1] ácido cítrico - ins 330: toxicidad=LOW → -1 * 0.705 = -0.70",
-      "   PASO 3 - Red flags: -0.70 → Score: 88.12",
-      "     ── Carbohidratos: valor=3.0000/100g < min=15.0000 → sin impacto",
-      "     ── Fibra alimentaria: valor=0.6667/100g < min=1.0000 → sin impacto",
-      "     ── Proteínas: valor=0.8333/100g < min=2.0000 → sin impacto",
-      "     ── Sodio: valor=7.0000/100g ≤ min=100.0000 → sin impacto",
-      "     ── Valor energético (calorías): valor=15.0000/100g < min=80.0000 → sin impacto",
-      "   PASO 4 - Nutrition Facts: negativos=-0.00 positivos=+0.00 × 9% = +0.00 (atenuación 70-90) → Score: 88.12",
-      "   PASO 6 - Pobreza nutricional: 0 beneficioso(s) → -15 → Score: 73.12",
-      "   ────────────────────────────────────────",
-      "   🏆 SCORE FINAL: 73/100",
-      "   📋 Desglose: ingredientes=-7.7 toxicidad=-3.4 redFlags=-0.7 nutri-=0.0 nutri+=0.0 ultraProc=-0.0 pobreza=-15.0",
-      "══════════════════════════════════════════════════\n"
-    ]
-  },
-  {
     "id": "d921524a-b2cd-45ef-87ea-0eafd43b62e8",
     "name": "Agua Saborizada H2Oh! Limoneto 1.5 L",
     "brand": "H2O",
@@ -8910,11 +8651,495 @@
     ]
   },
   {
+    "id": "8df866fd-6230-4703-b0aa-7d9f9df9083d",
+    "name": "Papas Kryzpo Original 280 G",
+    "brand": "KRYZPO",
+    "category": "Congelados",
+    "quota": "medio",
+    "scoreGuardado": 48,
+    "scoreRecalculado": 48,
+    "delta": 0,
+    "breakdown": {
+      "scoreFinal": 48,
+      "penaltyIngredientes": 19.027324188771154,
+      "penaltyToxicidad": 6.466143354031984,
+      "penaltyRedFlags": 2.4004852241796297,
+      "nutritionNegativeImpact": 10.115384615384615,
+      "nutritionPositiveImpact": 6.293036847090685,
+      "penaltyUltraProcessed": 20,
+      "penaltyPobrezaNutricional": 0,
+      "penaltyAmortiguacion": 0
+    },
+    "highlights": {
+      "beneficials": [
+        {
+          "name": "Grasas monoinsaturadas",
+          "valuePer100": 20.38,
+          "unit": "g"
+        },
+        {
+          "name": "Grasas poliinsaturadas",
+          "valuePer100": 4.23,
+          "unit": "g"
+        },
+        {
+          "name": "Proteínas",
+          "valuePer100": 5.77,
+          "unit": "g"
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "valuePer100": 2.31,
+          "unit": "g"
+        },
+        {
+          "name": "Sodio",
+          "valuePer100": 365.38,
+          "unit": "mg"
+        }
+      ],
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "valuePer100": 55.77,
+          "unit": "g"
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Valor energético (calorías)",
+          "valuePer100": 488.46,
+          "unit": "kcal"
+        }
+      ]
+    },
+    "logs": [
+      "\n══════════════════════════════════════════════════",
+      "📊 SCORING V2: Papas Kryzpo Original 280 G (8df866fd-6230-4703-b0aa-7d9f9df9083d)",
+      "   Ingredientes: 11 | Nutrition Facts: 8 | Tipo: SÓLIDO",
+      "══════════════════════════════════════════════════",
+      "     [0] papas deshidratadas: score=8.50 def=0.150 weight=1.000 → 0.1500 ~70%",
+      "     [1] aceite de girasol alto oleico: score=6.50 def=0.350 weight=0.705 → 0.2466 ~30%",
+      "     [2] maltodextrina (origen no especificado): score=3.00 def=0.700 weight=0.497 → 0.3476",
+      "     [3] almidón de papa: score=8.50 def=0.150 weight=0.350 → 0.0525 ~70%",
+      "     [4] fosfato de dialmión - ins 1412: score=1.50 def=0.850 weight=0.247 → 0.2096",
+      "     [5] sal: score=7.00 def=0.300 weight=0.174 → 0.0521 ~40%",
+      "     [6] mono y diglicéridos de ácidos grasos (origen animal) - ins 471: score=3.50 def=0.650 weight=0.122 → 0.0796",
+      "     [7] dextrosa (origen no especificado): score=6.00 def=0.400 weight=0.086 → 0.0345 ~20%",
+      "     [8] cloruro de potasio - ins 508: score=3.50 def=0.650 weight=0.061 → 0.0395",
+      "     [9] aromatizante (sabor sal): score=2.00 def=0.800 weight=0.043 → 0.0343",
+      "     [10] dióxido de silicio - ins 551: score=3.50 def=0.650 weight=0.030 → 0.0196",
+      "     Deficiencia promedio: 0.3820 → penalty: 15.28",
+      "     Proporción buenos: 37.5% → ajuste: +3.75",
+      "     Resultado Paso 1: -19.03",
+      "   PASO 1 - Ingredientes & Proporción: -19.03 → Score: 80.97",
+      "     Toxicidad ponderada: avg=0.72 max=2 final=1.72 → -6.47",
+      "   PASO 2 - Toxicidad promedio: -6.47 → Score: 74.51",
+      "     🚩 [1] aceite de girasol alto oleico: toxicidad=LOW → -1 * 0.705 = -0.70",
+      "     🚩 [2] maltodextrina (origen no especificado): toxicidad=LOW → -1 * 0.497 = -0.50",
+      "     🚩 [3] almidón de papa: toxicidad=LOW → -1 * 0.350 = -0.35",
+      "     🚩 [4] fosfato de dialmión - ins 1412: toxicidad=LOW → -1 * 0.247 = -0.25",
+      "     🚩 [5] sal: toxicidad=LOW → -1 * 0.174 = -0.17",
+      "     🚩 [6] mono y diglicéridos de ácidos grasos (origen animal) - ins 471: toxicidad=LOW → -1 * 0.122 = -0.12",
+      "     🚩 [7] dextrosa (origen no especificado): toxicidad=MEDIUM → -2 * 0.086 = -0.17",
+      "     🚩 [8] cloruro de potasio - ins 508: toxicidad=LOW → -1 * 0.061 = -0.06",
+      "     🚩 [9] aromatizante (sabor sal): toxicidad=LOW → -1 * 0.043 = -0.04",
+      "     🚩 [10] dióxido de silicio - ins 551: toxicidad=LOW → -1 * 0.030 = -0.03",
+      "   PASO 3 - Red flags: -2.40 → Score: 72.11",
+      "     ℹ️  Carbohidratos: valor=55.7692/100g | min=15.0000 → NEUTRAL (solo highlight)",
+      "     ✅ Grasas monoinsaturadas: valor=20.3846/100g | min=0.5000 max_score=3 → +2.85",
+      "     ✅ Grasas poliinsaturadas: valor=4.2308/100g | min=0.5000 max_score=3 → +1.29",
+      "     ⛔ Grasas saturadas: valor=2.3077/100g | min=1.5000 max_score=12 limit=6.0000 → -2.15",
+      "     ⏭️  Grasas totales: TOTAL_FATS → ignorado",
+      "     ✅ Proteínas: valor=5.7692/100g | min=2.0000 max_score=5 → +2.16",
+      "     ⛔ Sodio: valor=365.3846/100g | min=100.0000 max_score=12 limit=500.0000 → -7.96",
+      "     ℹ️⚠️ Valor energético (calorías): valor=488.4615/100g | min=80.0000 limit=300.0000 → NEUTRAL EXCESO",
+      "   PASO 4 - Nutrition Facts: negativos=-10.12 positivos=+6.29 neto=-3.82 → Score: 68.28",
+      "   PASO 5 - Ultra-procesado: -20 → Score: 48.28",
+      "   PASO 6 - Pobreza nutricional: 3 beneficioso(s) → sin penalización",
+      "   ────────────────────────────────────────",
+      "   🏆 SCORE FINAL: 48/100",
+      "   📋 Desglose: ingredientes=-19.0 toxicidad=-6.5 redFlags=-2.4 nutri-=10.1 nutri+=6.3 ultraProc=-20.0 pobreza=-0.0",
+      "══════════════════════════════════════════════════\n"
+    ]
+  },
+  {
+    "id": "26bc35c7-fd44-44de-b410-0043429778fa",
+    "name": "Pack Ravioles 5 Estrellas 1 Kg",
+    "brand": "5 Estrellas",
+    "category": "Pastas",
+    "quota": "medio",
+    "scoreGuardado": 53,
+    "scoreRecalculado": 53,
+    "delta": 0,
+    "breakdown": {
+      "scoreFinal": 53,
+      "penaltyIngredientes": 9.098307266011194,
+      "penaltyToxicidad": 3.6367652896854703,
+      "penaltyRedFlags": 1.582525985033717,
+      "nutritionNegativeImpact": 10.440000000000001,
+      "nutritionPositiveImpact": 2.4881026551612444,
+      "penaltyUltraProcessed": 20,
+      "penaltyPobrezaNutricional": 5,
+      "penaltyAmortiguacion": 0
+    },
+    "highlights": {
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "valuePer100": 1.7,
+          "unit": "g"
+        },
+        {
+          "name": "Proteínas",
+          "valuePer100": 7.7,
+          "unit": "g"
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Sodio",
+          "valuePer100": 448,
+          "unit": "mg"
+        }
+      ],
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "valuePer100": 46,
+          "unit": "g"
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "valuePer100": 246,
+          "unit": "kcal"
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "logs": [
+      "\n══════════════════════════════════════════════════",
+      "📊 SCORING V2: Pack Ravioles 5 Estrellas 1 Kg (26bc35c7-fd44-44de-b410-0043429778fa)",
+      "   Ingredientes: 15 | Nutrition Facts: 7 | Tipo: SÓLIDO",
+      "══════════════════════════════════════════════════",
+      "     [0] harina de trigo fortificada con hierro y ácido fólico: score=6.50 def=0.350 weight=1.000 → 0.3500 ~30%",
+      "     [1] agua mineral: score=10.00 def=0.000 weight=0.705 → 0.0000 ✓",
+      "     [2] pan rallado: score=5.50 def=0.450 weight=0.497 → 0.2235 ~10%",
+      "     [3] acelga: score=10.00 def=0.000 weight=0.350 → 0.0000 ✓",
+      "     [4] semolín: score=6.50 def=0.350 weight=0.247 → 0.0863 ~30%",
+      "     [5] ricotta: score=7.00 def=0.300 weight=0.174 → 0.0521 ~40%",
+      "     [6] cebolla: score=10.00 def=0.000 weight=0.122 → 0.0000 ✓",
+      "     [7] aceite de girasol refinado: score=5.00 def=0.500 weight=0.086 → 0.0431",
+      "     [8] huevo: score=10.00 def=0.000 weight=0.061 → 0.0000 ✓",
+      "     [9] sal: score=7.00 def=0.300 weight=0.043 → 0.0129 ~40%",
+      "     [10] perejil: score=10.00 def=0.000 weight=0.030 → 0.0000 ✓",
+      "     [11] espinaca en polvo: score=10.00 def=0.000 weight=0.021 → 0.0000 ✓",
+      "     [12] especias: score=8.00 def=0.200 weight=0.015 → 0.0030 ~60%",
+      "     [13] ácido sórbico - ins 200: score=3.50 def=0.650 weight=0.011 → 0.0069",
+      "     [14] propionato de calcio - ins 282: score=0.50 def=0.950 weight=0.007 → 0.0071",
+      "     Deficiencia promedio: 0.2330 → penalty: 9.32",
+      "     Proporción buenos: 53.7% → ajuste: -0.22",
+      "     Resultado Paso 1: -9.10",
+      "   PASO 1 - Ingredientes & Proporción: -9.10 → Score: 90.90",
+      "     Toxicidad ponderada: avg=0.47 max=1 final=0.97 → -3.64",
+      "   PASO 2 - Toxicidad promedio: -3.64 → Score: 87.26",
+      "     🚩 [0] harina de trigo fortificada con hierro y ácido fólico: toxicidad=LOW → -1 * 1.000 = -1.00",
+      "     🚩 [4] semolín: toxicidad=LOW → -1 * 0.247 = -0.25",
+      "     🚩 [5] ricotta: toxicidad=LOW → -1 * 0.174 = -0.17",
+      "     🚩 [7] aceite de girasol refinado: toxicidad=LOW → -1 * 0.086 = -0.09",
+      "     🚩 [9] sal: toxicidad=LOW → -1 * 0.043 = -0.04",
+      "     🚩 [12] especias: toxicidad=LOW → -1 * 0.015 = -0.01",
+      "     🚩 [13] ácido sórbico - ins 200: toxicidad=LOW → -1 * 0.011 = -0.01",
+      "     🚩 [14] propionato de calcio - ins 282: toxicidad=LOW → -1 * 0.007 = -0.01",
+      "   PASO 3 - Red flags: -1.58 → Score: 85.68",
+      "     ℹ️  Carbohidratos: valor=46.0000/100g | min=15.0000 → NEUTRAL (solo highlight)",
+      "     ✅ Fibra alimentaria: valor=1.7000/100g | min=1.0000 max_score=5 → +0.50",
+      "     ── Grasas saturadas: valor=0.6000/100g ≤ min=1.5000 → sin impacto",
+      "     ⏭️  Grasas totales: TOTAL_FATS → ignorado",
+      "     ✅ Proteínas: valor=7.7000/100g | min=2.0000 max_score=5 → +2.87",
+      "     ⛔ Sodio: valor=448.0000/100g | min=100.0000 max_score=12 limit=500.0000 → -10.44",
+      "     ℹ️  Valor energético (calorías): valor=246.0000/100g | min=80.0000 → NEUTRAL (solo highlight)",
+      "   PASO 4 - Nutrition Facts: negativos=-10.44 positivos=+3.37 × 74% = +2.49 (atenuación 70-90) → Score: 77.73",
+      "   PASO 5 - Ultra-procesado: -20 → Score: 57.73",
+      "   PASO 6 - Pobreza nutricional: 2 beneficioso(s) → -5 → Score: 52.73",
+      "   ────────────────────────────────────────",
+      "   🏆 SCORE FINAL: 53/100",
+      "   📋 Desglose: ingredientes=-9.1 toxicidad=-3.6 redFlags=-1.6 nutri-=10.4 nutri+=2.5 ultraProc=-20.0 pobreza=-5.0",
+      "══════════════════════════════════════════════════\n"
+    ]
+  },
+  {
+    "id": "9239e2a0-e15e-47a8-96a6-96022a2727bb",
+    "name": "Tagliatelle De Albahaca 270 G",
+    "brand": "Avanti",
+    "category": "Pastas",
+    "quota": "medio",
+    "scoreGuardado": 53,
+    "scoreRecalculado": 53,
+    "delta": 0,
+    "breakdown": {
+      "scoreFinal": 53,
+      "penaltyIngredientes": 6.646426758039794,
+      "penaltyToxicidad": 3.9877511987703724,
+      "penaltyRedFlags": 1.743182267733016,
+      "nutritionNegativeImpact": 5.550000000000001,
+      "nutritionPositiveImpact": 1.1760840188523745,
+      "penaltyUltraProcessed": 20,
+      "penaltyPobrezaNutricional": 10,
+      "penaltyAmortiguacion": 0
+    },
+    "highlights": {
+      "beneficials": [
+        {
+          "name": "Proteínas",
+          "valuePer100": 8,
+          "unit": "g"
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Sodio",
+          "valuePer100": 285,
+          "unit": "mg"
+        }
+      ],
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "valuePer100": 55,
+          "unit": "g"
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "valuePer100": 267,
+          "unit": "kcal"
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "logs": [
+      "\n══════════════════════════════════════════════════",
+      "📊 SCORING V2: Tagliatelle De Albahaca  270 G (9239e2a0-e15e-47a8-96a6-96022a2727bb)",
+      "   Ingredientes: 7 | Nutrition Facts: 7 | Tipo: SÓLIDO",
+      "══════════════════════════════════════════════════",
+      "     [0] sémola de trigo duro: score=7.00 def=0.300 weight=1.000 → 0.3000 ~40%",
+      "     [1] agua mineral: score=10.00 def=0.000 weight=0.705 → 0.0000 ✓",
+      "     [2] harina de trigo fortificada con hierro y ácido fólico: score=6.50 def=0.350 weight=0.497 → 0.1738 ~30%",
+      "     [3] huevo en polvo: score=9.50 def=0.050 weight=0.350 → 0.0175 ~90%",
+      "     [4] sal: score=7.00 def=0.300 weight=0.247 → 0.0740 ~40%",
+      "     [5] albahaca molida: score=9.50 def=0.050 weight=0.174 → 0.0087 ~90%",
+      "     [6] espinaca molida: score=10.00 def=0.000 weight=0.122 → 0.0000 ✓",
+      "     Deficiencia promedio: 0.1855 → penalty: 7.42",
+      "     Proporción buenos: 62.9% → ajuste: -0.77",
+      "     Resultado Paso 1: -6.65",
+      "   PASO 1 - Ingredientes & Proporción: -6.65 → Score: 93.35",
+      "     Toxicidad ponderada: avg=0.56 max=1 final=1.06 → -3.99",
+      "   PASO 2 - Toxicidad promedio: -3.99 → Score: 89.37",
+      "     🚩 [0] sémola de trigo duro: toxicidad=LOW → -1 * 1.000 = -1.00",
+      "     🚩 [2] harina de trigo fortificada con hierro y ácido fólico: toxicidad=LOW → -1 * 0.497 = -0.50",
+      "     🚩 [4] sal: toxicidad=LOW → -1 * 0.247 = -0.25",
+      "   PASO 3 - Red flags: -1.74 → Score: 87.62",
+      "     ℹ️  Carbohidratos: valor=55.0000/100g | min=15.0000 → NEUTRAL (solo highlight)",
+      "     ── Fibra alimentaria: valor=0.4000/100g < min=1.0000 → sin impacto",
+      "     ── Grasas saturadas: valor=0.3000/100g ≤ min=1.5000 → sin impacto",
+      "     ⏭️  Grasas totales: TOTAL_FATS → ignorado",
+      "     ✅ Proteínas: valor=8.0000/100g | min=2.0000 max_score=5 → +2.97",
+      "     ⛔ Sodio: valor=285.0000/100g | min=100.0000 max_score=12 limit=500.0000 → -5.55",
+      "     ℹ️  Valor energético (calorías): valor=267.0000/100g | min=80.0000 → NEUTRAL (solo highlight)",
+      "   PASO 4 - Nutrition Facts: negativos=-5.55 positivos=+2.97 × 40% = +1.18 (atenuación 70-90) → Score: 83.25",
+      "   PASO 5 - Ultra-procesado: -20 → Score: 63.25",
+      "   PASO 6 - Pobreza nutricional: 1 beneficioso(s) → -10 → Score: 53.25",
+      "   ────────────────────────────────────────",
+      "   🏆 SCORE FINAL: 53/100",
+      "   📋 Desglose: ingredientes=-6.6 toxicidad=-4.0 redFlags=-1.7 nutri-=5.6 nutri+=1.2 ultraProc=-20.0 pobreza=-10.0",
+      "══════════════════════════════════════════════════\n"
+    ]
+  },
+  {
+    "id": "e4d1426b-c9eb-42d4-9e58-2c1f26f5b62b",
+    "name": "Salsa Bolognesa Barilla 400 G",
+    "brand": "Barilla",
+    "category": "Salsas",
+    "quota": "relleno",
+    "scoreGuardado": 82,
+    "scoreRecalculado": 82,
+    "delta": 0,
+    "breakdown": {
+      "scoreFinal": 82,
+      "penaltyIngredientes": 0.9357565860043753,
+      "penaltyToxicidad": 2.515693380904649,
+      "penaltyRedFlags": 0.5755102167450055,
+      "nutritionNegativeImpact": 8.799999999999999,
+      "nutritionPositiveImpact": 0.24716760261645226,
+      "penaltyUltraProcessed": 0,
+      "penaltyPobrezaNutricional": 5,
+      "penaltyAmortiguacion": 0
+    },
+    "highlights": {
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "valuePer100": 1.5,
+          "unit": "g"
+        },
+        {
+          "name": "Proteínas",
+          "valuePer100": 4.17,
+          "unit": "g"
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Sodio",
+          "valuePer100": 393.33,
+          "unit": "mg"
+        }
+      ],
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Valor energético (calorías)",
+          "valuePer100": 86.67,
+          "unit": "kcal"
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "logs": [
+      "\n══════════════════════════════════════════════════",
+      "📊 SCORING V2: Salsa Bolognesa Barilla 400 G (e4d1426b-c9eb-42d4-9e58-2c1f26f5b62b)",
+      "   Ingredientes: 15 | Nutrition Facts: 7 | Tipo: SÓLIDO",
+      "══════════════════════════════════════════════════",
+      "     [0] pulpa de tomate: score=9.50 def=0.050 weight=1.000 → 0.0500 ~90%",
+      "     [1] agua mineral: score=10.00 def=0.000 weight=0.705 → 0.0000 ✓",
+      "     [2] concentrado de tomate: score=8.50 def=0.150 weight=0.497 → 0.0745 ~70%",
+      "     [3] cebolla: score=10.00 def=0.000 weight=0.350 → 0.0000 ✓",
+      "     [4] carne vacuna: score=8.00 def=0.200 weight=0.247 → 0.0493 ~60%",
+      "     [5] carne porcina: score=8.00 def=0.200 weight=0.174 → 0.0348 ~60%",
+      "     [6] zanahoria: score=10.00 def=0.000 weight=0.122 → 0.0000 ✓",
+      "     [7] apio: score=10.00 def=0.000 weight=0.086 → 0.0000 ✓",
+      "     [8] aceite de girasol alto oleico: score=6.50 def=0.350 weight=0.061 → 0.0213 ~30%",
+      "     [9] azúcar: score=7.00 def=0.300 weight=0.043 → 0.0129 ~40%",
+      "     [10] sal: score=7.00 def=0.300 weight=0.030 → 0.0091 ~40%",
+      "     [11] almidón de maíz: score=8.50 def=0.150 weight=0.021 → 0.0032 ~70%",
+      "     [12] tomillo: score=10.00 def=0.000 weight=0.015 → 0.0000 ✓",
+      "     [13] laurel: score=10.00 def=0.000 weight=0.011 → 0.0000 ✓",
+      "     [14] pimienta negra: score=10.00 def=0.000 weight=0.007 → 0.0000 ✓",
+      "     Deficiencia promedio: 0.0757 → penalty: 3.03",
+      "     Proporción buenos: 84.9% → ajuste: -2.09",
+      "     Resultado Paso 1: -0.94",
+      "   PASO 1 - Ingredientes & Proporción: -0.94 → Score: 99.06",
+      "     Toxicidad ponderada: avg=0.17 max=1 final=0.67 → -2.52",
+      "   PASO 2 - Toxicidad promedio: -2.52 → Score: 96.55",
+      "     🚩 [4] carne vacuna: toxicidad=LOW → -1 * 0.247 = -0.25",
+      "     🚩 [5] carne porcina: toxicidad=LOW → -1 * 0.174 = -0.17",
+      "     🚩 [8] aceite de girasol alto oleico: toxicidad=LOW → -1 * 0.061 = -0.06",
+      "     🚩 [9] azúcar: toxicidad=LOW → -1 * 0.043 = -0.04",
+      "     🚩 [10] sal: toxicidad=LOW → -1 * 0.030 = -0.03",
+      "     🚩 [11] almidón de maíz: toxicidad=LOW → -1 * 0.021 = -0.02",
+      "   PASO 3 - Red flags: -0.58 → Score: 95.97",
+      "     ── Carbohidratos: valor=7.1667/100g < min=15.0000 → sin impacto",
+      "     ✅ Fibra alimentaria: valor=1.5000/100g | min=1.0000 max_score=5 → +0.36",
+      "     ── Grasas saturadas: valor=1.0000/100g ≤ min=1.5000 → sin impacto",
+      "     ⏭️  Grasas totales: TOTAL_FATS → ignorado",
+      "     ✅ Proteínas: valor=4.1667/100g | min=2.0000 max_score=5 → +1.39",
+      "     ⛔ Sodio: valor=393.3333/100g | min=100.0000 max_score=12 limit=500.0000 → -8.80",
+      "     ℹ️  Valor energético (calorías): valor=86.6667/100g | min=80.0000 → NEUTRAL (solo highlight)",
+      "   PASO 4 - Nutrition Facts: negativos=-8.80 positivos=+1.75 × 14% = +0.25 (atenuación 70-90) → Score: 87.42",
+      "   PASO 6 - Pobreza nutricional: 2 beneficioso(s) → -5 → Score: 82.42",
+      "   ────────────────────────────────────────",
+      "   🏆 SCORE FINAL: 82/100",
+      "   📋 Desglose: ingredientes=-0.9 toxicidad=-2.5 redFlags=-0.6 nutri-=8.8 nutri+=0.2 ultraProc=-0.0 pobreza=-5.0",
+      "══════════════════════════════════════════════════\n"
+    ]
+  },
+  {
+    "id": "8b4ba186-3ac1-49d0-8c91-a1efcf68bf06",
+    "name": "Manteca Calidad Extra La Serenisima 200 G",
+    "brand": "La Serenisima",
+    "category": "Mantecas y Grasas",
+    "quota": "relleno",
+    "scoreGuardado": 55,
+    "scoreRecalculado": 55,
+    "delta": 0,
+    "breakdown": {
+      "scoreFinal": 55,
+      "penaltyIngredientes": 10,
+      "penaltyToxicidad": 5.625,
+      "penaltyRedFlags": 1,
+      "nutritionNegativeImpact": 13.2,
+      "nutritionPositiveImpact": 0,
+      "penaltyUltraProcessed": 0,
+      "penaltyPobrezaNutricional": 15,
+      "penaltyAmortiguacion": 0
+    },
+    "highlights": {
+      "beneficials": [],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "valuePer100": 52,
+          "unit": "g"
+        },
+        {
+          "name": "Sodio",
+          "valuePer100": 140,
+          "unit": "mg"
+        }
+      ],
+      "excesses": [
+        {
+          "name": "Grasas saturadas",
+          "valuePer100": 52,
+          "unit": "g"
+        }
+      ],
+      "neutrals": [],
+      "neutralExcesses": [
+        {
+          "name": "Valor energético (calorías)",
+          "valuePer100": 740,
+          "unit": "kcal"
+        }
+      ]
+    },
+    "logs": [
+      "\n══════════════════════════════════════════════════",
+      "📊 SCORING V2: Manteca Calidad Extra La Serenisima 200 G (8b4ba186-3ac1-49d0-8c91-a1efcf68bf06)",
+      "   Ingredientes: 1 | Nutrition Facts: 4 | Tipo: SÓLIDO",
+      "══════════════════════════════════════════════════",
+      "     [0] crema de leche: score=7.50 def=0.250 weight=1.000 → 0.2500 ~50%",
+      "     Deficiencia promedio: 0.2500 → penalty: 10.00",
+      "     Proporción buenos: 50.0% → ajuste: +0.00",
+      "     Resultado Paso 1: -10.00",
+      "   PASO 1 - Ingredientes & Proporción: -10.00 → Score: 90.00",
+      "     Toxicidad ponderada: avg=1.00 max=1 final=1.50 → -5.63",
+      "   PASO 2 - Toxicidad promedio: -5.63 → Score: 84.38",
+      "     🚩 [0] crema de leche: toxicidad=LOW → -1 * 1.000 = -1.00",
+      "   PASO 3 - Red flags: -1.00 → Score: 83.38",
+      "     ⛔ Grasas saturadas: valor=52.0000/100g | min=1.5000 max_score=12 limit=6.0000 → -12.00 [EXCESO]",
+      "     ⏭️  Grasas totales: TOTAL_FATS → ignorado",
+      "     ⛔ Sodio: valor=140.0000/100g | min=100.0000 max_score=12 limit=500.0000 → -1.20",
+      "     ℹ️⚠️ Valor energético (calorías): valor=740.0000/100g | min=80.0000 limit=300.0000 → NEUTRAL EXCESO",
+      "   PASO 4 - Nutrition Facts: negativos=-13.20 positivos=+0.00 × 99% = +0.00 (atenuación 70-90) → Score: 70.17",
+      "   PASO 6 - Pobreza nutricional: 0 beneficioso(s) → -15 → Score: 55.17",
+      "   ────────────────────────────────────────",
+      "   🏆 SCORE FINAL: 55/100",
+      "   📋 Desglose: ingredientes=-10.0 toxicidad=-5.6 redFlags=-1.0 nutri-=13.2 nutri+=0.0 ultraProc=-0.0 pobreza=-15.0",
+      "══════════════════════════════════════════════════\n"
+    ]
+  },
+  {
     "id": "8254023a-2dd0-4731-8c2d-de9541c617ef",
     "name": "Jamón Cocido Del Campo a la Mesa 200 G",
     "brand": "Del Campo A La Mesa",
     "category": "Embutidos",
-    "quota": "medio",
+    "quota": "relleno",
     "scoreGuardado": 40,
     "scoreRecalculado": 40,
     "delta": 0,
@@ -9017,7 +9242,7 @@
     "name": "Salame Del Campo a la Mesa 200 G",
     "brand": "Del Campo A La Mesa",
     "category": "Embutidos",
-    "quota": "medio",
+    "quota": "relleno",
     "scoreGuardado": 39,
     "scoreRecalculado": 39,
     "delta": 0,
@@ -9108,230 +9333,21 @@
     ]
   },
   {
-    "id": "782d3c6e-bb86-4ecb-ae87-8f1a8e6dab40",
-    "name": "Masa Para Empanada Avanti Casera 20 U",
-    "brand": "Avanti",
-    "category": "Masas",
-    "quota": "medio",
-    "scoreGuardado": 21,
-    "scoreRecalculado": 21,
-    "delta": 0,
-    "breakdown": {
-      "scoreFinal": 21,
-      "penaltyIngredientes": 18.052186751164495,
-      "penaltyToxicidad": 7.264532189884585,
-      "penaltyRedFlags": 3.106088851752955,
-      "nutritionNegativeImpact": 23.011111111111113,
-      "nutritionPositiveImpact": 2.389771116194919,
-      "penaltyUltraProcessed": 20,
-      "penaltyPobrezaNutricional": 10,
-      "penaltyAmortiguacion": 0
-    },
-    "highlights": {
-      "beneficials": [
-        {
-          "name": "Proteínas",
-          "valuePer100": 6.33,
-          "unit": "g"
-        }
-      ],
-      "notBeneficials": [
-        {
-          "name": "Grasas saturadas",
-          "valuePer100": 5.67,
-          "unit": "g"
-        },
-        {
-          "name": "Sodio",
-          "valuePer100": 496.67,
-          "unit": "mg"
-        }
-      ],
-      "excesses": [],
-      "neutrals": [
-        {
-          "name": "Carbohidratos",
-          "valuePer100": 46.67,
-          "unit": "g"
-        }
-      ],
-      "neutralExcesses": [
-        {
-          "name": "Valor energético (calorías)",
-          "valuePer100": 323.33,
-          "unit": "kcal"
-        }
-      ]
-    },
-    "logs": [
-      "\n══════════════════════════════════════════════════",
-      "📊 SCORING V2: Masa Para Empanada Avanti Casera 20 U (782d3c6e-bb86-4ecb-ae87-8f1a8e6dab40)",
-      "   Ingredientes: 11 | Nutrition Facts: 6 | Tipo: SÓLIDO",
-      "══════════════════════════════════════════════════",
-      "     [0] harina de trigo fortificada con hierro y ácido fólico: score=6.50 def=0.350 weight=1.000 → 0.3500 ~30%",
-      "     [1] agua mineral: score=10.00 def=0.000 weight=0.705 → 0.0000 ✓",
-      "     [2] margarina (origen no especificado): score=3.50 def=0.650 weight=0.497 → 0.3228",
-      "     [3] sal: score=7.00 def=0.300 weight=0.350 → 0.1050 ~40%",
-      "     [4] gluten de trigo: score=7.50 def=0.250 weight=0.247 → 0.0616 ~50%",
-      "     [5] cloruro de potasio - ins 508: score=3.50 def=0.650 weight=0.174 → 0.1130",
-      "     [6] propionato de calcio - ins 282: score=0.50 def=0.950 weight=0.122 → 0.1163",
-      "     [7] ácido sórbico - ins 200: score=3.50 def=0.650 weight=0.086 → 0.0561",
-      "     [8] mono y diglicéridos de ácidos grasos (origen animal) - ins 471: score=3.50 def=0.650 weight=0.061 → 0.0395",
-      "     [9] ácido cítrico - ins 330: score=5.00 def=0.500 weight=0.043 → 0.0214",
-      "     [10] l-cisteína (origen no especificado) - ins 920: score=4.00 def=0.600 weight=0.030 → 0.0181",
-      "     Deficiencia promedio: 0.3632 → penalty: 14.53",
-      "     Proporción buenos: 38.3% → ajuste: +3.52",
-      "     Resultado Paso 1: -18.05",
-      "   PASO 1 - Ingredientes & Proporción: -18.05 → Score: 81.95",
-      "     Toxicidad ponderada: avg=0.94 max=2 final=1.94 → -7.26",
-      "   PASO 2 - Toxicidad promedio: -7.26 → Score: 74.68",
-      "     🚩 [0] harina de trigo fortificada con hierro y ácido fólico: toxicidad=LOW → -1 * 1.000 = -1.00",
-      "     🚩 [2] margarina (origen no especificado): toxicidad=MEDIUM → -2 * 0.497 = -0.99",
-      "     🚩 [3] sal: toxicidad=LOW → -1 * 0.350 = -0.35",
-      "     🚩 [4] gluten de trigo: toxicidad=LOW → -1 * 0.247 = -0.25",
-      "     🚩 [5] cloruro de potasio - ins 508: toxicidad=LOW → -1 * 0.174 = -0.17",
-      "     🚩 [6] propionato de calcio - ins 282: toxicidad=LOW → -1 * 0.122 = -0.12",
-      "     🚩 [7] ácido sórbico - ins 200: toxicidad=LOW → -1 * 0.086 = -0.09",
-      "     🚩 [8] mono y diglicéridos de ácidos grasos (origen animal) - ins 471: toxicidad=LOW → -1 * 0.061 = -0.06",
-      "     🚩 [9] ácido cítrico - ins 330: toxicidad=LOW → -1 * 0.043 = -0.04",
-      "     🚩 [10] l-cisteína (origen no especificado) - ins 920: toxicidad=LOW → -1 * 0.030 = -0.03",
-      "   PASO 3 - Red flags: -3.11 → Score: 71.58",
-      "     ℹ️  Carbohidratos: valor=46.6667/100g | min=15.0000 → NEUTRAL (solo highlight)",
-      "     ⛔ Grasas saturadas: valor=5.6667/100g | min=1.5000 max_score=12 limit=6.0000 → -11.11",
-      "     ⏭️  Grasas totales: TOTAL_FATS → ignorado",
-      "     ✅ Proteínas: valor=6.3333/100g | min=2.0000 max_score=5 → +2.39",
-      "     ⛔ Sodio: valor=496.6667/100g | min=100.0000 max_score=12 limit=500.0000 → -11.90",
-      "     ℹ️⚠️ Valor energético (calorías): valor=323.3333/100g | min=80.0000 limit=300.0000 → NEUTRAL EXCESO",
-      "   PASO 4 - Nutrition Facts: negativos=-23.01 positivos=+2.39 neto=-20.62 → Score: 50.96",
-      "   PASO 5 - Ultra-procesado: -20 → Score: 30.96",
-      "   PASO 6 - Pobreza nutricional: 1 beneficioso(s) → -10 → Score: 20.96",
-      "   ────────────────────────────────────────",
-      "   🏆 SCORE FINAL: 21/100",
-      "   📋 Desglose: ingredientes=-18.1 toxicidad=-7.3 redFlags=-3.1 nutri-=23.0 nutri+=2.4 ultraProc=-20.0 pobreza=-10.0",
-      "══════════════════════════════════════════════════\n"
-    ]
-  },
-  {
-    "id": "f9e692b0-aa34-4766-94d0-d6daec1c597c",
-    "name": "Crema Vegetal Soya Pote 500 G",
-    "brand": "Soya",
-    "category": "Mantecas y Grasas",
+    "id": "30e7cbae-98b4-47f1-97df-12df1df0fe83",
+    "name": "Pan Tortuga Con Sesamo Bimbo 6 U",
+    "brand": "Bimbo",
+    "category": "Panes",
     "quota": "relleno",
-    "scoreGuardado": 13,
-    "scoreRecalculado": 13,
+    "scoreGuardado": 62,
+    "scoreRecalculado": 62,
     "delta": 0,
     "breakdown": {
-      "scoreFinal": 13,
-      "penaltyIngredientes": 17.185151721568623,
-      "penaltyToxicidad": 10.442059692030982,
-      "penaltyRedFlags": 2.6498860739956873,
-      "nutritionNegativeImpact": 24,
-      "nutritionPositiveImpact": 0,
-      "penaltyUltraProcessed": 20,
-      "penaltyPobrezaNutricional": 15,
-      "penaltyAmortiguacion": 2.027868273629987
-    },
-    "highlights": {
-      "beneficials": [],
-      "notBeneficials": [
-        {
-          "name": "Grasas saturadas",
-          "valuePer100": 7,
-          "unit": "g"
-        },
-        {
-          "name": "Sodio",
-          "valuePer100": 1030,
-          "unit": "mg"
-        }
-      ],
-      "excesses": [
-        {
-          "name": "Grasas saturadas",
-          "valuePer100": 7,
-          "unit": "g"
-        },
-        {
-          "name": "Sodio",
-          "valuePer100": 1030,
-          "unit": "mg"
-        }
-      ],
-      "neutrals": [
-        {
-          "name": "Valor energético (calorías)",
-          "valuePer100": 180,
-          "unit": "kcal"
-        }
-      ],
-      "neutralExcesses": []
-    },
-    "logs": [
-      "\n══════════════════════════════════════════════════",
-      "📊 SCORING V2: Crema Vegetal Soya Pote 500 G (f9e692b0-aa34-4766-94d0-d6daec1c597c)",
-      "   Ingredientes: 13 | Nutrition Facts: 4 | Tipo: SÓLIDO",
-      "══════════════════════════════════════════════════",
-      "     [0] agua mineral: score=10.00 def=0.000 weight=1.000 → 0.0000 ✓",
-      "     [1] aceite vegetal: score=5.50 def=0.450 weight=0.705 → 0.3171 ~10%",
-      "     [2] sal: score=7.00 def=0.300 weight=0.497 → 0.1490 ~40%",
-      "     [3] mono y diglicéridos de ácidos grasos (origen animal) - ins 471: score=3.50 def=0.650 weight=0.350 → 0.2275",
-      "     [4] ésteres acéticos de monoglicéridos y diglicéridos de ácidos grasos (origen vegetal) - ins 472a: score=3.50 def=0.650 weight=0.247 → 0.1603",
-      "     [5] aromatizante (sabor no especificado): score=2.00 def=0.800 weight=0.174 → 0.1390",
-      "     [6] benzoato de sodio - ins 211: score=0.00 def=1.000 weight=0.122 → 0.1225",
-      "     [7] extracto de annatto - ins 160b: score=7.00 def=0.300 weight=0.086 → 0.0259 ~40%",
-      "     [8] cúrcuma: score=10.00 def=0.000 weight=0.061 → 0.0000 ✓",
-      "     [9] ácido láctico - ins 270: score=6.00 def=0.400 weight=0.043 → 0.0171 ~20%",
-      "     [10] calcium disodium EDTA - ins 385: score=1.50 def=0.850 weight=0.030 → 0.0257",
-      "     [11] butilhidroxitolueno - ins 321: score=0.00 def=1.000 weight=0.021 → 0.0213",
-      "     [12] ácido cítrico - ins 330: score=5.00 def=0.500 weight=0.015 → 0.0075",
-      "     Deficiencia promedio: 0.3620 → penalty: 14.48",
-      "     Proporción buenos: 41.0% → ajuste: +2.71",
-      "     Resultado Paso 1: -17.19",
-      "   PASO 1 - Ingredientes & Proporción: -17.19 → Score: 82.81",
-      "     Toxicidad ponderada: avg=0.78 max=4 final=2.78 → -10.44",
-      "   PASO 2 - Toxicidad promedio: -10.44 → Score: 72.37",
-      "     🚩 [1] aceite vegetal: toxicidad=LOW → -1 * 0.705 = -0.70",
-      "     🚩 [2] sal: toxicidad=LOW → -1 * 0.497 = -0.50",
-      "     🚩 [3] mono y diglicéridos de ácidos grasos (origen animal) - ins 471: toxicidad=LOW → -1 * 0.350 = -0.35",
-      "     🚩 [4] ésteres acéticos de monoglicéridos y diglicéridos de ácidos grasos (origen vegetal) - ins 472a: toxicidad=LOW → -1 * 0.247 = -0.25",
-      "     🚩 [5] aromatizante (sabor no especificado): toxicidad=LOW → -1 * 0.174 = -0.17",
-      "     🚩 [6] benzoato de sodio - ins 211: toxicidad=MEDIUM_HIGH → -3 * 0.122 = -0.37",
-      "     🚩 [7] extracto de annatto - ins 160b: toxicidad=LOW → -1 * 0.086 = -0.09",
-      "     🚩 [9] ácido láctico - ins 270: toxicidad=LOW → -1 * 0.043 = -0.04",
-      "     🚩 [10] calcium disodium EDTA - ins 385: toxicidad=MEDIUM → -2 * 0.030 = -0.06",
-      "     🚩 [11] butilhidroxitolueno - ins 321: toxicidad=HIGH → -5 * 0.021 = -0.11",
-      "     🚩 [12] ácido cítrico - ins 330: toxicidad=LOW → -1 * 0.015 = -0.01",
-      "   PASO 3 - Red flags: -2.65 → Score: 69.72",
-      "     ⛔ Grasas saturadas: valor=7.0000/100g | min=1.5000 max_score=12 limit=6.0000 → -12.00 [EXCESO]",
-      "     ⏭️  Grasas totales: TOTAL_FATS → ignorado",
-      "     ⛔ Sodio: valor=1030.0000/100g | min=100.0000 max_score=12 limit=500.0000 → -12.00 [EXCESO]",
-      "     ℹ️  Valor energético (calorías): valor=180.0000/100g | min=80.0000 → NEUTRAL (solo highlight)",
-      "   PASO 4 - Nutrition Facts: negativos=-24.00 positivos=+0.00 neto=-24.00 → Score: 45.72",
-      "   PASO 5 - Ultra-procesado: -20 → Score: 25.72",
-      "   PASO 6 - Pobreza nutricional: 0 beneficioso(s) → -15 → Score: 10.72",
-      "   PASO 8 - Amortiguación: exceso=9.28 → amortiguado=7.25 → +2.03 pts ahorrados → Score: 12.75",
-      "   ────────────────────────────────────────",
-      "   🏆 SCORE FINAL: 13/100",
-      "   📋 Desglose: ingredientes=-17.2 toxicidad=-10.4 redFlags=-2.6 nutri-=24.0 nutri+=0.0 ultraProc=-20.0 pobreza=-15.0 amort=+2.0",
-      "══════════════════════════════════════════════════\n"
-    ]
-  },
-  {
-    "id": "9e12e3b1-364f-4833-984b-850d33dcad39",
-    "name": "CEREAL MIX LIGHT MANZANA & AVENA",
-    "brand": "Arcor",
-    "category": "Snacks saludables",
-    "quota": "relleno",
-    "scoreGuardado": 37,
-    "scoreRecalculado": 37,
-    "delta": 0,
-    "breakdown": {
-      "scoreFinal": 37,
-      "penaltyIngredientes": 17.971681821692744,
-      "penaltyToxicidad": 9.704762706449815,
-      "penaltyRedFlags": 1.9985343080933595,
-      "nutritionNegativeImpact": 18.043478260869566,
-      "nutritionPositiveImpact": 4.7787046405682565,
+      "scoreFinal": 62,
+      "penaltyIngredientes": 8.303738959901413,
+      "penaltyToxicidad": 3.730188133165858,
+      "penaltyRedFlags": 1.6690401670743589,
+      "nutritionNegativeImpact": 7.4399999999999995,
+      "nutritionPositiveImpact": 2.9175766948857214,
       "penaltyUltraProcessed": 20,
       "penaltyPobrezaNutricional": 0,
       "penaltyAmortiguacion": 0
@@ -9340,53 +9356,42 @@
       "beneficials": [
         {
           "name": "Fibra alimentaria",
-          "valuePer100": 11.74,
+          "valuePer100": 2.2,
           "unit": "g"
         },
         {
           "name": "Grasas monoinsaturadas",
-          "valuePer100": 1.3,
+          "valuePer100": 1.6,
+          "unit": "g"
+        },
+        {
+          "name": "Grasas poliinsaturadas",
+          "valuePer100": 2,
           "unit": "g"
         },
         {
           "name": "Proteínas",
-          "valuePer100": 2.61,
+          "valuePer100": 9.4,
           "unit": "g"
         }
       ],
       "notBeneficials": [
         {
-          "name": "Azúcares",
-          "valuePer100": 18.26,
-          "unit": "g"
-        },
-        {
-          "name": "Polialcoholes",
-          "valuePer100": 31.74,
-          "unit": "g"
-        },
-        {
           "name": "Sodio",
-          "valuePer100": 134.78,
+          "valuePer100": 348,
           "unit": "mg"
         }
       ],
-      "excesses": [
+      "excesses": [],
+      "neutrals": [
         {
-          "name": "Azúcares",
-          "valuePer100": 18.26,
+          "name": "Carbohidratos",
+          "valuePer100": 44,
           "unit": "g"
         },
         {
-          "name": "Polialcoholes",
-          "valuePer100": 31.74,
-          "unit": "g"
-        }
-      ],
-      "neutrals": [
-        {
           "name": "Valor energético (calorías)",
-          "valuePer100": 278.26,
+          "valuePer100": 268,
           "unit": "kcal"
         }
       ],
@@ -9394,58 +9399,413 @@
     },
     "logs": [
       "\n══════════════════════════════════════════════════",
-      "📊 SCORING V2: CEREAL MIX LIGHT MANZANA & AVENA (9e12e3b1-364f-4833-984b-850d33dcad39)",
-      "   Ingredientes: 16 | Nutrition Facts: 7 | Tipo: SÓLIDO",
+      "📊 SCORING V2: Pan Tortuga Con Sesamo Bimbo 6 U (30e7cbae-98b4-47f1-97df-12df1df0fe83)",
+      "   Ingredientes: 16 | Nutrition Facts: 10 | Tipo: SÓLIDO",
       "══════════════════════════════════════════════════",
-      "     [0] jarabe de maltitol - ins 965ii: score=3.50 def=0.650 weight=1.000 → 0.6500",
-      "     [1] manzana deshidratada: score=9.50 def=0.050 weight=0.705 → 0.0352 ~90%",
-      "     [2] arroz: score=9.00 def=0.100 weight=0.497 → 0.0497 ~80%",
-      "     [3] polidextrosa - ins 1200: score=3.50 def=0.650 weight=0.350 → 0.2275",
-      "     [4] avena laminada (sin certificación): score=8.50 def=0.150 weight=0.247 → 0.0370 ~70%",
-      "     [5] trigo inflado: score=6.50 def=0.350 weight=0.174 → 0.0608 ~30%",
-      "     [6] aceite de girasol alto oleico: score=6.50 def=0.350 weight=0.122 → 0.0429 ~30%",
-      "     [7] sal: score=7.00 def=0.300 weight=0.086 → 0.0259 ~40%",
-      "     [8] sorbitol - ins 420: score=2.50 def=0.750 weight=0.061 → 0.0456",
-      "     [9] ácido cítrico - ins 330: score=5.00 def=0.500 weight=0.043 → 0.0214",
-      "     [10] aromatizante (sabor manzana): score=2.00 def=0.800 weight=0.030 → 0.0242",
-      "     [11] lecitina de soja - ins 322: score=7.00 def=0.300 weight=0.021 → 0.0064 ~40%",
-      "     [12] butilhidroxitolueno - ins 321: score=0.00 def=1.000 weight=0.015 → 0.0150",
-      "     [13] extracto de annatto - ins 160b: score=7.00 def=0.300 weight=0.011 → 0.0032 ~40%",
-      "     [14] caramelo amónico de sulfito - ins 150d: score=1.00 def=0.900 weight=0.007 → 0.0067",
-      "     [15] sucralosa - ins 955: score=1.50 def=0.850 weight=0.005 → 0.0045",
-      "     Deficiencia promedio: 0.3722 → penalty: 14.89",
-      "     Proporción buenos: 39.7% → ajuste: +3.08",
-      "     Resultado Paso 1: -17.97",
-      "   PASO 1 - Ingredientes & Proporción: -17.97 → Score: 82.03",
-      "     Toxicidad ponderada: avg=0.59 max=4 final=2.59 → -9.70",
-      "   PASO 2 - Toxicidad promedio: -9.70 → Score: 72.32",
-      "     🚩 [0] jarabe de maltitol - ins 965ii: toxicidad=LOW → -1 * 1.000 = -1.00",
-      "     🚩 [3] polidextrosa - ins 1200: toxicidad=LOW → -1 * 0.350 = -0.35",
-      "     🚩 [5] trigo inflado: toxicidad=LOW → -1 * 0.174 = -0.17",
-      "     🚩 [6] aceite de girasol alto oleico: toxicidad=LOW → -1 * 0.122 = -0.12",
-      "     🚩 [7] sal: toxicidad=LOW → -1 * 0.086 = -0.09",
-      "     🚩 [8] sorbitol - ins 420: toxicidad=LOW → -1 * 0.061 = -0.06",
-      "     🚩 [9] ácido cítrico - ins 330: toxicidad=LOW → -1 * 0.043 = -0.04",
-      "     🚩 [10] aromatizante (sabor manzana): toxicidad=LOW → -1 * 0.030 = -0.03",
-      "     🚩 [11] lecitina de soja - ins 322: toxicidad=LOW → -1 * 0.021 = -0.02",
-      "     🚩 [12] butilhidroxitolueno - ins 321: toxicidad=HIGH → -5 * 0.015 = -0.07",
-      "     🚩 [13] extracto de annatto - ins 160b: toxicidad=LOW → -1 * 0.011 = -0.01",
-      "     🚩 [14] caramelo amónico de sulfito - ins 150d: toxicidad=MEDIUM → -2 * 0.007 = -0.01",
-      "     🚩 [15] sucralosa - ins 955: toxicidad=MEDIUM → -2 * 0.005 = -0.01",
-      "   PASO 3 - Red flags: -2.00 → Score: 70.33",
-      "     ⛔ Azúcares: valor=18.2609/100g | min=3.0000 max_score=15 limit=13.0000 → -15.00 [EXCESO]",
-      "     ✅ Fibra alimentaria: valor=11.7391/100g | min=1.0000 max_score=5 → +4.00",
-      "     ✅ Grasas monoinsaturadas: valor=1.3043/100g | min=0.5000 max_score=3 → +0.34",
-      "     ⛔ Polialcoholes: valor=31.7391/100g | min=5.0000 max_score=2 limit=20.0000 → -2.00 [EXCESO]",
-      "     ✅ Proteínas: valor=2.6087/100g | min=2.0000 max_score=5 → +0.44",
-      "     ⛔ Sodio: valor=134.7826/100g | min=100.0000 max_score=12 limit=500.0000 → -1.04",
-      "     ℹ️  Valor energético (calorías): valor=278.2609/100g | min=80.0000 → NEUTRAL (solo highlight)",
-      "   PASO 4 - Nutrition Facts: negativos=-18.04 positivos=+4.78 neto=-13.26 → Score: 57.06",
-      "   PASO 5 - Ultra-procesado: -20 → Score: 37.06",
-      "   PASO 6 - Pobreza nutricional: 3 beneficioso(s) → sin penalización",
+      "     [0] agua mineral: score=10.00 def=0.000 weight=1.000 → 0.0000 ✓",
+      "     [1] semillas de sésamo: score=10.00 def=0.000 weight=0.705 → 0.0000 ✓",
+      "     [2] aceite vegetal: score=5.50 def=0.450 weight=0.497 → 0.2235 ~10%",
+      "     [3] azúcar: score=7.00 def=0.300 weight=0.350 → 0.1050 ~40%",
+      "     [4] sal: score=7.00 def=0.300 weight=0.247 → 0.0740 ~40%",
+      "     [5] leche descremada en polvo: score=6.50 def=0.350 weight=0.174 → 0.0608 ~30%",
+      "     [6] propionato de calcio - ins 282: score=0.50 def=0.950 weight=0.122 → 0.1163",
+      "     [7] ácido sórbico - ins 200: score=3.50 def=0.650 weight=0.086 → 0.0561",
+      "     [8] propionato de sodio - ins 281: score=0.50 def=0.950 weight=0.061 → 0.0578",
+      "     [9] ácido láctico - ins 270: score=6.00 def=0.400 weight=0.043 → 0.0171 ~20%",
+      "     [10] ácido cítrico - ins 330: score=5.00 def=0.500 weight=0.030 → 0.0151",
+      "     [11] ésteres monoacetiltartáricos y diacetiltartáricos de monoglicéridos y diglicéridos de ácidos grasos (origen vegetal) - ins 472e: score=3.50 def=0.650 weight=0.021 → 0.0138",
+      "     [12] fosfato monocálcico - ins 341i: score=3.50 def=0.650 weight=0.015 → 0.0097",
+      "     [13] ácido ascórbico - ins 300: score=6.50 def=0.350 weight=0.011 → 0.0037 ~30%",
+      "     [14] gluten de trigo: score=7.50 def=0.250 weight=0.007 → 0.0019 ~50%",
+      "     [15] harina de trigo fortificada con hierro y ácido fólico: score=6.50 def=0.350 weight=0.005 → 0.0018 ~30%",
+      "     Deficiencia promedio: 0.2243 → penalty: 8.97",
+      "     Proporción buenos: 61.1% → ajuste: -0.67",
+      "     Resultado Paso 1: -8.30",
+      "   PASO 1 - Ingredientes & Proporción: -8.30 → Score: 91.70",
+      "     Toxicidad ponderada: avg=0.49 max=1 final=0.99 → -3.73",
+      "   PASO 2 - Toxicidad promedio: -3.73 → Score: 87.97",
+      "     🚩 [2] aceite vegetal: toxicidad=LOW → -1 * 0.497 = -0.50",
+      "     🚩 [3] azúcar: toxicidad=LOW → -1 * 0.350 = -0.35",
+      "     🚩 [4] sal: toxicidad=LOW → -1 * 0.247 = -0.25",
+      "     🚩 [5] leche descremada en polvo: toxicidad=LOW → -1 * 0.174 = -0.17",
+      "     🚩 [6] propionato de calcio - ins 282: toxicidad=LOW → -1 * 0.122 = -0.12",
+      "     🚩 [7] ácido sórbico - ins 200: toxicidad=LOW → -1 * 0.086 = -0.09",
+      "     🚩 [8] propionato de sodio - ins 281: toxicidad=LOW → -1 * 0.061 = -0.06",
+      "     🚩 [9] ácido láctico - ins 270: toxicidad=LOW → -1 * 0.043 = -0.04",
+      "     🚩 [10] ácido cítrico - ins 330: toxicidad=LOW → -1 * 0.030 = -0.03",
+      "     🚩 [11] ésteres monoacetiltartáricos y diacetiltartáricos de monoglicéridos y diglicéridos de ácidos grasos (origen vegetal) - ins 472e: toxicidad=LOW → -1 * 0.021 = -0.02",
+      "     🚩 [12] fosfato monocálcico - ins 341i: toxicidad=LOW → -1 * 0.015 = -0.01",
+      "     🚩 [13] ácido ascórbico - ins 300: toxicidad=LOW → -1 * 0.011 = -0.01",
+      "     🚩 [14] gluten de trigo: toxicidad=LOW → -1 * 0.007 = -0.01",
+      "     🚩 [15] harina de trigo fortificada con hierro y ácido fólico: toxicidad=LOW → -1 * 0.005 = -0.01",
+      "   PASO 3 - Red flags: -1.67 → Score: 86.30",
+      "     ── Azúcares: valor=2.4000/100g ≤ min=3.0000 → sin impacto",
+      "     ℹ️  Carbohidratos: valor=44.0000/100g | min=15.0000 → NEUTRAL (solo highlight)",
+      "     ✅ Fibra alimentaria: valor=2.2000/100g | min=1.0000 max_score=5 → +0.82",
+      "     ✅ Grasas monoinsaturadas: valor=1.6000/100g | min=0.5000 max_score=3 → +0.46",
+      "     ✅ Grasas poliinsaturadas: valor=2.0000/100g | min=0.5000 max_score=3 → +0.60",
+      "     ── Grasas saturadas: valor=1.2000/100g ≤ min=1.5000 → sin impacto",
+      "     ⏭️  Grasas totales: TOTAL_FATS → ignorado",
+      "     ✅ Proteínas: valor=9.4000/100g | min=2.0000 max_score=5 → +3.35",
+      "     ⛔ Sodio: valor=348.0000/100g | min=100.0000 max_score=12 limit=500.0000 → -7.44",
+      "     ℹ️  Valor energético (calorías): valor=268.0000/100g | min=80.0000 → NEUTRAL (solo highlight)",
+      "   PASO 4 - Nutrition Facts: negativos=-7.44 positivos=+5.24 × 56% = +2.92 (atenuación 70-90) → Score: 81.77",
+      "   PASO 5 - Ultra-procesado: -20 → Score: 61.77",
+      "   PASO 6 - Pobreza nutricional: 4 beneficioso(s) → sin penalización",
       "   ────────────────────────────────────────",
-      "   🏆 SCORE FINAL: 37/100",
-      "   📋 Desglose: ingredientes=-18.0 toxicidad=-9.7 redFlags=-2.0 nutri-=18.0 nutri+=4.8 ultraProc=-20.0 pobreza=-0.0",
+      "   🏆 SCORE FINAL: 62/100",
+      "   📋 Desglose: ingredientes=-8.3 toxicidad=-3.7 redFlags=-1.7 nutri-=7.4 nutri+=2.9 ultraProc=-20.0 pobreza=-0.0",
+      "══════════════════════════════════════════════════\n"
+    ]
+  },
+  {
+    "id": "ba301cc9-f7c6-4d5d-b1ea-67e49b00ea63",
+    "name": "Anana En Almibar Equador 825 G",
+    "brand": "EQUADOR",
+    "category": "Conservas",
+    "quota": "relleno",
+    "scoreGuardado": 66,
+    "scoreRecalculado": 66,
+    "delta": 0,
+    "breakdown": {
+      "scoreFinal": 66,
+      "penaltyIngredientes": 4.621914114116352,
+      "penaltyToxicidad": 3.1192958543693767,
+      "penaltyRedFlags": 0.8465230529025649,
+      "nutritionNegativeImpact": 10.5,
+      "nutritionPositiveImpact": 0,
+      "penaltyUltraProcessed": 0,
+      "penaltyPobrezaNutricional": 15,
+      "penaltyAmortiguacion": 0
+    },
+    "highlights": {
+      "beneficials": [],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "valuePer100": 10,
+          "unit": "g"
+        }
+      ],
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "valuePer100": 15.71,
+          "unit": "g"
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "logs": [
+      "\n══════════════════════════════════════════════════",
+      "📊 SCORING V2: Anana En Almibar Equador 825 G (ba301cc9-f7c6-4d5d-b1ea-67e49b00ea63)",
+      "   Ingredientes: 4 | Nutrition Facts: 4 | Tipo: SÓLIDO",
+      "══════════════════════════════════════════════════",
+      "     [0] anana en rodajas: score=9.50 def=0.050 weight=1.000 → 0.0500 ~90%",
+      "     [1] agua mineral: score=10.00 def=0.000 weight=0.705 → 0.0000 ✓",
+      "     [2] azúcar: score=7.00 def=0.300 weight=0.497 → 0.1490 ~40%",
+      "     [3] ácido cítrico - ins 330: score=5.00 def=0.500 weight=0.350 → 0.1750",
+      "     Deficiencia promedio: 0.1466 → penalty: 5.86",
+      "     Proporción buenos: 70.7% → ajuste: -1.24",
+      "     Resultado Paso 1: -4.62",
+      "   PASO 1 - Ingredientes & Proporción: -4.62 → Score: 95.38",
+      "     Toxicidad ponderada: avg=0.33 max=1 final=0.83 → -3.12",
+      "   PASO 2 - Toxicidad promedio: -3.12 → Score: 92.26",
+      "     🚩 [2] azúcar: toxicidad=LOW → -1 * 0.497 = -0.50",
+      "     🚩 [3] ácido cítrico - ins 330: toxicidad=LOW → -1 * 0.350 = -0.35",
+      "   PASO 3 - Red flags: -0.85 → Score: 91.41",
+      "     ⛔ Azúcares: valor=10.0000/100g | min=3.0000 max_score=15 limit=13.0000 → -10.50",
+      "     ℹ️  Carbohidratos: valor=15.7143/100g | min=15.0000 → NEUTRAL (solo highlight)",
+      "     ── Fibra alimentaria: valor=0.5714/100g < min=1.0000 → sin impacto",
+      "     ── Valor energético (calorías): valor=64.2857/100g < min=80.0000 → sin impacto",
+      "   PASO 4 - Nutrition Facts: negativos=-10.50 positivos=+0.00 × 45% = +0.00 (atenuación 70-90) → Score: 80.91",
+      "   PASO 6 - Pobreza nutricional: 0 beneficioso(s) → -15 → Score: 65.91",
+      "   ────────────────────────────────────────",
+      "   🏆 SCORE FINAL: 66/100",
+      "   📋 Desglose: ingredientes=-4.6 toxicidad=-3.1 redFlags=-0.8 nutri-=10.5 nutri+=0.0 ultraProc=-0.0 pobreza=-15.0",
+      "══════════════════════════════════════════════════\n"
+    ]
+  },
+  {
+    "id": "44d34759-69de-4b7a-a9fb-48e77cef40d3",
+    "name": "Cereales Zucosos Matinal 230 G",
+    "brand": "Zucosos",
+    "category": "Cereales",
+    "quota": "relleno",
+    "scoreGuardado": 56,
+    "scoreRecalculado": 56,
+    "delta": 0,
+    "breakdown": {
+      "scoreFinal": 56,
+      "penaltyIngredientes": 8.77337768123438,
+      "penaltyToxicidad": 6.746402452796872,
+      "penaltyRedFlags": 2.7040128381501396,
+      "nutritionNegativeImpact": 24.400000000000002,
+      "nutritionPositiveImpact": 18.42296500004533,
+      "penaltyUltraProcessed": 20,
+      "penaltyPobrezaNutricional": 0,
+      "penaltyAmortiguacion": 0
+    },
+    "highlights": {
+      "beneficials": [
+        {
+          "name": "Calcio",
+          "valuePer100": 633.33,
+          "unit": "mg"
+        },
+        {
+          "name": "Fibra alimentaria",
+          "valuePer100": 4.33,
+          "unit": "g"
+        },
+        {
+          "name": "Grasas monoinsaturadas",
+          "valuePer100": 0.67,
+          "unit": "g"
+        },
+        {
+          "name": "Grasas poliinsaturadas",
+          "valuePer100": 1,
+          "unit": "g"
+        },
+        {
+          "name": "Hierro",
+          "valuePer100": 20,
+          "unit": "mg"
+        },
+        {
+          "name": "Niacina",
+          "valuePer100": 18,
+          "unit": "mg"
+        },
+        {
+          "name": "Proteínas",
+          "valuePer100": 5.67,
+          "unit": "g"
+        },
+        {
+          "name": "Riboflavina",
+          "valuePer100": 2,
+          "unit": "mg"
+        },
+        {
+          "name": "Ácido fólico",
+          "valuePer100": 246.67,
+          "unit": "µg"
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "valuePer100": 25,
+          "unit": "g"
+        },
+        {
+          "name": "Sodio",
+          "valuePer100": 413.33,
+          "unit": "mg"
+        }
+      ],
+      "excesses": [
+        {
+          "name": "Azúcares",
+          "valuePer100": 25,
+          "unit": "g"
+        }
+      ],
+      "neutrals": [],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "valuePer100": 83.33,
+          "unit": "g"
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "valuePer100": 370,
+          "unit": "kcal"
+        }
+      ]
+    },
+    "logs": [
+      "\n══════════════════════════════════════════════════",
+      "📊 SCORING V2: Cereales Zucosos Matinal 230 G (44d34759-69de-4b7a-a9fb-48e77cef40d3)",
+      "   Ingredientes: 21 | Nutrition Facts: 17 | Tipo: SÓLIDO",
+      "══════════════════════════════════════════════════",
+      "     [0] granos de maiz integral: score=10.00 def=0.000 weight=1.000 → 0.0000 ✓",
+      "     [1] sémola fina de maíz: score=7.00 def=0.300 weight=0.705 → 0.2114 ~40%",
+      "     [2] azúcar: score=7.00 def=0.300 weight=0.497 → 0.1490 ~40%",
+      "     [3] carbonato de calcio - ins  170i: score=8.00 def=0.200 weight=0.350 → 0.0700 ~60%",
+      "     [4] sal yodada: score=7.50 def=0.250 weight=0.247 → 0.0616 ~50%",
+      "     [5] jarabe de azucar invertido: score=3.50 def=0.650 weight=0.174 → 0.1130",
+      "     [6] extracto de malta (origen cebada): score=7.50 def=0.250 weight=0.122 → 0.0306 ~50%",
+      "     [7] jarabe de glucosa: score=3.50 def=0.650 weight=0.086 → 0.0561",
+      "     [8] aceite de palma refinado: score=4.00 def=0.600 weight=0.061 → 0.0365",
+      "     [9] ascorbil palmitato - ins 304i: score=5.50 def=0.450 weight=0.043 → 0.0193 ~10%",
+      "     [10] hierro: score=7.50 def=0.250 weight=0.030 → 0.0075 ~50%",
+      "     [11] B3 niacina: score=7.00 def=0.300 weight=0.021 → 0.0064 ~40%",
+      "     [12] B5 ácido pantoténico: score=7.50 def=0.250 weight=0.015 → 0.0037 ~50%",
+      "     [13] B6 piridoxina: score=6.50 def=0.350 weight=0.011 → 0.0037 ~30%",
+      "     [14] B1 tiamina: score=7.50 def=0.250 weight=0.007 → 0.0019 ~50%",
+      "     [15] B2 riboflavina: score=7.50 def=0.250 weight=0.005 → 0.0013 ~50%",
+      "     [16] B9 ácido fólico: score=6.00 def=0.400 weight=0.004 → 0.0015 ~20%",
+      "     [17] fosfato trisódico - ins 339iii: score=5.00 def=0.500 weight=0.003 → 0.0013",
+      "     [18] tocoferoles - ins 306: score=7.50 def=0.250 weight=0.002 → 0.0005 ~50%",
+      "     [19] aromatizante (sabor no especificado): score=2.00 def=0.800 weight=0.001 → 0.0010",
+      "     [20] glicósidos de esteviol - ins 960: score=5.50 def=0.450 weight=0.001 → 0.0004 ~10%",
+      "     Deficiencia promedio: 0.2295 → penalty: 9.18",
+      "     Proporción buenos: 56.8% → ajuste: -0.41",
+      "     Resultado Paso 1: -8.77",
+      "   PASO 1 - Ingredientes & Proporción: -8.77 → Score: 91.23",
+      "     Toxicidad ponderada: avg=0.80 max=2 final=1.80 → -6.75",
+      "   PASO 2 - Toxicidad promedio: -6.75 → Score: 84.48",
+      "     🚩 [1] sémola fina de maíz: toxicidad=LOW → -1 * 0.705 = -0.70",
+      "     🚩 [2] azúcar: toxicidad=LOW → -1 * 0.497 = -0.50",
+      "     🚩 [3] carbonato de calcio - ins  170i: toxicidad=LOW → -1 * 0.350 = -0.35",
+      "     🚩 [4] sal yodada: toxicidad=LOW → -1 * 0.247 = -0.25",
+      "     🚩 [5] jarabe de azucar invertido: toxicidad=MEDIUM → -2 * 0.174 = -0.35",
+      "     🚩 [6] extracto de malta (origen cebada): toxicidad=LOW → -1 * 0.122 = -0.12",
+      "     🚩 [7] jarabe de glucosa: toxicidad=MEDIUM → -2 * 0.086 = -0.17",
+      "     🚩 [8] aceite de palma refinado: toxicidad=MEDIUM → -2 * 0.061 = -0.12",
+      "     🚩 [9] ascorbil palmitato - ins 304i: toxicidad=MEDIUM → -2 * 0.043 = -0.09",
+      "     🚩 [10] hierro: toxicidad=LOW → -1 * 0.030 = -0.03",
+      "     🚩 [11] B3 niacina: toxicidad=LOW → -1 * 0.021 = -0.02",
+      "     🚩 [17] fosfato trisódico - ins 339iii: toxicidad=LOW → -1 * 0.003 = -0.00",
+      "     🚩 [19] aromatizante (sabor no especificado): toxicidad=LOW → -1 * 0.001 = -0.00",
+      "     🚩 [20] glicósidos de esteviol - ins 960: toxicidad=LOW → -1 * 0.001 = -0.00",
+      "   PASO 3 - Red flags: -2.70 → Score: 81.78",
+      "     ⛔ Azúcares: valor=25.0000/100g | min=3.0000 max_score=15 limit=13.0000 → -15.00 [EXCESO]",
+      "     ✅ Calcio: valor=633.3333/100g | min=50.0000 max_score=4 → +4.00",
+      "     ℹ️⚠️ Carbohidratos: valor=83.3333/100g | min=15.0000 limit=60.0000 → NEUTRAL EXCESO",
+      "     ✅ Fibra alimentaria: valor=4.3333/100g | min=1.0000 max_score=5 → +1.97",
+      "     ✅ Grasas monoinsaturadas: valor=0.6667/100g | min=0.5000 max_score=3 → +0.07",
+      "     ✅ Grasas poliinsaturadas: valor=1.0000/100g | min=0.5000 max_score=3 → +0.22",
+      "     ── Grasas saturadas: valor=0.6667/100g ≤ min=1.5000 → sin impacto",
+      "     ⏭️  Grasas totales: TOTAL_FATS → ignorado",
+      "     ✅ Hierro: valor=20.0000/100g | min=0.7000 max_score=4 → +3.78",
+      "     ✅ Niacina: valor=18.0000/100g | min=1.0000 max_score=3 → +2.77",
+      "     ✅ Proteínas: valor=5.6667/100g | min=2.0000 max_score=5 → +2.12",
+      "     ✅ Riboflavina: valor=2.0000/100g | min=0.0600 max_score=2 → +0.50",
+      "     ⛔ Sodio: valor=413.3333/100g | min=100.0000 max_score=12 limit=500.0000 → -9.40",
+      "     ℹ️⚠️ Valor energético (calorías): valor=370.0000/100g | min=80.0000 limit=300.0000 → NEUTRAL EXCESO",
+      "     🔄 Vitamina B6: conversión de unidad: 0.5700 ug → 0.0006 mg",
+      "     ── Vitamina B6: valor=0.0019/100g < min=0.1000 → sin impacto",
+      "     ✅ Ácido fólico: valor=246.6667/100g | min=20.0000 max_score=3 → +3.00",
+      "     🔄 Ácido pantoténico: conversión de unidad: 2.0000 ug → 0.0020 mg",
+      "     ── Ácido pantoténico: valor=0.0067/100g < min=0.2500 → sin impacto",
+      "   PASO 4 - Nutrition Facts: negativos=-24.40 positivos=+18.42 neto=-5.98 → Score: 75.80",
+      "   PASO 5 - Ultra-procesado: -20 → Score: 55.80",
+      "   PASO 6 - Pobreza nutricional: 9 beneficioso(s) → sin penalización",
+      "   ────────────────────────────────────────",
+      "   🏆 SCORE FINAL: 56/100",
+      "   📋 Desglose: ingredientes=-8.8 toxicidad=-6.7 redFlags=-2.7 nutri-=24.4 nutri+=18.4 ultraProc=-20.0 pobreza=-0.0",
+      "══════════════════════════════════════════════════\n"
+    ]
+  },
+  {
+    "id": "54762dc6-e4b5-4a03-a8bc-1f98e5400619",
+    "name": "Pan Rallado MultiCereales Rallopan 450 G",
+    "brand": "Rallopan",
+    "category": "Panes",
+    "quota": "relleno",
+    "scoreGuardado": 60,
+    "scoreRecalculado": 60,
+    "delta": 0,
+    "breakdown": {
+      "scoreFinal": 60,
+      "penaltyIngredientes": 7.724026661554291,
+      "penaltyToxicidad": 7.827335027458866,
+      "penaltyRedFlags": 1.9850567417872977,
+      "nutritionNegativeImpact": 0,
+      "nutritionPositiveImpact": 2.932280531616352,
+      "penaltyUltraProcessed": 20,
+      "penaltyPobrezaNutricional": 5,
+      "penaltyAmortiguacion": 0
+    },
+    "highlights": {
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "valuePer100": 15.67,
+          "unit": "g"
+        },
+        {
+          "name": "Proteínas",
+          "valuePer100": 9.33,
+          "unit": "g"
+        }
+      ],
+      "notBeneficials": [],
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "valuePer100": 46.67,
+          "unit": "g"
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "valuePer100": 256.67,
+          "unit": "kcal"
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "logs": [
+      "\n══════════════════════════════════════════════════",
+      "📊 SCORING V2: Pan Rallado MultiCereales Rallopan 450 G (54762dc6-e4b5-4a03-a8bc-1f98e5400619)",
+      "   Ingredientes: 18 | Nutrition Facts: 7 | Tipo: SÓLIDO",
+      "══════════════════════════════════════════════════",
+      "     [0] aceite de girasol alto oleico: score=6.50 def=0.350 weight=1.000 → 0.3500 ~30%",
+      "     [1] semillas de sésamo: score=10.00 def=0.000 weight=0.705 → 0.0000 ✓",
+      "     [2] semillas de lino: score=9.00 def=0.100 weight=0.497 → 0.0497 ~80%",
+      "     [3] salvado de trigo: score=9.00 def=0.100 weight=0.350 → 0.0350 ~80%",
+      "     [4] harina de centeno: score=6.50 def=0.350 weight=0.247 → 0.0863 ~30%",
+      "     [5] avena laminada (sin certificación): score=8.50 def=0.150 weight=0.174 → 0.0261 ~70%",
+      "     [6] sal: score=7.00 def=0.300 weight=0.122 → 0.0367 ~40%",
+      "     [7] harina de malta: score=6.50 def=0.350 weight=0.086 → 0.0302 ~30%",
+      "     [8] levadura: score=7.00 def=0.300 weight=0.061 → 0.0182 ~40%",
+      "     [9] ácido ascórbico - ins 300: score=6.50 def=0.350 weight=0.043 → 0.0150 ~30%",
+      "     [10] derivados del ácido carbámico - ins 927: score=0.00 def=1.000 weight=0.030 → 0.0302",
+      "     [11] lactilato de sodio - ins 481: score=4.50 def=0.550 weight=0.021 → 0.0117",
+      "     [12] lactilatos cálcicos (origen vegetal) - ins 482: score=4.50 def=0.550 weight=0.015 → 0.0082",
+      "     [13] sésamo pelado: score=8.50 def=0.150 weight=0.011 → 0.0016 ~70%",
+      "     [14] ajo en polvo: score=8.50 def=0.150 weight=0.007 → 0.0011 ~70%",
+      "     [15] orégano: score=10.00 def=0.000 weight=0.005 → 0.0000 ✓",
+      "     [16] romero: score=10.00 def=0.000 weight=0.004 → 0.0000 ✓",
+      "     [17] harina de trigo fortificada con hierro y ácido fólico: score=6.50 def=0.350 weight=0.003 → 0.0009 ~30%",
+      "     Deficiencia promedio: 0.2074 → penalty: 8.30",
+      "     Proporción buenos: 59.5% → ajuste: -0.57",
+      "     Resultado Paso 1: -7.72",
+      "   PASO 1 - Ingredientes & Proporción: -7.72 → Score: 92.28",
+      "     Toxicidad ponderada: avg=0.59 max=3 final=2.09 → -7.83",
+      "   PASO 2 - Toxicidad promedio: -7.83 → Score: 84.45",
+      "     🚩 [0] aceite de girasol alto oleico: toxicidad=LOW → -1 * 1.000 = -1.00",
+      "     🚩 [3] salvado de trigo: toxicidad=LOW → -1 * 0.350 = -0.35",
+      "     🚩 [4] harina de centeno: toxicidad=LOW → -1 * 0.247 = -0.25",
+      "     🚩 [6] sal: toxicidad=LOW → -1 * 0.122 = -0.12",
+      "     🚩 [7] harina de malta: toxicidad=LOW → -1 * 0.086 = -0.09",
+      "     🚩 [9] ácido ascórbico - ins 300: toxicidad=LOW → -1 * 0.043 = -0.04",
+      "     🚩 [10] derivados del ácido carbámico - ins 927: toxicidad=MEDIUM_HIGH → -3 * 0.030 = -0.09",
+      "     🚩 [11] lactilato de sodio - ins 481: toxicidad=LOW → -1 * 0.021 = -0.02",
+      "     🚩 [12] lactilatos cálcicos (origen vegetal) - ins 482: toxicidad=LOW → -1 * 0.015 = -0.01",
+      "     🚩 [14] ajo en polvo: toxicidad=LOW → -1 * 0.007 = -0.01",
+      "     🚩 [17] harina de trigo fortificada con hierro y ácido fólico: toxicidad=LOW → -1 * 0.003 = -0.00",
+      "   PASO 3 - Red flags: -1.99 → Score: 82.46",
+      "     ℹ️  Carbohidratos: valor=46.6667/100g | min=15.0000 → NEUTRAL (solo highlight)",
+      "     ✅ Fibra alimentaria: valor=15.6667/100g | min=1.0000 max_score=5 → +4.45",
+      "     ── Grasas saturadas: valor=1.3333/100g ≤ min=1.5000 → sin impacto",
+      "     ⏭️  Grasas totales: TOTAL_FATS → ignorado",
+      "     ✅ Proteínas: valor=9.3333/100g | min=2.0000 max_score=5 → +3.34",
+      "     ── Sodio: valor=56.6667/100g ≤ min=100.0000 → sin impacto",
+      "     ℹ️  Valor energético (calorías): valor=256.6667/100g | min=80.0000 → NEUTRAL (solo highlight)",
+      "   PASO 4 - Nutrition Facts: negativos=-0.00 positivos=+7.78 × 38% = +2.93 (atenuación 70-90) → Score: 85.40",
+      "   PASO 5 - Ultra-procesado: -20 → Score: 65.40",
+      "   PASO 6 - Pobreza nutricional: 2 beneficioso(s) → -5 → Score: 60.40",
+      "   ────────────────────────────────────────",
+      "   🏆 SCORE FINAL: 60/100",
+      "   📋 Desglose: ingredientes=-7.7 toxicidad=-7.8 redFlags=-2.0 nutri-=0.0 nutri+=2.9 ultraProc=-20.0 pobreza=-5.0",
       "══════════════════════════════════════════════════\n"
     ]
   }
