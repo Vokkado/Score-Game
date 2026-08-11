@@ -1,0 +1,14 @@
+{
+  "name": "vokkado-event-game",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Minijuego de stand: adiviná el Score Vokkado",
+  "type": "commonjs",
+  "scripts": {
+    "curate": "node scripts/curate-products.js",
+    "images": "node scripts/download-images.js"
+  },
+  "dependencies": {
+    "pg": "^8.16.3"
+  }
+}

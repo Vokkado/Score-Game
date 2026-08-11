@@ -1,0 +1,33 @@
+# Dependencias
+node_modules/
+.pnp
+.pnp.js
+
+# Build
+dist/
+build/
+.vite/
+
+# Entorno — nunca commitear credenciales de la DB
+.env
+.env.*
+!.env.example
+
+# Imágenes de productos: se regeneran con scripts/download-images.js
+# (pesan ~40MB y salen de S3, no tiene sentido versionarlas)
+data/images/
+
+# Salidas intermedias de la curación (regenerables con los scripts)
+data/_raw_*.json
+data/_audit_*.json
+data/_digest.txt
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+
+# Editor
+.vscode/
+.idea/

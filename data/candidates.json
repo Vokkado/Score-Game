@@ -1,0 +1,6146 @@
+[
+  {
+    "id": "a8e4754c-7dfd-4f8c-9346-23ffd2755905",
+    "name": "Agua Mineral Nativa Sin Gas 2.25 L",
+    "brand": "Nativa",
+    "barcode": "7730130000610",
+    "score": 100,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/a8e4754c-7dfd-4f8c-9346-23ffd2755905.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": null,
+    "serving_size_unit": "ml",
+    "highlights": null,
+    "score_calculated_at": "2026-02-28T06:06:54.552Z",
+    "category": "Aguas",
+    "category_avg": 83,
+    "deviation": 17,
+    "halo": false,
+    "bucket": "ancla_buena",
+    "interest": 32,
+    "excesses": [],
+    "beneficials": [],
+    "quota": "agua_100"
+  },
+  {
+    "id": "55692058-c48e-48a9-b725-c1ec02fb1828",
+    "name": "AGUA MINERAL MATUTINA SIN GAS BOTELLA 2.25 LITROS",
+    "brand": "MATUTINA",
+    "barcode": "7730400003877",
+    "score": 100,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/55692058-c48e-48a9-b725-c1ec02fb1828.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "200.00",
+    "serving_size_unit": "ml",
+    "highlights": null,
+    "score_calculated_at": "2026-03-19T03:19:57.135Z",
+    "category": "Aguas",
+    "category_avg": 83,
+    "deviation": 17,
+    "halo": false,
+    "bucket": "ancla_buena",
+    "interest": 32,
+    "excesses": [],
+    "beneficials": [],
+    "quota": "agua_100"
+  },
+  {
+    "id": "8e4d5651-b680-454c-9c39-116bdf459a6d",
+    "name": "Coca Cola Retornable 2 L - Incluye Envase",
+    "brand": "Coca Cola",
+    "barcode": "7730197001377",
+    "score": 26,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/8e4d5651-b680-454c-9c39-116bdf459a6d.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": true,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "200.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 11
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 11
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 42
+        }
+      ],
+      "beneficials": [],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 11
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:36:10.942Z",
+    "category": "Refrescos",
+    "category_avg": 25,
+    "deviation": 1,
+    "halo": false,
+    "bucket": "medio",
+    "interest": 8.1,
+    "excesses": [
+      "Azúcares 11g"
+    ],
+    "beneficials": [],
+    "quota": "refresco_azucarado"
+  },
+  {
+    "id": "ef3bdfa7-6759-4b2a-ad6f-58cd76f1cea6",
+    "name": "Refresco Cola Pepsi No Retornable - Botella 1.50 L",
+    "brand": "Pepsi",
+    "barcode": "7734284114087",
+    "score": 26,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/ef3bdfa7-6759-4b2a-ad6f-58cd76f1cea6.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": true,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "200.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 11
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 11
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 42
+        }
+      ],
+      "beneficials": [],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 11
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T05:14:07.525Z",
+    "category": "Refrescos",
+    "category_avg": 25,
+    "deviation": 1,
+    "halo": false,
+    "bucket": "medio",
+    "interest": 8.1,
+    "excesses": [
+      "Azúcares 11g"
+    ],
+    "beneficials": [],
+    "quota": "refresco_azucarado"
+  },
+  {
+    "id": "03de8eea-2b9e-48de-82a2-d87ade947249",
+    "name": "Sprite Original 3L",
+    "brand": "Sprite",
+    "barcode": "7730197004811",
+    "score": 25,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/03de8eea-2b9e-48de-82a2-d87ade947249.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "200.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 5.75
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 5.75
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 22.75
+        }
+      ],
+      "beneficials": [],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 5.75
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T03:43:33.803Z",
+    "category": "Refrescos",
+    "category_avg": 25,
+    "deviation": 0,
+    "halo": false,
+    "bucket": "medio",
+    "interest": 7.6,
+    "excesses": [
+      "Azúcares 5.75g"
+    ],
+    "beneficials": [],
+    "quota": "refresco_azucarado"
+  },
+  {
+    "id": "83a1c583-1aa1-40a1-b037-4e89f33192e7",
+    "name": "Fanta Original 3L",
+    "brand": "Fanta",
+    "barcode": "7730197004804",
+    "score": 16,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/83a1c583-1aa1-40a1-b037-4e89f33192e7.png",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "200.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 6
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 12
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 24.75
+        }
+      ],
+      "beneficials": [],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 6
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T15:05:17.440Z",
+    "category": "Refrescos",
+    "category_avg": 25,
+    "deviation": 9,
+    "halo": false,
+    "bucket": "ancla_mala",
+    "interest": 19.3,
+    "excesses": [
+      "Azúcares 6g"
+    ],
+    "beneficials": [],
+    "quota": "refresco_azucarado"
+  },
+  {
+    "id": "fc94d390-0cf5-421f-af87-56c55a7a8916",
+    "name": "Lentejones Río De La Plata 1 Kg",
+    "brand": "Rio De La Plata",
+    "barcode": "7730205077295",
+    "score": 100,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/fc94d390-0cf5-421f-af87-56c55a7a8916.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "60.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 51.67
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 3.5
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 21.67
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 301.67
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T05:19:26.542Z",
+    "category": "Legumbres secas",
+    "category_avg": 91,
+    "deviation": 9,
+    "halo": false,
+    "bucket": "ancla_buena",
+    "interest": 23.7,
+    "excesses": [],
+    "beneficials": [
+      "Fibra alimentaria 3.5g",
+      "Proteínas 21.67g"
+    ],
+    "quota": "natural_100"
+  },
+  {
+    "id": "f67e1b43-a81e-414e-8d94-c52bc5187262",
+    "name": "Maracuya Congelado Cambay 500 G",
+    "brand": "Cambay",
+    "barcode": "7730995260310",
+    "score": 100,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/f67e1b43-a81e-414e-8d94-c52bc5187262.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "100.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 1
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 2
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T05:17:02.608Z",
+    "category": "Congelados",
+    "category_avg": 64,
+    "deviation": 36,
+    "halo": false,
+    "bucket": "sorpresa",
+    "interest": 50.8,
+    "excesses": [],
+    "beneficials": [
+      "Fibra alimentaria 1g",
+      "Proteínas 2g"
+    ],
+    "quota": "natural_100"
+  },
+  {
+    "id": "e7d0c81e-7640-4d14-afe0-938ec8e2d8ab",
+    "name": "Alfajor Milka Oreo Dulce De Leche 55 G",
+    "brand": "Milka",
+    "barcode": "7622300835620",
+    "score": 12,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/e7d0c81e-7640-4d14-afe0-938ec8e2d8ab.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": true,
+    "is_sodium_alert": false,
+    "is_fat_alert": true,
+    "is_saturated_fat_alert": true,
+    "serving_size_amount": "61.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 42.62
+        },
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 10.66
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 57.38
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 2.13
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 6.23
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 42.62
+        },
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 10.66
+        },
+        {
+          "name": "Grasas trans",
+          "unit": "g",
+          "valuePer100": 0.49
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 291.8
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 436.07
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T05:11:11.657Z",
+    "category": "Golosinas y Chocolates",
+    "category_avg": 21,
+    "deviation": 9,
+    "halo": false,
+    "bucket": "ancla_mala",
+    "interest": 20.8,
+    "excesses": [
+      "Azúcares 42.62g",
+      "Grasas saturadas 10.66g"
+    ],
+    "beneficials": [
+      "Fibra alimentaria 2.13g",
+      "Proteínas 6.23g"
+    ],
+    "quota": "alfajor"
+  },
+  {
+    "id": "197f52e7-91f5-42b3-bffd-eb5e9f4c51e7",
+    "name": "Alfajor Bon O Bon Mini 6 U 117G",
+    "brand": "Bon O Bon",
+    "barcode": "7790040129764",
+    "score": 13,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/197f52e7-91f5-42b3-bffd-eb5e9f4c51e7.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": true,
+    "is_sodium_alert": false,
+    "is_fat_alert": true,
+    "is_saturated_fat_alert": true,
+    "serving_size_amount": "39.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 35.9
+        },
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 10.77
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 56.41
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 2.05
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 8.72
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 35.9
+        },
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 10.77
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 133.33
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 500
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T03:51:32.539Z",
+    "category": "Golosinas y Chocolates",
+    "category_avg": 21,
+    "deviation": 8,
+    "halo": false,
+    "bucket": "ancla_mala",
+    "interest": 19.5,
+    "excesses": [
+      "Azúcares 35.9g",
+      "Grasas saturadas 10.77g"
+    ],
+    "beneficials": [
+      "Fibra alimentaria 2.05g",
+      "Proteínas 8.72g"
+    ],
+    "quota": "alfajor"
+  },
+  {
+    "id": "8ef8962c-a22d-4bdb-8955-13c7dadaf977",
+    "name": "Alfajor De Maicena Conaprole 6 Ud",
+    "brand": "Conaprole",
+    "barcode": "7730105206009",
+    "score": 17,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/9dd93417-b31e-452b-80ed-cf93e5548193.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": true,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": true,
+    "serving_size_amount": "60.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 6.17
+        },
+        {
+          "name": "Azúcares",
+          "unit": "",
+          "valuePer100": -1
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 58.33
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 6.33
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 6.17
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 128.33
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 358.33
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-31T22:07:59.015Z",
+    "category": "Golosinas y Chocolates",
+    "category_avg": 21,
+    "deviation": 4,
+    "halo": false,
+    "bucket": "ancla_mala",
+    "interest": 14.3,
+    "excesses": [
+      "Grasas saturadas 6.17g",
+      "Azúcares -1"
+    ],
+    "beneficials": [
+      "Proteínas 6.33g"
+    ],
+    "quota": "alfajor"
+  },
+  {
+    "id": "8ebed2bb-1e21-482c-92f8-e0032b112367",
+    "name": "Goma Mogul Oso Extreme 50 G",
+    "brand": "Mogul",
+    "barcode": "7790580129330",
+    "score": 7,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/8ebed2bb-1e21-482c-92f8-e0032b112367.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": true,
+    "serving_size_amount": "20.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 26.65
+        },
+        {
+          "name": "Grasas saturadas",
+          "unit": "",
+          "valuePer100": -1
+        }
+      ],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 5
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 26.65
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 115
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 80
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 330
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T04:36:20.354Z",
+    "category": "Golosinas y Chocolates",
+    "category_avg": 21,
+    "deviation": 14,
+    "halo": false,
+    "bucket": "ancla_mala",
+    "interest": 27.3,
+    "excesses": [
+      "Azúcares 26.65g",
+      "Grasas saturadas -1"
+    ],
+    "beneficials": [
+      "Proteínas 5g"
+    ],
+    "quota": "gomitas"
+  },
+  {
+    "id": "453912c2-a7a9-4df5-96ce-bf1ddbb3ff44",
+    "name": "Gomitas Haribo Worms 80 G",
+    "brand": "Haribo",
+    "barcode": "9002975377348",
+    "score": 12,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/453912c2-a7a9-4df5-96ce-bf1ddbb3ff44.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": true,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "20.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Azúcares",
+          "unit": "",
+          "valuePer100": -1
+        }
+      ],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 6.3
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 80
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 339
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T04:07:55.901Z",
+    "category": "Golosinas y Chocolates",
+    "category_avg": 21,
+    "deviation": 9,
+    "halo": false,
+    "bucket": "ancla_mala",
+    "interest": 20.8,
+    "excesses": [
+      "Azúcares -1"
+    ],
+    "beneficials": [
+      "Proteínas 6.3g"
+    ],
+    "quota": "gomitas"
+  },
+  {
+    "id": "ba5541fb-40fe-4461-8160-4e54fce44cb2",
+    "name": "Gomas Gelatina Beijos Fini 100 G",
+    "brand": "Fini",
+    "barcode": "7898279790400",
+    "score": 13,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/ba5541fb-40fe-4461-8160-4e54fce44cb2.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": true,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "20.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 25
+        }
+      ],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 7
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 25
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 85
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 365
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T04:53:08.223Z",
+    "category": "Golosinas y Chocolates",
+    "category_avg": 21,
+    "deviation": 8,
+    "halo": false,
+    "bucket": "ancla_mala",
+    "interest": 19.5,
+    "excesses": [
+      "Azúcares 25g"
+    ],
+    "beneficials": [
+      "Proteínas 7g"
+    ],
+    "quota": "gomitas"
+  },
+  {
+    "id": "74b55590-e690-4715-a5af-c7bc7df508d4",
+    "name": "Hamburguesa Congelada Schneck 12 U 1 Kg",
+    "brand": "Schneck",
+    "barcode": "7730138000056",
+    "score": 16,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/74b55590-e690-4715-a5af-c7bc7df508d4.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "84.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Colesterol",
+          "unit": "mg",
+          "valuePer100": 105.95
+        },
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 8.33
+        },
+        {
+          "name": "Grasas trans",
+          "unit": "g",
+          "valuePer100": 0.6
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 241.67
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Grasas monoinsaturadas",
+          "unit": "g",
+          "valuePer100": 8.81
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 17.86
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Colesterol",
+          "unit": "mg",
+          "valuePer100": 105.95
+        },
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 8.33
+        },
+        {
+          "name": "Grasas trans",
+          "unit": "g",
+          "valuePer100": 0.6
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 477.38
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:26:08.118Z",
+    "category": "Congelados",
+    "category_avg": 64,
+    "deviation": 48,
+    "halo": false,
+    "bucket": "sorpresa",
+    "interest": 58.4,
+    "excesses": [
+      "Colesterol 105.95mg",
+      "Grasas saturadas 8.33g",
+      "Grasas trans 0.6g"
+    ],
+    "beneficials": [
+      "Grasas monoinsaturadas 8.81g",
+      "Proteínas 17.86g"
+    ],
+    "quota": "sorpresa"
+  },
+  {
+    "id": "4d655902-f1ce-4f3d-9dba-dcfd112f6bfc",
+    "name": "Hamburguesas Sarubbi Gigante Extra Carne 4 U",
+    "brand": "Sarubbi",
+    "barcode": "7730101001400",
+    "score": 16,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/4d655902-f1ce-4f3d-9dba-dcfd112f6bfc.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": true,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "80.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 8.5
+        },
+        {
+          "name": "Grasas trans",
+          "unit": "g",
+          "valuePer100": 0.63
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 833.75
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 205
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 17.5
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 8.5
+        },
+        {
+          "name": "Grasas trans",
+          "unit": "g",
+          "valuePer100": 0.63
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 833.75
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:11:02.451Z",
+    "category": "Congelados",
+    "category_avg": 64,
+    "deviation": 48,
+    "halo": false,
+    "bucket": "sorpresa",
+    "interest": 58.4,
+    "excesses": [
+      "Grasas saturadas 8.5g",
+      "Grasas trans 0.63g",
+      "Sodio 833.75mg"
+    ],
+    "beneficials": [
+      "Proteínas 17.5g"
+    ],
+    "quota": "sorpresa"
+  },
+  {
+    "id": "fff7e161-84ca-4e19-a91c-ed292877ced0",
+    "name": "Galletas Dulces Sin Azúcar El Trigal 150 G",
+    "brand": "El Trigal",
+    "barcode": "7730116115116",
+    "score": 72,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/fff7e161-84ca-4e19-a91c-ed292877ced0.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "30.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 53.33
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 22
+        },
+        {
+          "name": "Grasas monoinsaturadas",
+          "unit": "g",
+          "valuePer100": 9
+        },
+        {
+          "name": "Grasas poliinsaturadas",
+          "unit": "g",
+          "valuePer100": 0.67
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 7
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 260
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 340
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T05:20:50.816Z",
+    "category": "Galletitas Dulces",
+    "category_avg": 21,
+    "deviation": 51,
+    "halo": true,
+    "bucket": "sorpresa",
+    "interest": 57.7,
+    "excesses": [],
+    "beneficials": [
+      "Fibra alimentaria 22g",
+      "Grasas monoinsaturadas 9g",
+      "Grasas poliinsaturadas 0.67g",
+      "Proteínas 7g"
+    ],
+    "quota": "sorpresa"
+  },
+  {
+    "id": "935135d8-8084-4d3b-b12e-1b2d938a4eb5",
+    "name": "Hamburguesa Congelada Chori Schneck 2 U 167 G",
+    "brand": "Schneck",
+    "barcode": "7730138000353",
+    "score": 20,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/935135d8-8084-4d3b-b12e-1b2d938a4eb5.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": true,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "84.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 6.9
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 765.48
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 234.52
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 16.67
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 6.9
+        },
+        {
+          "name": "Grasas trans",
+          "unit": "g",
+          "valuePer100": 0.36
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 765.48
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:38:07.503Z",
+    "category": "Congelados",
+    "category_avg": 64,
+    "deviation": 44,
+    "halo": false,
+    "bucket": "sorpresa",
+    "interest": 53.2,
+    "excesses": [
+      "Grasas saturadas 6.9g",
+      "Sodio 765.48mg"
+    ],
+    "beneficials": [
+      "Proteínas 16.67g"
+    ],
+    "quota": "sorpresa"
+  },
+  {
+    "id": "9db44ddf-8076-4ba6-b994-5f4a0d4e04b2",
+    "name": "SAMAN Mini Galletas de Arroz Clásicas",
+    "brand": "Saman",
+    "barcode": "7730115000116",
+    "score": 80,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/products/9db44ddf-8076-4ba6-b994-5f4a0d4e04b2/cover.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "30.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 4
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 8.33
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 300
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 76.67
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 360
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T04:42:03.827Z",
+    "category": "Galletitas Saladas",
+    "category_avg": 40,
+    "deviation": 40,
+    "halo": true,
+    "bucket": "sorpresa",
+    "interest": 48.5,
+    "excesses": [],
+    "beneficials": [
+      "Fibra alimentaria 4g",
+      "Proteínas 8.33g"
+    ],
+    "quota": "sorpresa"
+  },
+  {
+    "id": "42a6b8d9-3206-4053-b065-fae4e2f10466",
+    "name": "Bizcochos Dulces Hojalmar Palmeras 150 G",
+    "brand": "Hojalmar",
+    "barcode": "7793450000364",
+    "score": 15,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/42a6b8d9-3206-4053-b065-fae4e2f10466.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": true,
+    "is_sodium_alert": false,
+    "is_fat_alert": true,
+    "is_saturated_fat_alert": true,
+    "serving_size_amount": "30.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 16
+        },
+        {
+          "name": "Azúcares",
+          "unit": "",
+          "valuePer100": -1
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 56.67
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 3.67
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 8.67
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 16
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 483.33
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 490
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-30T22:20:43.710Z",
+    "category": "Panes",
+    "category_avg": 51,
+    "deviation": 36,
+    "halo": false,
+    "bucket": "sorpresa",
+    "interest": 46.9,
+    "excesses": [
+      "Grasas saturadas 16g",
+      "Azúcares -1"
+    ],
+    "beneficials": [
+      "Fibra alimentaria 3.67g",
+      "Proteínas 8.67g"
+    ],
+    "quota": "sorpresa"
+  },
+  {
+    "id": "a314a1af-164a-4391-8e17-cb3b75372d4f",
+    "name": "Mango Congelado Cambay 500 G",
+    "brand": "Cambay",
+    "barcode": "7730995260303",
+    "score": 96,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/a314a1af-164a-4391-8e17-cb3b75372d4f.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "100.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 1.4
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:44:10.880Z",
+    "category": "Congelados",
+    "category_avg": 64,
+    "deviation": 32,
+    "halo": false,
+    "bucket": "sorpresa",
+    "interest": 45.6,
+    "excesses": [],
+    "beneficials": [
+      "Fibra alimentaria 1.4g"
+    ],
+    "quota": "sorpresa"
+  },
+  {
+    "id": "7496af3f-57d1-48ad-a118-83f1c7fdd3d4",
+    "name": "Anana Congelada Cambay 500 G",
+    "brand": "Cambay",
+    "barcode": "7730995260327",
+    "score": 96,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/7496af3f-57d1-48ad-a118-83f1c7fdd3d4.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "100.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 1.9
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:26:06.172Z",
+    "category": "Congelados",
+    "category_avg": 64,
+    "deviation": 32,
+    "halo": false,
+    "bucket": "sorpresa",
+    "interest": 45.6,
+    "excesses": [],
+    "beneficials": [
+      "Fibra alimentaria 1.9g"
+    ],
+    "quota": "sorpresa"
+  },
+  {
+    "id": "26af1470-4711-4100-896c-3fa4f7797ee8",
+    "name": "Jugo Citric Naranja Tetra 250 Ml",
+    "brand": "Citric",
+    "barcode": "7798085681445",
+    "score": 79,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/26af1470-4711-4100-896c-3fa4f7797ee8.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "250.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 9.6
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 41.2
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 0.6
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T03:56:21.040Z",
+    "category": "Jugos",
+    "category_avg": 46,
+    "deviation": 33,
+    "halo": true,
+    "bucket": "sorpresa",
+    "interest": 42.1,
+    "excesses": [],
+    "beneficials": [
+      "Fibra alimentaria 0.6g"
+    ],
+    "quota": "sorpresa"
+  },
+  {
+    "id": "4efc71b5-d59c-451d-9f8f-4d30b44347b2",
+    "name": "Aceite De Oliva Sibarita 500 Ml",
+    "brand": "Sibarita",
+    "barcode": "7730132000342",
+    "score": 86,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/4efc71b5-d59c-451d-9f8f-4d30b44347b2.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "13.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 15.38
+        }
+      ],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Grasas monoinsaturadas",
+          "unit": "g",
+          "valuePer100": 65.38
+        },
+        {
+          "name": "Grasas poliinsaturadas",
+          "unit": "g",
+          "valuePer100": 11.54
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 15.38
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 830.77
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T04:11:46.205Z",
+    "category": "Aceites y Vinagres",
+    "category_avg": 56,
+    "deviation": 30,
+    "halo": false,
+    "bucket": "sorpresa",
+    "interest": 41.1,
+    "excesses": [
+      "Grasas saturadas 15.38g"
+    ],
+    "beneficials": [
+      "Grasas monoinsaturadas 65.38g",
+      "Grasas poliinsaturadas 11.54g"
+    ],
+    "quota": "sorpresa"
+  },
+  {
+    "id": "5a939a15-5558-4037-a108-6774d4477636",
+    "name": "ACEITE OLIVA EXTRA VIRGEN RIO DE LA PLATA 500 Ml",
+    "brand": "Rio De La Plata",
+    "barcode": "7730205088024",
+    "score": 86,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/5a939a15-5558-4037-a108-6774d4477636.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "13.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 16.92
+        }
+      ],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Grasas monoinsaturadas",
+          "unit": "g",
+          "valuePer100": 60.77
+        },
+        {
+          "name": "Grasas poliinsaturadas",
+          "unit": "g",
+          "valuePer100": 13.85
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 16.92
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 823.08
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T04:16:12.560Z",
+    "category": "Aceites y Vinagres",
+    "category_avg": 56,
+    "deviation": 30,
+    "halo": false,
+    "bucket": "sorpresa",
+    "interest": 41.1,
+    "excesses": [
+      "Grasas saturadas 16.92g"
+    ],
+    "beneficials": [
+      "Grasas monoinsaturadas 60.77g",
+      "Grasas poliinsaturadas 13.85g"
+    ],
+    "quota": "sorpresa"
+  },
+  {
+    "id": "f8c1cc38-1e32-4112-81ee-7260f996c4ef",
+    "name": "Aceite De Oliva Seleccion Natura 500 Ml",
+    "brand": "Natura",
+    "barcode": "7790272000961",
+    "score": 86,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/f8c1cc38-1e32-4112-81ee-7260f996c4ef.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "13.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 15.38
+        }
+      ],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Grasas monoinsaturadas",
+          "unit": "g",
+          "valuePer100": 63.85
+        },
+        {
+          "name": "Grasas poliinsaturadas",
+          "unit": "g",
+          "valuePer100": 12.31
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 15.38
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 830.77
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T05:17:57.810Z",
+    "category": "Aceites y Vinagres",
+    "category_avg": 56,
+    "deviation": 30,
+    "halo": false,
+    "bucket": "sorpresa",
+    "interest": 41.1,
+    "excesses": [
+      "Grasas saturadas 15.38g"
+    ],
+    "beneficials": [
+      "Grasas monoinsaturadas 63.85g",
+      "Grasas poliinsaturadas 12.31g"
+    ],
+    "quota": "sorpresa"
+  },
+  {
+    "id": "ccf50f27-c02f-47d1-9784-be7e0334c2a0",
+    "name": "Aderezo Mostaza Dijon Maille 215 G",
+    "brand": "Maille",
+    "barcode": "3036810201280",
+    "score": 66,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/ccf50f27-c02f-47d1-9784-be7e0334c2a0.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": true,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "12.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 1925
+        }
+      ],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 8.33
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 1925
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 150
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T05:00:42.358Z",
+    "category": "Aderezos",
+    "category_avg": 33,
+    "deviation": 33,
+    "halo": false,
+    "bucket": "sorpresa",
+    "interest": 38.2,
+    "excesses": [
+      "Sodio 1925mg"
+    ],
+    "beneficials": [
+      "Proteínas 8.33g"
+    ],
+    "quota": "sorpresa"
+  },
+  {
+    "id": "7cea54a1-bfe8-43a8-8283-ccd8a98759a6",
+    "name": "Masa Para Tarta Con Semillas Avanti",
+    "brand": "Avanti",
+    "barcode": "7730927022092",
+    "score": 61,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/7cea54a1-bfe8-43a8-8283-ccd8a98759a6.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "30.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 46.67
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 300
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 3
+        },
+        {
+          "name": "Grasas monoinsaturadas",
+          "unit": "g",
+          "valuePer100": 6.67
+        },
+        {
+          "name": "Grasas poliinsaturadas",
+          "unit": "g",
+          "valuePer100": 2.33
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 6.67
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 380
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:29:14.477Z",
+    "category": "Masas",
+    "category_avg": 27,
+    "deviation": 34,
+    "halo": false,
+    "bucket": "sorpresa",
+    "interest": 37,
+    "excesses": [],
+    "beneficials": [
+      "Fibra alimentaria 3g",
+      "Grasas monoinsaturadas 6.67g",
+      "Grasas poliinsaturadas 2.33g",
+      "Proteínas 6.67g"
+    ],
+    "quota": "sorpresa"
+  },
+  {
+    "id": "09387563-afec-4044-8348-66ec82b8f4f4",
+    "name": "Leche Conaprole UHT Descremada 0% lactosa 1L",
+    "brand": "Conaprole",
+    "barcode": "7730105001826",
+    "score": 85,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/09387563-afec-4044-8348-66ec82b8f4f4.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "200.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 5
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 34
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Calcio",
+          "unit": "mg",
+          "valuePer100": 113.5
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 3.55
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T03:45:30.933Z",
+    "category": "Leches y Yogures",
+    "category_avg": 59,
+    "deviation": 27,
+    "halo": true,
+    "bucket": "sorpresa",
+    "interest": 37,
+    "excesses": [],
+    "beneficials": [
+      "Calcio 113.5mg",
+      "Proteínas 3.55g"
+    ],
+    "quota": "sorpresa"
+  },
+  {
+    "id": "86b7d26b-b3bd-4eca-be3d-aa2e6cb31a57",
+    "name": "Almendras Peladas Rio De La Plata 100 G",
+    "brand": "Rio De La Plata",
+    "barcode": "7730205066404",
+    "score": 97,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/86b7d26b-b3bd-4eca-be3d-aa2e6cb31a57.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "15.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 20
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 12
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 20.67
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 613.33
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T04:33:11.075Z",
+    "category": "Frutos Secos",
+    "category_avg": 74,
+    "deviation": 23,
+    "halo": false,
+    "bucket": "sorpresa",
+    "interest": 36.9,
+    "excesses": [],
+    "beneficials": [
+      "Fibra alimentaria 12g",
+      "Proteínas 20.67g"
+    ],
+    "quota": "sorpresa"
+  },
+  {
+    "id": "82b7fc07-48d3-4a7c-980f-85c2217d8afa",
+    "name": "Galletas De Arroz Cerealitas 160 G",
+    "brand": "Cerealitas",
+    "barcode": "7622300160975",
+    "score": 70,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/82b7fc07-48d3-4a7c-980f-85c2217d8afa.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "32.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 1.56
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 8.13
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 4.06
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 446.88
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 81.25
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 362.5
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T04:31:31.867Z",
+    "category": "Galletitas Saladas",
+    "category_avg": 40,
+    "deviation": 30,
+    "halo": true,
+    "bucket": "sorpresa",
+    "interest": 35.5,
+    "excesses": [],
+    "beneficials": [
+      "Fibra alimentaria 1.56g",
+      "Proteínas 8.13g"
+    ],
+    "quota": "sorpresa"
+  },
+  {
+    "id": "9ebe2f87-281f-4eba-8628-6519318a1076",
+    "name": "Aceite De Oliva Rio De La Pla 250 Ml",
+    "brand": "Rio De La Plata",
+    "barcode": "7730205088017",
+    "score": 80,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/9ebe2f87-281f-4eba-8628-6519318a1076.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "13.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 16.92
+        }
+      ],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Grasas monoinsaturadas",
+          "unit": "g",
+          "valuePer100": 60.77
+        },
+        {
+          "name": "Grasas poliinsaturadas",
+          "unit": "g",
+          "valuePer100": 13.85
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 16.92
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 823.08
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T04:42:26.553Z",
+    "category": "Aceites y Vinagres",
+    "category_avg": 56,
+    "deviation": 24,
+    "halo": false,
+    "bucket": "sorpresa",
+    "interest": 33.3,
+    "excesses": [
+      "Grasas saturadas 16.92g"
+    ],
+    "beneficials": [
+      "Grasas monoinsaturadas 60.77g",
+      "Grasas poliinsaturadas 13.85g"
+    ],
+    "quota": "sorpresa"
+  },
+  {
+    "id": "fd718339-44e6-4b43-95a0-4dd35c630148",
+    "name": "Masa Para Tarta Integral Avanti",
+    "brand": "Avanti",
+    "barcode": "7730927022108",
+    "score": 58,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/fd718339-44e6-4b43-95a0-4dd35c630148.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "30.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 43.33
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 276.67
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 5
+        },
+        {
+          "name": "Grasas monoinsaturadas",
+          "unit": "g",
+          "valuePer100": 7
+        },
+        {
+          "name": "Grasas poliinsaturadas",
+          "unit": "g",
+          "valuePer100": 1
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 6
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 373.33
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T05:19:47.318Z",
+    "category": "Masas",
+    "category_avg": 27,
+    "deviation": 31,
+    "halo": true,
+    "bucket": "sorpresa",
+    "interest": 33.1,
+    "excesses": [],
+    "beneficials": [
+      "Fibra alimentaria 5g",
+      "Grasas monoinsaturadas 7g",
+      "Grasas poliinsaturadas 1g",
+      "Proteínas 6g"
+    ],
+    "quota": "sorpresa"
+  },
+  {
+    "id": "2a691c91-ab85-42ca-9b7b-462807021ff7",
+    "name": "Leche Entera La Serenísima Bot 1.00 L. Natural",
+    "brand": "La Serenísima",
+    "barcode": "7790742335500",
+    "score": 82,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/2a691c91-ab85-42ca-9b7b-462807021ff7.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "200.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 57
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Calcio",
+          "unit": "mg",
+          "valuePer100": 105
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 3
+        },
+        {
+          "name": "Vitamina A",
+          "unit": "µg",
+          "valuePer100": 64
+        },
+        {
+          "name": "Vitamina D",
+          "unit": "µg",
+          "valuePer100": 1
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 1.75
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T03:57:46.009Z",
+    "category": "Leches y Yogures",
+    "category_avg": 59,
+    "deviation": 24,
+    "halo": true,
+    "bucket": "sorpresa",
+    "interest": 33.1,
+    "excesses": [],
+    "beneficials": [
+      "Calcio 105mg",
+      "Proteínas 3g",
+      "Vitamina A 64µg",
+      "Vitamina D 1µg"
+    ],
+    "quota": "sorpresa"
+  },
+  {
+    "id": "636b0868-ffaa-4645-afd2-9cccfa4c11fb",
+    "name": "Leche Descremada La Serenísima 1.00 L. Natural",
+    "brand": "La Serenísima",
+    "barcode": "7790742335609",
+    "score": 81,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/636b0868-ffaa-4645-afd2-9cccfa4c11fb.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "200.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 40
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Calcio",
+          "unit": "mg",
+          "valuePer100": 105
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 3
+        },
+        {
+          "name": "Vitamina A",
+          "unit": "µg",
+          "valuePer100": 64
+        },
+        {
+          "name": "Vitamina D",
+          "unit": "µg",
+          "valuePer100": 1
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:19:26.004Z",
+    "category": "Leches y Yogures",
+    "category_avg": 59,
+    "deviation": 23,
+    "halo": true,
+    "bucket": "sorpresa",
+    "interest": 31.8,
+    "excesses": [],
+    "beneficials": [
+      "Calcio 105mg",
+      "Proteínas 3g",
+      "Vitamina A 64µg",
+      "Vitamina D 1µg"
+    ],
+    "quota": "sorpresa"
+  },
+  {
+    "id": "9422dd33-be83-4a17-90fc-a7e2663f3d00",
+    "name": "Galletas Dulce Sin Azúcar El Trigal Chocolate 150 G",
+    "brand": "El Trigal",
+    "barcode": "7730116116113",
+    "score": 52,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/9422dd33-be83-4a17-90fc-a7e2663f3d00.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "30.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 50
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 23.33
+        },
+        {
+          "name": "Grasas monoinsaturadas",
+          "unit": "g",
+          "valuePer100": 9
+        },
+        {
+          "name": "Grasas poliinsaturadas",
+          "unit": "g",
+          "valuePer100": 0.67
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 8
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 276.67
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 360
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T04:38:26.663Z",
+    "category": "Galletitas Dulces",
+    "category_avg": 21,
+    "deviation": 31,
+    "halo": true,
+    "bucket": "sorpresa",
+    "interest": 31.7,
+    "excesses": [],
+    "beneficials": [
+      "Fibra alimentaria 23.33g",
+      "Grasas monoinsaturadas 9g",
+      "Grasas poliinsaturadas 0.67g",
+      "Proteínas 8g"
+    ],
+    "quota": "sorpresa"
+  },
+  {
+    "id": "79837503-512b-4dc0-a4a1-7d2ac7f8f9dc",
+    "name": "Galletas Al Agua Famosa Pack 420 G",
+    "brand": "Famosa",
+    "barcode": "7622300226633",
+    "score": 16,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/79837503-512b-4dc0-a4a1-7d2ac7f8f9dc.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": true,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "30.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Grasas trans",
+          "unit": "g",
+          "valuePer100": 0.67
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 636.67
+        }
+      ],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 2.67
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 11
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 5.33
+        },
+        {
+          "name": "Grasas trans",
+          "unit": "g",
+          "valuePer100": 0.67
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 636.67
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 70
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 430
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T04:27:59.621Z",
+    "category": "Galletitas Saladas",
+    "category_avg": 40,
+    "deviation": 24,
+    "halo": true,
+    "bucket": "trampa",
+    "interest": 59.7,
+    "excesses": [
+      "Grasas trans 0.67g",
+      "Sodio 636.67mg"
+    ],
+    "beneficials": [
+      "Fibra alimentaria 2.67g",
+      "Proteínas 11g"
+    ],
+    "quota": "trampa"
+  },
+  {
+    "id": "f84f52b8-e68e-4d79-a3be-60080225ce8d",
+    "name": "Snack Saladix Arcor Jamon Caja 100 G",
+    "brand": "Saladix",
+    "barcode": "7790580716707",
+    "score": 19,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/f84f52b8-e68e-4d79-a3be-60080225ce8d.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": true,
+    "is_fat_alert": true,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "30.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 833.33
+        }
+      ],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 2
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 9
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 12
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 833.33
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 70
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 433.33
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T05:17:44.031Z",
+    "category": "Galletitas Saladas",
+    "category_avg": 40,
+    "deviation": 21,
+    "halo": true,
+    "bucket": "trampa",
+    "interest": 55.8,
+    "excesses": [
+      "Sodio 833.33mg"
+    ],
+    "beneficials": [
+      "Fibra alimentaria 2g",
+      "Proteínas 9g"
+    ],
+    "quota": "trampa"
+  },
+  {
+    "id": "829f580c-0fe9-4d69-af0b-bf9877ea54cb",
+    "name": "Refresco En Polvo Tang Naranja Dulce 18 G",
+    "brand": "Tang",
+    "barcode": "7622201814946",
+    "score": 23,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/829f580c-0fe9-4d69-af0b-bf9877ea54cb.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "3.60",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 63.89
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 750
+        }
+      ],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Vitamina D",
+          "unit": "µg",
+          "valuePer100": 20.83
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 63.89
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 750
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 66.67
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 333.33
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T04:31:29.315Z",
+    "category": "Jugos",
+    "category_avg": 46,
+    "deviation": 23,
+    "halo": true,
+    "bucket": "trampa",
+    "interest": 55.7,
+    "excesses": [
+      "Azúcares 63.89g",
+      "Sodio 750mg"
+    ],
+    "beneficials": [
+      "Vitamina D 20.83µg"
+    ],
+    "quota": "trampa"
+  },
+  {
+    "id": "e4a6f7a9-aef8-4509-b41c-0eba70cdca70",
+    "name": "Snack Saladix Arcor Calabre Bolsa 100 G",
+    "brand": "Saladix",
+    "barcode": "7790580716806",
+    "score": 20,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/e4a6f7a9-aef8-4509-b41c-0eba70cdca70.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": true,
+    "is_fat_alert": true,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "30.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 843.33
+        }
+      ],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 2
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 9.67
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 9.67
+        },
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 2.33
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 843.33
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 70
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 440
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T05:09:55.559Z",
+    "category": "Galletitas Saladas",
+    "category_avg": 40,
+    "deviation": 20,
+    "halo": true,
+    "bucket": "trampa",
+    "interest": 54.5,
+    "excesses": [
+      "Sodio 843.33mg"
+    ],
+    "beneficials": [
+      "Fibra alimentaria 2g",
+      "Proteínas 9.67g"
+    ],
+    "quota": "trampa"
+  },
+  {
+    "id": "10757f2b-de6d-4129-9911-2a8f03f48384",
+    "name": "Galletas Cracker Finitas La Celestina 300 G",
+    "brand": "Fini",
+    "barcode": "7730172275113",
+    "score": 25,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/10757f2b-de6d-4129-9911-2a8f03f48384.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "30.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 6
+        }
+      ],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 2
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 11.33
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 6
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 500
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 66.67
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 426.67
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T03:48:05.739Z",
+    "category": "Galletitas Saladas",
+    "category_avg": 40,
+    "deviation": 15,
+    "halo": true,
+    "bucket": "trampa",
+    "interest": 48,
+    "excesses": [
+      "Grasas saturadas 6g"
+    ],
+    "beneficials": [
+      "Fibra alimentaria 2g",
+      "Proteínas 11.33g"
+    ],
+    "quota": "trampa"
+  },
+  {
+    "id": "3701257c-604e-4c58-8bd3-436a78459dcb",
+    "name": "Jugo Dairyco Naranja Light 500 Ml",
+    "brand": "Dairyco",
+    "barcode": "7730203108922",
+    "score": 29,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/3701257c-604e-4c58-8bd3-436a78459dcb.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "200.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 6
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 25
+        }
+      ],
+      "beneficials": [],
+      "notBeneficials": [],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:02:32.787Z",
+    "category": "Jugos",
+    "category_avg": 46,
+    "deviation": 17,
+    "halo": true,
+    "bucket": "trampa",
+    "interest": 47.9,
+    "excesses": [],
+    "beneficials": [],
+    "quota": "trampa"
+  },
+  {
+    "id": "926b3ce0-d22c-486d-b0a0-e8c5f918c761",
+    "name": "Agua Saborizada Salus Sin Gas Frutte Pomelo 1.5 L",
+    "brand": "Salus",
+    "barcode": "7730400003570",
+    "score": 21,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/926b3ce0-d22c-486d-b0a0-e8c5f918c761.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "200.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [],
+      "beneficials": [],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 2.95
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:37:46.276Z",
+    "category": "Aguas Saborizadas",
+    "category_avg": 32,
+    "deviation": 11,
+    "halo": true,
+    "bucket": "trampa",
+    "interest": 45,
+    "excesses": [],
+    "beneficials": [],
+    "quota": "trampa"
+  },
+  {
+    "id": "c3b3dc33-cfd7-4d6f-91be-d791d90590f8",
+    "name": "Galletas Cerealitas Avena Cacao 170 Gr",
+    "brand": "Cerealitas",
+    "barcode": "7622202241505",
+    "score": 37,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/c3b3dc33-cfd7-4d6f-91be-d791d90590f8.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": true,
+    "is_sodium_alert": false,
+    "is_fat_alert": true,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "32.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 22.81
+        }
+      ],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 4.38
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 8.44
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 22.81
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 253.13
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 68.75
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 434.38
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T04:56:51.133Z",
+    "category": "Galletitas Dulces",
+    "category_avg": 21,
+    "deviation": 16,
+    "halo": true,
+    "bucket": "trampa",
+    "interest": 45,
+    "excesses": [
+      "Azúcares 22.81g"
+    ],
+    "beneficials": [
+      "Fibra alimentaria 4.38g",
+      "Proteínas 8.44g"
+    ],
+    "quota": "trampa"
+  },
+  {
+    "id": "4dcd321f-694c-404b-a9a0-a6772e4e8c62",
+    "name": "Jugo Dairyco Naranja 500 Ml",
+    "brand": "Dairyco",
+    "barcode": "7730203108489",
+    "score": 32,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/4dcd321f-694c-404b-a9a0-a6772e4e8c62.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "200.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 8
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 35
+        }
+      ],
+      "beneficials": [],
+      "notBeneficials": [],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:11:13.732Z",
+    "category": "Jugos",
+    "category_avg": 46,
+    "deviation": 14,
+    "halo": true,
+    "bucket": "trampa",
+    "interest": 44,
+    "excesses": [],
+    "beneficials": [],
+    "quota": "trampa"
+  },
+  {
+    "id": "dc2e5dc9-754e-44c8-b2b4-5ced7b9ab435",
+    "name": "Agua Saborizada Salus Frutte Sin Gas Manzana 1.5 L",
+    "brand": "Salus",
+    "barcode": "7730400003594",
+    "score": 22,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/dc2e5dc9-754e-44c8-b2b4-5ced7b9ab435.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "200.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [],
+      "beneficials": [],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 2.95
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T05:06:37.688Z",
+    "category": "Aguas Saborizadas",
+    "category_avg": 32,
+    "deviation": 10,
+    "halo": true,
+    "bucket": "trampa",
+    "interest": 43.7,
+    "excesses": [],
+    "beneficials": [],
+    "quota": "trampa"
+  },
+  {
+    "id": "6cd297ae-816f-49a5-9fa7-b363108514b5",
+    "name": "Jugo Citric Natanja 3 L",
+    "brand": "Citric",
+    "barcode": "7798085681490",
+    "score": 34,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/6cd297ae-816f-49a5-9fa7-b363108514b5.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "200.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 8.5
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 9.5
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 41
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 0.6
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 8.5
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:23:07.533Z",
+    "category": "Jugos",
+    "category_avg": 46,
+    "deviation": 12,
+    "halo": true,
+    "bucket": "trampa",
+    "interest": 41.4,
+    "excesses": [
+      "Azúcares 8.5g"
+    ],
+    "beneficials": [
+      "Fibra alimentaria 0.6g"
+    ],
+    "quota": "trampa"
+  },
+  {
+    "id": "d84b4c9e-3835-4d95-811b-1578fa985da6",
+    "name": "Helado Crufi Diet Frutilla con Frutilla en Trozos 1 L",
+    "brand": "Crufi",
+    "barcode": "7730916581432",
+    "score": 49,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/d84b4c9e-3835-4d95-811b-1578fa985da6.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "60.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 95
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 6.5
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 3.5
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 6.5
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T05:05:06.209Z",
+    "category": "Helados",
+    "category_avg": 33,
+    "deviation": 16,
+    "halo": true,
+    "bucket": "trampa",
+    "interest": 40.9,
+    "excesses": [],
+    "beneficials": [
+      "Fibra alimentaria 6.5g",
+      "Proteínas 3.5g"
+    ],
+    "quota": "trampa"
+  },
+  {
+    "id": "c9646ed0-4ebf-4bb4-a949-555d35d6d63b",
+    "name": "Helado Crufi Diet Flan Con Dulce De Leche 1 L",
+    "brand": "Crufi",
+    "barcode": "7730916582552",
+    "score": 46,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/c9646ed0-4ebf-4bb4-a949-555d35d6d63b.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "60.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 98.33
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 10.17
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 4.33
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 7
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:59:06.866Z",
+    "category": "Helados",
+    "category_avg": 33,
+    "deviation": 13,
+    "halo": true,
+    "bucket": "trampa",
+    "interest": 38.8,
+    "excesses": [],
+    "beneficials": [
+      "Fibra alimentaria 10.17g",
+      "Proteínas 4.33g"
+    ],
+    "quota": "trampa"
+  },
+  {
+    "id": "e3bd5c78-f2ad-4257-85ed-ba2d0beb98cb",
+    "name": "BISCOITO INTEGRAL COM MORANGO E CEREAIS",
+    "brand": "Nesfit",
+    "barcode": "7891000304594",
+    "score": 28,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/e3bd5c78-f2ad-4257-85ed-ba2d0beb98cb.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": true,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "30.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 22
+        }
+      ],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 4.67
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 9.67
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 22
+        },
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 2.33
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 263.33
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 66.67
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 460
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T05:09:30.208Z",
+    "category": "Galletitas Dulces",
+    "category_avg": 21,
+    "deviation": 7,
+    "halo": true,
+    "bucket": "trampa",
+    "interest": 38.7,
+    "excesses": [
+      "Azúcares 22g"
+    ],
+    "beneficials": [
+      "Fibra alimentaria 4.67g",
+      "Proteínas 9.67g"
+    ],
+    "quota": "trampa"
+  },
+  {
+    "id": "9d3b2c15-d77a-42f7-b919-cd0454a7541f",
+    "name": "Agua Saborizada H2Oh! Naranchello 1.5 L",
+    "brand": "H2O",
+    "barcode": "7734284001820",
+    "score": 43,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/9d3b2c15-d77a-42f7-b919-cd0454a7541f.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "200.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Niacina",
+          "unit": "mg",
+          "valuePer100": 1.6
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:41:52.739Z",
+    "category": "Aguas Saborizadas",
+    "category_avg": 32,
+    "deviation": 11,
+    "halo": true,
+    "bucket": "trampa",
+    "interest": 37.8,
+    "excesses": [],
+    "beneficials": [
+      "Niacina 1.6mg"
+    ],
+    "quota": "trampa"
+  },
+  {
+    "id": "2c7cb5a7-9971-4ebc-a7be-3cd76f30802e",
+    "name": "Refresco Gatorade Manzana 1.25 L",
+    "brand": "Gatorade",
+    "barcode": "7792170110575",
+    "score": 17,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/2c7cb5a7-9971-4ebc-a7be-3cd76f30802e.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "200.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 6
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 6
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 24
+        }
+      ],
+      "beneficials": [],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 6
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T03:58:28.687Z",
+    "category": "Energizantes",
+    "category_avg": 19,
+    "deviation": 2,
+    "halo": true,
+    "bucket": "trampa",
+    "interest": 37.2,
+    "excesses": [
+      "Azúcares 6g"
+    ],
+    "beneficials": [],
+    "quota": "trampa"
+  },
+  {
+    "id": "6a9c5671-7481-48a7-abcf-7c1abdc1679b",
+    "name": "Jugo Dairyco Naranja/Ma Light 3 L",
+    "brand": "Dairyco",
+    "barcode": "7730203108908",
+    "score": 38,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/6a9c5671-7481-48a7-abcf-7c1abdc1679b.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "200.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 6
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 23.5
+        }
+      ],
+      "beneficials": [],
+      "notBeneficials": [],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:22:15.336Z",
+    "category": "Jugos",
+    "category_avg": 46,
+    "deviation": 8,
+    "halo": true,
+    "bucket": "trampa",
+    "interest": 36.2,
+    "excesses": [],
+    "beneficials": [],
+    "quota": "trampa"
+  },
+  {
+    "id": "ae59c410-4cca-430e-ba24-14a063c5720e",
+    "name": "Queso Para Untar Requesón Conaprole Light 250 G",
+    "brand": "Conaprole",
+    "barcode": "77309563",
+    "score": 39,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/ae59c410-4cca-430e-ba24-14a063c5720e.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": true,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": true,
+    "serving_size_amount": "30.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 6.33
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 740
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 156.67
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Grasas monoinsaturadas",
+          "unit": "g",
+          "valuePer100": 3
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 13.33
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Colesterol",
+          "unit": "mg",
+          "valuePer100": 36.67
+        },
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 6.33
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 740
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:48:28.229Z",
+    "category": "Quesos",
+    "category_avg": 32,
+    "deviation": 8,
+    "halo": true,
+    "bucket": "trampa",
+    "interest": 35.8,
+    "excesses": [
+      "Grasas saturadas 6.33g",
+      "Sodio 740mg"
+    ],
+    "beneficials": [
+      "Grasas monoinsaturadas 3g",
+      "Proteínas 13.33g"
+    ],
+    "quota": "trampa"
+  },
+  {
+    "id": "38fa6092-5c90-4213-bf91-0b3cfaa3a4f6",
+    "name": "Refresco Gatorade Cool Blue 500 Ml",
+    "brand": "Gatorade",
+    "barcode": "7792170042258",
+    "score": 20,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/38fa6092-5c90-4213-bf91-0b3cfaa3a4f6.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "200.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 6
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 6
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 24
+        }
+      ],
+      "beneficials": [],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 6
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:03:18.643Z",
+    "category": "Energizantes",
+    "category_avg": 19,
+    "deviation": 1,
+    "halo": true,
+    "bucket": "trampa",
+    "interest": 34.8,
+    "excesses": [
+      "Azúcares 6g"
+    ],
+    "beneficials": [],
+    "quota": "trampa"
+  },
+  {
+    "id": "ff3c9a95-7d79-42b0-a5cc-825250ce11ee",
+    "name": "Refresco Gatorade Naranja 1.25 L",
+    "brand": "Gatorade",
+    "barcode": "7792170110551",
+    "score": 20,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/ff3c9a95-7d79-42b0-a5cc-825250ce11ee.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "200.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 6
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 6
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 24
+        }
+      ],
+      "beneficials": [],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 6
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T05:20:33.125Z",
+    "category": "Energizantes",
+    "category_avg": 19,
+    "deviation": 1,
+    "halo": true,
+    "bucket": "trampa",
+    "interest": 34.8,
+    "excesses": [
+      "Azúcares 6g"
+    ],
+    "beneficials": [],
+    "quota": "trampa"
+  },
+  {
+    "id": "8e43699a-1426-4e6d-8e19-d380a690c75f",
+    "name": "Yogurísimo Licuado Mango Coco Y Sésamo 250 Ml",
+    "brand": "Yogurísimo",
+    "barcode": "7730922255594",
+    "score": 49,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/8e43699a-1426-4e6d-8e19-d380a690c75f.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "250.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 84
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Calcio",
+          "unit": "mg",
+          "valuePer100": 99.6
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 2.84
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 1.56
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:36:10.038Z",
+    "category": "Leches y Yogures",
+    "category_avg": 59,
+    "deviation": 10,
+    "halo": true,
+    "bucket": "trampa",
+    "interest": 34.8,
+    "excesses": [],
+    "beneficials": [
+      "Calcio 99.6mg",
+      "Proteínas 2.84g"
+    ],
+    "quota": "trampa"
+  },
+  {
+    "id": "030c3735-6cff-43ba-95dc-244d9e226e46",
+    "name": "Sopa Crema De Verduras Light Monte Cudine 37 G",
+    "brand": "Monte Cudine",
+    "barcode": "7730177005043",
+    "score": 39,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/030c3735-6cff-43ba-95dc-244d9e226e46.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": true,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "12.50",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 5768
+        }
+      ],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 8.8
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 5768
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 64.8
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 304
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T03:43:17.293Z",
+    "category": "Sopa y Puré",
+    "category_avg": 43,
+    "deviation": 4,
+    "halo": true,
+    "bucket": "trampa",
+    "interest": 32.6,
+    "excesses": [
+      "Sodio 5768mg"
+    ],
+    "beneficials": [
+      "Proteínas 8.8g"
+    ],
+    "quota": "trampa"
+  },
+  {
+    "id": "46d8629d-46a7-41b0-9af7-b5684ba563c5",
+    "name": "Agua Mineral Nativa Sin Gas Full Sport 1 L",
+    "brand": "Nativa",
+    "barcode": "7730130001938",
+    "score": 100,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/46d8629d-46a7-41b0-9af7-b5684ba563c5.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": null,
+    "serving_size_unit": "ml",
+    "highlights": null,
+    "score_calculated_at": "2026-02-26T21:39:59.447Z",
+    "category": "Aguas",
+    "category_avg": 83,
+    "deviation": 17,
+    "halo": false,
+    "bucket": "ancla_buena",
+    "interest": 32,
+    "excesses": [],
+    "beneficials": [],
+    "quota": "ancla_buena"
+  },
+  {
+    "id": "d51ba8bf-ab4d-4f61-827e-51e90e54e014",
+    "name": "AGUA MINERAL MATUTINA CON GAS BOTELLA 2.25 LITROS",
+    "brand": "MATUTINA",
+    "barcode": "7730400003884",
+    "score": 97,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/d51ba8bf-ab4d-4f61-827e-51e90e54e014.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "200.00",
+    "serving_size_unit": "ml",
+    "highlights": null,
+    "score_calculated_at": "2026-03-14T23:28:08.881Z",
+    "category": "Aguas",
+    "category_avg": 83,
+    "deviation": 14,
+    "halo": false,
+    "bucket": "ancla_buena",
+    "interest": 28.1,
+    "excesses": [],
+    "beneficials": [],
+    "quota": "ancla_buena"
+  },
+  {
+    "id": "21181954-21cc-4ca4-8f1a-1b4a976ff86e",
+    "name": "Fideos Trigo Duro Barilla Angel Hair N°1 500 G",
+    "brand": "Barilla",
+    "barcode": "8076800195019",
+    "score": 84,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/21181954-21cc-4ca4-8f1a-1b4a976ff86e.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "80.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 3
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 11.37
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 72.5
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 352.5
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T03:54:23.117Z",
+    "category": "Pastas",
+    "category_avg": 69,
+    "deviation": 16,
+    "halo": false,
+    "bucket": "ancla_buena",
+    "interest": 25.7,
+    "excesses": [],
+    "beneficials": [
+      "Fibra alimentaria 3g",
+      "Proteínas 11.37g"
+    ],
+    "quota": "ancla_buena"
+  },
+  {
+    "id": "31207c62-6c0b-48a5-baf9-df5c0ffa3650",
+    "name": "Fideos Espinaca Adria Vermicelli 500 G",
+    "brand": "Adria",
+    "barcode": "7730103010080",
+    "score": 84,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/31207c62-6c0b-48a5-baf9-df5c0ffa3650.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "80.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 2.25
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 15
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 72.5
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 362.5
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T04:00:13.192Z",
+    "category": "Pastas",
+    "category_avg": 69,
+    "deviation": 16,
+    "halo": false,
+    "bucket": "ancla_buena",
+    "interest": 25.7,
+    "excesses": [],
+    "beneficials": [
+      "Fibra alimentaria 2.25g",
+      "Proteínas 15g"
+    ],
+    "quota": "ancla_buena"
+  },
+  {
+    "id": "e1609953-8672-494f-8bee-0c9939a279de",
+    "name": "Fideos Trigo Duro Barilla Spaghettoni 500 G",
+    "brand": "Barilla",
+    "barcode": "8076808150072",
+    "score": 84,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/e1609953-8672-494f-8bee-0c9939a279de.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "80.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 3
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 11.37
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 72.5
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 352.5
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T05:08:35.274Z",
+    "category": "Pastas",
+    "category_avg": 69,
+    "deviation": 16,
+    "halo": false,
+    "bucket": "ancla_buena",
+    "interest": 25.7,
+    "excesses": [],
+    "beneficials": [
+      "Fibra alimentaria 3g",
+      "Proteínas 11.37g"
+    ],
+    "quota": "ancla_buena"
+  },
+  {
+    "id": "07884b34-18bd-4050-b5ed-898eeab066b9",
+    "name": "Fideos Espinaca Adria Nido 500 Gr",
+    "brand": "Adria",
+    "barcode": "7730103010028",
+    "score": 82,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/07884b34-18bd-4050-b5ed-898eeab066b9.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "80.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 2.25
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 15
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 72.5
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 362.5
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T03:44:52.338Z",
+    "category": "Pastas",
+    "category_avg": 69,
+    "deviation": 14,
+    "halo": false,
+    "bucket": "ancla_buena",
+    "interest": 23.1,
+    "excesses": [],
+    "beneficials": [
+      "Fibra alimentaria 2.25g",
+      "Proteínas 15g"
+    ],
+    "quota": "ancla_buena"
+  },
+  {
+    "id": "4a59c20c-c87e-44c0-bff3-d2c5a66f25b9",
+    "name": "Cous Cous Barilla 500 G",
+    "brand": "Barilla",
+    "barcode": "8076809534376",
+    "score": 76,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/4a59c20c-c87e-44c0-bff3-d2c5a66f25b9.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "80.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 3
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 12
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 71.25
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 358.75
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T04:09:51.037Z",
+    "category": "Legumbres secas",
+    "category_avg": 91,
+    "deviation": 15,
+    "halo": false,
+    "bucket": "ancla_buena",
+    "interest": 23.1,
+    "excesses": [],
+    "beneficials": [
+      "Fibra alimentaria 3g",
+      "Proteínas 12g"
+    ],
+    "quota": "ancla_buena"
+  },
+  {
+    "id": "8bada35f-2a9e-4cfe-ac12-381ab8ce3b28",
+    "name": "Tomate Pelado Perita Arcor Lata 400 G",
+    "brand": "Arcor",
+    "barcode": "7790580567903",
+    "score": 75,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/8bada35f-2a9e-4cfe-ac12-381ab8ce3b28.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "130.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [],
+      "beneficials": [],
+      "notBeneficials": [],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:35:05.089Z",
+    "category": "Salsas",
+    "category_avg": 62,
+    "deviation": 13,
+    "halo": false,
+    "bucket": "ancla_buena",
+    "interest": 20.9,
+    "excesses": [],
+    "beneficials": [],
+    "quota": "ancla_buena"
+  },
+  {
+    "id": "d491b2f6-f764-40c9-8d7c-02b81991d2d2",
+    "name": "Yerba Mate Armiño 1 Kg",
+    "brand": "Armiño",
+    "barcode": "7730205037756",
+    "score": 81,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/d491b2f6-f764-40c9-8d7c-02b81991d2d2.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "100.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 3
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T05:03:49.136Z",
+    "category": "Yerbas",
+    "category_avg": 92,
+    "deviation": 11,
+    "halo": false,
+    "bucket": "ancla_buena",
+    "interest": 20.1,
+    "excesses": [],
+    "beneficials": [
+      "Proteínas 3g"
+    ],
+    "quota": "ancla_buena"
+  },
+  {
+    "id": "f1a3765a-c835-449e-a9aa-92065ea0906c",
+    "name": "Yerba Mate Compuesta Serena Canaria 1 Kg",
+    "brand": "Canarias",
+    "barcode": "7730241010294",
+    "score": 97,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/f1a3765a-c835-449e-a9aa-92065ea0906c.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "100.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 27
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 196
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Calcio",
+          "unit": "mg",
+          "valuePer100": 850
+        },
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 50
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 8
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T05:15:10.183Z",
+    "category": "Yerbas",
+    "category_avg": 92,
+    "deviation": 5,
+    "halo": false,
+    "bucket": "ancla_buena",
+    "interest": 19.3,
+    "excesses": [],
+    "beneficials": [
+      "Calcio 850mg",
+      "Fibra alimentaria 50g",
+      "Proteínas 8g"
+    ],
+    "quota": "ancla_buena"
+  },
+  {
+    "id": "35b56109-f370-40f2-b591-ac894e76c008",
+    "name": "Fideos Foratti Al Huevo Adria 500 G",
+    "brand": "Adria",
+    "barcode": "7730103300051",
+    "score": 78,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/35b56109-f370-40f2-b591-ac894e76c008.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "80.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 1.75
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 12.5
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 75
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 375
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T04:02:01.416Z",
+    "category": "Pastas",
+    "category_avg": 69,
+    "deviation": 10,
+    "halo": false,
+    "bucket": "ancla_buena",
+    "interest": 17.9,
+    "excesses": [],
+    "beneficials": [
+      "Fibra alimentaria 1.75g",
+      "Proteínas 12.5g"
+    ],
+    "quota": "ancla_buena"
+  },
+  {
+    "id": "860d3c85-9863-4cc0-a2b9-05f6ace7245c",
+    "name": "Lasagna Facil Las Acacias 200 G",
+    "brand": "Las Acacias",
+    "barcode": "7730430002727",
+    "score": 76,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/860d3c85-9863-4cc0-a2b9-05f6ace7245c.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "80.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 2.5
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 11.75
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 73.75
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 358.75
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T04:32:52.515Z",
+    "category": "Pastas",
+    "category_avg": 69,
+    "deviation": 8,
+    "halo": false,
+    "bucket": "ancla_buena",
+    "interest": 15.3,
+    "excesses": [],
+    "beneficials": [
+      "Fibra alimentaria 2.5g",
+      "Proteínas 11.75g"
+    ],
+    "quota": "ancla_buena"
+  },
+  {
+    "id": "f48e843c-d4f2-4414-99e5-3fe81aff79b0",
+    "name": "Yerba Mate Canarias Té Rojo Y Centella 1 Kg",
+    "brand": "Canarias",
+    "barcode": "7730241009120",
+    "score": 93,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/f48e843c-d4f2-4414-99e5-3fe81aff79b0.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "100.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 30
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 184
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Calcio",
+          "unit": "mg",
+          "valuePer100": 787
+        },
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 50
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 12
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T05:16:17.736Z",
+    "category": "Yerbas",
+    "category_avg": 92,
+    "deviation": 1,
+    "halo": false,
+    "bucket": "ancla_buena",
+    "interest": 14.1,
+    "excesses": [],
+    "beneficials": [
+      "Calcio 787mg",
+      "Fibra alimentaria 50g",
+      "Proteínas 12g"
+    ],
+    "quota": "ancla_buena"
+  },
+  {
+    "id": "7fdc351b-fe85-4e40-ba45-d9315fcffddb",
+    "name": "Yerba Mate Canarias Edición Especial 1 Kg",
+    "brand": "Canarias",
+    "barcode": "7730241003708",
+    "score": 91,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/7fdc351b-fe85-4e40-ba45-d9315fcffddb.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "100.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 27
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 196
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Calcio",
+          "unit": "mg",
+          "valuePer100": 810
+        },
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 50
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 8
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:30:26.575Z",
+    "category": "Yerbas",
+    "category_avg": 92,
+    "deviation": 1,
+    "halo": false,
+    "bucket": "ancla_buena",
+    "interest": 13.1,
+    "excesses": [],
+    "beneficials": [
+      "Calcio 810mg",
+      "Fibra alimentaria 50g",
+      "Proteínas 8g"
+    ],
+    "quota": "ancla_buena"
+  },
+  {
+    "id": "eb534176-6061-4f81-b57b-ded1400a2dee",
+    "name": "Queso Para Untar Conapole Cheddar 230 G",
+    "brand": "Conaprole",
+    "barcode": "7730105009792",
+    "score": 13,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/eb534176-6061-4f81-b57b-ded1400a2dee.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": true,
+    "is_fat_alert": true,
+    "is_saturated_fat_alert": true,
+    "serving_size_amount": "30.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 13
+        },
+        {
+          "name": "Grasas trans",
+          "unit": "g",
+          "valuePer100": 1
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 790
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 273.33
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 9.67
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 13
+        },
+        {
+          "name": "Grasas trans",
+          "unit": "g",
+          "valuePer100": 1
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 790
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T05:12:29.633Z",
+    "category": "Quesos",
+    "category_avg": 32,
+    "deviation": 19,
+    "halo": false,
+    "bucket": "ancla_mala",
+    "interest": 29.6,
+    "excesses": [
+      "Grasas saturadas 13g",
+      "Grasas trans 1g",
+      "Sodio 790mg"
+    ],
+    "beneficials": [
+      "Proteínas 9.67g"
+    ],
+    "quota": "ancla_mala"
+  },
+  {
+    "id": "89471470-2e81-4b6f-b561-b9b040f5584c",
+    "name": "Postre Helado Crufi Suspiro De Menta 854 G",
+    "brand": "Crufi",
+    "barcode": "7730916581715",
+    "score": 20,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/89471470-2e81-4b6f-b561-b9b040f5584c.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": true,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "60.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Azúcares",
+          "unit": "",
+          "valuePer100": -1
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 38.33
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 250
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 2
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 3.17
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 4.83
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:34:05.015Z",
+    "category": "Postres",
+    "category_avg": 39,
+    "deviation": 19,
+    "halo": false,
+    "bucket": "ancla_mala",
+    "interest": 28.1,
+    "excesses": [
+      "Azúcares -1"
+    ],
+    "beneficials": [
+      "Fibra alimentaria 2g",
+      "Proteínas 3.17g"
+    ],
+    "quota": "ancla_mala"
+  },
+  {
+    "id": "4da2e22c-174c-49cd-8b2b-7dae45a94bda",
+    "name": "Galletas Rellenas Lu Lu Chantilly 115 G",
+    "brand": "Lu Lu",
+    "barcode": "7730110331932",
+    "score": 6,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/4da2e22c-174c-49cd-8b2b-7dae45a94bda.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": true,
+    "is_sodium_alert": false,
+    "is_fat_alert": true,
+    "is_saturated_fat_alert": true,
+    "serving_size_amount": "30.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 30.67
+        },
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 8.67
+        },
+        {
+          "name": "Grasas trans",
+          "unit": "g",
+          "valuePer100": 1
+        }
+      ],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 5.67
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 30.67
+        },
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 8.67
+        },
+        {
+          "name": "Grasas trans",
+          "unit": "g",
+          "valuePer100": 1
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 70
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 480
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T04:11:08.619Z",
+    "category": "Galletitas Dulces",
+    "category_avg": 21,
+    "deviation": 15,
+    "halo": false,
+    "bucket": "ancla_mala",
+    "interest": 28.1,
+    "excesses": [
+      "Azúcares 30.67g",
+      "Grasas saturadas 8.67g",
+      "Grasas trans 1g"
+    ],
+    "beneficials": [
+      "Proteínas 5.67g"
+    ],
+    "quota": "ancla_mala"
+  },
+  {
+    "id": "c43f0079-7dd2-4c66-8eed-03228542f096",
+    "name": "Galletas Rellenas Lu Lu Frutilla 115 G",
+    "brand": "Lu Lu",
+    "barcode": "7730110332038",
+    "score": 6,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/c43f0079-7dd2-4c66-8eed-03228542f096.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": true,
+    "is_sodium_alert": false,
+    "is_fat_alert": true,
+    "is_saturated_fat_alert": true,
+    "serving_size_amount": "30.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 31.67
+        },
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 8.33
+        },
+        {
+          "name": "Grasas trans",
+          "unit": "g",
+          "valuePer100": 1
+        }
+      ],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 5.33
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 31.67
+        },
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 8.33
+        },
+        {
+          "name": "Grasas trans",
+          "unit": "g",
+          "valuePer100": 1
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 73.33
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 480
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T04:57:02.863Z",
+    "category": "Galletitas Dulces",
+    "category_avg": 21,
+    "deviation": 15,
+    "halo": false,
+    "bucket": "ancla_mala",
+    "interest": 28.1,
+    "excesses": [
+      "Azúcares 31.67g",
+      "Grasas saturadas 8.33g",
+      "Grasas trans 1g"
+    ],
+    "beneficials": [
+      "Proteínas 5.33g"
+    ],
+    "quota": "ancla_mala"
+  },
+  {
+    "id": "cb894830-5e8a-4f95-accb-33e2dd8b3554",
+    "name": "Aderezo Mayonesa Mayoliva 237 G",
+    "brand": "Mayoliva",
+    "barcode": "7791866003283",
+    "score": 18,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/cb894830-5e8a-4f95-accb-33e2dd8b3554.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": true,
+    "is_fat_alert": true,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "12.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 758.33
+        }
+      ],
+      "neutrals": [],
+      "beneficials": [],
+      "notBeneficials": [
+        {
+          "name": "Colesterol",
+          "unit": "mg",
+          "valuePer100": 39.17
+        },
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 5.83
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 758.33
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 466.67
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T05:00:02.417Z",
+    "category": "Aderezos",
+    "category_avg": 33,
+    "deviation": 15,
+    "halo": false,
+    "bucket": "ancla_mala",
+    "interest": 24.2,
+    "excesses": [
+      "Sodio 758.33mg"
+    ],
+    "beneficials": [],
+    "quota": "ancla_mala"
+  },
+  {
+    "id": "cd41e3dd-6789-4986-89b6-933bbea9ac49",
+    "name": "Caldo Maggi Gallina 6U",
+    "brand": "Maggi",
+    "barcode": "7891000345344",
+    "score": 8,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/cd41e3dd-6789-4986-89b6-933bbea9ac49.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": true,
+    "is_fat_alert": true,
+    "is_saturated_fat_alert": true,
+    "serving_size_amount": "4.75",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 14.74
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 18378.95
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 16.84
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 273.68
+        }
+      ],
+      "beneficials": [],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 14.74
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 18378.95
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T05:00:49.295Z",
+    "category": "Condimentos",
+    "category_avg": 15,
+    "deviation": 7,
+    "halo": false,
+    "bucket": "ancla_mala",
+    "interest": 19.8,
+    "excesses": [
+      "Grasas saturadas 14.74g",
+      "Sodio 18378.95mg"
+    ],
+    "beneficials": [],
+    "quota": "ancla_mala"
+  },
+  {
+    "id": "46c0db12-4d07-4a0e-919b-a419188468a1",
+    "name": "Refresco Fanta Naranja Retornable 2 L - Incluye Envase",
+    "brand": "Fanta",
+    "barcode": "7730197002398",
+    "score": 16,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/46c0db12-4d07-4a0e-919b-a419188468a1.png",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "200.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 6
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 12
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 24.75
+        }
+      ],
+      "beneficials": [],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 6
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:08:28.109Z",
+    "category": "Refrescos",
+    "category_avg": 25,
+    "deviation": 9,
+    "halo": false,
+    "bucket": "ancla_mala",
+    "interest": 19.3,
+    "excesses": [
+      "Azúcares 6g"
+    ],
+    "beneficials": [],
+    "quota": "ancla_mala"
+  },
+  {
+    "id": "10a1cba1-eb5b-4aec-a9d4-014902eb09c5",
+    "name": "Masa Para Empanadas Hojaldrada La Especialista 12 U",
+    "brand": "La Especialista",
+    "barcode": "7730152000131",
+    "score": 19,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/10a1cba1-eb5b-4aec-a9d4-014902eb09c5.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "30.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 6
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 43.33
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 7
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 6
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 493.33
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 303.33
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T03:48:11.144Z",
+    "category": "Masas",
+    "category_avg": 27,
+    "deviation": 8,
+    "halo": false,
+    "bucket": "ancla_mala",
+    "interest": 17.6,
+    "excesses": [
+      "Grasas saturadas 6g"
+    ],
+    "beneficials": [
+      "Proteínas 7g"
+    ],
+    "quota": "ancla_mala"
+  },
+  {
+    "id": "0d7c51b6-c3b7-41d6-aec7-9dec432b61ab",
+    "name": "Masa Para Empanada Caseras La Especialista 20 U",
+    "brand": "La Especialista",
+    "barcode": "7730152001121",
+    "score": 19,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/0d7c51b6-c3b7-41d6-aec7-9dec432b61ab.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "30.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 6
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 43.33
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 7
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 6
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 493.33
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 303.33
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T03:47:03.756Z",
+    "category": "Masas",
+    "category_avg": 27,
+    "deviation": 8,
+    "halo": false,
+    "bucket": "ancla_mala",
+    "interest": 17.6,
+    "excesses": [
+      "Grasas saturadas 6g"
+    ],
+    "beneficials": [
+      "Proteínas 7g"
+    ],
+    "quota": "ancla_mala"
+  },
+  {
+    "id": "6ac213c2-52b0-4ef4-a553-0a5313022a2f",
+    "name": "Masa Para Empanadas Casera La Especilista 12 Ud",
+    "brand": "La Especialista",
+    "barcode": "7730152000285",
+    "score": 19,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/6ac213c2-52b0-4ef4-a553-0a5313022a2f.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "30.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 6
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 43.33
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 7
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 6
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 493.33
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 303.33
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T04:22:20.869Z",
+    "category": "Masas",
+    "category_avg": 27,
+    "deviation": 8,
+    "halo": false,
+    "bucket": "ancla_mala",
+    "interest": 17.6,
+    "excesses": [
+      "Grasas saturadas 6g"
+    ],
+    "beneficials": [
+      "Proteínas 7g"
+    ],
+    "quota": "ancla_mala"
+  },
+  {
+    "id": "f016ed5a-883c-4f26-997a-c63df9b18590",
+    "name": "Caldo De Carne Monte Cudine 9G 10 U",
+    "brand": "Monte Cudine",
+    "barcode": "7730177002837",
+    "score": 10,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/f016ed5a-883c-4f26-997a-c63df9b18590.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": true,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "5.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 20220
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 200
+        }
+      ],
+      "beneficials": [],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 6
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 20220
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T05:14:31.006Z",
+    "category": "Condimentos",
+    "category_avg": 15,
+    "deviation": 5,
+    "halo": false,
+    "bucket": "ancla_mala",
+    "interest": 17.2,
+    "excesses": [
+      "Sodio 20220mg"
+    ],
+    "beneficials": [],
+    "quota": "ancla_mala"
+  },
+  {
+    "id": "ef5b83fe-c236-4ac8-b646-a86d548ef3d7",
+    "name": "Salamin Schneck Al Vacio 190 Gr",
+    "brand": "Schneck",
+    "barcode": "7730138000735",
+    "score": 19,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/ef5b83fe-c236-4ac8-b646-a86d548ef3d7.webp",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": true,
+    "is_fat_alert": true,
+    "is_saturated_fat_alert": true,
+    "serving_size_amount": "40.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 18
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 950
+        }
+      ],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 12
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 18
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 950
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 430
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T05:14:12.053Z",
+    "category": "Embutidos",
+    "category_avg": 27,
+    "deviation": 8,
+    "halo": false,
+    "bucket": "ancla_mala",
+    "interest": 17.1,
+    "excesses": [
+      "Grasas saturadas 18g",
+      "Sodio 950mg"
+    ],
+    "beneficials": [
+      "Proteínas 12g"
+    ],
+    "quota": "ancla_mala"
+  },
+  {
+    "id": "58130857-4774-4a69-9ae8-e2f8965def25",
+    "name": "Caldo Maggi Carne 6U",
+    "brand": "Maggi",
+    "barcode": "7891000250150",
+    "score": 17,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/58130857-4774-4a69-9ae8-e2f8965def25.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": true,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "5.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 14
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 17960
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 18
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 280
+        }
+      ],
+      "beneficials": [],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 14
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 17960
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:15:18.417Z",
+    "category": "Condimentos",
+    "category_avg": 15,
+    "deviation": 2,
+    "halo": false,
+    "bucket": "ancla_mala",
+    "interest": 11.7,
+    "excesses": [
+      "Grasas saturadas 14g",
+      "Sodio 17960mg"
+    ],
+    "beneficials": [],
+    "quota": "ancla_mala"
+  },
+  {
+    "id": "669ed96f-60ca-4743-b51b-00a92c672cf5",
+    "name": "Sazonador Jugoso Pollo Mediterraneo Maggi 25 G",
+    "brand": "Maggi",
+    "barcode": "7613035191822",
+    "score": 17,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/669ed96f-60ca-4743-b51b-00a92c672cf5.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "5.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 9420
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 52
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 280
+        }
+      ],
+      "beneficials": [],
+      "notBeneficials": [
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 9420
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:20:34.687Z",
+    "category": "Condimentos",
+    "category_avg": 15,
+    "deviation": 2,
+    "halo": false,
+    "bucket": "ancla_mala",
+    "interest": 11.7,
+    "excesses": [
+      "Sodio 9420mg"
+    ],
+    "beneficials": [],
+    "quota": "ancla_mala"
+  },
+  {
+    "id": "2209879e-a057-41e6-8180-cf664c122542",
+    "name": "Sopa Instantánea De Choclo Monte Cudine Sobre 15 G",
+    "brand": "Monte Cudine",
+    "barcode": "7730177004084",
+    "score": 27,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/2209879e-a057-41e6-8180-cf664c122542.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": true,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "14.50",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 4165.52
+        }
+      ],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 8.28
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 4165.52
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 68.97
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 337.93
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T03:54:45.287Z",
+    "category": "Sopa y Puré",
+    "category_avg": 43,
+    "deviation": 16,
+    "halo": false,
+    "bucket": "medio",
+    "interest": 23.2,
+    "excesses": [
+      "Sodio 4165.52mg"
+    ],
+    "beneficials": [
+      "Proteínas 8.28g"
+    ],
+    "quota": "medio"
+  },
+  {
+    "id": "b35a0344-ad5c-434b-888d-e7fd7dd20139",
+    "name": "Pan Rallado Saborizado Sin Sal Rallopan 450 G",
+    "brand": "Rallopan",
+    "barcode": "7730172252237",
+    "score": 67,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/b35a0344-ad5c-434b-888d-e7fd7dd20139.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "30.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 3.67
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 10.67
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 80
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 363.33
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T04:50:26.076Z",
+    "category": "Panes",
+    "category_avg": 51,
+    "deviation": 16,
+    "halo": false,
+    "bucket": "medio",
+    "interest": 20.7,
+    "excesses": [],
+    "beneficials": [
+      "Fibra alimentaria 3.67g",
+      "Proteínas 10.67g"
+    ],
+    "quota": "medio"
+  },
+  {
+    "id": "0906b00e-605e-4d24-826d-3cb86b0b9bfa",
+    "name": "Queso Casancrem Light Sin Sal Agregada 290 Gr",
+    "brand": "Casancrem",
+    "barcode": "7791337060944",
+    "score": 51,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/0906b00e-605e-4d24-826d-3cb86b0b9bfa.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "30.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 120
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Grasas monoinsaturadas",
+          "unit": "g",
+          "valuePer100": 1.67
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 8
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 3.67
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T03:45:25.840Z",
+    "category": "Quesos",
+    "category_avg": 32,
+    "deviation": 20,
+    "halo": true,
+    "bucket": "medio",
+    "interest": 19.8,
+    "excesses": [],
+    "beneficials": [
+      "Grasas monoinsaturadas 1.67g",
+      "Proteínas 8g"
+    ],
+    "quota": "medio"
+  },
+  {
+    "id": "9f53f41f-96aa-4dc7-82f6-538914929486",
+    "name": "Agua Mineral Salus Con Gas Pack 4 U 2.25 L",
+    "brand": "Salus",
+    "barcode": "7730400003853",
+    "score": 69,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/9f53f41f-96aa-4dc7-82f6-538914929486.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "200.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Magnesio",
+          "unit": "mg",
+          "valuePer100": 8
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:42:44.559Z",
+    "category": "Aguas",
+    "category_avg": 83,
+    "deviation": 14,
+    "halo": false,
+    "bucket": "medio",
+    "interest": 19.7,
+    "excesses": [],
+    "beneficials": [
+      "Magnesio 8mg"
+    ],
+    "quota": "medio"
+  },
+  {
+    "id": "89add6c3-5f1e-4298-9c48-af584e908439",
+    "name": "Postre Viva Chocolate 2 U 110 G",
+    "brand": "Viva",
+    "barcode": "7730105026560",
+    "score": 56,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/89add6c3-5f1e-4298-9c48-af584e908439.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "110.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Calcio",
+          "unit": "mg",
+          "valuePer100": 93.64
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 3.45
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:34:15.128Z",
+    "category": "Postres",
+    "category_avg": 39,
+    "deviation": 17,
+    "halo": false,
+    "bucket": "medio",
+    "interest": 18.7,
+    "excesses": [],
+    "beneficials": [
+      "Calcio 93.64mg",
+      "Proteínas 3.45g"
+    ],
+    "quota": "medio"
+  },
+  {
+    "id": "27ef0428-27b2-4602-92f2-952c7ba83db9",
+    "name": "Pulpa de Tomate Arcor Tetra 520 G",
+    "brand": "Arcor",
+    "barcode": "7790580650919",
+    "score": 73,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/27ef0428-27b2-4602-92f2-952c7ba83db9.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "60.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [],
+      "beneficials": [],
+      "notBeneficials": [],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T03:56:54.047Z",
+    "category": "Salsas",
+    "category_avg": 62,
+    "deviation": 11,
+    "halo": false,
+    "bucket": "medio",
+    "interest": 18.3,
+    "excesses": [],
+    "beneficials": [],
+    "quota": "medio"
+  },
+  {
+    "id": "d921524a-b2cd-45ef-87ea-0eafd43b62e8",
+    "name": "Agua Saborizada H2Oh! Limoneto 1.5 L",
+    "brand": "H2O",
+    "barcode": "7734284001479",
+    "score": 50,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/d921524a-b2cd-45ef-87ea-0eafd43b62e8.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "200.00",
+    "serving_size_unit": "ml",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [],
+      "beneficials": [
+        {
+          "name": "Niacina",
+          "unit": "mg",
+          "valuePer100": 1.6
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T05:05:25.947Z",
+    "category": "Aguas Saborizadas",
+    "category_avg": 32,
+    "deviation": 18,
+    "halo": true,
+    "bucket": "medio",
+    "interest": 17.7,
+    "excesses": [],
+    "beneficials": [
+      "Niacina 1.6mg"
+    ],
+    "quota": "medio"
+  },
+  {
+    "id": "1d15a428-1f98-4b44-a0d8-27b3bf73ff0f",
+    "name": "Pack Ser Postre Dulce De Leche 2 U",
+    "brand": "Ser",
+    "barcode": "7730922256317",
+    "score": 55,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/1d15a428-1f98-4b44-a0d8-27b3bf73ff0f.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "95.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 16.84
+        },
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 96.84
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Calcio",
+          "unit": "mg",
+          "valuePer100": 136.84
+        },
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 2.32
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 3.68
+        },
+        {
+          "name": "Zinc",
+          "unit": "mg",
+          "valuePer100": 1.47
+        }
+      ],
+      "notBeneficials": [],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T03:52:49.604Z",
+    "category": "Postres",
+    "category_avg": 39,
+    "deviation": 16,
+    "halo": false,
+    "bucket": "medio",
+    "interest": 17.4,
+    "excesses": [],
+    "beneficials": [
+      "Calcio 136.84mg",
+      "Fibra alimentaria 2.32g",
+      "Proteínas 3.68g",
+      "Zinc 1.47mg"
+    ],
+    "quota": "medio"
+  },
+  {
+    "id": "6445a02f-2ef9-43d1-b681-56b951364e69",
+    "name": "Tomates Perita Enteros Pelados Las Acacias 400 G",
+    "brand": "Las Acacias",
+    "barcode": "7730430003410",
+    "score": 72,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/6445a02f-2ef9-43d1-b681-56b951364e69.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "130.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [],
+      "beneficials": [],
+      "notBeneficials": [],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:19:42.228Z",
+    "category": "Salsas",
+    "category_avg": 62,
+    "deviation": 10,
+    "halo": false,
+    "bucket": "medio",
+    "interest": 17,
+    "excesses": [],
+    "beneficials": [],
+    "quota": "medio"
+  },
+  {
+    "id": "8254023a-2dd0-4731-8c2d-de9541c617ef",
+    "name": "Jamón Cocido Del Campo a la Mesa 200 G",
+    "brand": "Del Campo A La Mesa",
+    "barcode": "7730101001493",
+    "score": 40,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/8254023a-2dd0-4731-8c2d-de9541c617ef.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": true,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "34.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 1100
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 102.94
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 12.06
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 1100
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:31:21.470Z",
+    "category": "Embutidos",
+    "category_avg": 27,
+    "deviation": 13,
+    "halo": false,
+    "bucket": "medio",
+    "interest": 16.2,
+    "excesses": [
+      "Sodio 1100mg"
+    ],
+    "beneficials": [
+      "Proteínas 12.06g"
+    ],
+    "quota": "medio"
+  },
+  {
+    "id": "f227b8e1-09ea-4c55-a5df-7dd33db52265",
+    "name": "Salame Del Campo a la Mesa 200 G",
+    "brand": "Del Campo A La Mesa",
+    "barcode": "7730101001578",
+    "score": 39,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/f227b8e1-09ea-4c55-a5df-7dd33db52265.jpg",
+    "is_ultra_processed": false,
+    "is_sugar_alert": false,
+    "is_sodium_alert": true,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "37.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 7.57
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 1418.92
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 256.76
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 21.89
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 7.57
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 1418.92
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T05:15:21.682Z",
+    "category": "Embutidos",
+    "category_avg": 27,
+    "deviation": 12,
+    "halo": false,
+    "bucket": "medio",
+    "interest": 15.5,
+    "excesses": [
+      "Grasas saturadas 7.57g",
+      "Sodio 1418.92mg"
+    ],
+    "beneficials": [
+      "Proteínas 21.89g"
+    ],
+    "quota": "medio"
+  },
+  {
+    "id": "782d3c6e-bb86-4ecb-ae87-8f1a8e6dab40",
+    "name": "Masa Para Empanada Avanti Casera 20 U",
+    "brand": "Avanti",
+    "barcode": "7730927020548",
+    "score": 21,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/782d3c6e-bb86-4ecb-ae87-8f1a8e6dab40.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "30.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [],
+      "neutrals": [
+        {
+          "name": "Carbohidratos",
+          "unit": "g",
+          "valuePer100": 46.67
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 6.33
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 5.67
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 496.67
+        }
+      ],
+      "neutralExcesses": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 323.33
+        }
+      ]
+    },
+    "score_calculated_at": "2026-07-20T04:27:29.324Z",
+    "category": "Masas",
+    "category_avg": 27,
+    "deviation": 6,
+    "halo": false,
+    "bucket": "medio",
+    "interest": 15,
+    "excesses": [],
+    "beneficials": [
+      "Proteínas 6.33g"
+    ],
+    "quota": "medio"
+  },
+  {
+    "id": "f9e692b0-aa34-4766-94d0-d6daec1c597c",
+    "name": "Crema Vegetal Soya Pote 500 G",
+    "brand": "Soya",
+    "barcode": "7894904268283",
+    "score": 13,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/f9e692b0-aa34-4766-94d0-d6daec1c597c.jpg",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "10.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 7
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 1030
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 180
+        }
+      ],
+      "beneficials": [],
+      "notBeneficials": [
+        {
+          "name": "Grasas saturadas",
+          "unit": "g",
+          "valuePer100": 7
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 1030
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T05:18:22.805Z",
+    "category": "Mantecas y Grasas",
+    "category_avg": 34,
+    "deviation": 21,
+    "halo": false,
+    "bucket": "sorpresa",
+    "interest": 31.6,
+    "excesses": [
+      "Grasas saturadas 7g",
+      "Sodio 1030mg"
+    ],
+    "beneficials": [],
+    "quota": "relleno"
+  },
+  {
+    "id": "9e12e3b1-364f-4833-984b-850d33dcad39",
+    "name": "CEREAL MIX LIGHT MANZANA & AVENA",
+    "brand": "Arcor",
+    "barcode": "77915818",
+    "score": 37,
+    "image": "https://vokkado-product-images.s3.us-east-2.amazonaws.com/productsCoverImages/9e12e3b1-364f-4833-984b-850d33dcad39.webp",
+    "is_ultra_processed": true,
+    "is_sugar_alert": false,
+    "is_sodium_alert": false,
+    "is_fat_alert": false,
+    "is_saturated_fat_alert": false,
+    "serving_size_amount": "23.00",
+    "serving_size_unit": "g",
+    "highlights": {
+      "excesses": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 18.26
+        },
+        {
+          "name": "Polialcoholes",
+          "unit": "g",
+          "valuePer100": 31.74
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Valor energético (calorías)",
+          "unit": "kcal",
+          "valuePer100": 278.26
+        }
+      ],
+      "beneficials": [
+        {
+          "name": "Fibra alimentaria",
+          "unit": "g",
+          "valuePer100": 11.74
+        },
+        {
+          "name": "Grasas monoinsaturadas",
+          "unit": "g",
+          "valuePer100": 1.3
+        },
+        {
+          "name": "Proteínas",
+          "unit": "g",
+          "valuePer100": 2.61
+        }
+      ],
+      "notBeneficials": [
+        {
+          "name": "Azúcares",
+          "unit": "g",
+          "valuePer100": 18.26
+        },
+        {
+          "name": "Polialcoholes",
+          "unit": "g",
+          "valuePer100": 31.74
+        },
+        {
+          "name": "Sodio",
+          "unit": "mg",
+          "valuePer100": 134.78
+        }
+      ],
+      "neutralExcesses": []
+    },
+    "score_calculated_at": "2026-07-20T04:42:13.979Z",
+    "category": "Snacks saludables",
+    "category_avg": 37,
+    "deviation": 0,
+    "halo": true,
+    "bucket": "trampa",
+    "interest": 28.9,
+    "excesses": [
+      "Azúcares 18.26g",
+      "Polialcoholes 31.74g"
+    ],
+    "beneficials": [
+      "Fibra alimentaria 11.74g",
+      "Grasas monoinsaturadas 1.3g",
+      "Proteínas 2.61g"
+    ],
+    "quota": "relleno"
+  }
+]
