@@ -2,14 +2,13 @@ import { useEffect, useState } from 'react';
 import type { Player, Round } from '../game/engine';
 import { totalPoints, totalMs, rankPlayers, MAX_TOTAL, type LeaderboardEntry } from '../game/engine';
 import { allGames } from '../game/storage';
+import { TablaPosiciones } from '../componentes/TablaPosiciones';
 
 interface Props {
   rounds: Round[];
   player: Player;
   onSeguir: () => void;
 }
-
-const PREMIOS = ['🦘', '👕'];
 
 export function Resultado({ rounds, player, onSeguir }: Props) {
   const puntos = totalPoints(rounds);
@@ -41,46 +40,28 @@ export function Resultado({ rounds, player, onSeguir }: Props) {
   }, [player, puntos, ms]);
 
   const puesto = tabla.findIndex((e) => e.email === player.email) + 1;
-  const top = tabla.slice(0, 5);
-  const estoyEnTop = top.some((e) => e.email === player.email);
+  const aciertos = rounds.filter((r) => r.points >= 80).length;
 
   return (
     <div className="pantalla">
       <h1>Tu resultado</h1>
       <div className="total">{puntos}</div>
-      <p className="sub" style={{ textAlign: 'center' }}>
-        de {MAX_TOTAL} puntos · {Math.round(ms / 1000)} segundos
+      <p className="de-total">
+        de {MAX_TOTAL} puntos · {Math.round(ms / 1000)} segundos ·{' '}
+        {aciertos} de {rounds.length} muy cerca
       </p>
 
       {puesto > 0 && (
-        <p className="sub" style={{ textAlign: 'center', fontSize: 22, color: 'var(--verde)' }}>
+        <p className="mi-puesto">
           Vas <strong>{puesto}º</strong> de {tabla.length}
         </p>
       )}
 
-      <h2>Ranking del día</h2>
-      <div style={{ marginBottom: 20 }}>
-        {top.map((e, i) => (
-          <div key={e.email} className={`fila-ranking ${e.email === player.email ? 'yo' : ''}`}>
-            <span className="puesto">{i + 1}º</span>
-            <span className="quien">
-              {e.nombre} {e.apellido.charAt(0)}.
-            </span>
-            {PREMIOS[i] && <span className="premio">{PREMIOS[i]}</span>}
-            <span className="pts">{e.points}</span>
-          </div>
-        ))}
-
-        {!estoyEnTop && puesto > 0 && (
-          <div className="fila-ranking yo">
-            <span className="puesto">{puesto}º</span>
-            <span className="quien">
-              {player.nombre} {player.apellido.charAt(0)}.
-            </span>
-            <span className="pts">{puntos}</span>
-          </div>
-        )}
-      </div>
+      <TablaPosiciones
+        entradas={tabla}
+        emailPropio={player.email}
+        puestoPropio={puesto}
+      />
 
       <div className="espaciador" />
 

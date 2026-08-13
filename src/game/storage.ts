@@ -15,6 +15,7 @@ export interface StoredGame {
   email: string;
   nombre: string;
   apellido: string;
+  telefono: string;
   profesion: string;
   consent: boolean;
   points: number;
@@ -92,9 +93,11 @@ export async function pendingSync(): Promise<StoredGame[]> {
  * Conviene exportar cada hora durante el stand.
  */
 export function toCsv(games: StoredGame[]): string {
+  // Este CSV lo abre gente del equipo, no un sistema: las cabeceras van en
+  // español igual que todo lo que se ve en el evento.
   const headers = [
-    'nombre', 'apellido', 'email', 'profesion', 'consent',
-    'puntos', 'segundos', 'jugado', 'nps', 'comentario', 'sincronizado',
+    'nombre', 'apellido', 'correo', 'telefono', 'profesion', 'acepta_novedades',
+    'puntos', 'segundos', 'fecha', 'recomendacion_0_10', 'comentario', 'sincronizado',
   ];
   const esc = (v: unknown) => {
     const s = String(v ?? '');
@@ -102,7 +105,7 @@ export function toCsv(games: StoredGame[]): string {
   };
   const rows = games.map((g) =>
     [
-      g.nombre, g.apellido, g.email, g.profesion, g.consent ? 'sí' : 'no',
+      g.nombre, g.apellido, g.email, g.telefono, g.profesion, g.consent ? 'sí' : 'no',
       g.points, Math.round(g.ms / 1000), new Date(g.playedAt).toISOString(),
       g.survey?.nps ?? '', g.survey?.comentario ?? '', g.synced ? 'sí' : 'no',
     ].map(esc).join(';'),

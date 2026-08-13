@@ -1,6 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import {
   scoreGuess,
+  scoreColor,
+  demoLabel,
   pickRound,
   rankPlayers,
   totalPoints,
@@ -43,6 +45,40 @@ describe('scoreGuess', () => {
   it('llega a cero a partir de 50 puntos de error', () => {
     expect(scoreGuess(50, 0)).toBe(0);
     expect(scoreGuess(49, 0)).toBe(2);
+  });
+});
+
+describe('scoreColor', () => {
+  // Los cortes son los de ProductCard.getScoreColor en la app. Si estos tests
+  // fallan es porque alguien movió la escala en un solo lado.
+  it('respeta los cortes de la escala de la app', () => {
+    expect(scoreColor(100)).toBe('var(--vk-score-green)');
+    expect(scoreColor(85)).toBe('var(--vk-score-green)');
+    expect(scoreColor(84)).toBe('var(--vk-score-light-green)');
+    expect(scoreColor(65)).toBe('var(--vk-score-light-green)');
+    expect(scoreColor(64)).toBe('var(--vk-score-yellow)');
+    expect(scoreColor(45)).toBe('var(--vk-score-yellow)');
+    expect(scoreColor(44)).toBe('var(--vk-score-orange)');
+    expect(scoreColor(25)).toBe('var(--vk-score-orange)');
+    expect(scoreColor(24)).toBe('var(--vk-score-red)');
+    expect(scoreColor(0)).toBe('var(--vk-score-red)');
+  });
+
+  it('devuelve gris cuando no hay puntaje (comodines con alcohol)', () => {
+    expect(scoreColor(null)).toBe('var(--vk-grey)');
+  });
+});
+
+describe('demoLabel', () => {
+  // Mismos cortes que scoreColor (45/65), agrupados de 5 a 3: el ejemplo
+  // interactivo del inicio y el resto del juego nunca deberían contradecirse.
+  it('coincide con los cortes de scoreColor', () => {
+    expect(demoLabel(0)).toBe('Mal producto');
+    expect(demoLabel(44)).toBe('Mal producto');
+    expect(demoLabel(45)).toBe('Decente');
+    expect(demoLabel(64)).toBe('Decente');
+    expect(demoLabel(65)).toBe('Saludable');
+    expect(demoLabel(100)).toBe('Saludable');
   });
 });
 

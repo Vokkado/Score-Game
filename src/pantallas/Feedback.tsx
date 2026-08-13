@@ -1,5 +1,6 @@
 import type { Product, Round } from '../game/engine';
-import { feedbackFor } from '../game/engine';
+import { feedbackFor, scoreColor } from '../game/engine';
+import { Insignia } from '../componentes/Insignia';
 
 interface Props {
   producto: Product;
@@ -10,31 +11,37 @@ interface Props {
 
 /** Ancho de la barra de cada paso, relativo a la penalización más grande. */
 function anchoBarra(valor: number, maximo: number): string {
-  return `${Math.max(4, (Math.abs(valor) / maximo) * 120)}px`;
+  return `${Math.max(4, (Math.abs(valor) / maximo) * 110)}px`;
 }
 
 export function Feedback({ producto, round, esUltimo, onSeguir }: Props) {
   const maximo = Math.max(...producto.breakdown.map((s) => Math.abs(s.value)), 1);
+  const error = Math.abs(round.guess - round.realScore);
 
   return (
     <div className="pantalla">
       <p className="nombre-producto">{producto.name}</p>
       <p className="marca">{producto.brand}</p>
 
+      {/* Las dos insignias circulares, como las muestra la app. */}
       <div className="comparacion">
-        <div className="caja">
-          <div className="etiqueta">Dijiste</div>
-          <div className="numero">{round.guess}</div>
+        <div className="columna-insignia">
+          <span className="etiqueta">Dijiste</span>
+          <Insignia puntaje={round.guess} tamano="md" />
         </div>
-        <div className="caja real">
-          <div className="etiqueta">Score Vokkado</div>
-          <div className="numero">{round.realScore}</div>
+        <span className="separador-vs">vs</span>
+        <div className="columna-insignia destacada">
+          <span className="etiqueta">Puntaje real</span>
+          <Insignia puntaje={round.realScore} tamano="lg" />
         </div>
       </div>
 
-      <div className="veredicto">{feedbackFor(round.points)}</div>
+      <div className="veredicto" style={{ color: scoreColor(round.realScore) }}>
+        {feedbackFor(round.points)}
+      </div>
       <div className="puntos-ganados">
-        +{round.points} puntos · erraste por {Math.abs(round.guess - round.realScore)}
+        <strong>+{round.points} puntos</strong> ·{' '}
+        {error === 0 ? 'exacto' : `te alejaste por ${error}`}
       </div>
 
       <div className="justificacion">{producto.justification}</div>
@@ -42,14 +49,22 @@ export function Feedback({ producto, round, esUltimo, onSeguir }: Props) {
       {producto.breakdown.length > 0 && (
         <div className="desglose">
           <h3>Cómo se llega a {round.realScore}</h3>
-          <div className="paso">
+          <div className="paso inicial">
             <span className="etiqueta-paso">Punto de partida</span>
             <span className="valor">100</span>
           </div>
-          {producto.breakdown.map((s) => (
+          {producto.breakdown.map((s, i) => (
             <div key={s.label} className={`paso ${s.value < 0 ? 'resta' : 'suma'}`}>
               <span className="etiqueta-paso">{s.label}</span>
-              <span className="barra" style={{ width: anchoBarra(s.value, maximo) }} />
+              <span
+                className="barra"
+                style={{
+                  width: anchoBarra(s.value, maximo),
+                  // Las barras entran escalonadas: se lee como una cuenta que
+                  // va bajando, no como un bloque de números.
+                  animationDelay: `${i * 70}ms`,
+                }}
+              />
               <span className="valor">
                 {s.value > 0 ? '+' : ''}
                 {s.value}

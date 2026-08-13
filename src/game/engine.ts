@@ -3,7 +3,7 @@
  *
  * Reglas:
  *   - 5 productos por partida, sorteados del pool de 100.
- *   - Se adivina el Score Vokkado (0-100) con un slider.
+ *   - Se adivina el Puntaje Vokkado (0-100) con un control deslizante.
  *   - Puntos por producto = max(0, 100 - |guess - real| * 2), tope 100.
  *   - Total máximo 500. Desempate por tiempo total, y después por orden de llegada.
  *   - Los comodines (productos con alcohol) no puntúan: son un producto extra.
@@ -37,6 +37,8 @@ export interface Player {
   nombre: string;
   apellido: string;
   email: string;
+  /** Opcional: para contactar ganadores si el email no responde. */
+  telefono: string;
   profesion: string;
   consent: boolean;
 }
@@ -71,6 +73,34 @@ export const MAX_TOTAL = ROUNDS_PER_GAME * MAX_POINTS_PER_ROUND;
 export function scoreGuess(guess: number, real: number): number {
   const error = Math.abs(guess - real);
   return Math.max(0, MAX_POINTS_PER_ROUND - error * ERROR_PENALTY);
+}
+
+/**
+ * Color de la escala de puntaje.
+ *
+ * Mismos cortes que `getScoreColor` en `Frontend/src/components/ui/ProductCard.tsx`,
+ * para que el jugador vea en el stand el mismo color que vería escaneando el
+ * producto con la app. Si cambian allá, hay que cambiarlos acá.
+ */
+export function scoreColor(score: number | null): string {
+  if (score === null) return 'var(--vk-grey)';
+  if (score >= 85) return 'var(--vk-score-green)';
+  if (score >= 65) return 'var(--vk-score-light-green)';
+  if (score >= 45) return 'var(--vk-score-yellow)';
+  if (score >= 25) return 'var(--vk-score-orange)';
+  return 'var(--vk-score-red)';
+}
+
+/**
+ * Etiqueta genérica de un puntaje, para el ejemplo interactivo del inicio.
+ *
+ * Usa los mismos cortes que `scoreColor` (45 y 65), agrupados en 3 en vez de 5:
+ * texto y color quedan siempre consistentes entre sí y con el resto del juego.
+ */
+export function demoLabel(score: number): string {
+  if (score < 45) return 'Mal producto';
+  if (score < 65) return 'Decente';
+  return 'Saludable';
 }
 
 /** Etiqueta para la pantalla de resultado. */

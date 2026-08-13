@@ -1,0 +1,131 @@
+/**
+ * Tokens de diseño de Vokkado.
+ *
+ * Portados del Frontend (React Native) para que el juego se vea como la app:
+ *   Frontend/src/theme/colors.ts                    → --vk-*
+ *   Frontend/src/theme/typography.ts                → familia Lexend
+ *   Frontend/src/components/ui/AppText.tsx          → --fs-* (las 7 variantes)
+ *   Frontend/src/theme/spacing.ts                   → --sp-*, --r-*, --sombra-*
+ *   Frontend/src/components/ui/AppInput.tsx         → --input-*
+ *   Frontend/src/components/ui/AppButton.tsx        → --alto-boton
+ *
+ * Si cambia el sistema de diseño de la app, este archivo es el único lugar a
+ * tocar acá.
+ */
+
+/* Lexend, la tipografía de la app. Se importa desde node_modules para que quede
+   dentro del bundle: en el evento no hay red para pedirle nada a Google Fonts.
+   Sólo el subset latin — los archivos genéricos arrastran también cirílico y
+   vietnamita, que no se usan y hay que cachear igual para el modo offline. */
+@import '@fontsource/lexend/latin-400.css';
+@import '@fontsource/lexend/latin-500.css';
+@import '@fontsource/lexend/latin-600.css';
+@import '@fontsource/lexend/latin-700.css';
+
+/* Alan Sans ExtraBold: sólo para el isotipo "Vokkado" del header, igual que
+   `fontFamily: "AlanSans-ExtraBold"` en Topbar.tsx. El resto del texto sigue
+   en Lexend — mezclar las dos es la misma regla que usa la app. */
+@import '@fontsource/alan-sans/latin-800.css';
+
+:root {
+  /* ── Marca ─────────────────────────────────────────────────────────── */
+  --vk-primary-dark: #22521d;
+  --vk-primary: #5b8806;
+  --vk-primary-light: #b8c445;
+  --vk-secondary: #885b02;
+  --vk-alternative: #a7bece;
+
+  /* ── Base ──────────────────────────────────────────────────────────── */
+  --vk-friendly-white: #f1f1f1;
+  --vk-white: #fcfcfc;
+  --vk-grey: #727272;
+  --vk-dark: #161616;
+
+  /* ── Semánticos ────────────────────────────────────────────────────── */
+  --vk-fondo: var(--vk-friendly-white);
+  --vk-superficie: var(--vk-white);
+  --vk-texto: var(--vk-dark);
+  --vk-texto-secundario: var(--vk-grey);
+  --vk-titulo: var(--vk-primary-dark);
+  /* colors.borderColor en la app, no colors.border */
+  --vk-borde: rgba(14, 17, 22, 0.08);
+  --vk-error: #dc2626;
+  --vk-placeholder: #999;
+
+  /* ── Escala de puntaje ─────────────────────────────────────────────────
+     Mismos cortes que ScoreBadge y ProductCard: el jugador ve exactamente el
+     color que vería escaneando el producto.
+       ≥85 verde · ≥65 verde claro · ≥45 amarillo · ≥25 naranja · <25 rojo   */
+  --vk-score-green: #00813e;
+  --vk-score-light-green: #4caf50;
+  --vk-score-yellow: #ecbf0a;
+  --vk-score-orange: #ef8201;
+  --vk-score-red: #e73b09;
+
+  /* ── Tipografía ────────────────────────────────────────────────────────
+     Las 7 variantes de AppText, con la misma jerarquía de la app pero un
+     piso más alto: esto se lee parado, a veces desde medio metro, con el
+     dedo de otra persona en la pantalla — no sentado con el celular en la
+     mano. El máximo sigue escalando para el iPad del stand.               */
+  --fuente: 'Lexend', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+
+  --fs-display: clamp(3.1rem, 2.2rem + 4.4vw, 4.75rem);    /* app 44 */
+  --fs-title: clamp(1.4rem, 1.05rem + 1.6vw, 2.15rem);     /* app 20 */
+  --fs-section: clamp(1.1rem, 0.92rem + 0.85vw, 1.7rem);   /* app 16 */
+  --fs-subtitle: clamp(1rem, 0.85rem + 0.7vw, 1.5rem);     /* app 14 */
+  --fs-body: clamp(0.94rem, 0.78rem + 0.7vw, 1.4rem);      /* app 13 */
+  --fs-caption: clamp(0.8rem, 0.7rem + 0.5vw, 1.2rem);     /* app 11 */
+  --fs-label: clamp(0.72rem, 0.63rem + 0.4vw, 1.05rem);    /* app 10 */
+
+  /* Fuera de escala: el número del slider y el total. En la app no existe algo
+     así de grande porque nadie lo mira desde dos metros. */
+  --fs-gigante: clamp(3.5rem, 2rem + 7vw, 6rem);
+
+  /* Pesos, como los mapea AppText */
+  --peso-regular: 400;
+  --peso-medium: 500;
+  --peso-semibold: 600;
+  --peso-bold: 700;
+
+  /* lineHeight de las variantes que lo definen */
+  --lh-display: 1.16; /* 51/44 */
+  --lh-body: 1.46; /* 19/13 */
+
+  /* ── Espaciado ─────────────────────────────────────────────────────── */
+  --sp-xs: 4px;
+  --sp-sm: 8px;
+  --sp-md: 16px;
+  --sp-lg: 24px;
+  --sp-xl: 32px;
+  --sp-2xl: 48px;
+
+  /* ── Radios ────────────────────────────────────────────────────────── */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 16px;
+  --r-2xl: 24px;
+  --r-full: 9999px;
+
+  /* ── Sombras (mismas opacidades que Shadows en la app) ─────────────── */
+  --sombra-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --sombra-md: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --sombra-lg: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --sombra-xl: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+  /* ── Medidas de componentes ────────────────────────────────────────────
+     AppButton: height 52, borderRadius 12
+     AppInput:  height 46, borderRadius 10, borderWidth 1, paddingH 14
+     AppCheckbox: borderRadius 10, borderWidth 2, padding 14, caja 22 radio 5  */
+  --alto-boton: 52px;
+  --radio-boton: 12px;
+  --alto-input: 46px;
+  --radio-input: 10px;
+  --pad-input: 14px;
+  --radio-tarjeta: 10px;
+
+  /* ScoreBadge: círculos de 36 / 60 / 80 con el número en blanco */
+  --badge-sm: 36px;
+  --badge-md: 60px;
+  --badge-lg: 80px;
+}

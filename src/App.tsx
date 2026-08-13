@@ -88,6 +88,7 @@ export function App() {
       email: player.email.trim().toLowerCase(),
       nombre: player.nombre,
       apellido: player.apellido,
+      telefono: player.telefono,
       profesion: player.profesion,
       consent: player.consent,
       points: totalPoints(rounds),
@@ -114,7 +115,9 @@ export function App() {
   }
 
   if (fase.t === 'registro') {
-    return <Registro onListo={empezar} yaJugo={findByEmail} />;
+    return (
+      <Registro onListo={empezar} onVolver={() => setFase({ t: 'inicio' })} yaJugo={findByEmail} />
+    );
   }
 
   if (fase.t === 'jugando') {
@@ -161,7 +164,7 @@ export function App() {
   return (
     <div className="pantalla">
       <div className="espaciador" />
-      <h1>¡Gracias por jugar!</h1>
+      <h1 className="display">¡Gracias por jugar!</h1>
       <p className="sub">
         Tu resultado quedó registrado. Los ganadores se anuncian al cierre del evento.
       </p>

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { Product } from '../game/engine';
-import { SECONDS_PER_ROUND } from '../game/engine';
+import { SECONDS_PER_ROUND, scoreColor } from '../game/engine';
 
 interface Props {
   producto: Product;
@@ -22,8 +22,8 @@ export function Jugada({ producto, numero, total, onResponder }: Props) {
   };
 
   // El timer evita que una persona piense dos minutos con fila esperando.
-  // Al llegar a cero se envía lo que haya en el slider: no se castiga con cero,
-  // pero tampoco se espera indefinidamente.
+  // Al llegar a cero se envía lo que haya en el control: no se castiga con
+  // cero, pero tampoco se espera indefinidamente.
   useEffect(() => {
     const id = setInterval(() => {
       const pasado = (Date.now() - inicio.current) / 1000;
@@ -42,6 +42,7 @@ export function Jugada({ producto, numero, total, onResponder }: Props) {
   }, []);
 
   const pct = (restante / SECONDS_PER_ROUND) * 100;
+  const urgente = restante <= 5;
 
   return (
     <div className="pantalla">
@@ -49,13 +50,13 @@ export function Jugada({ producto, numero, total, onResponder }: Props) {
         <span>
           Producto {numero} de {total}
         </span>
-        <span className={`timer ${restante <= 5 ? 'urgente' : ''}`}>
-          {Math.ceil(restante)}s
+        <span className={`timer ${urgente ? 'urgente' : ''}`}>
+          {Math.ceil(restante)} s
         </span>
       </div>
 
       <div className="progreso">
-        <div style={{ width: `${pct}%` }} />
+        <div className={urgente ? 'urgente' : ''} style={{ width: `${pct}%` }} />
       </div>
 
       <img className="foto" src={`/products/${producto.image}`} alt={producto.name} />
@@ -65,18 +66,23 @@ export function Jugada({ producto, numero, total, onResponder }: Props) {
 
       <div className="espaciador" />
 
-      <div className="valor-slider">{guess}</div>
+      {/* El número toma el color de la escala de la app: mientras juega, la
+          persona va aprendiendo qué significa cada rango. */}
+      <div className="valor-slider" style={{ color: scoreColor(guess) }}>
+        {guess}
+      </div>
       <input
         type="range"
         min={0}
         max={100}
         value={guess}
+        style={{ '--relleno-color': scoreColor(guess) } as React.CSSProperties}
         onChange={(e) => setGuess(Number(e.target.value))}
         aria-label="Tu puntaje"
       />
       <div className="escala">
-        <span>0 · nada saludable</span>
-        <span>100 · muy saludable</span>
+        <span>Nada saludable</span>
+        <span>Muy saludable</span>
       </div>
 
       <button className="primario" onClick={() => responder(guess)}>

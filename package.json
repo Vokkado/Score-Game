@@ -14,6 +14,8 @@
     "data": "node scripts/merge-justifications.js && node scripts/build-review.js"
   },
   "dependencies": {
+    "@fontsource/alan-sans": "^5.3.0",
+    "@fontsource/lexend": "^5.3.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
@@ -21,9 +23,9 @@
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
     "@vitejs/plugin-react": "^6.0.5",
+    "pg": "^8.16.3",
     "typescript": "^7.0.2",
     "vite": "^8.2.1",
-    "vitest": "^4.1.10",
-    "pg": "^8.16.3"
+    "vitest": "^4.1.10"
   }
 }
