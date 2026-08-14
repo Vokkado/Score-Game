@@ -4,6 +4,14 @@ import type { LeaderboardEntry } from '../game/engine';
  * Tabla de posiciones. Se muestra en la pantalla de inicio (para que la gente
  * que pasa por el stand vea contra quién compite) y al terminar la partida.
  *
+ * **Se muestran todos los jugadores, no un top.** Antes cortaba en 5 y al que
+ * quedaba afuera se le agregaba su fila suelta al final, lo que hacía que la
+ * mayoría no se viera en la lista y que la suya apareciera descolgada. Con
+ * premios de por medio, cada uno tiene que poder encontrarse y ver contra
+ * quién está compitiendo. La lista crece durante el evento, así que en las
+ * dos pantallas donde aparece el botón va ARRIBA de la tabla: nadie debería
+ * tener que scrollear una lista larga para poder seguir.
+ *
  * Nunca muestra qué productos salieron ni sus puntajes de ronda: el que está
  * esperando en la fila los memorizaría. Tampoco muestra el correo ni el
  * teléfono de nadie: son datos de contacto privados, no algo para exhibir en
@@ -15,24 +23,14 @@ interface Props {
   entradas: LeaderboardEntry[];
   /** Email del jugador actual, para resaltar su fila. */
   emailPropio?: string;
-  /** Cuántos puestos mostrar. */
-  limite?: number;
-  /** Si el jugador quedó fuera del corte, se agrega su fila al final. */
-  puestoPropio?: number;
   titulo?: string;
 }
 
 export function TablaPosiciones({
   entradas,
   emailPropio,
-  limite = 5,
-  puestoPropio,
   titulo = 'Tabla de posiciones',
 }: Props) {
-  const visibles = entradas.slice(0, limite);
-  const estoyVisible = emailPropio ? visibles.some((e) => e.email === emailPropio) : true;
-  const yo = emailPropio ? entradas.find((e) => e.email === emailPropio) : undefined;
-
   return (
     <div className="bloque-tabla">
       <div className="cabecera-tabla">
@@ -44,13 +42,9 @@ export function TablaPosiciones({
         <p className="vacio">Todavía no jugó nadie. Podés ser el primero.</p>
       ) : (
         <div className="lista-posiciones">
-          {visibles.map((e, i) => (
+          {entradas.map((e, i) => (
             <Fila key={e.email} puesto={i + 1} entrada={e} esPropio={e.email === emailPropio} />
           ))}
-
-          {!estoyVisible && yo && puestoPropio ? (
-            <Fila puesto={puestoPropio} entrada={yo} esPropio />
-          ) : null}
         </div>
       )}
     </div>
@@ -92,8 +86,11 @@ function Fila({
   return (
     <div className={`fila-posicion ${esPropio ? 'yo' : ''} ${metal}`}>
       <span className={`puesto ${metal}`}>{puesto}º</span>
+      {/* La inicial sólo si hay apellido: partidas viejas o importadas pueden
+          no tenerlo, y "Ana ." con el punto suelto se lee como un error. */}
       <span className="quien">
-        {entrada.nombre} {entrada.apellido.charAt(0)}.
+        {entrada.nombre}
+        {entrada.apellido ? ` ${entrada.apellido.charAt(0)}.` : ''}
       </span>
       {premio && <span className={`premio-tag ${metal}`}>{premio}</span>}
       <span className="pts">{entrada.points}</span>

@@ -55,11 +55,10 @@ dist/
   assets/index-*.js         205 kB   (65 kB gzip)
   assets/index-*.css          6 kB
   products.json              89 kB
-  wildcards.json
-  products/                  12,9 MB  ← las 111 imágenes
+  products/                  12,0 MB  ← las 100 imágenes
 ```
 
-Total ~13,2 MB, casi todo imágenes.
+Total ~12,3 MB, casi todo imágenes.
 
 ### Opción recomendada: Vercel
 
@@ -111,7 +110,7 @@ El resto del checklist del stand está en [CONTEXT.md](CONTEXT.md) §8.
 - [x] Desglose real del score (motor V2.2), verificado contra la base
 - [x] Justificación escrita a mano para cada producto
 - [x] Motor del juego + 16 tests
-- [x] Siete pantallas: inicio, registro, jugada, feedback, comodín, resultado, encuesta
+- [x] Seis pantallas: inicio, registro, jugada, feedback, resultado, encuesta
 - [x] Persistencia en IndexedDB + un intento por email
 - [x] Build de producción verificado
 - [ ] Revisión humana de los 100 → `data/revision.csv`
@@ -132,13 +131,12 @@ src/
   App.tsx           Máquina de estados
 data/
   products.json       Lo que consume el juego: 100 productos con desglose y justificación
-  wildcards.json      11 comodines con alcohol (sin puntaje)
   revision.csv        Tabla para revisión humana, con alertas y justificaciones
   candidates.json     Los 100 seleccionados por la curación (regenerable)
   breakdowns.json     Desglose crudo de los 8 pasos del motor
   justifications.json Los párrafos escritos a mano, uno por producto
 public/
-  products/           Las 111 imágenes (no versionadas, se regeneran)
+  products/           Las 100 imágenes (no versionadas, se regeneran)
   *.json              Copias que sirve Vite; la fuente es data/
 scripts/
   curate-products.js      Selección con filtros + cuotas + imprescindibles

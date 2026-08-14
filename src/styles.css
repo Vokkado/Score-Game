@@ -206,29 +206,10 @@ body {
   flex-shrink: 0;
 }
 
-/* Control del ejemplo: mismo look que el de la jugada real, pero con relleno
-   sólido en vez del degradé de 5 colores — se lee más prolijo y el color
-   siempre coincide con la etiqueta de arriba. Los dos ejes (`-webkit`/`-moz`)
-   toman el color y el porcentaje de las variables que pone React en línea. */
-input[type='range'].control-demo::-webkit-slider-runnable-track {
-  height: 14px;
-  border-radius: var(--r-full);
-  background: linear-gradient(
-    to right,
-    var(--relleno-color) var(--relleno-pct),
-    var(--vk-borde) var(--relleno-pct)
-  );
-}
-
-input[type='range'].control-demo::-moz-range-track {
-  height: 14px;
-  border-radius: var(--r-full);
-  background: linear-gradient(
-    to right,
-    var(--relleno-color) var(--relleno-pct),
-    var(--vk-borde) var(--relleno-pct)
-  );
-}
+/* El control del ejemplo ya no necesita reglas propias: el relleno sólido que
+   estrenó acá pasó a ser el del `input[type='range']` base, así que el de la
+   jugada y el del ejemplo son literalmente el mismo control. Sólo queda lo
+   que sí lo diferencia: que no se puede tocar. */
 
 /* Bloquea el arrastre en el navegador: es la parte que realmente evita el
    bug (tocar/arrastrar y que la animación se quede parada para siempre).
@@ -688,6 +669,9 @@ textarea:focus {
   border-radius: var(--r-full);
   color: var(--vk-white);
   flex-shrink: 0;
+  /* En la jugada la insignia cambia de color mientras se arrastra el control:
+     sin transición el salto entre tramos se ve como un parpadeo. */
+  transition: background 0.2s ease;
 }
 
 .insignia-sm {
@@ -721,13 +705,6 @@ textarea:focus {
 
 .insignia-lg .insignia-numero {
   font-size: 29px;
-}
-
-.insignia-graduacion {
-  font-weight: var(--peso-bold);
-  font-size: 12px;
-  line-height: 1;
-  margin-top: 2px;
 }
 
 /* ── Tarjetas ────────────────────────────────────────────────────────── */
@@ -767,6 +744,19 @@ textarea:focus {
 
 /* ── Jugada ──────────────────────────────────────────────────────────── */
 
+/* El ritmo de la alarma de los últimos 5 segundos. Un solo valor para las
+   cuatro cosas que laten —barra, segundos, foto y el aviso "¡POCO TIEMPO!"—
+   porque tienen que sonar al unísono: con duraciones distintas (estaban en
+   0,6s y 0,9s) arrancan juntas pero se van desfasando enseguida y la pantalla
+   queda temblando en desorden en vez de latiendo.
+
+   Las cuatro animaciones además pican en el 50% y no llevan `animation-delay`,
+   así que empiezan y llegan al pico en el mismo frame: las clases se aplican
+   todas en el mismo render de React, cuando `restante` cruza los 5 segundos. */
+:root {
+  --pulso-alarma: 0.7s;
+}
+
 .barra-superior {
   display: flex;
   justify-content: space-between;
@@ -784,7 +774,7 @@ textarea:focus {
 
 .timer.urgente {
   color: var(--vk-score-red);
-  animation: latir 0.6s ease-in-out infinite;
+  animation: latir var(--pulso-alarma) ease-in-out infinite;
 }
 
 @keyframes latir {
@@ -808,8 +798,86 @@ textarea:focus {
   transition: width 0.25s linear, background 0.3s ease;
 }
 
+/* Sobre el final la barra deja de ser verde y late. El pulso va en el relleno
+   y no en `.progreso`, que también pinta el riel gris de fondo: si latiera el
+   contenedor entero parpadearía toda la barra, incluido lo que ya se gastó. */
 .progreso > div.urgente {
   background: var(--vk-score-red);
+  animation: pulso var(--pulso-alarma) ease-in-out infinite;
+}
+
+@keyframes pulso {
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* Aviso de tiempo. Ocupa su lugar desde el primer segundo aunque no se vea:
+   ver comentario en `Jugada.tsx` — aparecer de golpe empujaría el control
+   justo cuando puede haber un dedo apoyado en él. */
+.aviso-tiempo {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: var(--fs-subtitle);
+  font-weight: var(--peso-bold);
+  color: var(--vk-score-red);
+  margin: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.aviso-tiempo.visible {
+  visibility: visible;
+  opacity: 1;
+  animation: latir var(--pulso-alarma) ease-in-out infinite;
+}
+
+/* Lo que se toca, todo junto y centrado en el espacio que sobra (un
+   `.espaciador` arriba y otro abajo). Antes el control quedaba pegado al piso
+   con un hueco muerto de 200px entre la marca y el puntaje. */
+.bloque-jugada {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Aire entre el puntaje y el control. Empezó en 8px —el círculo parecía
+   apoyado sobre la barra— y se fue abriendo hasta acá. Además de separarlos,
+   el hueco sube el círculo dentro del bloque: `.bloque-jugada` se centra
+   entre dos espaciadores, así que todo lo que se agregue acá adentro empuja
+   el puntaje hacia arriba y el control hacia abajo. */
+.bloque-jugada input[type='range'] {
+  margin-top: var(--sp-xl);
+}
+
+/* La insignia de la jugada es más grande que la del resto de las pantallas:
+   es el número que la persona está eligiendo en ese momento, lo que mira
+   mientras arrastra. Mantiene la proporción número/círculo de ScoreBadge
+   (29/80 = 0,3625) para que no se deforme.
+
+   En celular chico se queda en el tamaño estándar a propósito: ahí la
+   pantalla entra justa (el botón cierra a 46px del borde) y crecer acá
+   empujaría el control fuera de la vista. El objetivo es el iPad. */
+@media (min-width: 700px) {
+  .bloque-jugada .insignia-lg {
+    width: 150px;
+    height: 150px;
+  }
+
+  .bloque-jugada .insignia-lg .insignia-numero {
+    font-size: 54px;
+  }
+
+  .bloque-jugada input[type='range'] {
+    margin-top: var(--sp-2xl);
+  }
+}
+
+.bloque-jugada .primario {
+  margin-top: var(--sp-lg);
 }
 
 .foto {
@@ -823,6 +891,61 @@ textarea:focus {
   border-radius: var(--radio-tarjeta);
   margin-bottom: var(--sp-md);
   padding: var(--sp-sm);
+}
+
+/* Cabecera del feedback: foto cuadrada a la izquierda, nombre y marca al
+   lado. Apilados en tres bloques centrados ocupaban mucho alto para decir lo
+   mismo, y en esta pantalla el alto es lo que escasea — abajo van la
+   explicación y la cascada del desglose, que es lo que se vino a leer. */
+.cabecera-producto {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-md);
+  margin-bottom: var(--sp-md);
+}
+
+/* Cuadrada por `aspect-ratio`, no por alto fijo: la imagen del producto viene
+   con cualquier proporción y `contain` la acomoda adentro sin recortarla. */
+.foto-mini {
+  width: clamp(84px, 13vw, 120px);
+  aspect-ratio: 1;
+  flex-shrink: 0;
+  object-fit: contain;
+  background: var(--vk-superficie);
+  border: 1px solid var(--vk-borde);
+  border-radius: var(--radio-tarjeta);
+  padding: var(--sp-sm);
+}
+
+.cabecera-producto-texto {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Alineados a la izquierda y sin margen: dentro de la fila acompañan a la
+   foto. Sueltos en la jugada siguen centrados, que es donde corresponde. */
+.cabecera-producto .nombre-producto {
+  text-align: left;
+  margin: 0 0 var(--sp-xs);
+}
+
+.cabecera-producto .marca {
+  text-align: left;
+  margin: 0;
+}
+
+/* La foto también respira sobre el final. Mismo ritmo y mismo pico que las
+   otras tres, pero mucho más suave (1,03 contra 1,12 del timer): es un bloque
+   grande, y a esa escala un pulso fuerte se lee como un error de render, no
+   como urgencia. La amplitud puede cambiar; la velocidad no. */
+@keyframes respirar-foto {
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+.foto.urgente {
+  animation: respirar-foto var(--pulso-alarma) ease-in-out infinite;
 }
 
 .nombre-producto {
@@ -861,21 +984,19 @@ input[type='range'] {
   margin: 0;
 }
 
-/* Los cortes coinciden con la escala de la app: 25 / 45 / 65 / 85 */
+/* Relleno sólido hasta el valor elegido, gris el resto — el mismo control en
+   las dos pantallas donde aparece. Antes el riel era un degradé de los 5
+   colores de la escala: se leía sucio y, sobre todo, competía con la leyenda
+   de tramos que ahora va debajo diciendo lo mismo con números.
+   El color y el porcentaje llegan por variables en línea desde React; los
+   valores de resguardo son para cualquier `range` que no las defina. */
 input[type='range']::-webkit-slider-runnable-track {
   height: 14px;
   border-radius: var(--r-full);
   background: linear-gradient(
-    90deg,
-    var(--vk-score-red) 0%,
-    var(--vk-score-red) 24%,
-    var(--vk-score-orange) 25%,
-    var(--vk-score-orange) 44%,
-    var(--vk-score-yellow) 45%,
-    var(--vk-score-yellow) 64%,
-    var(--vk-score-light-green) 65%,
-    var(--vk-score-light-green) 84%,
-    var(--vk-score-green) 85%
+    to right,
+    var(--relleno-color, var(--vk-primary-dark)) var(--relleno-pct, 0%),
+    var(--vk-borde) var(--relleno-pct, 0%)
   );
 }
 
@@ -883,16 +1004,9 @@ input[type='range']::-moz-range-track {
   height: 14px;
   border-radius: var(--r-full);
   background: linear-gradient(
-    90deg,
-    var(--vk-score-red) 0%,
-    var(--vk-score-red) 24%,
-    var(--vk-score-orange) 25%,
-    var(--vk-score-orange) 44%,
-    var(--vk-score-yellow) 45%,
-    var(--vk-score-yellow) 64%,
-    var(--vk-score-light-green) 65%,
-    var(--vk-score-light-green) 84%,
-    var(--vk-score-green) 85%
+    to right,
+    var(--relleno-color, var(--vk-primary-dark)) var(--relleno-pct, 0%),
+    var(--vk-borde) var(--relleno-pct, 0%)
   );
 }
 
@@ -938,12 +1052,18 @@ input[type='range']::-moz-range-thumb {
   gap: var(--sp-sm);
 }
 
+/* `nowrap` a propósito: las dos etiquetas ya no miden parecido ("TU PUNTAJE"
+   contra "PUNTAJE DE VOKKADO"), y si la larga envuelve en dos líneas su
+   columna crece y las dos insignias dejan de estar a la misma altura —
+   `.comparacion` las centra verticalmente. */
 .columna-insignia .etiqueta {
   font-size: var(--fs-label);
   color: var(--vk-texto-secundario);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: var(--peso-medium);
+  text-align: center;
+  white-space: nowrap;
 }
 
 .columna-insignia.destacada .etiqueta {
@@ -978,9 +1098,12 @@ input[type='range']::-moz-range-thumb {
   margin-bottom: var(--sp-xs);
 }
 
+/* Lo que se ganó en la ronda: es el dato que la persona vino a buscar después
+   del veredicto, así que sube de `--fs-body` a subtítulo, y el número de
+   puntos un escalón más. */
 .puntos-ganados {
   text-align: center;
-  font-size: var(--fs-body);
+  font-size: var(--fs-subtitle);
   color: var(--vk-texto-secundario);
   margin-bottom: var(--sp-md);
 }
@@ -988,12 +1111,50 @@ input[type='range']::-moz-range-thumb {
 .puntos-ganados strong {
   color: var(--vk-primary);
   font-weight: var(--peso-bold);
+  font-size: var(--fs-title);
+}
+
+/* El botón de Feedback queda pegado al piso de la pantalla mientras se
+   scrollea, y aterriza en su lugar natural al final.
+
+   Esta pantalla no tiene un alto fijo: el párrafo de justificación y la
+   cantidad de pasos del desglose cambian por producto. Medido en una partida
+   real: con 5 pasos el botón cerraba en 1131px y con 8 en 1195px, contra un
+   viewport de 1112 — o sea que en 4 de 5 productos quedaba abajo del pliegue,
+   y en el peor caso por poco, que es la forma más traicionera: la pantalla
+   parece terminada y el botón está escondido. Con fila en el stand eso es
+   alguien trabado esperando que le digan qué hacer.
+
+   `sticky` en vez de mover el botón más arriba: el orden de lectura
+   —explicación, después desglose, después seguir— es el que se aprobó. */
+.pantalla-feedback > .primario {
+  position: sticky;
+  bottom: var(--sp-md);
+  box-shadow: var(--sombra-lg);
+}
+
+/* Pregunta que encabeza la explicación. Es el momento en que el juego deja de
+   ser un juego y explica el criterio de Vokkado: va como pregunta directa a la
+   persona, no como rótulo de sección.
+
+   Vive DENTRO de la tarjeta blanca, así que se alinea a la izquierda como el
+   párrafo que encabeza — centrada arriba de un texto alineado a la izquierda
+   quedaba descolgada. Es el mismo patrón que el `h3` del desglose, con más
+   peso porque acá la pregunta es el gancho. */
+.titulo-porque {
+  font-size: var(--fs-section);
+  font-weight: var(--peso-semibold);
+  color: var(--vk-titulo);
+  margin: 0 0 var(--sp-sm);
+}
+
+.justificacion p {
+  margin: 0;
 }
 
 .justificacion {
   background: var(--vk-superficie);
   border: 1px solid var(--vk-borde);
-  border-left: 4px solid var(--vk-primary-light);
   border-radius: var(--radio-tarjeta);
   padding: var(--pad-input);
   font-size: var(--fs-body);
@@ -1108,28 +1269,6 @@ input[type='range']::-moz-range-thumb {
 .chip.bueno {
   background: rgba(91, 136, 6, 0.12);
   color: var(--vk-primary);
-}
-
-/* ── Comodín ─────────────────────────────────────────────────────────── */
-
-.comodin {
-  background: var(--vk-primary-dark);
-  color: var(--vk-friendly-white);
-  border-radius: var(--radio-tarjeta);
-  padding: var(--sp-md);
-  margin-bottom: var(--sp-md);
-}
-
-.comodin h2 {
-  color: var(--vk-primary-light);
-  margin-bottom: var(--sp-sm);
-}
-
-.comodin p {
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
-  margin: 0;
-  opacity: 0.95;
 }
 
 /* ── Resultado y tabla de posiciones ─────────────────────────────────── */
@@ -1338,10 +1477,6 @@ input[type='range']::-moz-range-thumb {
 
   .insignia-lg .insignia-numero {
     font-size: 45px;
-  }
-
-  .insignia-graduacion {
-    font-size: 17px;
   }
 }
 

@@ -23,16 +23,6 @@ export interface Product {
   beneficials: { name: string; value: number; unit: string }[];
 }
 
-export interface Wildcard {
-  id: string;
-  name: string;
-  brand: string | null;
-  /** Nombre de archivo dentro de public/products, ya con su extensión. */
-  image: string;
-  alcohol_graduation: number;
-  explanation: string;
-}
-
 export interface Player {
   nombre: string;
   apellido: string;
@@ -49,6 +39,28 @@ export interface Round {
   realScore: number;
   points: number;
   ms: number;
+}
+
+/**
+ * Parte el nombre completo por el **primer** espacio: la primera palabra es el
+ * nombre y todo el resto el apellido.
+ *
+ * El formulario pide el nombre en un solo campo, pero `Player` los guarda
+ * separados porque así los espera el CSV que exporta el admin y el schema de
+ * la base de la fase 2.
+ *
+ * Es la lectura literal de "Nombre y apellido", y la que mejor funciona acá:
+ * los apellidos dobles son comunes ("Ana Rodríguez Pérez" → Ana / Rodríguez
+ * Pérez, y la tabla muestra "Ana R."). El caso que no resuelve bien es el
+ * nombre compuesto ("María del Carmen Pérez" → María / del Carmen Pérez, y la
+ * tabla muestra "María d."): se pierde prolijidad, no el dato — el nombre
+ * completo se reconstruye siempre juntando las dos columnas del CSV.
+ */
+export function partirNombre(completo: string): { nombre: string; apellido: string } {
+  const limpio = completo.trim().replace(/\s+/g, ' ');
+  const corte = limpio.indexOf(' ');
+  if (corte === -1) return { nombre: limpio, apellido: '' };
+  return { nombre: limpio.slice(0, corte), apellido: limpio.slice(corte + 1) };
 }
 
 /** Cuántos productos tiene una partida. */
@@ -118,46 +130,120 @@ export function feedbackFor(points: number): string {
   return 'Muy lejos';
 }
 
+/** Un producto "interesante": sorpresa o trampa saludable. */
+function esInteresante(p: Product): boolean {
+  return p.quota === 'sorpresa' || p.quota === 'trampa';
+}
+
+/** Cuántos interesantes lleva cada partida. Ni más ni menos: ver `pickRound`. */
+export const INTERESANTES_POR_PARTIDA = 2;
+
 /**
  * Sortea los productos de una partida.
  *
- * No es aleatorio puro: se fuerza que al menos dos sean "sorpresa" o "trampa
- * saludable". Con random uniforme, a alguien le tocaban cinco productos obvios
- * y el juego perdía toda la gracia — que es justamente donde se genera la
- * conversación en el stand.
+ * No es aleatorio puro, por dos motivos:
+ *
+ * 1. **Al menos dos "interesantes"** (sorpresa o trampa saludable). Con random
+ *    uniforme, a alguien le tocaban cinco productos obvios y el juego perdía
+ *    la gracia — que es justamente donde se genera la conversación en el stand.
+ * 2. **No se repite categoría** dentro de una partida: la segunda respuesta
+ *    sería una copia de la primera.
+ *
+ * `usados` son los productos que ya salieron en el ciclo actual y hay que
+ * evitar. Normalmente esto se llama a través de `sortear()`, que lleva esa
+ * cuenta; se exporta aparte porque es la parte fácil de testear.
  */
-export function pickRound(pool: Product[], rng: () => number = Math.random): Product[] {
-  const interesting = pool.filter((p) => p.quota === 'sorpresa' || p.quota === 'trampa');
-  const rest = pool.filter((p) => p.quota !== 'sorpresa' && p.quota !== 'trampa');
-
+export function pickRound(
+  pool: Product[],
+  { usados = new Set<string>(), rng = Math.random }: { usados?: Set<string>; rng?: () => number } = {},
+): Product[] {
+  const frescos = pool.filter((p) => !usados.has(p.id));
   const picked: Product[] = [];
-  const take = (from: Product[], n: number) => {
-    const bag = shuffle(from, rng);
-    for (const p of bag) {
-      if (picked.length >= ROUNDS_PER_GAME) return;
-      if (n <= 0) return;
+
+  const tomar = (de: Product[], n: number, conCategoria = true) => {
+    for (const p of shuffle(de, rng)) {
+      if (picked.length >= ROUNDS_PER_GAME || n <= 0) return;
       if (picked.some((x) => x.id === p.id)) continue;
-      // Nunca dos productos de la misma categoría en la misma partida: repetir
-      // categoría hace que la segunda respuesta sea una copia de la primera.
-      if (picked.some((x) => x.category === p.category)) continue;
+      if (conCategoria && picked.some((x) => x.category === p.category)) continue;
       picked.push(p);
       n--;
     }
   };
 
-  take(interesting, 2);
-  take(shuffle([...interesting, ...rest], rng), ROUNDS_PER_GAME - picked.length);
+  // Exactamente dos interesantes y tres del resto, siempre de la bolsa fresca.
+  //
+  // El "tres del resto" excluye a los interesantes a propósito. Antes se
+  // completaba con cualquiera, y como son 44 de 100 caían de más: medido sobre
+  // 20.000 partidas, el 45% traía 3 interesantes, el 30% traía 4 y el 5% traía
+  // 5. Con premios de por medio eso es un problema de equidad — dos personas
+  // competían por lo mismo con partidas de dificultad distinta. Ahora todas
+  // las partidas tienen la misma mezcla, y de paso los dos grupos se consumen
+  // a un ritmo parejo (2 y 3 por partida), así el ciclo aprovecha el pool
+  // entero en vez de quedarse sin interesantes a mitad de camino.
+  tomar(frescos.filter(esInteresante), INTERESANTES_POR_PARTIDA);
+  tomar(
+    frescos.filter((p) => !esInteresante(p)),
+    ROUNDS_PER_GAME - picked.length,
+  );
 
-  // Red de seguridad: si el filtro de categoría dejó la partida corta (pool
-  // chico o muchas categorías repetidas), se completa sin ese requisito.
-  if (picked.length < ROUNDS_PER_GAME) {
-    for (const p of shuffle(pool, rng)) {
-      if (picked.length >= ROUNDS_PER_GAME) break;
-      if (!picked.some((x) => x.id === p.id)) picked.push(p);
-    }
-  }
+  // Redes de seguridad, en orden de menor a mayor concesión: primero cualquier
+  // producto fresco, después el pool entero (acepta repetir uno del ciclo) y
+  // por último sin el requisito de categoría (pool chico, o de una sola).
+  tomar(frescos, ROUNDS_PER_GAME - picked.length);
+  tomar(pool, ROUNDS_PER_GAME - picked.length);
+  tomar(pool, ROUNDS_PER_GAME - picked.length, false);
 
   return picked.slice(0, ROUNDS_PER_GAME);
+}
+
+/**
+ * Sorteo con bolsa: un producto no vuelve a salir hasta que se hayan usado
+ * todos los demás.
+ *
+ * Sin esto, cada partida sorteaba de cero y la probabilidad hacía el resto:
+ * medido sobre 20.000 partidas del pool real, **el 26% repetía algún producto
+ * de la partida inmediatamente anterior y el 60% repetía alguno de las tres
+ * anteriores**. En un stand con fila, donde la gente mira jugar al de adelante,
+ * eso se lee como que el juego tiene cuatro productos.
+ *
+ * `yaSalieron` es la lista de ids del ciclo en curso; el llamador la persiste
+ * y la vuelve a pasar. Cuando quedan menos productos que una partida, se da
+ * vuelta la bolsa y arranca un ciclo nuevo — evitando en ese primer sorteo los
+ * de la última partida, para que el corte de ciclo no se note.
+ */
+export function sortear(
+  pool: Product[],
+  yaSalieron: string[] = [],
+  rng: () => number = Math.random,
+): { ronda: Product[]; yaSalieron: string[] } {
+  // Ids que ya no están en el pool (se regeneró la curación) no cuentan.
+  const vigentes = yaSalieron.filter((id) => pool.some((p) => p.id === id));
+  const usados = new Set(vigentes);
+  const frescos = pool.filter((p) => !usados.has(p.id));
+
+  // La bolsa se da vuelta cuando ya no puede armar una partida completa **con
+  // su mezcla exacta**: hacen falta 2 interesantes y 3 del resto. No alcanza
+  // con mirar cuántos productos quedan en total — con 8 interesantes y 2 del
+  // resto sobran diez para una partida, pero la mezcla ya no sale y la ronda
+  // terminaba trayendo 3 interesantes por la red de seguridad. Cortar acá es
+  // lo que sostiene las dos promesas a la vez: dentro de un ciclo no se
+  // repite ningún producto y todas las partidas tienen la misma mezcla.
+  const interesantesFrescos = frescos.filter(esInteresante).length;
+  const restoFresco = frescos.length - interesantesFrescos;
+  const agotada =
+    interesantesFrescos < INTERESANTES_POR_PARTIDA ||
+    restoFresco < ROUNDS_PER_GAME - INTERESANTES_POR_PARTIDA;
+
+  if (agotada) {
+    // Ciclo nuevo. Se evitan sólo los de la última partida, y no quedan
+    // marcados como usados: así el corte de ciclo no se nota y ninguno queda
+    // castigado durante todo el ciclo siguiente.
+    const ronda = pickRound(pool, { usados: new Set(vigentes.slice(-ROUNDS_PER_GAME)), rng });
+    return { ronda, yaSalieron: ronda.map((p) => p.id) };
+  }
+
+  const ronda = pickRound(pool, { usados, rng });
+  return { ronda, yaSalieron: [...vigentes, ...ronda.map((p) => p.id)] };
 }
 
 /** Fisher-Yates con rng inyectable, para poder testear con semilla fija. */

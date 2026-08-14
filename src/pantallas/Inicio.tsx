@@ -39,7 +39,7 @@ export function Inicio({ onEmpezar }: { onEmpezar: () => void }) {
 
         <div className="caja-premios">
           <p className="leyenda pie-inicio">
-            Los premios se entregan a las 16:00 hs. Acercate al stand para recibirlo.
+            Los premios se entregan a las 17:00 hs. Acercate al stand para recibirlo.
           </p>
           <p className="leyenda pie-secundario">
             ¡Si no ganás no importa, te llevás un sticker por participar y futuros

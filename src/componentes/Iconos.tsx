@@ -61,11 +61,3 @@ export function Info({ size = 22, color = 'currentColor' }: Props) {
   );
 }
 
-/** MaterialCommunityIcons `bottle-wine`, el que usa ScoreBadge para el alcohol. */
-export function Botella({ size = 28, color = 'currentColor' }: Props) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true" fill={color}>
-      <path d="M10 1v5.4L8.6 8.2A4 4 0 0 0 8 10.3V22a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V10.3a4 4 0 0 0-.6-2.1L14 6.4V1h-4zm1.5 1.5h1V6h-1V2.5z" />
-    </svg>
-  );
-}

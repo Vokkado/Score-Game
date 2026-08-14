@@ -57,17 +57,16 @@ export function Resultado({ rounds, player, onSeguir }: Props) {
         </p>
       )}
 
-      <TablaPosiciones
-        entradas={tabla}
-        emailPropio={player.email}
-        puestoPropio={puesto}
-      />
-
-      <div className="espaciador" />
-
-      <button className="primario" onClick={onSeguir}>
+      {/* El botón va antes de la tabla, igual que el CTA de Inicio: la tabla
+          ahora muestra a todos los jugadores y crece sola durante el evento —
+          dejarlo abajo obligaría a scrollear una lista larga para terminar. */}
+      <button className="primario grande" onClick={onSeguir}>
         Última pregunta y listo
       </button>
+
+      <div className="separador-tabla" />
+
+      <TablaPosiciones entradas={tabla} emailPropio={player.email} />
     </div>
   );
 }

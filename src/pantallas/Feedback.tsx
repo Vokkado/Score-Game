@@ -19,19 +19,31 @@ export function Feedback({ producto, round, esUltimo, onSeguir }: Props) {
   const error = Math.abs(round.guess - round.realScore);
 
   return (
-    <div className="pantalla">
-      <p className="nombre-producto">{producto.name}</p>
-      <p className="marca">{producto.brand}</p>
+    <div className="pantalla pantalla-feedback">
+      {/* Foto cuadrada a la izquierda con el nombre y la marca al lado, en una
+          sola fila. Apilados ocupaban tres bloques de alto para decir lo mismo,
+          y acá el alto es escaso: abajo esperan la explicación y el desglose. */}
+      <div className="cabecera-producto">
+        <img
+          className="foto-mini"
+          src={`/products/${producto.image}`}
+          alt={producto.name}
+        />
+        <div className="cabecera-producto-texto">
+          <p className="nombre-producto">{producto.name}</p>
+          <p className="marca">{producto.brand}</p>
+        </div>
+      </div>
 
       {/* Las dos insignias circulares, como las muestra la app. */}
       <div className="comparacion">
         <div className="columna-insignia">
-          <span className="etiqueta">Dijiste</span>
+          <span className="etiqueta">Tu puntaje</span>
           <Insignia puntaje={round.guess} tamano="md" />
         </div>
         <span className="separador-vs">vs</span>
         <div className="columna-insignia destacada">
-          <span className="etiqueta">Puntaje real</span>
+          <span className="etiqueta">Puntaje de Vokkado</span>
           <Insignia puntaje={round.realScore} tamano="lg" />
         </div>
       </div>
@@ -44,7 +56,10 @@ export function Feedback({ producto, round, esUltimo, onSeguir }: Props) {
         {error === 0 ? 'exacto' : `te alejaste por ${error}`}
       </div>
 
-      <div className="justificacion">{producto.justification}</div>
+      <div className="justificacion">
+        <h2 className="titulo-porque">¿Por qué Vokkado le pone este puntaje?</h2>
+        <p>{producto.justification}</p>
+      </div>
 
       {producto.breakdown.length > 0 && (
         <div className="desglose">
@@ -91,7 +106,7 @@ export function Feedback({ producto, round, esUltimo, onSeguir }: Props) {
         </div>
       )}
 
-      <button className="primario" onClick={onSeguir}>
+      <button className="primario grande" onClick={onSeguir}>
         {esUltimo ? 'Ver mi resultado' : 'Siguiente producto'}
       </button>
     </div>

@@ -82,6 +82,36 @@ export async function findByEmail(email: string): Promise<StoredGame | null> {
   });
 }
 
+/**
+ * La bolsa del sorteo: qué productos ya salieron en el ciclo en curso.
+ *
+ * Va en `localStorage` y no en IndexedDB a propósito: se lee de forma
+ * sincrónica justo cuando arranca la partida, y perderla no rompe nada —
+ * el peor caso es que la bolsa empiece de nuevo. Tiene que sobrevivir a que
+ * alguien recargue la app en pleno evento, que es lo único que importa.
+ */
+const CLAVE_BOLSA = 'vokkado-score-game:bolsa';
+
+export function leerBolsa(): string[] {
+  try {
+    const crudo = localStorage.getItem(CLAVE_BOLSA);
+    const ids: unknown = crudo ? JSON.parse(crudo) : [];
+    return Array.isArray(ids) ? ids.filter((x): x is string => typeof x === 'string') : [];
+  } catch {
+    // Modo privado de Safari, cuota llena o JSON corrupto: la bolsa arranca
+    // vacía y el juego sigue. No vale la pena romper una partida por esto.
+    return [];
+  }
+}
+
+export function guardarBolsa(ids: string[]): void {
+  try {
+    localStorage.setItem(CLAVE_BOLSA, JSON.stringify(ids));
+  } catch {
+    /* ídem */
+  }
+}
+
 export async function pendingSync(): Promise<StoredGame[]> {
   const games = await allGames();
   return games.filter((g) => !g.synced);

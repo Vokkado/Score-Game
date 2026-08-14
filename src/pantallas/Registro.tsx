@@ -1,15 +1,29 @@
 import { useState } from 'react';
 import type { Player } from '../game/engine';
+import { partirNombre } from '../game/engine';
 import type { StoredGame } from '../game/storage';
 import { Campo } from '../componentes/Campo';
 import { Casilla } from '../componentes/Casilla';
 import { Encabezado } from '../componentes/Encabezado';
 import { Info } from '../componentes/Iconos';
 
+/**
+ * Lo que la persona escribe, que ya no es igual a lo que se guarda: el
+ * formulario pide el nombre completo en un solo campo y `Player` sigue
+ * teniendo `nombre` y `apellido` separados, porque así los espera el CSV que
+ * exporta el admin y el schema de la base que va en la fase 2.
+ */
+export interface Borrador {
+  nombreCompleto: string;
+  email: string;
+  telefono: string;
+  profesion: string;
+  consent: boolean;
+}
+
 /** Formulario en blanco. Vive acá porque App lo usa para limpiar el borrador. */
-export const PLAYER_VACIO: Player = {
-  nombre: '',
-  apellido: '',
+export const BORRADOR_VACIO: Borrador = {
+  nombreCompleto: '',
   email: '',
   telefono: '',
   profesion: '',
@@ -21,8 +35,8 @@ export const PLAYER_VACIO: Player = {
 
 interface Props {
   /** El borrador vive en App: si la persona vuelve a Inicio, no se pierde. */
-  valores: Player;
-  onCambiar: (p: Player) => void;
+  valores: Borrador;
+  onCambiar: (b: Borrador) => void;
   onListo: (p: Player) => void;
   onVolver: () => void;
   yaJugo: (email: string) => Promise<StoredGame | null>;
@@ -30,20 +44,32 @@ interface Props {
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-/** Los obligatorios. El teléfono es el único opcional. */
-type CampoId = 'nombre' | 'apellido' | 'email' | 'profesion';
+/** Mínimo de dígitos de un teléfono uruguayo (fijo 8, celular 9). */
+const MIN_DIGITOS_TEL = 8;
 
-const ORDEN: CampoId[] = ['nombre', 'apellido', 'email', 'profesion'];
+type CampoId = 'nombreCompleto' | 'email' | 'telefono' | 'profesion';
+
+const ORDEN: CampoId[] = ['nombreCompleto', 'email', 'profesion', 'telefono'];
 
 type Errores = Partial<Record<CampoId, string>>;
 
-function validar(v: Player): Errores {
+/** Todos los campos son obligatorios: no queda ninguno opcional. */
+function validar(v: Borrador): Errores {
   const e: Errores = {};
-  if (!v.nombre.trim()) e.nombre = 'Escribí tu nombre';
-  if (!v.apellido.trim()) e.apellido = 'Escribí tu apellido';
+
+  if (!v.nombreCompleto.trim()) e.nombreCompleto = 'Escribí tu nombre y apellido';
+  else if (!partirNombre(v.nombreCompleto).apellido) e.nombreCompleto = 'Falta el apellido';
+
   if (!v.email.trim()) e.email = 'Escribí tu correo';
   else if (!EMAIL_RE.test(v.email.trim())) e.email = 'Ese correo no parece válido';
+
   if (!v.profesion.trim()) e.profesion = 'Contanos a qué te dedicás o de dónde venís';
+
+  if (!v.telefono.trim()) e.telefono = 'Escribí tu teléfono';
+  else if (v.telefono.replace(/\D/g, '').length < MIN_DIGITOS_TEL) {
+    e.telefono = 'Ese teléfono parece incompleto';
+  }
+
   return e;
 }
 
@@ -59,7 +85,7 @@ export function Registro({ valores, onCambiar, onListo, onVolver, yaJugo }: Prop
   const errores = validar(valores);
   const faltan = Object.keys(errores).length > 0;
 
-  const set = (campo: keyof Player, valor: string | boolean) =>
+  const set = (campo: keyof Borrador, valor: string | boolean) =>
     onCambiar({ ...valores, [campo]: valor });
 
   /** El error de un campo, sólo si corresponde mostrarlo todavía. */
@@ -74,8 +100,8 @@ export function Registro({ valores, onCambiar, onListo, onVolver, yaJugo }: Prop
     setErrorEmail('');
 
     if (faltan) {
-      // Llevar el foco al primer campo que falta: con seis campos, "revisá lo
-      // que está en rojo" no alcanza si el que falta quedó fuera de pantalla.
+      // Llevar el foco al primer campo que falta: "revisá lo que está en rojo"
+      // no alcanza si el que falta quedó fuera de pantalla.
       const primero = ORDEN.find((c) => errores[c]);
       if (primero) document.getElementById(primero)?.focus();
       return;
@@ -93,9 +119,10 @@ export function Registro({ valores, onCambiar, onListo, onVolver, yaJugo }: Prop
         document.getElementById('email')?.focus();
         return;
       }
+      const { nombre, apellido } = partirNombre(valores.nombreCompleto);
       onListo({
-        nombre: valores.nombre.trim(),
-        apellido: valores.apellido.trim(),
+        nombre,
+        apellido,
         email: valores.email.trim().toLowerCase(),
         telefono: valores.telefono.trim(),
         profesion: valores.profesion.trim(),
@@ -120,27 +147,17 @@ export function Registro({ valores, onCambiar, onListo, onVolver, yaJugo }: Prop
         </div>
 
         {/* Los campos van sobre una tarjeta blanca: el formulario se lee como
-            una sola cosa y no como seis controles sueltos sobre el fondo. */}
+            una sola cosa y no como cuatro controles sueltos sobre el fondo. */}
         <div className="tarjeta-formulario">
           <Campo
-            id="nombre"
-            label="Nombre"
-            value={valores.nombre}
-            onChange={(e) => set('nombre', e.target.value)}
-            onBlur={() => setTocado((t) => ({ ...t, nombre: true }))}
-            autoComplete="given-name"
-            error={errorDe('nombre')}
-          />
-
-          <Campo
-            id="apellido"
-            label="Apellido"
-            placeholder="Tu apellido"
-            value={valores.apellido}
-            onChange={(e) => set('apellido', e.target.value)}
-            onBlur={() => setTocado((t) => ({ ...t, apellido: true }))}
-            autoComplete="family-name"
-            error={errorDe('apellido')}
+            id="nombreCompleto"
+            label="Nombre y apellido"
+            placeholder="Ana Pérez"
+            value={valores.nombreCompleto}
+            onChange={(e) => set('nombreCompleto', e.target.value)}
+            onBlur={() => setTocado((t) => ({ ...t, nombreCompleto: true }))}
+            autoComplete="name"
+            error={errorDe('nombreCompleto')}
           />
 
           <Campo
@@ -171,11 +188,13 @@ export function Registro({ valores, onCambiar, onListo, onVolver, yaJugo }: Prop
 
           <Campo
             id="telefono"
-            label="Teléfono (opcional)"
+            label="Teléfono"
             tipo="tel"
             value={valores.telefono}
             onChange={(e) => set('telefono', e.target.value)}
+            onBlur={() => setTocado((t) => ({ ...t, telefono: true }))}
             autoComplete="tel"
+            error={errorDe('telefono')}
           />
         </div>
 

@@ -231,21 +231,14 @@ const SQL = `
     )
 `;
 
-/**
- * Productos con alcohol: el motor les da score NULL a propósito (no existe un
- * nivel de consumo libre de riesgo — posición de la OMS), así que no se pueden
- * adivinar. En el juego van como comodín: producto extra, no suma ni resta
- * puntos, y sirve para explicar por qué Vokkado no puntúa alcohol.
+/*
+ * Los productos con alcohol quedaron fuera del juego (decisión del usuario,
+ * 2026-08-14 — ver CONTEXT §8p). Antes se traían aparte para usarlos como
+ * comodín: una ronda extra, sin puntaje, que explicaba por qué Vokkado no
+ * puntúa alcohol. Se sacaron el `SQL_WILDCARDS`, `wildcards.json` y la
+ * pantalla entera. El pool del juego nunca los incluyó: el `SQL` de arriba
+ * ya filtra `alcohol_graduation < 0.5`.
  */
-const SQL_WILDCARDS = `
-  SELECT p.id, p.name, p.brand, p.image, p.alcohol_graduation, c.name AS category
-  FROM products p
-  LEFT JOIN product_categories c ON c.id = p.category_id
-  WHERE p.alcohol_graduation >= 0.5
-    AND p.image IS NOT NULL
-    AND p.is_inspected
-  ORDER BY p.alcohol_graduation
-`;
 
 // ─── Clasificación ───────────────────────────────────────────────────────────
 
@@ -394,7 +387,6 @@ function select(pool) {
   await client.connect();
   await client.query('SET default_transaction_read_only = on');
   const { rows } = await client.query(SQL);
-  const { rows: wildcardRows } = await client.query(SQL_WILDCARDS);
   await client.end();
 
   console.log(`Pool tras filtros de calidad: ${rows.length}`);
@@ -444,23 +436,9 @@ function select(pool) {
   const chosen = select(pool);
   console.log(`\nSeleccionados: ${chosen.length}`);
 
-  // Comodines: productos con alcohol. No tienen puntaje que adivinar.
-  const wildcards = wildcardRows.map((w) => ({
-    ...w,
-    alcohol_graduation: Number(w.alcohol_graduation),
-    isWildcard: true,
-    score: null,
-    explanation:
-      'Vokkado no le pone puntaje a las bebidas con alcohol. No existe un nivel ' +
-      'de consumo de alcohol libre de riesgo (posición de la OMS), así que ' +
-      'puntuarlas en una escala de "más o menos saludable" sería engañoso.',
-  }));
-
   fs.mkdirSync(DATA_DIR, { recursive: true });
   fs.writeFileSync(path.join(DATA_DIR, '_raw_pool.json'), JSON.stringify(pool, null, 2));
   fs.writeFileSync(path.join(DATA_DIR, 'candidates.json'), JSON.stringify(chosen, null, 2));
-  fs.writeFileSync(path.join(DATA_DIR, 'wildcards.json'), JSON.stringify(wildcards, null, 2));
-  console.log(`Comodines (alcohol, sin puntaje): ${wildcards.length}`);
 
   const finalCounts = {};
   for (const p of chosen) finalCounts[p.quota] = (finalCounts[p.quota] || 0) + 1;

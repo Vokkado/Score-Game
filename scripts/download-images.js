@@ -32,11 +32,9 @@ const get = (url, dest) =>
   });
 
 (async () => {
-  const candidates = [
-    ...JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'candidates.json'), 'utf8')),
-    // Los comodines de alcohol también se muestran en pantalla.
-    ...JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'wildcards.json'), 'utf8')),
-  ];
+  const candidates = JSON.parse(
+    fs.readFileSync(path.join(DATA_DIR, 'candidates.json'), 'utf8'),
+  );
   fs.mkdirSync(IMG_DIR, { recursive: true });
 
   let ok = 0;

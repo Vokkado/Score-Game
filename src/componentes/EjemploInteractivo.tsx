@@ -92,7 +92,7 @@ export function EjemploInteractivo() {
         min={0}
         max={100}
         value={valor}
-        className="control-demo inerte"
+        className="inerte"
         style={
           {
             '--relleno-color': color,

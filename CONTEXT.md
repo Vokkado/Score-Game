@@ -128,9 +128,11 @@ Coca-Cola se quedaba afuera porque Fanta (16) está más lejos de 50.
 **Cuotas para el resto:** 22 sorpresa · 22 trampa · 14 ancla buena · 14 ancla mala ·
 12 medio. Topes: 3 por marca, 6 por categoría.
 
-**Comodines:** 11 productos con alcohol ≥0,5%. El motor les da `score = null` a
-propósito (no hay nivel de consumo libre de riesgo, posición de la OMS). En el
-juego son producto extra que no suma ni resta.
+> **Desactualizado desde el 2026-08-14 (§8p): los comodines se eliminaron.**
+> Eran 11 productos con alcohol ≥0,5%, a los que el motor les da `score = null`
+> a propósito (no hay nivel de consumo libre de riesgo, posición de la OMS), y
+> en el juego iban como producto extra que no sumaba ni restaba. Ya no existen
+> ni en el juego ni en el pipeline de datos.
 
 ## 6. Rarezas detectadas
 
@@ -187,7 +189,7 @@ Encontradas leyendo los 100 productos uno por uno.
 | `components/ui/AppButton.tsx` | Botón: alto 52, radio 12, primaryDark, texto friendlyWhite, deshabilitado gris con opacidad 0.6 |
 | `components/ui/AppInput.tsx` | **Campo**: alto 46, radio 10, **borde 1px**, padding 14, **fondo del color de página** (no blanco), placeholder `#999` y los textos por defecto ("Tu nombre", "tucorreo@ejemplo.com"). Label en body sobre `--vk-texto`, no en color de marca |
 | `components/ui/AppCheckbox.tsx` | **Casilla**: tarjeta entera clickeable, borde 2px, radio 10, padding 14; cuadrito de 22 con radio 5 **a la derecha**; marcada tiñe borde y fondo con primaryDark |
-| `components/ui/ScoreBadge.tsx` | **Insignia**: círculo relleno con el color del puntaje y número en blanco. 36/13, 60/22, 80/29. Con alcohol: fondo rojo, botella y el grado con coma decimal |
+| `components/ui/ScoreBadge.tsx` | **Insignia**: círculo relleno con el color del puntaje y número en blanco. 36/13, 60/22, 80/29. (La variante con alcohol —fondo rojo y botella— se portó y después se eliminó, §8p) |
 | `components/ui/ScreenHeader.tsx` | **Encabezado**: chevron en área de 40px, título centrado en sectionTitle, franja inferior de 1px |
 | `components/ui/ProductCard.tsx` | **La escala de color por puntaje** |
 
@@ -643,8 +645,28 @@ Primera pantalla después de Inicio. Pedido del usuario, punto por punto:
   del color de página que les da `AppInput` — sobre el blanco de la tarjeta
   eso se lee como campo relleno, que es justo lo que se quería; si además se
   hubieran puesto blancos, desaparecían dentro de la tarjeta.
-- **Profesión pasó a obligatoria.** El único opcional ahora es el teléfono.
-  Se le sacó el "(opcional)" del label a Profesión y se lo dejó en Teléfono.
+- **Profesión pasó a obligatoria**, y en una segunda vuelta **el teléfono
+  también**: hoy no queda ningún campo opcional. El teléfono además valida un
+  mínimo de 8 dígitos (fijo 8, celular 9 en Uruguay), ignorando espacios y
+  signos, para atajar el "099" a medio escribir.
+- **Nombre y apellido en un solo campo.** El formulario pide "Nombre y
+  apellido" y `partirNombre()` (en `engine.ts`, con 5 tests) lo parte por el
+  **primer** espacio al enviar: primera palabra = nombre, el resto = apellido.
+  `Player`, el CSV y el schema de la fase 2 **siguen con las dos columnas
+  separadas** — cambió el formulario, no el modelo.
+
+  Se parte por el primer espacio y no por el último porque los apellidos
+  dobles son comunes acá: "Ana Rodríguez Pérez" → Ana / Rodríguez Pérez, y la
+  tabla muestra "Ana R.". El caso que no queda prolijo es el nombre compuesto
+  ("María del Carmen Pérez" → María / del Carmen Pérez, tabla "María d."):
+  **se pierde prolijidad, no el dato** — el nombre completo se reconstruye
+  juntando las dos columnas del CSV.
+
+  Como consecuencia, el borrador dejó de ser un `Player` y pasó a ser un tipo
+  propio `Borrador` (`nombreCompleto` en vez de `nombre`/`apellido`): lo que
+  se guarda ya no es igual a lo que se escribe. Y `TablaPosiciones` ahora
+  muestra la inicial **sólo si hay apellido** — partidas viejas o importadas
+  pueden no tenerlo, y "Ana ." con el punto suelto se lee como un error.
 - **La validación ahora avisa, antes sólo bloqueaba.** Existía `completo`,
   pero su único efecto era dejar el botón gris: la persona veía un botón que
   no responde y ningún cartel diciendo qué falta. Ahora hay un `validar()`
@@ -685,11 +707,320 @@ Primera pantalla después de Inicio. Pedido del usuario, punto por punto:
   el puerto fiel de los tokens del Frontend.
 
 Verificado en navegador a 834×1112: con el formulario vacío, "Empezar" marca
-los 4 obligatorios (teléfono no), muestra el aviso general y deja el foco en
-`nombre`; el botón mide 68px y 30,15px de fuente; llenar todo → "Volver" →
-volver a entrar devuelve los cinco campos **y la casilla marcada**, sin
-errores en rojo; y "Empezar" entra a la jugada. Sin scroll horizontal.
-21 tests en verde, `tsc --noEmit` limpio.
+los 4 campos, muestra el aviso general y deja el foco en `nombreCompleto`; el
+botón mide 68px y 30,15px de fuente; "Ana" + teléfono "099" da exactamente
+"Falta el apellido" y "Ese teléfono parece incompleto"; llenar todo →
+"Volver" → volver a entrar devuelve los cuatro campos **y la casilla
+marcada**, sin errores en rojo. Partida completa hasta el final: en IndexedDB
+quedó `nombre: "Ana"`, `apellido: "Rodríguez Pérez"`, con el teléfono y la
+profesión, y la tabla mostró "Ana R.". "Que juegue otra persona" dejó el
+formulario en blanco con la casilla marcada de nuevo. Sin scroll horizontal.
+26 tests en verde, `tsc --noEmit` limpio.
+
+## 8l. Pantalla de Jugada — primera vuelta (2026-08-14)
+
+Pedido del usuario: darle emoción al final del tiempo y ordenar el bloque de
+abajo, que quedaba pegado al piso con un hueco muerto arriba.
+
+- **Alarma a los 5 segundos** (`SEGUNDOS_URGENTE`, constante nombrada). Se
+  encienden cuatro cosas a la vez: la barra pasa de verde a rojo y late
+  (`@keyframes pulso`, opacidad), el número de segundos late (`latir`, ya
+  existía), **la foto respira** (`respirar-foto`) y aparece **"¡POCO TIEMPO!"**
+  debajo del nombre y la marca.
+- **El aviso se renderiza siempre, oculto con `visibility`/`opacity`.** Si
+  apareciera de la nada a los 5 segundos empujaría todo lo de abajo —el
+  control incluido— **justo cuando puede haber un dedo apoyado en él**.
+  Confirmado midiendo: el bloque arranca en 662px y sigue en 662px con el
+  aviso visible.
+- **El pulso va en el relleno, no en `.progreso`.** El contenedor también
+  pinta el riel gris; si latiera entero parpadearía toda la barra, incluido el
+  tramo ya gastado.
+- **La foto respira mucho más suave que el timer** (`scale(1.03)` contra
+  `1.12`). A ese tamaño un pulso fuerte se lee como error de render, no como
+  urgencia. **La amplitud puede diferir; la velocidad no** — ver el punto
+  siguiente.
+- **Las cuatro laten al unísono, con un solo token `--pulso-alarma: 0.7s`.**
+  La primera versión tenía la foto en 0,9s y el resto en 0,6s: arrancaban
+  juntas pero se desfasaban enseguida y la pantalla quedaba temblando en
+  desorden en vez de latiendo (lo detectó el usuario mirándolo). Las cuatro
+  animaciones pican en el 50% y ninguna lleva `animation-delay`, y las cuatro
+  clases se aplican en el mismo render de React —cuando `restante` cruza los
+  5 segundos—, así que empiezan en el mismo frame. Verificado con
+  `Element.getAnimations()`: las cuatro dan `duration: 700`, `delay: 0` y el
+  mismo `currentTime`. Con esos tres iguales no pueden derivar.
+  **Si se agrega algo más que lata en esta pantalla, tiene que usar el mismo
+  token — no un valor propio parecido.**
+- **El puntaje pasó a insignia circular** (`<Insignia tamano="lg">`), igual que
+  en Inicio, Feedback y Comodín. Se eliminó `.valor-slider` del JSX; **la regla
+  CSS quedó en el archivo** porque `--fs-gigante` y ese bloque los sigue usando
+  `.total` en Resultado.
+- **La escala completa reemplazó a "Nada saludable / Muy saludable"** — la
+  misma `.leyenda-escala` de 5 tramos armada desde `ESCALA_PUNTAJE`. Acá
+  importa más que en el inicio: es el momento en que se decide. `.escala`
+  sigue en el CSS, la usa la Encuesta.
+- **Bloque centrado.** Puntaje, control, escala y botón quedaron en
+  `.bloque-jugada`, con un `.espaciador` arriba y otro abajo: el grupo se
+  centra en el espacio libre en vez de caer al piso. El botón usa
+  `.primario.grande` (68px) y respira siempre, como el CTA de Inicio.
+- **Refactor del timer, de paso.** Al vencerse llamaba a `onResponder` **dentro
+  del updater de `setGuess`** — un efecto colateral en una función que React
+  puede invocar dos veces. Ahora el valor se espeja en un `guessRef` y el
+  intervalo lo lee directo. El `respondido.current` sigue, que es lo que evita
+  la doble respuesta cuando el timer y el botón llegan juntos.
+
+**Segunda pasada, mismo día:**
+
+- **El riel perdió el degradé de 5 colores.** Pasó a relleno sólido hasta el
+  valor elegido y gris el resto — el estilo que había estrenado el ejemplo de
+  Inicio. Se movió a la regla base de `input[type='range']`, así que **el
+  control de la jugada y el del ejemplo son literalmente el mismo**: las
+  reglas `.control-demo::-*-track` se borraron y la clase salió del JSX de
+  `EjemploInteractivo` (quedó sólo `.inerte`, que es lo que sí lo diferencia).
+  Además del look, el degradé competía con la leyenda de tramos que ahora va
+  justo debajo diciendo lo mismo con números.
+- **La insignia de la jugada creció a 150px** (número 54px, manteniendo la
+  proporción 29/80 de ScoreBadge) y se separó del control. El hueco se abrió
+  en tres pasos hasta `sp-xl` (32px) y `sp-2xl` (48px) en tablet: además de
+  separarlos, **sube el círculo dentro del bloque** — `.bloque-jugada` se
+  centra entre dos espaciadores, así que todo lo que crece adentro empuja el
+  puntaje hacia arriba y el control hacia abajo. Medido a 834×1112: 130px de
+  aire sobre el círculo y 110px bajo el botón, que es el mismo espaciador de
+  86px a cada lado más los márgenes fijos de cada punta. **Sólo desde 700px de ancho:** en celular chico la pantalla
+  entra justa y crecer ahí empujaría el control fuera de la vista. Es un
+  selector descendente (`.bloque-jugada .insignia-lg`), así que Inicio,
+  Feedback y Comodín no se tocaron — confirmado, la de Inicio sigue en 124px.
+
+**La lección de §8b apareció otra vez, y esta vez ya estaba escrita.** El
+fondo de la barra medido en vivo daba verde aunque la clase `.urgente`
+estuviera aplicada (el `animation-name` sí leía `pulso`, o sea que la regla
+había matcheado). No es un bug: `.progreso > div` tiene
+`transition: background 0.3s` y el panel no compone frames, así que
+`getComputedStyle` devuelve el frame congelado. Confirmado creando un nodo de
+prueba con las mismas clases y `transition: none`: resuelve
+`rgb(231, 59, 9)` con `.urgente` y `rgb(91, 136, 6)` sin ella. **El resto de
+las propiedades sin transición (color del timer, `text-transform`,
+`animation-name`) leyeron bien siempre** — ese contraste es la forma más
+rápida de reconocer el síntoma.
+
+Verificado jugando rondas reales: el timer vence y responde solo con el valor
+del control, y el camino manual (arrastrar a 88 → "Confirmar 88") dio +84
+puntos contra un producto de 80. Sin scroll en 834×1112 (insignia 150px, hueco
+de 32px, botón cerrando en 994 de 1112) ni en 375×812 (insignia 80px, hueco de
+24px, botón en 774 de 812). 21 tests en verde, `tsc --noEmit` limpio.
+
+**Nota de método:** Chrome **no** expone el estilo computado de
+`::-webkit-slider-runnable-track` — `getComputedStyle(el, '::-webkit-…')`
+devuelve valores por defecto (`background-image: none`), incluso con la regla
+aplicada. Para verificar el riel hay que leer las reglas parseadas en
+`document.styleSheets`, no el elemento. Confirmado así: queda **una** regla de
+track y ya no menciona ningún `--vk-score-*`.
+
+## 8m. Tabla de posiciones — todos los jugadores (2026-08-14)
+
+El usuario detectó el problema en Inicio y en Resultado: **la tabla cortaba en
+5**. Con premios de por medio, la mayoría no se veía en la lista.
+
+- **Se eliminaron las props `limite` y `puestoPropio`** de `TablaPosiciones`.
+  Ahora renderiza `entradas` completo. La lógica de "si el jugador quedó fuera
+  del corte, se agrega su fila al final" desapareció con ellas: **ya no puede
+  quedar nadie fuera**, y dejarla habría sido código muerto esperando a
+  confundir a alguien.
+- **El botón de Resultado se movió arriba de la tabla**, con el mismo criterio
+  que el CTA de Inicio (§8b): la lista crece sola durante el evento y dejarlo
+  abajo obligaría a scrollear una tabla larga para poder terminar la partida.
+  De paso quedó en `.primario.grande`, como los otros dos botones que hacen
+  avanzar el flujo. **Esto no estaba pedido explícitamente** — es consecuencia
+  directa de mostrar a todos, y se avisó al usuario.
+
+Verificado con 8 jugadores sembrados a mano en IndexedDB más una partida real:
+Inicio lista los 8 (antes 5), Resultado lista los 9 con la fila propia
+resaltada en el puesto 7 —que antes ni siquiera entraba—, el botón queda
+arriba de la tabla en las dos pantallas y sigue sin aparecer ningún `@` en el
+texto de la página (la verificación de privacidad de §8b/§8c). Los 8 registros
+de prueba se borraron después: la base quedó vacía, como estaba.
+
+## 8n. Pantalla de Feedback — primera vuelta (2026-08-14)
+
+- **Cabecera en una fila: foto cuadrada a la izquierda, nombre y marca al
+  lado** (`.cabecera-producto` + `.foto-mini`). La primera versión de esta
+  vuelta puso la foto arriba, apilada y más chica; el usuario propuso ponerla
+  al costado y **fue lo que resolvió el problema de alto de esta pantalla**
+  (ver más abajo). La foto es cuadrada por `aspect-ratio: 1`, no por alto
+  fijo: las imágenes del pool vienen con cualquier proporción y `contain` las
+  acomoda adentro sin recortarlas. `.nombre-producto` y `.marca` se alinean a
+  la izquierda **sólo dentro de la cabecera**; sueltas en la jugada siguen
+  centradas.
+- **Las etiquetas de las insignias:** "DIJISTE" → "TU PUNTAJE", "PUNTAJE REAL"
+  → "PUNTAJE DE VOKKADO". Se les agregó `white-space: nowrap`: ahora miden muy
+  distinto, y si la larga envolvía en dos líneas su columna crecía y las dos
+  insignias dejaban de estar a la misma altura (`.comparacion` las centra
+  verticalmente).
+- **Los puntos ganados subieron de tamaño**: la línea de `--fs-body` a
+  `--fs-subtitle` y el `+NN puntos` a `--fs-title`. Es el dato que la persona
+  vino a buscar después del veredicto.
+- **Título nuevo:** "¿Por qué Vokkado le pone este puntaje?"
+  (`.titulo-porque`), **adentro de la tarjeta blanca**, encabezando el
+  párrafo — primero quedó suelto arriba y el usuario pidió meterlo dentro del
+  bloque. Alineado a la izquierda como el párrafo: centrado sobre un texto
+  alineado a la izquierda quedaba descolgado. Mismo patrón que el `h3` del
+  desglose, con más peso porque acá la pregunta es el gancho.
+- **La justificación perdió la franja verde de la izquierda** — quedó tarjeta
+  blanca lisa, igual que el desglose.
+- **Botón a `.primario.grande`.**
+
+**El botón quedaba abajo del pliegue y no era culpa de la foto.** Medido en
+una partida real, a 834×1112: esta pantalla **no tiene un alto fijo** —el
+párrafo y la cantidad de pasos del desglose cambian por producto— y el botón
+cerraba entre 1098px (5 pasos) y 1195px (8 pasos). **En 4 de 5 productos
+quedaba fuera de pantalla**, en el peor caso por 16px, que es la forma más
+traicionera: la pantalla parece terminada y el botón está escondido.
+Achicar la foto no alcanzaba: movía el promedio, no la variabilidad.
+
+Se atacó por dos lados:
+
+1. **`position: sticky; bottom: var(--sp-md)`** en
+   `.pantalla-feedback > .primario`: el botón se pega al piso mientras se
+   scrollea y aterriza en su lugar natural al final. **No se movió de lugar**
+   — el orden de lectura (explicación → desglose → seguir) es el aprobado.
+2. **La cabecera en una fila**, que es lo que terminó de arreglarlo: pasar
+   de tres bloques apilados (foto + nombre + marca, ~250px) a una fila de
+   ~108px liberó casi 150px.
+
+Con las dos cosas, **las 5 rondas de una partida entran justas en 1112px sin
+scroll** (`scrollHeight` exactamente 1112 en las cinco), incluso con productos
+de 8 pasos de desglose, que antes daban 1219. El `sticky` quedó igual como red
+de seguridad y sigue ganándose el lugar: a 375×812, con el nombre más largo
+del pool envolviendo en 3 líneas, el documento mide 1069 y el botón se ve sin
+scrollear. Cuando todo entra, el botón se queda quieto en su posición natural
+— verificado con un producto de 2 pasos.
+
+Las frases del veredicto son cinco, en `feedbackFor()`: **¡Clavado!** (≥95),
+**Muy cerca** (≥80), **Cerca** (≥50), **Lejos** (≥20), **Muy lejos** (<20).
+
+Verificado además a 375×812 con el nombre más largo del pool ("Galletitas
+Integrales con Frutilla y Cereales", 3 líneas): foto de 84×84, cabecera de
+112px, la comparación mide 321px contra 343 disponibles y las etiquetas con
+`nowrap` entran en 78 y 145px. Sin scroll horizontal en ningún ancho.
+
+**Nota de método:** al verificar que las dos insignias quedaran alineadas,
+comparar `getBoundingClientRect().top` da falso negativo — son de tamaños
+distintos (md 84px contra lg 107px en tablet) y `.comparacion` las centra
+verticalmente, así que los bordes superiores difieren por diseño. Lo que tiene
+que coincidir es **el centro**, no el borde.
+
+## 8o. Pantalla de Comodín — primera vuelta (2026-08-14)
+
+- **Barra superior:** "No suma ni resta puntos" → **"Dato sobre Vokkado"**. La
+  pantalla no es una ronda que no puntúa: es el momento donde la marca muestra
+  criterio, y el rótulo ahora lo dice.
+- **El recuadro verde**, reescrito: título "Los productos con alcohol no
+  tienen puntaje", la pregunta **"¿Qué te parece?"** destacada debajo, y
+  después el porqué — la posición de la OMS sobre que no hay consumo libre de
+  riesgo, más la aclaración de que **por eso se muestra sólo la graduación**.
+  La pregunta es el gancho de conversación del stand: la excusa para que la
+  persona del equipo arranque a charlar.
+- La foto, el nombre y la insignia con la botella quedaron como estaban.
+
+**El texto salió de los datos y pasó al componente.** Antes se renderizaba
+`wildcard.explanation`, un campo que existe en `wildcards.json` para los 11
+comodines… con **exactamente el mismo string**, porque lo escribe a mano
+`scripts/curate-products.js` (línea ~453). O sea que editarlo en el JSON se
+habría perdido en la próxima regeneración del pool, y editarlo en el script
+significa tocar el pipeline de datos para cambiar una frase de interfaz. Es
+copy, no un dato del producto: **el único dato propio de cada comodín es la
+graduación**. El campo sigue existiendo en los datos y en el tipo `Wildcard`,
+pero ya no se muestra — está anotado en el docblock de `Comodin.tsx` para que
+nadie lo busque.
+
+Verificado en una partida completa hasta el comodín: la pregunta le gana a
+`.comodin p` en la cascada (19,4px semibold en `--vk-primary-light`, opacidad
+1 contra 0,95 del párrafo) porque está escrita como selector compuesto
+`.comodin p.comodin-pregunta` — una clase suelta habría perdido, que es
+justo la lección de §8d. El texto viejo de los datos ya no aparece en la
+página. Entra sin scroll en 1112px.
+
+## 8p. Fuera el alcohol, y el sorteo con bolsa (2026-08-14)
+
+### Se sacaron los productos con alcohol
+
+Decisión del usuario: no van en el juego. Se eliminó **todo**, no sólo la
+pantalla — que era el riesgo, porque el pipeline los habría vuelto a traer en
+la próxima regeneración del pool:
+
+| Dónde | Qué se sacó |
+|---|---|
+| `src/pantallas/Comodin.tsx` | Archivo entero |
+| `src/App.tsx` | Fase `comodin`, estado `comodin`/`wildcards`, el `fetch` de `wildcards.json` |
+| `src/game/engine.ts` | La interfaz `Wildcard` |
+| `src/componentes/Insignia.tsx` | La prop `graduacion` y la variante con botella |
+| `src/componentes/Iconos.tsx` | El ícono `Botella` |
+| `src/styles.css` | El bloque `.comodin*` y `.insignia-graduacion` (con su regla del media query) |
+| `scripts/curate-products.js` | `SQL_WILDCARDS`, el mapeo y la escritura de `wildcards.json` |
+| `scripts/merge-justifications.js` | La copia a `public/wildcards.json` |
+| `scripts/download-images.js` | Los comodines de la lista de descarga |
+| Datos | `data/wildcards.json`, `public/wildcards.json` y **las 11 imágenes** (0,95 MB menos en el bundle) |
+
+El pool del juego nunca los incluyó: el `SQL` de la curación ya filtraba
+`alcohol_graduation < 0.5`. Quedan **100 productos y 100 imágenes** (antes 111).
+Verificado en el navegador: la app sólo pide `products.json`, sin 404 ni
+errores de consola.
+
+### El sorteo: por qué se repetían
+
+El usuario notó repetidos cada dos partidas. **No era una impresión.** Medido
+sobre 20.000 partidas del pool real con el sorteo viejo:
+
+- **26,4%** de las partidas repetía algún producto de la **inmediatamente
+  anterior**; **59,8%** repetía alguno de las tres anteriores.
+- El sorteo tampoco era parejo: el producto más frecuente salía **1661** veces
+  y el menos frecuente **507** — más del triple. Los 44 "interesantes"
+  (sorpresa/trampa) salían mucho más que el resto, porque además de los 2
+  forzados podían volver a caer en los otros 3 lugares.
+- Por lo mismo, la mezcla cambiaba de partida en partida: 2 interesantes en el
+  20%, 3 en el 45%, 4 en el 30% y 5 en el 5%. **Con premios de por medio, eso
+  es un problema de equidad**: dos personas competían por el mismo canguro con
+  partidas de dificultad distinta.
+
+La causa de fondo: `pickRound` sorteaba **de cero en cada partida**, sin
+memoria. Con 5 de 100, la probabilidad hace el resto.
+
+### El sorteo nuevo: bolsa
+
+`sortear()` en `engine.ts` lleva la cuenta de qué salió en el ciclo en curso;
+`App` la persiste en `localStorage` (`leerBolsa`/`guardarBolsa` en
+`storage.ts` — sincrónico, se lee justo al arrancar la partida, y perderlo no
+rompe nada). Cada partida se arma con **2 interesantes y 3 del resto, siempre
+de lo que no salió todavía**.
+
+La bolsa se da vuelta cuando ya no puede armar esa mezcla exacta — **no**
+cuando se queda sin productos. Es una distinción que costó dos tests: con 8
+interesantes y 2 del resto sobran diez para una partida, pero la mezcla ya no
+sale, y la red de seguridad terminaba metiendo un tercer interesante. Cortar
+por la mezcla es lo que sostiene las dos promesas a la vez: dentro de un ciclo
+no se repite ningún producto **y** todas las partidas tienen la misma mezcla.
+Al dar vuelta la bolsa se evitan los de la última partida, pero no quedan
+marcados como usados — si no, quedarían castigados todo el ciclo siguiente.
+
+Resultado, misma simulación de 20.000 partidas:
+
+| | Antes | Ahora |
+|---|---|---|
+| Repite algo de la partida anterior | 26,4% | **0,00%** |
+| Repite algo de las 3 anteriores | 59,8% | 6,1% |
+| Producto más / menos frecuente | 1661 / 507 | 1092 / 873 |
+| Interesantes por partida | 2 a 5 | siempre 2 |
+
+El 6,1% restante son los cortes de ciclo: lo más cerca que pueden quedar dos
+apariciones del mismo producto son **2 partidas**, y sólo ahí.
+
+**Un test encontró un bug de verdad.** La primera versión ponía el mínimo de
+interesantes *después* de llenar la partida, así que al agotarse los
+interesantes del ciclo salían rondas con **cero**. El test falló en el primer
+intento; sin él, eso llegaba al stand.
+
+Verificado también end-to-end en el navegador: dos partidas completas
+seguidas, 10 productos, 10 distintos, y la bolsa con 10 ids en `localStorage`.
+32 tests en verde.
 
 ## 9. Dónde retomar
 
@@ -702,10 +1033,13 @@ estable.
 
 ### Fase 1 — Pantallas (en curso)
 
-1. **Jugada, Feedback, Comodín, Resultado, Encuesta.** Inicio ✅ (§8b-8j) y
-   Registro ✅ (§8k). El resto sigue con el diseño del branding pass general
-   — mismos tokens, pero sin el mismo nivel de pulido de copy/interacción.
-   Van una por una.
+1. **Resultado y Encuesta.** Inicio ✅ (§8b-8j), Registro ✅ (§8k), Jugada ✅
+   (§8l) y Feedback ✅ (§8n); la tabla de posiciones de Inicio y Resultado, en
+   §8m. Comodín se pulió (§8o) y después se eliminó junto con el alcohol
+   (§8p) — el juego quedó en **seis** pantallas. Las dos que faltan siguen
+   con el diseño del branding pass general — mismos tokens, pero sin el mismo
+   nivel de pulido de copy/interacción. La pantalla de "gracias" sigue
+   hardcodeada dentro de `App.tsx`, sin encabezado de marca y sin auto-reset.
 2. **Revisión humana de `revision.csv`** — marcar la columna `ok` y decidir
    sobre las marcas que no se reconozcan. Es lo único que no puedo hacer yo.
 3. Decidir sobre las Gomitas Mogul (§6.4).

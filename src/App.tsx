@@ -1,11 +1,16 @@
 import { useEffect, useState } from 'react';
-import type { Product, Wildcard, Player, Round } from './game/engine';
-import { pickRound, scoreGuess, totalPoints, totalMs, shuffle } from './game/engine';
-import { saveGame, findByEmail, type StoredGame } from './game/storage';
-import { Registro, PLAYER_VACIO } from './pantallas/Registro';
+import type { Product, Player, Round } from './game/engine';
+import { sortear, scoreGuess, totalPoints, totalMs } from './game/engine';
+import {
+  saveGame,
+  findByEmail,
+  leerBolsa,
+  guardarBolsa,
+  type StoredGame,
+} from './game/storage';
+import { Registro, BORRADOR_VACIO, type Borrador } from './pantallas/Registro';
 import { Jugada } from './pantallas/Jugada';
 import { Feedback } from './pantallas/Feedback';
-import { Comodin } from './pantallas/Comodin';
 import { Resultado } from './pantallas/Resultado';
 import { Encuesta } from './pantallas/Encuesta';
 import { Inicio } from './pantallas/Inicio';
@@ -16,47 +21,45 @@ type Fase =
   | { t: 'registro' }
   | { t: 'jugando' }
   | { t: 'feedback'; round: Round }
-  | { t: 'comodin' }
   | { t: 'resultado' }
   | { t: 'encuesta' }
   | { t: 'gracias' };
 
 export function App() {
   const [pool, setPool] = useState<Product[]>([]);
-  const [wildcards, setWildcards] = useState<Wildcard[]>([]);
   const [fase, setFase] = useState<Fase>({ t: 'cargando' });
   const [player, setPlayer] = useState<Player | null>(null);
   // El formulario a medio llenar vive acá, no en Registro: si la persona toca
   // "Volver" sin querer y vuelve a entrar, encuentra sus datos donde los dejó.
   // Se limpia sólo cuando arranca otra persona — son datos de contacto ajenos.
-  const [borrador, setBorrador] = useState<Player>(PLAYER_VACIO);
+  const [borrador, setBorrador] = useState<Borrador>(BORRADOR_VACIO);
   const [ronda, setRonda] = useState<Product[]>([]);
   const [indice, setIndice] = useState(0);
   const [rounds, setRounds] = useState<Round[]>([]);
-  const [comodin, setComodin] = useState<Wildcard | null>(null);
   const [gameId, setGameId] = useState<string>('');
 
   // Los datos van en el bundle. Si esto falla, el juego no arranca — mejor que
   // arranque a medias y falle en pleno stand.
   useEffect(() => {
-    Promise.all([
-      fetch('/products.json').then((r) => r.json()),
-      fetch('/wildcards.json').then((r) => r.json()),
-    ])
-      .then(([p, w]) => {
+    fetch('/products.json')
+      .then((r) => r.json())
+      .then((p) => {
         setPool(p);
-        setWildcards(w);
         setFase({ t: 'inicio' });
       })
       .catch(() => setFase({ t: 'cargando' }));
   }, []);
 
   const empezar = (p: Player) => {
+    // La bolsa vive fuera de React (localStorage): tiene que sobrevivir a que
+    // alguien recargue la app en pleno evento, no sólo a la partida.
+    const { ronda: nueva, yaSalieron } = sortear(pool, leerBolsa());
+    guardarBolsa(yaSalieron);
+
     setPlayer(p);
-    setRonda(pickRound(pool));
+    setRonda(nueva);
     setIndice(0);
     setRounds([]);
-    setComodin(shuffle(wildcards)[0] ?? null);
     setGameId(crypto.randomUUID());
     setFase({ t: 'jugando' });
   };
@@ -78,8 +81,6 @@ export function App() {
     if (indice + 1 < ronda.length) {
       setIndice(indice + 1);
       setFase({ t: 'jugando' });
-    } else if (comodin) {
-      setFase({ t: 'comodin' });
     } else {
       setFase({ t: 'resultado' });
     }
@@ -153,10 +154,6 @@ export function App() {
     );
   }
 
-  if (fase.t === 'comodin' && comodin) {
-    return <Comodin wildcard={comodin} onSeguir={() => setFase({ t: 'resultado' })} />;
-  }
-
   if (fase.t === 'resultado') {
     return (
       <Resultado
@@ -185,7 +182,7 @@ export function App() {
           setPlayer(null);
           // Acá sí se borra el formulario: lo que sigue es otra persona, y sus
           // datos de contacto no pueden aparecer precargados.
-          setBorrador(PLAYER_VACIO);
+          setBorrador(BORRADOR_VACIO);
           setFase({ t: 'inicio' });
         }}
       >
