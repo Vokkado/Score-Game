@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { scoreColor, demoLabel } from '../game/engine';
+import { scoreColor, tramoDe, ESCALA_PUNTAJE } from '../game/engine';
 
 /**
  * Ejemplo jugable en la pantalla de inicio: no es una ronda real ni un
@@ -75,7 +75,7 @@ export function EjemploInteractivo() {
           {valor}
         </div>
         <div className="demo-etiqueta" style={{ color }}>
-          {demoLabel(valor)}
+          {tramoDe(valor).etiqueta}
         </div>
       </div>
 
@@ -98,9 +98,16 @@ export function EjemploInteractivo() {
         }}
         aria-label="Probar el control de puntaje"
       />
-      <div className="escala">
-        <span>0 · Nada saludable</span>
-        <span>100 · Muy saludable</span>
+      {/* La escala completa, con rango y color de cada tramo — la misma tabla
+          que usa `scoreColor`, así que nunca puede decir algo distinto de lo
+          que el juego realmente hace. */}
+      <div className="leyenda-escala">
+        {ESCALA_PUNTAJE.map((t) => (
+          <span key={t.desde} className="tramo-leyenda">
+            <span className="tramo-punto" style={{ background: t.color }} />
+            {t.desde}-{t.hasta} {t.etiqueta}
+          </span>
+        ))}
       </div>
     </div>
   );

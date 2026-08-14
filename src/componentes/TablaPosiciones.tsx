@@ -57,10 +57,19 @@ export function TablaPosiciones({
   );
 }
 
+/** El metal de cada puesto premiado. Vacío = sin premio, sin tratamiento especial. */
+function metalDe(puesto: number): 'oro' | 'plata' | 'cobre' | '' {
+  if (puesto === 1) return 'oro';
+  if (puesto === 2) return 'plata';
+  if (puesto === 3) return 'cobre';
+  return '';
+}
+
 /** El premio de cada puesto, tal como se anuncia en el stand. */
 function premioDe(puesto: number): string | null {
   if (puesto === 1) return '¿Se lleva el CANGURO?';
   if (puesto === 2) return '¿Se lleva la camiseta?';
+  if (puesto === 3) return '¿Se lleva la bolsa?';
   return null;
 }
 
@@ -74,19 +83,19 @@ function Fila({
   esPropio: boolean;
 }) {
   const premio = premioDe(puesto);
-  // Sólo el podio de a dos tiene tratamiento especial: 1º dorado y el más
-  // grande, 2º plateado y un escalón más chico. De 3º en adelante todas las
-  // filas quedan iguales entre sí — el peso visual es sólo para quien
-  // realmente se lleva algo.
-  const nivel = puesto === 1 ? 'oro' : puesto === 2 ? 'plata' : '';
+  // El tamaño de fila y el color van juntos ahora: 1º oro y el más grande,
+  // 2º plata un escalón menos, 3º cobre otro escalón menos. De 4º en
+  // adelante todas iguales — más chicas, pero no minúsculas — porque ya no
+  // hay premio que resaltar.
+  const metal = metalDe(puesto);
 
   return (
-    <div className={`fila-posicion ${esPropio ? 'yo' : ''} ${nivel}`}>
-      <span className="puesto">{puesto}º</span>
+    <div className={`fila-posicion ${esPropio ? 'yo' : ''} ${metal}`}>
+      <span className={`puesto ${metal}`}>{puesto}º</span>
       <span className="quien">
         {entrada.nombre} {entrada.apellido.charAt(0)}.
       </span>
-      {premio && <span className="premio-tag">{premio}</span>}
+      {premio && <span className={`premio-tag ${metal}`}>{premio}</span>}
       <span className="pts">{entrada.points}</span>
     </div>
   );

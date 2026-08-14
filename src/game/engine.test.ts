@@ -2,7 +2,8 @@ import { describe, it, expect } from 'vitest';
 import {
   scoreGuess,
   scoreColor,
-  demoLabel,
+  tramoDe,
+  ESCALA_PUNTAJE,
   pickRound,
   rankPlayers,
   totalPoints,
@@ -69,16 +70,36 @@ describe('scoreColor', () => {
   });
 });
 
-describe('demoLabel', () => {
-  // Mismos cortes que scoreColor (45/65), agrupados de 5 a 3: el ejemplo
-  // interactivo del inicio y el resto del juego nunca deberían contradecirse.
-  it('coincide con los cortes de scoreColor', () => {
-    expect(demoLabel(0)).toBe('Mal producto');
-    expect(demoLabel(44)).toBe('Mal producto');
-    expect(demoLabel(45)).toBe('Decente');
-    expect(demoLabel(64)).toBe('Decente');
-    expect(demoLabel(65)).toBe('Saludable');
-    expect(demoLabel(100)).toBe('Saludable');
+describe('tramoDe / ESCALA_PUNTAJE', () => {
+  // scoreColor se arma recorriendo ESCALA_PUNTAJE, así que estos tests son la
+  // garantía real de que la leyenda de la pantalla de inicio (rangos + texto)
+  // nunca puede quedar desincronizada del color que usa el resto del juego.
+  it('cubre 0-100 sin huecos ni superposiciones', () => {
+    expect(ESCALA_PUNTAJE[0].desde).toBe(0);
+    expect(ESCALA_PUNTAJE[ESCALA_PUNTAJE.length - 1].hasta).toBe(100);
+    for (let i = 1; i < ESCALA_PUNTAJE.length; i++) {
+      expect(ESCALA_PUNTAJE[i].desde).toBe(ESCALA_PUNTAJE[i - 1].hasta + 1);
+    }
+  });
+
+  it('devuelve el tramo correcto en cada borde', () => {
+    expect(tramoDe(0).etiqueta).toBe('Malo');
+    expect(tramoDe(24).etiqueta).toBe('Malo');
+    expect(tramoDe(25).etiqueta).toBe('Regular');
+    expect(tramoDe(44).etiqueta).toBe('Regular');
+    expect(tramoDe(45).etiqueta).toBe('Decente');
+    expect(tramoDe(64).etiqueta).toBe('Decente');
+    expect(tramoDe(65).etiqueta).toBe('Bueno');
+    expect(tramoDe(84).etiqueta).toBe('Bueno');
+    expect(tramoDe(85).etiqueta).toBe('Excelente');
+    expect(tramoDe(100).etiqueta).toBe('Excelente');
+  });
+
+  it('el color de cada tramo coincide con scoreColor en todo el rango', () => {
+    for (const t of ESCALA_PUNTAJE) {
+      expect(scoreColor(t.desde)).toBe(t.color);
+      expect(scoreColor(t.hasta)).toBe(t.color);
+    }
   });
 });
 

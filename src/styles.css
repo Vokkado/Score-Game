@@ -68,45 +68,6 @@ body {
 
 /* ── Inicio ──────────────────────────────────────────────────────────── */
 
-/* Envoltorio propio para el fondo de marca: sólo esta pantalla lo necesita,
-   así no se arrastra `position: relative` a todo `.pantalla`. */
-.pantalla-con-fondo {
-  position: relative;
-  min-height: 100%;
-  overflow: hidden;
-}
-
-/* Franja decorativa al pie: recorte matemático de Background.png, medido con
-   un canvas sobre la imagen real (no a ojo). El patrón de cuadraditos ocupa
-   del 69,4% al 86,6% de la altura del póster; de ahí para abajo la imagen es
-   transparente. Antes el recorte apuntaba a esa zona transparente — por eso
-   "desaparecía". `aspect-ratio` fija la altura real del `<img>` a partir del
-   ancho, así el `translateY(-69.4%)` (relativo a SU PROPIA altura) siempre
-   sube el póster lo justo para que el patrón quede pegado arriba del recorte,
-   sin depender de que la imagen ya haya cargado. Si se reemplaza el asset,
-   hay que remedir estos dos números. */
-.fondo-marca-wrap {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: calc(min(760px, 100vw) * 0.23);
-  overflow: hidden;
-  opacity: 0.14;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.fondo-marca {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: min(760px, 100vw);
-  aspect-ratio: 1296 / 1728;
-  transform: translate(-50%, -69.4%);
-  user-select: none;
-}
-
 /* De punta a punta, sin la columna de lectura de `.pantalla`: es la barra de
    marca, tiene que quedar pegada al borde real de la pantalla como en el
    Topbar de la app — con `max-width` centrado quedaba flotando lejos del
@@ -135,11 +96,6 @@ body {
   letter-spacing: -0.01em;
 }
 
-.pantalla-con-fondo > .pantalla {
-  position: relative;
-  z-index: 1;
-}
-
 /* El héroe de la pantalla: mayúsculas y bien grande, es lo primero que hay
    que leer parado frente al stand. Selector compuesto (`.display.hero-titulo`)
    a propósito: con dos clases sueltas de igual especificidad, quien gana el
@@ -165,7 +121,7 @@ body {
   font-weight: var(--peso-semibold);
   font-size: clamp(1.15rem, 0.95rem + 1.1vw, 1.9rem);
   line-height: 1.3;
-  color: var(--vk-primary-dark);
+  color: var(--vk-texto);
   margin: 0 0 var(--sp-lg);
 }
 
@@ -186,7 +142,7 @@ body {
   text-align: center;
   font-weight: var(--peso-semibold);
   font-size: var(--fs-subtitle);
-  color: var(--vk-primary-dark);
+  color: var(--vk-texto);
   margin: 0 0 var(--sp-md);
 }
 
@@ -205,6 +161,32 @@ body {
 .demo-etiqueta {
   font-size: var(--fs-title);
   font-weight: var(--peso-bold);
+}
+
+/* Leyenda de los 5 tramos, con rango numérico y color. Envuelve en varias
+   líneas si no entra (celular chico) sin romper nada. */
+.leyenda-escala {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-xs) var(--sp-md);
+  margin-top: var(--sp-md);
+}
+
+.tramo-leyenda {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-caption);
+  color: var(--vk-texto-secundario);
+  white-space: nowrap;
+}
+
+.tramo-punto {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--r-full);
+  flex-shrink: 0;
 }
 
 /* Control del ejemplo: mismo look que el de la jugada real, pero con relleno
@@ -231,18 +213,36 @@ input[type='range'].control-demo::-moz-range-track {
   );
 }
 
-/* Chip del premio: tamaño en `em` para escalar solo con la fila que lo
-   contiene (más grande en la fila de oro, mediano en la de plata). Fondo
-   translúcido para funcionar igual sobre el dorado, el plateado o el verde
-   de "esta es tu fila". */
+/* Chip del premio: tamaño en `em` para escalar con la fila que lo contiene,
+   pero con un piso en `rem` (vía `max()`) — en la fila de plata, más chica
+   que la de oro, un 0.68em puro quedaba minúsculo e ilegible. */
+/* Tamaño FIJO, no en `em`: si escala con la fila, el chip de oro (la fila
+   más grande de todas) termina casi el doble de grande que el de plata —
+   exactamente lo que se reportó. Todos los chips miden igual sin importar
+   en qué fila caigan. */
 .premio-tag {
-  font-size: 0.68em;
+  font-size: var(--fs-caption);
   font-weight: var(--peso-bold);
-  padding: 0.34em 0.7em;
+  padding: 5px 12px;
   border-radius: var(--r-full);
-  background: rgba(0, 0, 0, 0.14);
   white-space: nowrap;
   flex-shrink: 0;
+}
+
+/* Fondo de cada chip según el metal — antes eran todos gris translúcido. */
+.premio-tag.oro {
+  background: #f6dd8f;
+  color: #6b4e00;
+}
+
+.premio-tag.plata {
+  background: #dbe1e5;
+  color: #3a444c;
+}
+
+.premio-tag.cobre {
+  background: #e9bd97;
+  color: #6b3a15;
 }
 
 .primario.grande {
@@ -250,12 +250,32 @@ input[type='range'].control-demo::-moz-range-track {
   font-size: var(--fs-title);
 }
 
+/* Recuadro celeste pastel que agrupa los dos avisos de premios — antes eran
+   dos párrafos sueltos flotando en el fondo de la página. */
+.caja-premios {
+  background: #e4f0f8;
+  border: 1px solid #c9e0ef;
+  border-radius: var(--radio-tarjeta);
+  padding: var(--sp-md);
+  margin: var(--sp-md) 0;
+}
+
 /* Mismo motivo que `.display.hero-titulo`: compuesto para no depender del
    orden del archivo contra `.leyenda`. */
 .leyenda.pie-inicio {
   text-align: center;
+  font-size: var(--fs-subtitle);
+  font-weight: var(--peso-medium);
+  color: var(--vk-texto);
+  margin: 0 0 var(--sp-xs);
+}
+
+/* El mensaje de "no pasa nada si no ganás" es más chico que el horario —
+   es la letra chica tranquilizadora, no la información importante. */
+.leyenda.pie-secundario {
+  text-align: center;
   font-size: var(--fs-body);
-  margin: var(--sp-md) 0;
+  margin: 0;
 }
 
 .separador-tabla {
@@ -274,7 +294,8 @@ input[type='range'].control-demo::-moz-range-track {
 .cabecera-tabla h2 {
   margin: 0;
   text-transform: uppercase;
-  font-size: var(--fs-title);
+  /* Sin font-size propio: hereda el tamaño normal de h2 (--fs-section).
+     Con --fs-title quedaba más grande que el número "1º" del podio. */
 }
 
 .columna-puntaje {
@@ -1055,37 +1076,60 @@ input[type='range']::-moz-range-thumb {
   color: var(--vk-friendly-white);
 }
 
-/* Podio de a dos: 1º dorado y el más grande, 2º plateado un escalón más
-   chico. Van DESPUÉS de `.yo` a propósito — si la fila propia es también la
-   ganadora, el dorado/plateado tiene que ganar, no el verde genérico de
-   "esta es tu fila". Colores de trofeo, no de la paleta de marca. */
+/* Podio de a tres, en escalera proporcional a partir de oro (que se deja
+   intacto: "el tamaño de top1 está perfecto"). Los otros tres son
+   porcentajes de `--fs-title` vía `calc()`, no tokens independientes — así
+   la RELACIÓN entre escalones se mantiene igual en cualquier ancho de
+   pantalla, en vez de que cada uno clampee por su cuenta y el resultado
+   dependa del viewport. Antes plata/cobre/resto quedaban todos apretados
+   cerca del 65% de oro (una caída fuerte de 1º a 2º y después casi nada de
+   diferencia entre 2º, 3º y el resto); ahora es 100/84/68/54 aprox. */
 .fila-posicion.oro {
-  background: linear-gradient(135deg, #fff2cf, #efc659);
-  border-color: #cf9d1f;
-  color: #5c4308;
   font-size: var(--fs-title);
   padding: calc(var(--pad-input) * 1.15) var(--pad-input);
 }
 
 .fila-posicion.plata {
-  background: linear-gradient(135deg, #f4f6f7, #cad2d8);
-  border-color: #98a3ab;
-  color: #38424a;
-  font-size: var(--fs-subtitle);
-  padding: calc(var(--pad-input) * 1.05) var(--pad-input);
+  font-size: calc(var(--fs-title) * 0.84);
+  padding: calc(var(--pad-input) * 1.08) var(--pad-input);
 }
 
-.fila-posicion.oro .puesto,
-.fila-posicion.plata .puesto {
-  font-size: 1.15em;
+.fila-posicion.cobre {
+  font-size: calc(var(--fs-title) * 0.68);
+  padding: var(--pad-input);
 }
 
 .fila-posicion .puesto {
   font-weight: var(--peso-bold);
   font-size: var(--fs-subtitle);
-  width: 2.4em;
+  /* Ancho fijo en `rem`, no en `em`: con `em` el ancho reservado escalaba
+     junto con la letra de cada fila, y en la fila de oro (la más grande de
+     todas) dejaba un hueco enorme antes del nombre — el "espacio raro" que
+     se veía sólo en el 1º y, en menor medida, en el 2º. */
+  width: 3rem;
   flex-shrink: 0;
   font-variant-numeric: tabular-nums;
+}
+
+.fila-posicion.oro .puesto,
+.fila-posicion.plata .puesto,
+.fila-posicion.cobre .puesto {
+  font-size: 1.15em;
+}
+
+/* Literalmente "el 1 es dorado": color de metal sólo en el texto del número,
+   nada de fondo. Funciona igual arriba de `.yo` (verde) o de la tarjeta
+   blanca normal. Oro más amarillo/vívido que un dorado apagado. */
+.puesto.oro {
+  color: #d19a00;
+}
+
+.puesto.plata {
+  color: #7c8791;
+}
+
+.puesto.cobre {
+  color: #b5651d;
 }
 
 .fila-posicion .quien {

@@ -82,25 +82,31 @@ export function scoreGuess(guess: number, real: number): number {
  * para que el jugador vea en el stand el mismo color que vería escaneando el
  * producto con la app. Si cambian allá, hay que cambiarlos acá.
  */
-export function scoreColor(score: number | null): string {
-  if (score === null) return 'var(--vk-grey)';
-  if (score >= 85) return 'var(--vk-score-green)';
-  if (score >= 65) return 'var(--vk-score-light-green)';
-  if (score >= 45) return 'var(--vk-score-yellow)';
-  if (score >= 25) return 'var(--vk-score-orange)';
-  return 'var(--vk-score-red)';
+/**
+ * Los 5 tramos de la escala, fuente única de verdad para el color Y el texto
+ * que ve el jugador (la leyenda del ejemplo interactivo). `scoreColor` se
+ * arma recorriendo esta misma tabla — así es imposible que la leyenda diga
+ * un rango y el color real del juego use otro.
+ */
+export const ESCALA_PUNTAJE = [
+  { desde: 0, hasta: 24, etiqueta: 'Malo', color: 'var(--vk-score-red)' },
+  { desde: 25, hasta: 44, etiqueta: 'Regular', color: 'var(--vk-score-orange)' },
+  { desde: 45, hasta: 64, etiqueta: 'Decente', color: 'var(--vk-score-yellow)' },
+  { desde: 65, hasta: 84, etiqueta: 'Bueno', color: 'var(--vk-score-light-green)' },
+  { desde: 85, hasta: 100, etiqueta: 'Excelente', color: 'var(--vk-score-green)' },
+] as const;
+
+/** El tramo de `ESCALA_PUNTAJE` al que pertenece un puntaje. */
+export function tramoDe(score: number): (typeof ESCALA_PUNTAJE)[number] {
+  for (let i = ESCALA_PUNTAJE.length - 1; i >= 0; i--) {
+    if (score >= ESCALA_PUNTAJE[i].desde) return ESCALA_PUNTAJE[i];
+  }
+  return ESCALA_PUNTAJE[0];
 }
 
-/**
- * Etiqueta genérica de un puntaje, para el ejemplo interactivo del inicio.
- *
- * Usa los mismos cortes que `scoreColor` (45 y 65), agrupados en 3 en vez de 5:
- * texto y color quedan siempre consistentes entre sí y con el resto del juego.
- */
-export function demoLabel(score: number): string {
-  if (score < 45) return 'Mal producto';
-  if (score < 65) return 'Decente';
-  return 'Saludable';
+export function scoreColor(score: number | null): string {
+  if (score === null) return 'var(--vk-grey)';
+  return tramoDe(score).color;
 }
 
 /** Etiqueta para la pantalla de resultado. */

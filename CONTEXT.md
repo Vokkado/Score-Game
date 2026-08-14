@@ -432,36 +432,209 @@ reemplaza mirar el resultado.** Cambios de esta vuelta:
 - **Letra chica del horario**, un poco más grande (de `--fs-caption` a
   `--fs-body`).
 
+## 8d. Pantalla de Inicio — tercera vuelta (2026-08-13)
+
+**Bug de cascada CSS, encontrado con matemática, no a ojo.** Dos clases sueltas
+de igual especificidad en el mismo elemento (`className="display hero-titulo"`,
+`className="leyenda pie-inicio"`) se resuelven por **orden en el archivo**, no
+por dónde aparecen en el JSX. `.display` y `.leyenda` vivían más abajo en
+`styles.css` que sus modificadores, así que ganaban ellas — el "aún más
+grande" del héroe y el "un poco más grande" del pie de la vuelta anterior
+**nunca se habían aplicado**, aunque el código parecía correcto. Se confirmó
+midiendo: el tamaño real coincidía exacto con el clamp() de `.display`
+(71,28px a 820px de ancho), no con el de `.hero-titulo`. Arreglado con
+selectores compuestos (`.display.hero-titulo`, `.leyenda.pie-inicio`), que
+tienen más especificidad que cualquiera de las dos clases sueltas y ganan
+**sin importar el orden del archivo**. Se auditaron todas las demás
+combinaciones de clases del proyecto (`columna-insignia.destacada`,
+`paso.inicial`, `chip.exceso/bueno`, `primario.grande`, `valor-slider.chico`)
+— esas ya estaban escritas como selectores compuestos en el CSS, sólo estas
+dos eran clases sueltas. **Lección: cualquier combinación de dos clases sobre
+el mismo elemento donde ambas puedan tocar la misma propiedad es candidata a
+este bug — hay que escribirlas compuestas desde el principio, no confiar en
+el orden del archivo.**
+
+**El fondo, medido con canvas antes de tocar CSS.** En vez de ajustar a ojo
+otra vez, se leyeron los píxeles reales de `Background.png` con
+`canvas.getImageData` para encontrar dónde vive el patrón de cuadraditos: del
+**69,4% al 86,6%** de la altura de la imagen. De ahí para abajo, **puro alpha
+0 (transparente)** — el recorte de la vuelta anterior apuntaba exactamente a
+esa franja vacía, por eso "desaparecía". Se corrigió con
+`aspect-ratio: 1296/1728` + `transform: translate(-50%, -69.4%)` (el
+porcentaje de `transform` es relativo a la altura propia del elemento, a
+diferencia de `top`/`bottom`), matemáticamente correcto y confirmado con la
+misma técnica de canvas. **Pero el usuario pidió sacarlo igual** — mucho lío
+para un elemento decorativo. Se eliminó todo: el `<div>` en `Inicio.tsx`, el
+import de `Background.png`, y las reglas `.fondo-marca-wrap`/`.fondo-marca`
+en CSS, junto con el wrapper `.pantalla-con-fondo` que ya no cumplía función
+sin la imagen (Inicio volvió a un `<>...</>` simple). El archivo
+`Background.png` sigue en `src/assets/` por si se reusa en otra pantalla,
+pero no se importa en ningún lado.
+
+**Podio: sólo el número, no la fila.** La vuelta anterior pintó toda la fila
+1ª/2ª con degradé dorado/plateado — mal interpretado. Ahora `.fila-posicion`
+mantiene el fondo blanco normal de siempre; **sólo el texto del span
+`.puesto`** ("1º"/"2º") toma color dorado (`#b8860b`) o plateado (`#7c8791`)
+vía las clases `.puesto.oro`/`.puesto.plata`. El tamaño de fila (1º más
+grande, 2º intermedio, 3º+ iguales) se mantuvo — eso no estaba mal, sólo el
+alcance del color.
+
+**Escala completa, no sólo los extremos.** La vuelta anterior mostraba
+"0 · Nada saludable" / "100 · Muy saludable" bajo el control — el usuario
+quería los 5 tramos con su rango exacto, literalmente pegando el código de
+`getScoreColor` de la app. Se creó `ESCALA_PUNTAJE` en `engine.ts` — un array
+de 5 tramos `{desde, hasta, etiqueta, color}` que es la **fuente única de
+verdad**: `scoreColor()` ahora se arma recorriendo esa tabla (`tramoDe()`),
+en vez de tener su propia cadena de `if` independiente. Esto hace estructuralmente
+imposible que la leyenda diga un rango y el color real del juego use otro —
+antes eran dos implementaciones separadas que había que mantener sincronizadas
+a mano. `demoLabel()` (3 niveles) se eliminó: la etiqueta bajo el número ahora
+usa `tramoDe(valor).etiqueta`, las mismas 5 palabras que la leyenda, un solo
+vocabulario en toda la pantalla en vez de dos.
+
+Tests: 21 en verde, incluye uno que verifica que `ESCALA_PUNTAJE` cubre 0-100
+sin huecos ni superposiciones, y otro que `scoreColor` coincide con el color
+de tabla en cada borde de cada tramo.
+
+## 8e. Pantalla de Inicio — cuarta vuelta (2026-08-13)
+
+- **Textos a negro.** `.hero-sub` y `.demo-instruccion` usaban
+  `--vk-primary-dark` (verde); pasaron a `--vk-texto` (negro/`#161616`).
+- **Tercer premio: la bolsa.** El podio pasó de 2 a 3 puestos premiados.
+  `metalDe(puesto)` en `TablaPosiciones.tsx` centraliza qué puesto es qué
+  metal (`oro`/`plata`/`cobre`/`''`), usado tanto para el tamaño de fila
+  como para el color — antes eran dos variables separadas
+  (`tamano`/`colorPuesto`) que podían desincronizarse.
+- **Color dorado, más amarillo.** `#b8860b` (dorado apagado, casi marrón) →
+  `#d19a00`, más vívido. Cobre nuevo: `#b5651d`.
+- **Tamaño en 4 escalones, no 2.** Antes sólo oro/plata tenían tamaño
+  especial y todo lo demás (3º en adelante) caía de golpe al tamaño base.
+  Ahora: oro (`--fs-title`) → plata (`--fs-subtitle`) → cobre (punto medio
+  entre subtitle y body, `calc((var(--fs-subtitle) + var(--fs-body)) / 2)`)
+  → resto (`--fs-body`, sin clase). Verificado en navegador con 5 jugadores:
+  29.92px → 19.34px → 18.78px → 18.22px — degradado suave, nada minúsculo.
+- **Chips de premio con fondo por metal**, no gris translúcido genérico:
+  `.premio-tag.oro/.plata/.cobre`, cada uno con su propio fondo y texto
+  legible sobre ese fondo.
+- **Bug real en el chip de plata:** `font-size: 0.68em` puro, sobre una fila
+  ya más chica (plata usa `--fs-subtitle`, no `--fs-title` como oro), daba un
+  chip minúsculo — exactamente lo que se reportó ("muy chico"). Solución:
+  `font-size: max(0.8em, 0.85rem)` — escala con la fila pero nunca cae debajo
+  de un piso absoluto. Confirmado: pasó de un tamaño roto a 15,47px legible.
+- **Pie de página en dos mensajes**, no uno. Línea 1 (`--fs-subtitle`,
+  información real): *"Los premios se entregan a las 16:00 hs. Acercate al
+  stand para recibirlo."* Línea 2 (`--fs-body`, letra chica tranquilizadora):
+  *"¡Si no ganás no importa, te llevás un sticker por participar y futuros
+  beneficios de Vokkado!"*
+
+## 8f. Pantalla de Inicio — quinta vuelta (2026-08-13)
+
+- **El chip "CANGURO" se veía casi el doble que los demás.** La causa: el
+  `max(0.8em, 0.85rem)` de la vuelta anterior arregló el piso (que no fuera
+  chico), pero seguía escalando en `em` con el tamaño de SU fila — y la fila
+  de oro es la más grande de las cuatro. Fix real: sacar el `em` del todo,
+  `.premio-tag` pasó a `font-size: var(--fs-caption)` fijo. Ahora los tres
+  chips del podio (oro/plata/cobre) miden exactamente lo mismo —
+  confirmado en navegador: 15,3px los tres, sin importar la fila.
+- **Recuadro celeste pastel** (`.caja-premios`, `#e4f0f8` con borde
+  `#c9e0ef`) agrupando las dos frases de premios, que antes flotaban sueltas
+  contra el fondo de la página.
+
+## 8g. Pantalla de Inicio — sexta vuelta (2026-08-13)
+
+- **"Espacio raro" antes del nombre en 1º/2º.** `.puesto` reservaba
+  `width: 2.4em` — em relativo a SU PROPIO font-size, que en el podio ya
+  estaba multiplicado por `1.15em` sobre el font-size ya agrandado de la
+  fila. En la fila de oro (la más grande de las cuatro) esa columna
+  reservada terminaba mucho más ancha que en las demás, empujando el nombre
+  lejos del número. Fix: `width: 3rem` fijo, ajeno a cuánto escale la
+  tipografía de cada fila. Confirmado: las 5 filas miden exactamente 48px de
+  columna y 16px de separación hasta el nombre, sin importar el tamaño.
+- **Escala de tamaños, con relación real entre escalones.** El pedido fue
+  una proporción tipo 100/80/60/40 (números de ejemplo del usuario, no
+  literales — habría hecho el texto de "resto" ilegible a ~12px). Se tradujo
+  a `calc(var(--fs-title) * 0.84)` (plata) y `* 0.68` (cobre), dejando oro
+  intacto (`var(--fs-title)`, "ya está perfecto") y resto sin tocar
+  (`var(--fs-body)`, ya aprobado como piso legible en una vuelta anterior).
+  Con `calc()` sobre el mismo token en vez de tokens independientes, la
+  RELACIÓN entre escalones se mantiene igual en cualquier ancho de
+  pantalla — antes plata/cobre eran clamps con su propia curva, y sólo
+  coincidían en apretarse cerca del mismo valor a este viewport en particular.
+  Confirmado con 5 jugadores reales: 29,92 → 25,13 → 20,35 → 18,22px
+  (100/84/68/61%), un escalón parejo en vez del salto brusco 1º→2º seguido
+  de una meseta 2º/3º/4º casi idéntica que había antes.
+
 ## 9. Dónde retomar
 
-En orden de importancia:
+**Orden acordado con el usuario (2026-08-13): primero todas las pantallas del
+front, backend + deploy van juntos al final.** Motivo explícito: las pantallas
+no dependen del backend, y si el diseño sigue moviéndose (como pasó varias
+veces con Inicio) conviene no haber ya cableado sync contra un schema que
+capaz cambia de forma. Se arma una sola vez, al final, con el frente ya
+estable.
 
-1. **Service worker.** Es lo único que separa la promesa de "funciona en modo
-   avión" de la realidad: hoy la app necesita red para cargar. Cachear el shell,
-   los dos JSON y las 111 imágenes. Después probar **de verdad** con el iPad en
-   modo avión, no asumirlo.
-2. **Deploy a Vercel.** Nunca se hizo. El build está verificado, pero la primera
-   vez hay que hacerla con tiempo. Ver README §Desplegar.
-3. **Pantalla `/tv`** con el ranking en vivo para la segunda pantalla del stand.
-   No debe mostrar nunca qué productos salieron ni sus scores: el que está en la
-   fila memoriza.
-4. **Backend de sync + panel admin** con PIN, export CSV y reset. Schema
-   `event_game` en la Neon existente, creado por script SQL de este repo.
-5. **Revisión humana de `revision.csv`** — marcar la columna `ok` y decidir sobre
-   las marcas que no se reconozcan. Es lo único que no puedo hacer yo.
-6. Decidir sobre las Gomitas Mogul (§6.4).
+### Fase 1 — Pantallas (en curso)
+
+1. **Registro, Jugada, Feedback, Comodín, Resultado, Encuesta.** Inicio ✅
+   rediseñada a fondo (§8b-8g). El resto sigue con el diseño del branding
+   pass general — mismos tokens, pero sin el mismo nivel de pulido de
+   copy/interacción que Inicio. Van una por una.
+2. **Revisión humana de `revision.csv`** — marcar la columna `ok` y decidir
+   sobre las marcas que no se reconozcan. Es lo único que no puedo hacer yo.
+3. Decidir sobre las Gomitas Mogul (§6.4).
+
+### Fase 2 — Backend + deploy (al final, todo junto)
+
+**⚠️ Estado real verificado en código (no es un supuesto): hoy no existe
+NINGUNA base de datos del lado del servidor.** Todo lo que se juega —nombre,
+email, teléfono, puntaje, rondas, encuesta— vive únicamente en el
+`IndexedDB` del navegador de ESE dispositivo (`vokkado-score-game`, en
+`src/game/storage.ts`). El código ya tiene el campo `synced: boolean` y la
+función `pendingSync()` pensados para subir al backend cuando haya red, pero
+**no se llaman en ningún lado** — quedaron como intención, no como algo
+funcionando. El único respaldo hoy es el botón manual de exportar CSV
+(`downloadCsv`). Si el iPad se resetea a media tarde del evento, se pierde
+todo lo que no se haya exportado a mano.
+
+Cuando se llegue a esta fase, hace falta:
+
+4. **Dos tablas en Neon**, schema `event_game` (nunca creado — verificado, no
+   hay ningún `.sql` en el repo todavía):
+   ```sql
+   CREATE SCHEMA event_game;
+   CREATE TABLE event_game.players (
+     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+     nombre TEXT NOT NULL, apellido TEXT NOT NULL, email TEXT NOT NULL,
+     telefono TEXT, profesion TEXT, consent BOOLEAN NOT NULL DEFAULT false,
+     points INTEGER NOT NULL, ms INTEGER NOT NULL,
+     played_at TIMESTAMPTZ NOT NULL DEFAULT now(),  -- histórico real, con hora
+     nps SMALLINT, comentario TEXT
+   );
+   CREATE UNIQUE INDEX ON event_game.players (lower(email));
+   CREATE TABLE event_game.rounds (
+     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+     player_id UUID NOT NULL REFERENCES event_game.players(id),
+     product_id UUID NOT NULL, guess SMALLINT NOT NULL,
+     real_score SMALLINT NOT NULL, points SMALLINT NOT NULL, ms INTEGER NOT NULL
+   );
+   ```
+   Local (IndexedDB) sigue siendo caché de sesión, se puede limpiar sin
+   drama; Neon es la fuente de verdad histórica, nunca se limpia.
+5. **Conectar `pendingSync()` de verdad** — hoy existe pero no se usa.
+6. **Service worker.** Es lo único que separa la promesa de "funciona en modo
+   avión" de la realidad: hoy la app necesita red para cargar. Cachear el
+   shell, los dos JSON y las 111 imágenes. Probar **de verdad** con el iPad
+   en modo avión, no asumirlo.
+7. **Deploy a Vercel.** Nunca se hizo. El build está verificado, pero la
+   primera vez hay que hacerla con tiempo. Ver README §Desplegar.
+8. **Pantalla `/tv`** con el ranking en vivo para la segunda pantalla del
+   stand. No debe mostrar nunca qué productos salieron ni sus scores: el que
+   está en la fila memoriza.
+9. **Panel admin** con PIN, export CSV y reset.
 
 **Branding:** ✅ hecho, ver §6c. **Logo:** ✅ resuelto — el usuario pasó
-`src/assets/icon.png` (aguacate con lupa) y `src/assets/Background.png` (póster
-de marca), ver §8b.
-
-**Pantallas:** Inicio ✅ rediseñada (§8b). Registro, Jugada, Feedback, Comodín,
-Resultado y Encuesta siguen con el diseño del branding pass anterior — mismos
-tokens, pero sin el mismo nivel de pulido de copy/interacción que Inicio.
-Van una por una, como pidió el usuario.
-
-**Falta:** revisión humana de `revision.csv` (marcar columna `ok`, decidir marcas
-no reconocibles) y las decisiones de la sección 6.
+`src/assets/icon.png` (aguacate con lupa) y `src/assets/Background.png`
+(sigue en `src/assets/` sin usarse, se sacó de Inicio en §8f).
 
 ## 10. Checklist del stand
 

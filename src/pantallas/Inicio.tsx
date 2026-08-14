@@ -4,7 +4,6 @@ import { allGames } from '../game/storage';
 import { TablaPosiciones } from '../componentes/TablaPosiciones';
 import { EncabezadoMarca } from '../componentes/EncabezadoMarca';
 import { EjemploInteractivo } from '../componentes/EjemploInteractivo';
-import fondo from '../assets/Background.png';
 
 export function Inicio({ onEmpezar }: { onEmpezar: () => void }) {
   const [tabla, setTabla] = useState<LeaderboardEntry[]>([]);
@@ -29,13 +28,7 @@ export function Inicio({ onEmpezar }: { onEmpezar: () => void }) {
   }, []);
 
   return (
-    <div className="pantalla-con-fondo">
-      {/* Franja decorativa del póster de marca, recortada para mostrar sólo el
-          patrón de cuadraditos del pie. Ancho completo, pegada al piso. */}
-      <div className="fondo-marca-wrap" aria-hidden="true">
-        <img src={fondo} alt="" className="fondo-marca" />
-      </div>
-
+    <>
       <EncabezadoMarca />
 
       <div className="pantalla">
@@ -44,9 +37,15 @@ export function Inicio({ onEmpezar }: { onEmpezar: () => void }) {
 
         <EjemploInteractivo />
 
-        <p className="leyenda pie-inicio">
-          Los premios se entregan a las 16:00 hs · Llevate un sticker de regalo
-        </p>
+        <div className="caja-premios">
+          <p className="leyenda pie-inicio">
+            Los premios se entregan a las 16:00 hs. Acercate al stand para recibirlo.
+          </p>
+          <p className="leyenda pie-secundario">
+            ¡Si no ganás no importa, te llevás un sticker por participar y futuros
+            beneficios de Vokkado!
+          </p>
+        </div>
 
         {/* El CTA va acá, antes de la tabla: la tabla crece sola durante el
             evento y no debería obligar a scrollear para poder jugar. */}
@@ -58,6 +57,6 @@ export function Inicio({ onEmpezar }: { onEmpezar: () => void }) {
 
         <TablaPosiciones entradas={tabla} />
       </div>
-    </div>
+    </>
   );
 }
