@@ -47,7 +47,12 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 760px;
+  /* Fluido, no un salto fijo: antes quedaba en 760px hasta los 1100px de
+     ancho de ventana y ahí recién saltaba a 820 — en el medio (una ventana
+     de escritorio normal, ni celular ni pantalla gigante) se veía angosta
+     con mucho hueco a los costados. Ahora crece en proporción al viewport,
+     con un techo para que no se estire de más en pantallas enormes. */
+  max-width: min(960px, 94vw);
   margin: 0 auto;
   padding: var(--sp-lg) var(--sp-md) calc(var(--sp-lg) + env(safe-area-inset-bottom));
   /* Sólo opacidad: un translateY acá empuja el contenedor que define el alto de
@@ -80,18 +85,24 @@ body {
   gap: var(--sp-sm);
   width: 100%;
   padding: calc(var(--sp-md) + env(safe-area-inset-top)) var(--sp-md) 0;
+  /* Achica el hueco hasta "JUGÁ Y GANÁ" sin tocar el padding-top de
+     `.pantalla` (compartido por TODAS las pantallas, no sólo Inicio).
+     `.marca-header` y `.pantalla` son hermanos sueltos bajo `#root`
+     (flex-column, no colapsan márgenes solos), así que un margen negativo
+     acá los acerca de forma controlada y sin efecto en el resto de la app. */
+  margin-bottom: -10px;
 }
 
 .marca-logo {
-  width: 52px;
-  height: 52px;
+  width: 38px;
+  height: 38px;
   flex-shrink: 0;
 }
 
 .marca-wordmark {
   font-family: 'Alan Sans', var(--fuente);
   font-weight: 800;
-  font-size: clamp(1.75rem, 1.4rem + 1.6vw, 2.4rem);
+  font-size: clamp(1.3rem, 1.05rem + 1.2vw, 1.85rem);
   color: var(--vk-primary-dark);
   letter-spacing: -0.01em;
 }
@@ -132,7 +143,11 @@ body {
   border: 1px solid var(--vk-borde);
   border-radius: var(--radio-tarjeta);
   padding: var(--sp-lg) var(--pad-input);
-  margin-bottom: var(--sp-lg);
+  /* `.pantalla` es flex-column: los márgenes entre hermanos NO colapsan como
+     en flujo normal, así que esto se suma al margen superior de la caja
+     celeste de abajo. Chico a propósito para que las dos tarjetas queden
+     agrupadas, no flotando separadas. */
+  margin-bottom: var(--sp-sm);
 }
 
 /* Instrucción dentro de la tarjeta, arriba del número: mayúsculas y centrada,
@@ -146,14 +161,16 @@ body {
   margin: 0 0 var(--sp-md);
 }
 
+/* Centra la insignia (un div, no texto — `text-align` solo no alcanza) y la
+   etiqueta cualitativa debajo, con el espaciado entre una y otra. */
 .demo-numero-wrap {
-  text-align: center;
-  margin-bottom: var(--sp-md);
-}
-
-.valor-slider.chico {
-  font-size: clamp(2.75rem, 1.9rem + 4.3vw, 4.25rem);
-  margin-bottom: var(--sp-xs);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-sm);
+  /* Chico, para que la insignia + etiqueta queden agrupadas con el control
+     de abajo en vez de sentirse como dos bloques separados. */
+  margin-bottom: var(--sp-sm);
 }
 
 /* Etiqueta cualitativa, debajo del número, grande: es lo que reemplaza al
@@ -213,6 +230,14 @@ input[type='range'].control-demo::-moz-range-track {
   );
 }
 
+/* Bloquea el arrastre en el navegador: es la parte que realmente evita el
+   bug (tocar/arrastrar y que la animación se quede parada para siempre).
+   `tabIndex`/`aria-hidden` en el JSX cubren teclado y lectores de pantalla. */
+input[type='range'].inerte {
+  pointer-events: none;
+  cursor: default;
+}
+
 /* Chip del premio: tamaño en `em` para escalar con la fila que lo contiene,
    pero con un piso en `rem` (vía `max()`) — en la fila de plata, más chica
    que la de oro, un 0.68em puro quedaba minúsculo e ilegible. */
@@ -250,6 +275,26 @@ input[type='range'].control-demo::-moz-range-track {
   font-size: var(--fs-title);
 }
 
+/* "Tocame": un latido lento y sutil, sólo en el CTA de Inicio — no en todos
+   los botones primarios de la app, que confirman una acción puntual y no
+   necesitan invitar a nada. `prefers-reduced-motion` ya lo apaga globalmente
+   (regla al final del archivo). */
+@keyframes respirar {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: var(--sombra-md);
+  }
+  50% {
+    transform: scale(1.025);
+    box-shadow: 0 6px 18px rgba(34, 82, 29, 0.32);
+  }
+}
+
+.boton-respira {
+  animation: respirar 2.4s ease-in-out infinite;
+}
+
 /* Recuadro celeste pastel que agrupa los dos avisos de premios — antes eran
    dos párrafos sueltos flotando en el fondo de la página. */
 .caja-premios {
@@ -257,7 +302,9 @@ input[type='range'].control-demo::-moz-range-track {
   border: 1px solid #c9e0ef;
   border-radius: var(--radio-tarjeta);
   padding: var(--sp-md);
-  margin: var(--sp-md) 0;
+  /* Poco arriba (junto con el margen chico de `.tarjeta-demo`, quedan
+     agrupadas) y un poco más abajo, para separarla del botón. */
+  margin: var(--sp-xs) 0 var(--sp-md);
 }
 
 /* Mismo motivo que `.display.hero-titulo`: compuesto para no depender del
@@ -1231,12 +1278,6 @@ input[type='range']::-moz-range-thumb {
 
   .insignia-graduacion {
     font-size: 17px;
-  }
-}
-
-@media (min-width: 1100px) {
-  .pantalla {
-    max-width: 820px;
   }
 }
 

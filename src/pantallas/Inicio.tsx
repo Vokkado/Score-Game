@@ -49,7 +49,7 @@ export function Inicio({ onEmpezar }: { onEmpezar: () => void }) {
 
         {/* El CTA va acá, antes de la tabla: la tabla crece sola durante el
             evento y no debería obligar a scrollear para poder jugar. */}
-        <button className="primario grande" onClick={onEmpezar}>
+        <button className="primario grande boton-respira" onClick={onEmpezar}>
           Empezar a jugar
         </button>
 

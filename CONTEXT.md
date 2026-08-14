@@ -564,6 +564,76 @@ de tabla en cada borde de cada tramo.
   (100/84/68/61%), un escalón parejo en vez del salto brusco 1º→2º seguido
   de una meseta 2º/3º/4º casi idéntica que había antes.
 
+## 8h. Pantalla de Inicio — séptima vuelta, cierre (2026-08-13)
+
+- **Bug real: arrastrar el ejemplo dejaba la animación parada para siempre.**
+  La primera versión del barrido automático usaba un estado `tocado` que se
+  ponía en `true` al primer `onPointerDown`/`onChange` y frenaba el
+  `useEffect` para siempre — pensado como "se mueve solo hasta que jugás con
+  él", pero el usuario no quería que se pudiera tocar en absoluto (es una
+  animación de ejemplo, no una práctica real). Se sacó el estado `tocado`
+  entero: la animación corre siempre, en loop infinito, y el `<input>` se
+  hizo inerte de verdad — `pointer-events: none` (bloquea arrastre real; un
+  `dispatchEvent()` programático SÍ lo saltea, pero eso no es algo que un
+  dedo en el iPad pueda hacer), `tabIndex={-1}` (fuera del tabulado),
+  `aria-hidden="true"` (fuera de lectores de pantalla), `onChange` no-op
+  (sólo para que React no se queje de un input controlado sin manejador).
+- **Verificación con un hallazgo de entorno, otra vez.** Al confirmar que la
+  animación seguía corriendo, apareció detenida (`"14"` fijo por 1,5s). Antes
+  de reportarlo como bug, se chequeó `document.hidden` → `true` — la pestaña
+  del panel estaba en background en ese momento de la sesión, y los
+  navegadores **pausan `requestAnimationFrame` por completo** en pestañas
+  ocultas (confirmado además con un `setInterval` de control: sólo 2 ticks en
+  1,5s en vez de ~15, el clásico throttle a ~1/seg de Chrome en background).
+  No es un bug de producto — en el iPad real, con la pestaña siempre visible,
+  corre normal. Ya había pasado algo parecido con una `transition` de CSS en
+  una vuelta anterior (§8b): mismo síntoma raíz, mismo diagnóstico.
+- **Ancho de página fluido, no un salto fijo.** `.pantalla` tenía
+  `max-width: 760px` hasta los 1100px de ventana y ahí saltaba a 820 — en el
+  medio (una ventana de escritorio común, ni celular ni pantalla gigante)
+  quedaba angosta con huecos grandes a los costados, que es exactamente lo
+  que se veía en la captura del usuario a ~960px. Cambiado a
+  `max-width: min(960px, 94vw)`: crece en proporción al viewport en vez de
+  quedarse pegada a un número fijo hasta un breakpoint lejano. Confirmado en
+  navegador: a 960px de ventana, pasó de 760px con ~100px de hueco por lado a
+  902px con ~29px — se nota la diferencia sin llegar a estirarse de más en
+  pantallas gigantes (el techo de 960px sigue ahí).
+- **El puntaje del ejemplo pasó a insignia circular**, igual que en Feedback
+  y Comodín: se reemplazó el número de texto plano coloreado
+  (`.valor-slider.chico`, ahora removido del CSS por quedar sin uso) por
+  `<Insignia puntaje={valor} tamano="lg" />` — el mismo componente que
+  replica `ScoreBadge` de la app real. Consistencia visual: el puntaje se ve
+  igual en las tres pantallas donde aparece.
+
+## 8i. Pantalla de Inicio — octava vuelta, cierre final (2026-08-13)
+
+- **Espaciado más compacto.** `.pantalla` es `flex-direction: column`, así que
+  los márgenes entre hermanos NO colapsan como en flujo de bloque normal —
+  se suman. `.tarjeta-demo` tenía `margin-bottom: var(--sp-lg)` (24px) y
+  `.caja-premios` `margin: var(--sp-md) 0` (16px arriba): 40px de hueco total
+  entre las dos tarjetas. Bajado a `sp-sm` (8px) + `sp-xs` (4px) = 12px. Mismo
+  criterio en `.demo-numero-wrap` (insignia + etiqueta) contra el control de
+  abajo: de 16px a 8px. La caja celeste mantiene más aire antes del botón
+  (`sp-md`, 16px) — ahí sí conviene una pausa antes del CTA.
+- **El botón "Empezar a jugar" respira.** Nueva clase `.boton-respira`
+  (`@keyframes respirar`, 2,4s, `scale` + sombra sutiles), aplicada sólo en
+  el CTA de Inicio — no en `.primario` en general, los demás botones
+  confirman una acción puntual y no necesitan invitar a nada. Ya cubierto por
+  la regla global de `prefers-reduced-motion` al final del archivo.
+
+## 8j. Pantalla de Inicio — novena vuelta (2026-08-13)
+
+- **Logo y wordmark más chicos**: `.marca-logo` 52px→38px,
+  `.marca-wordmark` clamp 1,75–2,4rem → 1,3–1,85rem.
+- **Menos hueco entre "Vokkado" y "JUGÁ Y GANÁ"**: `margin-bottom: -10px`
+  en `.marca-header`. A propósito NO se tocó el `padding-top` de
+  `.pantalla` — ese token lo comparten TODAS las pantallas, no sólo
+  Inicio, así que bajarlo ahí habría compactado también Registro, Jugada,
+  etc. `.marca-header` y `.pantalla` son hermanos sueltos bajo `#root`
+  (flex-column, sin colapso de márgenes), así que el margen negativo en el
+  header los acerca de forma controlada y aislada. Confirmado en navegador:
+  14px de hueco final.
+
 ## 9. Dónde retomar
 
 **Orden acordado con el usuario (2026-08-13): primero todas las pantallas del

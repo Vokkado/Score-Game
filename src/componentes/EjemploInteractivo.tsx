@@ -1,14 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
 import { scoreColor, tramoDe, ESCALA_PUNTAJE } from '../game/engine';
+import { Insignia } from './Insignia';
 
 /**
- * Ejemplo jugable en la pantalla de inicio: no es una ronda real ni un
+ * Animación de ejemplo en la pantalla de inicio: no es una ronda real ni un
  * producto del pool, es sólo para que la persona entienda el mecanismo antes
  * de anotarse — nada de esto usa datos del juego real.
  *
- * El control se mueve solo hasta el primer toque: viaja de a tramos, con una
- * curva suave y una pausa al llegar a cada parada (no un barrido lineal
- * constante), para que se note que "se puede mover" sin marear.
+ * A propósito NO es interactiva: es sólo para mirar, viaja de a tramos con
+ * una curva suave y una pausa en cada parada, para siempre. La primera
+ * versión sí se podía arrastrar, y arrastrarla paraba la animación para
+ * siempre — quedaba "roto" apenas alguien lo tocaba sin querer. El control
+ * real donde SÍ se juega está en la pantalla de la ronda, no acá.
  */
 
 /** Paradas del recorrido automático. Cubren los tres niveles de demoLabel. */
@@ -22,11 +25,9 @@ function easeInOutCubic(t: number): number {
 
 export function EjemploInteractivo() {
   const [valor, setValor] = useState(PARADAS[0]);
-  const [tocado, setTocado] = useState(false);
   const cancelado = useRef(false);
 
   useEffect(() => {
-    if (tocado) return;
     cancelado.current = false;
 
     let indice = 0;
@@ -62,7 +63,7 @@ export function EjemploInteractivo() {
       cancelAnimationFrame(rafId);
       clearTimeout(timeoutId);
     };
-  }, [tocado]);
+  }, []);
 
   const color = scoreColor(valor);
 
@@ -70,33 +71,37 @@ export function EjemploInteractivo() {
     <div className="tarjeta-demo">
       <p className="demo-instruccion">Arrastrá la barra del 0 al 100 y embocale al puntaje</p>
 
+      {/* Círculo de color con el número en blanco — la misma `Insignia` que
+          usan Feedback y Comodín, así el puntaje se ve siempre igual en toda
+          la app (es el mismo `ScoreBadge` que la app real). */}
       <div className="demo-numero-wrap">
-        <div className="valor-slider chico" style={{ color }}>
-          {valor}
-        </div>
+        <Insignia puntaje={valor} tamano="lg" />
         <div className="demo-etiqueta" style={{ color }}>
           {tramoDe(valor).etiqueta}
         </div>
       </div>
 
+      {/* Puramente decorativo: `pointer-events: none` bloquea el arrastre (la
+          causa del bug — arrastrarlo dejaba la animación parada para
+          siempre), `tabIndex={-1}` lo saca del tabulado por teclado, y
+          `aria-hidden` lo esconde de lectores de pantalla, porque no hace
+          nada si lo "activás". `onChange` no-op es sólo para que React no
+          se queje de un input controlado sin manejador. */}
       <input
         type="range"
         min={0}
         max={100}
         value={valor}
-        className="control-demo"
+        className="control-demo inerte"
         style={
           {
             '--relleno-color': color,
             '--relleno-pct': `${valor}%`,
           } as React.CSSProperties
         }
-        onPointerDown={() => setTocado(true)}
-        onChange={(e) => {
-          setTocado(true);
-          setValor(Number(e.target.value));
-        }}
-        aria-label="Probar el control de puntaje"
+        onChange={() => {}}
+        tabIndex={-1}
+        aria-hidden="true"
       />
       {/* La escala completa, con rango y color de cada tramo — la misma tabla
           que usa `scoreColor`, así que nunca puede decir algo distinto de lo
