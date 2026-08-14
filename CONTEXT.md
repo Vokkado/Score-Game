@@ -634,6 +634,63 @@ de tabla en cada borde de cada tramo.
   header los acerca de forma controlada y aislada. Confirmado en navegador:
   14px de hueco final.
 
+## 8k. Pantalla de Registro — primera vuelta (2026-08-14)
+
+Primera pantalla después de Inicio. Pedido del usuario, punto por punto:
+
+- **Los campos van sobre una tarjeta blanca** (`.tarjeta-formulario`,
+  `--vk-superficie` + borde + `--sombra-sm`). Los inputs mantienen el fondo
+  del color de página que les da `AppInput` — sobre el blanco de la tarjeta
+  eso se lee como campo relleno, que es justo lo que se quería; si además se
+  hubieran puesto blancos, desaparecían dentro de la tarjeta.
+- **Profesión pasó a obligatoria.** El único opcional ahora es el teléfono.
+  Se le sacó el "(opcional)" del label a Profesión y se lo dejó en Teléfono.
+- **La validación ahora avisa, antes sólo bloqueaba.** Existía `completo`,
+  pero su único efecto era dejar el botón gris: la persona veía un botón que
+  no responde y ningún cartel diciendo qué falta. Ahora hay un `validar()`
+  con un mensaje por campo, y **el botón dejó de deshabilitarse a propósito**
+  — al tocarlo se marcan los campos que faltan, aparece el aviso general y
+  **el foco salta al primero que falta** (con seis campos, "revisá lo que
+  está en rojo" no alcanza si el que falta quedó fuera de pantalla).
+  El rojo aparece por campo recién cuando la persona lo tocó (`onBlur`) o
+  cuando intentó empezar: un formulario todo en rojo antes de escribir nada
+  espanta.
+- **El borrador sobrevive al "Volver".** El estado del formulario se subió a
+  `App.tsx` (`borrador`, tipo `Player`, inicializado con `PLAYER_VACIO` que
+  ahora exporta `Registro.tsx`). Antes vivía en el `useState` de `Registro`,
+  así que **tocar "Volver" sin querer borraba los seis campos** — en un stand
+  con fila, eso es abandono asegurado. **Se limpia en un solo lugar:** el
+  botón "Que juegue otra persona" de la pantalla de gracias. Es intencional y
+  no negociable — son datos de contacto ajenos, no pueden aparecer
+  precargados para el siguiente jugador.
+- **Título:** "Tus datos" → "Datos para contactarte".
+- **Aviso celeste con ícono de información** (`.aviso-info` + `Info` en
+  `Iconos.tsx`, Ionicons `information-circle`), reemplazando el `.sub` gris.
+  Explica los dos motivos: ranking/ganadores y beneficios a futuro.
+- **Botón "Empezar" más grande:** reusa `.primario.grande` (68px,
+  `--fs-title`), el mismo modificador del CTA de Inicio. No se creó una clase
+  nueva ni se tocó `--alto-boton`, que lo comparten todos los botones.
+- **Copy de la casilla:** "Quiero recibir novedades y beneficios a futuro" /
+  "¡Te vamos a contactar para que recibas novedades y tus beneficios más
+  adelante!". **Viene marcada por defecto** (`PLAYER_VACIO.consent: true`,
+  decisión del usuario): con fila en el stand nadie se frena a marcar una
+  casilla extra. Se advirtió que el opt-in premarcado no es consentimiento
+  válido bajo la ley 18.331 ni bajo GDPR, y que el `consent` guardado deja de
+  ser prueba de que la persona lo eligió; el usuario decidió dejarlo así. Si
+  algún día se manda mailing a esa lista, esto es lo primero a revisar.
+- **Celeste unificado.** El `#e4f0f8`/`#c9e0ef` de `.caja-premios` estaba
+  hardcodeado; ahora son `--vk-info-fondo`/`--vk-info-borde` (más
+  `--vk-info: #14567f` para el texto). Viven en `styles.css` y **no** en
+  `theme.css` a propósito: la app no tiene variante "info", y `theme.css` es
+  el puerto fiel de los tokens del Frontend.
+
+Verificado en navegador a 834×1112: con el formulario vacío, "Empezar" marca
+los 4 obligatorios (teléfono no), muestra el aviso general y deja el foco en
+`nombre`; el botón mide 68px y 30,15px de fuente; llenar todo → "Volver" →
+volver a entrar devuelve los cinco campos **y la casilla marcada**, sin
+errores en rojo; y "Empezar" entra a la jugada. Sin scroll horizontal.
+21 tests en verde, `tsc --noEmit` limpio.
+
 ## 9. Dónde retomar
 
 **Orden acordado con el usuario (2026-08-13): primero todas las pantallas del
@@ -645,10 +702,10 @@ estable.
 
 ### Fase 1 — Pantallas (en curso)
 
-1. **Registro, Jugada, Feedback, Comodín, Resultado, Encuesta.** Inicio ✅
-   rediseñada a fondo (§8b-8g). El resto sigue con el diseño del branding
-   pass general — mismos tokens, pero sin el mismo nivel de pulido de
-   copy/interacción que Inicio. Van una por una.
+1. **Jugada, Feedback, Comodín, Resultado, Encuesta.** Inicio ✅ (§8b-8j) y
+   Registro ✅ (§8k). El resto sigue con el diseño del branding pass general
+   — mismos tokens, pero sin el mismo nivel de pulido de copy/interacción.
+   Van una por una.
 2. **Revisión humana de `revision.csv`** — marcar la columna `ok` y decidir
    sobre las marcas que no se reconozcan. Es lo único que no puedo hacer yo.
 3. Decidir sobre las Gomitas Mogul (§6.4).

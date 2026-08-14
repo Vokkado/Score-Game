@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import type { Product, Wildcard, Player, Round } from './game/engine';
 import { pickRound, scoreGuess, totalPoints, totalMs, shuffle } from './game/engine';
 import { saveGame, findByEmail, type StoredGame } from './game/storage';
-import { Registro } from './pantallas/Registro';
+import { Registro, PLAYER_VACIO } from './pantallas/Registro';
 import { Jugada } from './pantallas/Jugada';
 import { Feedback } from './pantallas/Feedback';
 import { Comodin } from './pantallas/Comodin';
@@ -26,6 +26,10 @@ export function App() {
   const [wildcards, setWildcards] = useState<Wildcard[]>([]);
   const [fase, setFase] = useState<Fase>({ t: 'cargando' });
   const [player, setPlayer] = useState<Player | null>(null);
+  // El formulario a medio llenar vive acá, no en Registro: si la persona toca
+  // "Volver" sin querer y vuelve a entrar, encuentra sus datos donde los dejó.
+  // Se limpia sólo cuando arranca otra persona — son datos de contacto ajenos.
+  const [borrador, setBorrador] = useState<Player>(PLAYER_VACIO);
   const [ronda, setRonda] = useState<Product[]>([]);
   const [indice, setIndice] = useState(0);
   const [rounds, setRounds] = useState<Round[]>([]);
@@ -116,7 +120,13 @@ export function App() {
 
   if (fase.t === 'registro') {
     return (
-      <Registro onListo={empezar} onVolver={() => setFase({ t: 'inicio' })} yaJugo={findByEmail} />
+      <Registro
+        valores={borrador}
+        onCambiar={setBorrador}
+        onListo={empezar}
+        onVolver={() => setFase({ t: 'inicio' })}
+        yaJugo={findByEmail}
+      />
     );
   }
 
@@ -173,6 +183,9 @@ export function App() {
         className="primario"
         onClick={() => {
           setPlayer(null);
+          // Acá sí se borra el formulario: lo que sigue es otra persona, y sus
+          // datos de contacto no pueden aparecer precargados.
+          setBorrador(PLAYER_VACIO);
           setFase({ t: 'inicio' });
         }}
       >

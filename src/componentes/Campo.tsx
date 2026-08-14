@@ -38,9 +38,15 @@ export function Campo({ label, tipo = 'text', error, id, placeholder, ...props }
         autoCapitalize={tipo === 'text' ? 'words' : 'off'}
         autoCorrect="off"
         inputMode={INPUT_MODE[tipo]}
+        aria-invalid={error ? true : undefined}
+        aria-describedby={error && id ? `${id}-error` : undefined}
         {...props}
       />
-      {error && <p className="mensaje-error">{error}</p>}
+      {error && (
+        <p className="mensaje-error" id={id ? `${id}-error` : undefined}>
+          {error}
+        </p>
+      )}
     </div>
   );
 }

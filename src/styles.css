@@ -270,6 +270,8 @@ input[type='range'].inerte {
   color: #6b3a15;
 }
 
+/* Modificador de botón, no un estilo de Inicio: lo usan el CTA de Inicio y el
+   "Empezar" de Registro, los dos únicos botones que arrancan algo. */
 .primario.grande {
   min-height: 68px;
   font-size: var(--fs-title);
@@ -298,8 +300,8 @@ input[type='range'].inerte {
 /* Recuadro celeste pastel que agrupa los dos avisos de premios — antes eran
    dos párrafos sueltos flotando en el fondo de la página. */
 .caja-premios {
-  background: #e4f0f8;
-  border: 1px solid #c9e0ef;
+  background: var(--vk-info-fondo);
+  border: 1px solid var(--vk-info-borde);
   border-radius: var(--radio-tarjeta);
   padding: var(--sp-md);
   /* Poco arriba (junto con el margen chico de `.tarjeta-demo`, quedan
@@ -491,6 +493,68 @@ button:active:not(:disabled) {
   font-size: var(--fs-subtitle);
   font-weight: var(--peso-medium);
   padding: var(--sp-sm);
+}
+
+/* ── Registro ────────────────────────────────────────────────────────── */
+
+/* El celeste de los avisos. No sale del sistema de diseño de la app —ahí no
+   hay una variante "info"— así que vive acá y no en theme.css, que es el
+   puerto fiel de los tokens del Frontend. Lo comparten el aviso de Registro
+   y la caja de premios de Inicio, que antes repetía estos mismos hex. */
+:root {
+  --vk-info: #14567f;
+  --vk-info-fondo: #e4f0f8;
+  --vk-info-borde: #c9e0ef;
+}
+
+.aviso-info {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-sm);
+  background: var(--vk-info-fondo);
+  border: 1px solid var(--vk-info-borde);
+  border-radius: var(--radio-tarjeta);
+  padding: var(--sp-md);
+  margin: 0 0 var(--sp-md);
+  color: var(--vk-info);
+}
+
+.aviso-info svg {
+  flex-shrink: 0;
+  /* Alineado con la primera línea de texto, no con el bloque entero. */
+  margin-top: 1px;
+}
+
+.aviso-info p {
+  margin: 0;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+/* Tarjeta blanca que agrupa los campos. Los inputs mantienen el fondo del
+   color de página (así los dibuja AppInput), que sobre el blanco se lee como
+   campo relleno en vez de desaparecer. */
+.tarjeta-formulario {
+  background: var(--vk-superficie);
+  border: 1px solid var(--vk-borde);
+  border-radius: var(--radio-tarjeta);
+  box-shadow: var(--sombra-sm);
+  padding: var(--sp-md);
+  margin-bottom: var(--sp-md);
+}
+
+/* El margen del último campo sumaría un hueco muerto contra el borde de la
+   tarjeta: `.pantalla` es flex-column, los márgenes no colapsan. */
+.tarjeta-formulario .campo:last-child {
+  margin-bottom: 0;
+}
+
+.aviso-faltan {
+  font-size: var(--fs-body);
+  font-weight: var(--peso-medium);
+  color: var(--vk-error);
+  text-align: center;
+  margin: 0 0 var(--sp-sm);
 }
 
 /* ── Campos (AppInput) ───────────────────────────────────────────────── */
