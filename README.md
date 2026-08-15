@@ -111,11 +111,14 @@ El resto del checklist del stand está en [CONTEXT.md](CONTEXT.md) §8.
 - [x] Justificación escrita a mano para cada producto
 - [x] Motor del juego + 16 tests
 - [x] Seis pantallas: inicio, registro, jugada, feedback, resultado, encuesta
+- [x] Pantalla `/scoreboard` para el monitor del stand — **sólo ve las
+      partidas de su propio navegador; ver CONTEXT §8q antes de usarla en un
+      dispositivo aparte**
 - [x] Persistencia en IndexedDB + un intento por email
 - [x] Build de producción verificado
 - [ ] Revisión humana de los 100 → `data/revision.csv`
 - [ ] **Service worker** — sin esto la app todavía necesita red para cargar
-- [ ] Pantalla `/tv` de ranking en vivo
+- [ ] Sync para que `/scoreboard` funcione en un dispositivo distinto al del juego
 - [ ] Backend de sync y panel admin
 - [ ] Deploy
 

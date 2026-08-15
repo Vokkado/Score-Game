@@ -278,34 +278,26 @@ input[type='range'].inerte {
   animation: respirar 2.4s ease-in-out infinite;
 }
 
-/* Recuadro celeste pastel que agrupa los dos avisos de premios — antes eran
-   dos párrafos sueltos flotando en el fondo de la página. */
-.caja-premios {
-  background: var(--vk-info-fondo);
-  border: 1px solid var(--vk-info-borde);
-  border-radius: var(--radio-tarjeta);
-  padding: var(--sp-md);
-  /* Poco arriba (junto con el margen chico de `.tarjeta-demo`, quedan
-     agrupadas) y un poco más abajo, para separarla del botón. */
-  margin: var(--sp-xs) 0 var(--sp-md);
-}
+/* El recuadro celeste de premios (`.caja-premios` + `.pie-inicio` +
+   `.pie-secundario`) se eliminó de acá: se mudó a `/scoreboard` como
+   `.sb-premios`, que es la pantalla donde tiene sentido — la que queda puesta
+   en el monitor del stand. */
 
-/* Mismo motivo que `.display.hero-titulo`: compuesto para no depender del
-   orden del archivo contra `.leyenda`. */
-.leyenda.pie-inicio {
-  text-align: center;
-  font-size: var(--fs-subtitle);
-  font-weight: var(--peso-medium);
-  color: var(--vk-texto);
-  margin: 0 0 var(--sp-xs);
-}
-
-/* El mensaje de "no pasa nada si no ganás" es más chico que el horario —
-   es la letra chica tranquilizadora, no la información importante. */
-.leyenda.pie-secundario {
-  text-align: center;
-  font-size: var(--fs-body);
-  margin: 0;
+/* Atajo al scoreboard, pegado a la derecha de la barra de marca. `margin-left:
+   auto` y no `justify-content` en el padre: el logo y el wordmark tienen que
+   seguir juntos a la izquierda. */
+.boton-trofeo {
+  margin-left: auto;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--vk-superficie);
+  border: 1px solid var(--vk-borde);
+  border-radius: var(--r-full);
+  padding: 0;
 }
 
 .separador-tabla {
@@ -1405,28 +1397,342 @@ input[type='range']::-moz-range-thumb {
 
 /* ── Encuesta ────────────────────────────────────────────────────────── */
 
-.nps {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: var(--sp-sm);
+/* Escala del 1 al 10, en UNA fila.
+
+   Antes era `grid-template-columns: repeat(6, 1fr)`: envolvía en dos renglones
+   con el 10 debajo del 0, y eso se lee como un teclado numérico en vez de como
+   una escala de poco a mucho. Ahora los diez se reparten el ancho y se achican
+   en lugar de bajar de línea. `min-width: 0` es lo que habilita encogerse por
+   debajo del ancho del contenido — sin eso, `flex: 1` no alcanza y la fila se
+   desborda. `flex-basis: 0` para que el ancho no dependa del número que tiene
+   adentro (el "10" tiene dos dígitos y quedaría más ancho que el resto). */
+.escala-puntos {
+  display: flex;
+  gap: var(--sp-xs);
   margin-bottom: var(--sp-sm);
 }
 
-.nps button {
-  padding: var(--sp-sm) 0;
-  min-height: var(--alto-boton);
+.escala-puntos button {
+  flex: 1 1 0;
+  min-width: 0;
+  /* Alto fijo: los botones se angostan en pantallas chicas, así que el área
+     táctil se sostiene con la altura. */
+  height: 48px;
+  padding: 0;
   font-size: var(--fs-subtitle);
   font-weight: var(--peso-semibold);
+  font-variant-numeric: tabular-nums;
   background: var(--vk-superficie);
   color: var(--vk-texto);
   border: 1px solid var(--vk-borde);
   border-radius: var(--radio-input);
 }
 
-.nps button.elegido {
+.escala-puntos button.elegido {
   background: var(--vk-primary-dark);
   color: var(--vk-friendly-white);
   border-color: var(--vk-primary-dark);
+  /* Se agranda apenas: con diez botones angostos, sólo el color no basta para
+     ver de un vistazo cuál quedó elegido. */
+  transform: scale(1.06);
+}
+
+/* ── Scoreboard (/scoreboard) ────────────────────────────────────────────
+   La pantalla del monitor del stand. Está fuera de `.pantalla` a propósito:
+   no comparte ni el ancho máximo ni la escala tipográfica del juego, porque
+   no se mira a un brazo de distancia sino desde el otro lado del pasillo.
+   Fondo verde de marca para que se despegue de la pared y del iPad.         */
+
+.scoreboard {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--vk-primary-dark);
+  color: var(--vk-friendly-white);
+  padding: clamp(12px, 2vh, 28px) clamp(12px, 2vw, 36px);
+  gap: clamp(12px, 2vh, 24px);
+}
+
+.sb-cabecera {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  flex-shrink: 0;
+}
+
+.sb-logo {
+  width: clamp(32px, 3vw, 46px);
+  height: auto;
+}
+
+.sb-marca {
+  font-family: 'Alan Sans', var(--fuente);
+  font-weight: 800;
+  font-size: clamp(1.3rem, 1.8vw, 2rem);
+}
+
+.sb-titulo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  margin-left: var(--sp-lg);
+  font-size: clamp(1rem, 1.4vw, 1.5rem);
+  font-weight: var(--peso-semibold);
+  color: var(--vk-primary-light);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.sb-volver {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--r-full);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: var(--fs-caption);
+  padding: 6px 14px 6px 8px;
+}
+
+/* Dos columnas: la tabla manda y el póster acompaña. `minmax(0, …)` en la
+   primera es lo que deja que la tabla se encoja en vez de empujar al póster
+   fuera de la pantalla. */
+.sb-cuerpo {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(240px, 26vw, 380px);
+  gap: clamp(16px, 2vw, 32px);
+}
+
+.sb-tabla {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.sb-tabla-cabecera {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-md);
+  margin-bottom: clamp(8px, 1.5vh, 20px);
+}
+
+.sb-tabla-cabecera h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.4vw, 3.6rem);
+  font-weight: var(--peso-bold);
+  line-height: 1.1;
+}
+
+.sb-cuenta {
+  font-size: clamp(0.9rem, 1.2vw, 1.3rem);
+  color: var(--vk-primary-light);
+  font-weight: var(--peso-semibold);
+  white-space: nowrap;
+}
+
+.sb-vacio {
+  font-size: clamp(1.1rem, 1.8vw, 1.8rem);
+  opacity: 0.8;
+}
+
+/* Grilla de carriles iguales, no un flex-column: las filas se reparten el alto
+   disponible para que la tabla llene la pantalla y se lea de lejos, pero la
+   cantidad de carriles la fija React en `--filas` y **no** la cantidad de
+   filas de la página actual.
+
+   Con flex pasaba esto: la última página, que trae menos jugadores que las
+   demás, estiraba sus filas para ocupar todo (medido: 174px contra los ~70px
+   de la primera). Al rotar, la tabla parecía otra. Con carriles fijos, una
+   página incompleta deja el hueco abajo y las filas miden siempre igual.
+
+   El piso de `--filas` (ver `Scoreboard.tsx`) evita el otro extremo: con dos
+   jugadores a primera hora, dos filas de 400px de alto. */
+.sb-lista {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: repeat(var(--filas, 10), minmax(0, 1fr));
+  gap: clamp(4px, 0.8vh, 10px);
+}
+
+.sb-fila {
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.5vw, 24px);
+  padding: 0 clamp(12px, 1.5vw, 24px);
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: var(--r-lg);
+  font-size: clamp(1rem, 2vw, 2.1rem);
+  /* Entra desde abajo cuando la tabla rota de página. */
+  animation: sb-entrar 0.35s ease both;
+}
+
+@keyframes sb-entrar {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+.sb-fila.oro {
+  background: rgba(246, 221, 143, 0.16);
+  border: 1px solid rgba(246, 221, 143, 0.5);
+}
+
+.sb-fila.plata {
+  background: rgba(219, 225, 229, 0.13);
+  border: 1px solid rgba(219, 225, 229, 0.38);
+}
+
+.sb-fila.cobre {
+  background: rgba(233, 189, 151, 0.13);
+  border: 1px solid rgba(233, 189, 151, 0.38);
+}
+
+.sb-puesto {
+  font-weight: var(--peso-bold);
+  font-variant-numeric: tabular-nums;
+  min-width: 2.6ch;
+  opacity: 0.7;
+}
+
+.sb-puesto.oro {
+  color: #f6dd8f;
+  opacity: 1;
+}
+
+.sb-puesto.plata {
+  color: #dbe1e5;
+  opacity: 1;
+}
+
+.sb-puesto.cobre {
+  color: #e9bd97;
+  opacity: 1;
+}
+
+.sb-quien {
+  flex: 1;
+  min-width: 0;
+  font-weight: var(--peso-semibold);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sb-premio {
+  font-size: clamp(0.7rem, 1vw, 1.05rem);
+  font-weight: var(--peso-bold);
+  padding: 5px 14px;
+  border-radius: var(--r-full);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.sb-premio.oro {
+  background: #f6dd8f;
+  color: #6b4e00;
+}
+
+.sb-premio.plata {
+  background: #dbe1e5;
+  color: #3a444c;
+}
+
+.sb-premio.cobre {
+  background: #e9bd97;
+  color: #6b3a15;
+}
+
+.sb-pts {
+  font-weight: var(--peso-bold);
+  font-variant-numeric: tabular-nums;
+  color: var(--vk-primary-light);
+  min-width: 3.5ch;
+  text-align: right;
+}
+
+.sb-paginas {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: clamp(8px, 1.2vh, 14px);
+  flex-shrink: 0;
+}
+
+.sb-punto {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--r-full);
+  background: rgba(255, 255, 255, 0.25);
+  transition: background 0.3s ease;
+}
+
+.sb-punto.activo {
+  background: var(--vk-primary-light);
+}
+
+.sb-lateral {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.5vh, 18px);
+  min-height: 0;
+}
+
+/* `min-height: 0` + `object-fit: contain`: el póster es vertical y muy alto,
+   y sin eso estiraba la columna hasta desbordar la pantalla. */
+.sb-poster {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  object-fit: contain;
+  border-radius: var(--r-lg);
+}
+
+/* El recuadro celeste que se sacó de Inicio: acá es donde tiene sentido, en
+   la pantalla que la gente mira mientras espera. */
+.sb-premios {
+  background: var(--vk-info-fondo);
+  border: 1px solid var(--vk-info-borde);
+  border-radius: var(--r-lg);
+  padding: clamp(10px, 1.5vh, 18px);
+  color: var(--vk-info);
+  flex-shrink: 0;
+}
+
+.sb-premios-hora {
+  margin: 0 0 4px;
+  font-size: clamp(0.95rem, 1.3vw, 1.35rem);
+  font-weight: var(--peso-bold);
+}
+
+.sb-premios-sub {
+  margin: 0;
+  font-size: clamp(0.75rem, 0.95vw, 1rem);
+  line-height: 1.4;
+}
+
+/* Pantalla angosta (alguien abre /scoreboard en el celular): el póster pasa
+   abajo en vez de comerse media pantalla de ancho. */
+@media (max-width: 760px) {
+  .sb-cuerpo {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sb-lateral {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .sb-poster {
+    max-height: 220px;
+  }
 }
 
 /* ── Responsive ──────────────────────────────────────────────────────── */
@@ -1440,8 +1746,14 @@ input[type='range']::-moz-range-thumb {
     gap: var(--sp-md);
   }
 
-  .nps {
-    grid-template-columns: repeat(4, 1fr);
+  /* En celular chico los diez botones quedan muy angostos para el número:
+     se achica la fuente y se apreta el gap, pero sigue siendo una sola fila. */
+  .escala-puntos {
+    gap: 3px;
+  }
+
+  .escala-puntos button {
+    font-size: var(--fs-body);
   }
 }
 

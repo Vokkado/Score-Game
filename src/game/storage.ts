@@ -10,6 +10,22 @@ const DB_NAME = 'vokkado-score-game';
 const DB_VERSION = 1;
 const STORE_GAMES = 'games';
 
+/**
+ * Las respuestas de la encuesta final. Las tres escalas van del 1 al 10 y hoy
+ * son obligatorias, pero el tipo las deja anulables porque **las partidas
+ * guardadas antes del 2026-08-14 no tienen `gusta` ni `utilidad`** — y el CSV
+ * y la tabla tienen que poder leerlas igual.
+ */
+export interface Survey {
+  /** Cuánto le gusta Vokkado. */
+  gusta: number | null;
+  /** Qué tan probable es que lo recomiende (el NPS de siempre). */
+  nps: number | null;
+  /** Qué tan útil le resulta la herramienta para nutricionistas. */
+  utilidad: number | null;
+  comentario: string;
+}
+
 export interface StoredGame {
   id: string;
   email: string;
@@ -22,7 +38,7 @@ export interface StoredGame {
   ms: number;
   playedAt: number;
   rounds: { productId: string; guess: number; realScore: number; points: number; ms: number }[];
-  survey: { nps: number | null; comentario: string } | null;
+  survey: Survey | null;
   /** false mientras no se haya confirmado la subida al backend. */
   synced: boolean;
 }
@@ -127,7 +143,9 @@ export function toCsv(games: StoredGame[]): string {
   // español igual que todo lo que se ve en el evento.
   const headers = [
     'nombre', 'apellido', 'correo', 'telefono', 'profesion', 'acepta_novedades',
-    'puntos', 'segundos', 'fecha', 'recomendacion_0_10', 'comentario', 'sincronizado',
+    'puntos', 'segundos', 'fecha',
+    'le_gusta_1_10', 'recomendacion_1_10', 'utilidad_1_10',
+    'comentario', 'sincronizado',
   ];
   const esc = (v: unknown) => {
     const s = String(v ?? '');
@@ -137,7 +155,8 @@ export function toCsv(games: StoredGame[]): string {
     [
       g.nombre, g.apellido, g.email, g.telefono, g.profesion, g.consent ? 'sí' : 'no',
       g.points, Math.round(g.ms / 1000), new Date(g.playedAt).toISOString(),
-      g.survey?.nps ?? '', g.survey?.comentario ?? '', g.synced ? 'sí' : 'no',
+      g.survey?.gusta ?? '', g.survey?.nps ?? '', g.survey?.utilidad ?? '',
+      g.survey?.comentario ?? '', g.synced ? 'sí' : 'no',
     ].map(esc).join(';'),
   );
   return '﻿' + headers.join(';') + '\n' + rows.join('\n') + '\n';

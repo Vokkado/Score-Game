@@ -1022,6 +1022,90 @@ Verificado también end-to-end en el navegador: dos partidas completas
 seguidas, 10 productos, 10 distintos, y la bolsa con 10 ids en `localStorage`.
 32 tests en verde.
 
+## 8q. Scoreboard, encuesta nueva y ruteo (2026-08-14)
+
+### La pantalla `/scoreboard`
+
+La idea del usuario: el juego en el iPad y, en **otra pantalla**, la tabla de
+posiciones puesta todo el día. Se creó `src/pantallas/Scoreboard.tsx`.
+
+- **Fondo verde de marca, tipografía en `clamp()` contra el viewport.** No
+  reusa `.pantalla`: esa pantalla no se mira a un brazo de distancia sino
+  desde el otro lado del pasillo, así que no comparte ni el ancho máximo ni la
+  escala tipográfica del juego.
+- **Dos columnas:** tabla a la izquierda, y a la derecha el póster
+  `PREMIOS (1).png` más el recuadro celeste con el horario de entrega — el
+  mismo que se sacó de Inicio.
+- **Se relee sola cada 4s.** IndexedDB no avisa cuando cambia, así que se
+  consulta por intervalo; el monitor queda puesto y nadie va a recargarlo.
+- **Rota de a 10 puestos cada 8s** cuando hay más jugadores. En una pantalla
+  que se mira todo el día, el que salió 14º también quiere verse; recortar en
+  un top 10 fijo era volver al problema de §8m.
+- **Atajo:** ícono de trofeo arriba a la derecha de la barra de marca en
+  Inicio (`.boton-trofeo`). Va en la barra y no en el cuerpo porque no es
+  parte del juego — lo usa el equipo, no quien viene a jugar.
+
+**Bug de layout encontrado midiendo, no a ojo.** Las filas eran `flex: 1` en
+una columna, así que **la última página estiraba sus filas para llenar el
+alto**: medido, 174px contra los 65px de la primera página, y al rotar la
+tabla parecía otra pantalla. Se cambió a una grilla con
+`grid-template-rows: repeat(var(--filas), minmax(0, 1fr))`, donde `--filas` lo
+fija React con el **total** de jugadores (no con los de la página actual). Una
+página incompleta ahora deja el hueco abajo y las filas miden siempre igual.
+`--filas` tiene un piso de 6 para el otro extremo: con dos jugadores a primera
+hora, dos filas de 400px de alto.
+
+### ⚠️ El scoreboard sólo ve las partidas de SU navegador
+
+Esto es lo que hay que saber antes del evento: los datos viven en el
+IndexedDB del dispositivo (`storage.ts`). **Si `/scoreboard` se abre en otra
+computadora, la tabla aparece vacía.** Hoy funciona como segunda ventana o
+segundo monitor de la MISMA máquina que corre el juego. Para ponerlo en un
+dispositivo aparte hace falta el backend de sync de la fase 2 — es la misma
+dependencia que ya tenía anotada la pantalla `/tv` en §9.
+
+### Ruteo, sin librería
+
+`useRuta()` en `App.tsx`: lee `location.pathname`, escucha `popstate` y navega
+con `history.pushState`. Un router entero pesaría en el bundle más que todo lo
+que resuelve para **una** ruta. El scoreboard se evalúa antes que la máquina
+de estados del juego, así que entra directo aunque `products.json` no haya
+cargado.
+
+**Necesita que el hosting devuelva `index.html` para cualquier ruta**, si no
+`/scoreboard` da 404 al entrar directo o al recargar. Se agregó `vercel.json`
+con el rewrite. Los archivos estáticos siguen sirviéndose primero: en Vercel
+los `rewrites` corren después del filesystem, así que `products.json` y las
+imágenes no se ven afectados. En dev, Vite ya hace ese fallback solo.
+
+### La encuesta
+
+De dos preguntas a cuatro, **todas obligatorias**, y se sacó el botón
+"Prefiero no contestar" (pedido del usuario). Tres escalas del 1 al 10 —cuánto
+le gusta Vokkado, si lo recomendaría, qué tan útil le resulta la herramienta—
+y un comentario. Más un aviso celeste con `contact@vokkado.com`.
+
+**La escala dejó de ser una grilla.** Era `repeat(6, 1fr)`: envolvía en dos
+renglones con el 10 debajo del 0, y eso se lee como un teclado numérico, no
+como una escala de poco a mucho. Ahora es una fila de diez que se reparten el
+ancho (`flex: 1 1 0` + `min-width: 0`, que es lo que habilita encogerse por
+debajo del ancho del contenido) con alto fijo de 48px para sostener el área
+táctil. Medido: 72px por botón a 834px de ancho y **29px a 375px, todavía en
+una sola fila y sin desbordar**.
+
+`survey` pasó de `{ nps, comentario }` a `{ gusta, nps, utilidad, comentario }`.
+Los tres números quedan **anulables en el tipo** aunque hoy sean obligatorios:
+las partidas guardadas antes de este cambio no tienen `gusta` ni `utilidad`, y
+el CSV tiene que poder leerlas igual. Las columnas del CSV pasaron a
+`le_gusta_1_10`, `recomendacion_1_10`, `utilidad_1_10`.
+
+Verificado end-to-end: `/scoreboard` entra por URL directa y por el trofeo,
+lista 14 jugadores sembrados rotando entre dos páginas con el alto de fila
+constante en 65px, el póster carga y nada se sale de 1440×900; la encuesta
+vacía marca las cuatro preguntas y no avanza; completada, en IndexedDB quedó
+`{gusta: 9, nps: 10, utilidad: 7, comentario: "…"}`. 32 tests en verde y build
+limpio.
+
 ## 9. Dónde retomar
 
 **Orden acordado con el usuario (2026-08-13): primero todas las pantallas del
@@ -1033,13 +1117,13 @@ estable.
 
 ### Fase 1 — Pantallas (en curso)
 
-1. **Resultado y Encuesta.** Inicio ✅ (§8b-8j), Registro ✅ (§8k), Jugada ✅
-   (§8l) y Feedback ✅ (§8n); la tabla de posiciones de Inicio y Resultado, en
-   §8m. Comodín se pulió (§8o) y después se eliminó junto con el alcohol
-   (§8p) — el juego quedó en **seis** pantallas. Las dos que faltan siguen
-   con el diseño del branding pass general — mismos tokens, pero sin el mismo
-   nivel de pulido de copy/interacción. La pantalla de "gracias" sigue
-   hardcodeada dentro de `App.tsx`, sin encabezado de marca y sin auto-reset.
+1. **Resultado.** Inicio ✅ (§8b-8j), Registro ✅ (§8k), Jugada ✅ (§8l),
+   Feedback ✅ (§8n) y Encuesta ✅ (§8q); la tabla de posiciones de Inicio y
+   Resultado, en §8m; el scoreboard del monitor, en §8q. Comodín se pulió
+   (§8o) y después se eliminó junto con el alcohol (§8p). **Falta Resultado**,
+   que sigue con el diseño del branding pass general. Y la pantalla de
+   "gracias" sigue hardcodeada dentro de `App.tsx`, sin encabezado de marca y
+   sin auto-reset.
 2. **Revisión humana de `revision.csv`** — marcar la columna `ok` y decidir
    sobre las marcas que no se reconozcan. Es lo único que no puedo hacer yo.
 3. Decidir sobre las Gomitas Mogul (§6.4).

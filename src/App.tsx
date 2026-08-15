@@ -9,6 +9,7 @@ import {
   type StoredGame,
 } from './game/storage';
 import { Registro, BORRADOR_VACIO, type Borrador } from './pantallas/Registro';
+import { Scoreboard } from './pantallas/Scoreboard';
 import { Jugada } from './pantallas/Jugada';
 import { Feedback } from './pantallas/Feedback';
 import { Resultado } from './pantallas/Resultado';
@@ -25,7 +26,37 @@ type Fase =
   | { t: 'encuesta' }
   | { t: 'gracias' };
 
+/** La única ruta que existe además del juego. */
+const RUTA_SCOREBOARD = '/scoreboard';
+
+/**
+ * Ruteo mínimo, sin librería: el juego tiene una sola pantalla aparte. Un
+ * router entero acá sería más peso en el bundle que viaja al iPad que todo lo
+ * que resuelve. `popstate` cubre el botón de atrás del navegador.
+ *
+ * En producción esto necesita que el hosting devuelva `index.html` para
+ * cualquier ruta, si no `/scoreboard` da 404 al entrar directo o al recargar:
+ * de eso se ocupa `vercel.json`.
+ */
+function useRuta(): [string, (r: string) => void] {
+  const [ruta, setRuta] = useState(() => window.location.pathname.replace(/\/+$/, '') || '/');
+
+  useEffect(() => {
+    const alVolver = () => setRuta(window.location.pathname.replace(/\/+$/, '') || '/');
+    window.addEventListener('popstate', alVolver);
+    return () => window.removeEventListener('popstate', alVolver);
+  }, []);
+
+  const ir = (destino: string) => {
+    window.history.pushState({}, '', destino);
+    setRuta(destino);
+  };
+
+  return [ruta, ir];
+}
+
 export function App() {
+  const [ruta, ir] = useRuta();
   const [pool, setPool] = useState<Product[]>([]);
   const [fase, setFase] = useState<Fase>({ t: 'cargando' });
   const [player, setPlayer] = useState<Player | null>(null);
@@ -107,6 +138,13 @@ export function App() {
     setFase({ t: 'gracias' });
   };
 
+  // El scoreboard va antes que todo: no depende del pool ni de la fase del
+  // juego, sólo lee las partidas guardadas. Así entra directo aunque
+  // `products.json` todavía no haya cargado.
+  if (ruta === RUTA_SCOREBOARD) {
+    return <Scoreboard onVolver={() => ir('/')} />;
+  }
+
   if (fase.t === 'cargando') {
     return (
       <div className="pantalla">
@@ -116,7 +154,12 @@ export function App() {
   }
 
   if (fase.t === 'inicio') {
-    return <Inicio onEmpezar={() => setFase({ t: 'registro' })} />;
+    return (
+      <Inicio
+        onEmpezar={() => setFase({ t: 'registro' })}
+        onScoreboard={() => ir(RUTA_SCOREBOARD)}
+      />
+    );
   }
 
   if (fase.t === 'registro') {
