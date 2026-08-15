@@ -1472,21 +1472,10 @@ input[type='range']::-moz-range-thumb {
   transition: background 0.15s ease, border-color 0.15s ease;
 }
 
-/* Dos colores fijos, sin degradé y sin cambios de tamaño: los botones hasta el
-   elegido en verde claro y el elegido en el verde fuerte. Antes cada botón
-   tenía su propia intensidad y el elegido se agrandaba — demasiado ruido para
-   una respuesta de un toque. */
-.escala-puntos button.lleno {
-  background: var(--vk-primary-light);
-  border-color: var(--vk-primary-light);
-  color: var(--vk-titulo);
-}
-
-.escala-puntos button.elegido {
-  background: var(--vk-primary-dark);
-  border-color: var(--vk-primary-dark);
-  color: var(--vk-friendly-white);
-}
+/* El color de los botones hasta el elegido es un degradé (CLARO → OSCURO en
+   EscalaPuntos.tsx), calculado en JS e inyectado como style inline — no hay
+   nada que fijar acá aparte de la transición de arriba, que ya cubre los
+   cambios de background/border-color vengan de clase o de style. */
 
 /* ── Gracias (cierre de la partida) ──────────────────────────────────── */
 

@@ -20,17 +20,34 @@ interface Props {
 
 const VALORES = Array.from({ length: 10 }, (_, i) => i + 1);
 
+// Mismos tonos que --vk-primary-light / --vk-primary-dark en theme.css. En
+// hex acá (no CSS vars) porque hace falta interpolar en JS, no sólo elegir
+// entre dos valores fijos.
+const CLARO = { r: 0xb8, g: 0xc4, b: 0x45 };
+const OSCURO = { r: 0x22, g: 0x52, b: 0x1d };
+
 /**
- * Se llenan todos los botones hasta el elegido, **todos del mismo verde
- * claro**, y el elegido en el verde fuerte.
- *
- * La primera versión usaba un degradé con una intensidad distinta por botón:
- * se leía exagerado, diez tonos para una sola respuesta. Dos colores fijos
- * alcanzan para lo mismo — se ve hasta dónde llegaste y cuál elegiste.
+ * Color de fondo de cada botón hasta el elegido: degradé parejo entre
+ * CLARO (posición 1) y OSCURO (la posición elegida, sea cual sea), no un
+ * salto de dos colores fijos — así se ve de un vistazo qué tan lejos del
+ * elegido está cada botón, no sólo "llegó o no llegó".
  */
-function claseDe(v: number, valor: number | null): string {
-  if (valor === null || v > valor) return '';
-  return v === valor ? 'elegido' : 'lleno';
+function colorDe(v: number, valor: number): string {
+  const t = valor > 1 ? (v - 1) / (valor - 1) : 1;
+  const r = Math.round(CLARO.r + (OSCURO.r - CLARO.r) * t);
+  const g = Math.round(CLARO.g + (OSCURO.g - CLARO.g) * t);
+  const b = Math.round(CLARO.b + (OSCURO.b - CLARO.b) * t);
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
+/** Texto blanco una vez que el fondo interpolado se pone lo bastante oscuro. */
+function textoClaroSobre(v: number, valor: number): boolean {
+  const t = valor > 1 ? (v - 1) / (valor - 1) : 1;
+  const luminancia =
+    0.299 * (CLARO.r + (OSCURO.r - CLARO.r) * t) +
+    0.587 * (CLARO.g + (OSCURO.g - CLARO.g) * t) +
+    0.114 * (CLARO.b + (OSCURO.b - CLARO.b) * t);
+  return luminancia < 140;
 }
 
 export function EscalaPuntos({
@@ -47,18 +64,30 @@ export function EscalaPuntos({
       <label>{label}</label>
 
       <div className="escala-puntos" role="radiogroup" aria-label={label}>
-        {VALORES.map((v) => (
-          <button
-            key={v}
-            type="button"
-            className={claseDe(v, valor)}
-            onClick={() => onElegir(v)}
-            role="radio"
-            aria-checked={valor === v}
-          >
-            {v}
-          </button>
-        ))}
+        {VALORES.map((v) => {
+          const lleno = valor !== null && v <= valor;
+          const color = lleno ? colorDe(v, valor!) : undefined;
+          return (
+            <button
+              key={v}
+              type="button"
+              onClick={() => onElegir(v)}
+              role="radio"
+              aria-checked={valor === v}
+              style={
+                lleno
+                  ? {
+                      background: color,
+                      borderColor: color,
+                      color: textoClaroSobre(v, valor!) ? 'var(--vk-friendly-white)' : 'var(--vk-titulo)',
+                    }
+                  : undefined
+              }
+            >
+              {v}
+            </button>
+          );
+        })}
       </div>
 
       <div className="escala">
