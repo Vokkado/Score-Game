@@ -149,11 +149,18 @@ export function App() {
       survey,
       synced: false,
     };
+    // Local primero, siempre: si el intento de subida de abajo falla o no hay
+    // red, el juego ya quedó a salvo acá y el reintento pendiente de App (al
+    // volver a abrir la app) lo termina de subir solo.
     await saveGame(game);
-    setFase({ t: 'gracias' }); // no espera al backend: offline-first no negociable
-    syncGame(game).then((ok) => {
-      if (ok) markSynced(game.id);
-    });
+    // Ahora sí espera la subida antes de pasar de pantalla — es lo que
+    // mantiene visible el botón "Guardando…" en vez de tapar la espera.
+    // `syncGame` nunca cuelga: tiene su propio timeout (6s) y no lanza, así
+    // que en wifi mala el peor caso es 6s de loader y seguir sin conexión,
+    // no una pantalla trabada.
+    const subido = await syncGame(game);
+    if (subido) await markSynced(game.id);
+    setFase({ t: 'gracias' });
   };
 
   // El scoreboard va antes que todo: no depende del pool ni de la fase del
