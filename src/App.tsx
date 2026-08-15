@@ -6,8 +6,11 @@ import {
   findByEmail,
   leerBolsa,
   guardarBolsa,
+  pendingSync,
+  markSynced,
   type StoredGame,
 } from './game/storage';
+import { syncGame } from './game/sync';
 import { Registro, BORRADOR_VACIO, type Borrador } from './pantallas/Registro';
 import { Scoreboard } from './pantallas/Scoreboard';
 import { Jugada } from './pantallas/Jugada';
@@ -81,6 +84,18 @@ export function App() {
       .catch(() => setFase({ t: 'cargando' }));
   }, []);
 
+  // Reintenta lo que quedó pendiente de una sesión anterior sin red. Secuencial,
+  // no Promise.all: si hubo un apagón largo la cola puede ser grande, y no
+  // conviene abrir muchas conexiones a la vez sobre wifi débil de evento.
+  useEffect(() => {
+    (async () => {
+      const pendientes = await pendingSync();
+      for (const g of pendientes) {
+        if (await syncGame(g)) await markSynced(g.id);
+      }
+    })();
+  }, []);
+
   const empezar = (p: Player) => {
     // La bolsa vive fuera de React (localStorage): tiene que sobrevivir a que
     // alguien recargue la app en pleno evento, no sólo a la partida.
@@ -135,7 +150,10 @@ export function App() {
       synced: false,
     };
     await saveGame(game);
-    setFase({ t: 'gracias' });
+    setFase({ t: 'gracias' }); // no espera al backend: offline-first no negociable
+    syncGame(game).then((ok) => {
+      if (ok) markSynced(game.id);
+    });
   };
 
   // El scoreboard va antes que todo: no depende del pool ni de la fase del

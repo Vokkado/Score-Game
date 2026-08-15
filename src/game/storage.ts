@@ -134,6 +134,28 @@ export async function pendingSync(): Promise<StoredGame[]> {
   return games.filter((g) => !g.synced);
 }
 
+export async function markSynced(id: string): Promise<void> {
+  const db = await openDb();
+  return new Promise((resolve, reject) => {
+    const t = db.transaction(STORE_GAMES, 'readwrite');
+    const store = t.objectStore(STORE_GAMES);
+    const req = store.get(id);
+    req.onsuccess = () => {
+      const game = req.result as StoredGame | undefined;
+      if (game) {
+        game.synced = true;
+        store.put(game);
+      }
+    };
+    req.onerror = () => reject(req.error);
+    t.oncomplete = () => {
+      db.close();
+      resolve();
+    };
+    t.onerror = () => reject(t.error);
+  });
+}
+
 /**
  * Exporta todo a CSV. Es la red de seguridad del evento: si el iPad se resetea
  * o IndexedDB se vacía, lo único que queda son los CSV que se hayan bajado.

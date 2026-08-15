@@ -9,6 +9,7 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "test": "vitest run",
+    "db:apply": "node scripts/run-sql.js",
     "curate": "node scripts/curate-products.js",
     "images": "node scripts/download-images.js",
     "data": "node scripts/merge-justifications.js && node scripts/build-review.js"
