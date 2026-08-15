@@ -9,7 +9,6 @@ import {
   rankPlayers,
   totalPoints,
   shuffle,
-  partirNombre,
   MAX_POINTS_PER_ROUND,
   ROUNDS_PER_GAME,
   type Product,
@@ -200,31 +199,6 @@ describe('shuffle', () => {
     const arr = [1, 2, 3, 4, 5];
     shuffle(arr);
     expect(arr).toEqual([1, 2, 3, 4, 5]);
-  });
-});
-
-describe('partirNombre', () => {
-  it('parte por el primer espacio', () => {
-    expect(partirNombre('Ana Pérez')).toEqual({ nombre: 'Ana', apellido: 'Pérez' });
-  });
-
-  it('el apellido doble queda entero', () => {
-    expect(partirNombre('Ana Rodríguez Pérez')).toEqual({
-      nombre: 'Ana',
-      apellido: 'Rodríguez Pérez',
-    });
-  });
-
-  it('sin apellido devuelve el apellido vacío, no el nombre repetido', () => {
-    expect(partirNombre('Ana')).toEqual({ nombre: 'Ana', apellido: '' });
-  });
-
-  it('normaliza espacios de más y de los bordes', () => {
-    expect(partirNombre('  Ana   Pérez  ')).toEqual({ nombre: 'Ana', apellido: 'Pérez' });
-  });
-
-  it('con la cadena vacía no rompe', () => {
-    expect(partirNombre('   ')).toEqual({ nombre: '', apellido: '' });
   });
 });
 

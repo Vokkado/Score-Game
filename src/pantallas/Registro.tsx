@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import type { Player } from '../game/engine';
-import { partirNombre } from '../game/engine';
 import type { StoredGame } from '../game/storage';
 import { Campo } from '../componentes/Campo';
 import { Casilla } from '../componentes/Casilla';
@@ -8,13 +7,16 @@ import { Encabezado } from '../componentes/Encabezado';
 import { Info } from '../componentes/Iconos';
 
 /**
- * Lo que la persona escribe, que ya no es igual a lo que se guarda: el
- * formulario pide el nombre completo en un solo campo y `Player` sigue
- * teniendo `nombre` y `apellido` separados, porque así los espera el CSV que
- * exporta el admin y el schema de la base que va en la fase 2.
+ * Nombre y apellido van en campos separados, igual que `Player` — antes eran
+ * un solo campo de texto libre partido por `partirNombre()`, pero el backend
+ * exige `apellido` como obligatorio y ese esquema dejaba pasar nombres sin
+ * apellido (alguien escribe "Ana" sin espacio) que el frontend aceptaba y el
+ * backend rechazaba en silencio al sincronizar — la partida quedaba guardada
+ * local para siempre sin que nadie se enterara de que nunca llegó a la base.
  */
 export interface Borrador {
-  nombreCompleto: string;
+  nombre: string;
+  apellido: string;
   email: string;
   telefono: string;
   profesion: string;
@@ -23,7 +25,8 @@ export interface Borrador {
 
 /** Formulario en blanco. Vive acá porque App lo usa para limpiar el borrador. */
 export const BORRADOR_VACIO: Borrador = {
-  nombreCompleto: '',
+  nombre: '',
+  apellido: '',
   email: '',
   telefono: '',
   profesion: '',
@@ -47,21 +50,22 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 /** Mínimo de dígitos de un teléfono uruguayo (fijo 8, celular 9). */
 const MIN_DIGITOS_TEL = 8;
 
-type CampoId = 'nombreCompleto' | 'email' | 'telefono' | 'profesion';
+type CampoId = 'nombre' | 'apellido' | 'email' | 'telefono' | 'profesion';
 
-const ORDEN: CampoId[] = ['nombreCompleto', 'email', 'profesion', 'telefono'];
+const ORDEN: CampoId[] = ['nombre', 'apellido', 'email', 'profesion', 'telefono'];
 
 type Errores = Partial<Record<CampoId, string>>;
 
-/** Todos los campos son obligatorios: no queda ninguno opcional. */
+/**
+ * Todos los campos son obligatorios, apellido incluido: el backend lo exige
+ * (`apellido es requerido`, 400), así que dejarlo pasar vacío acá sólo
+ * pospone el rechazo hasta el sync — donde falla en silencio.
+ */
 function validar(v: Borrador): Errores {
   const e: Errores = {};
 
-  // Sólo que haya escrito algo. **No se exige apellido**: en un stand la gente
-  // pone lo que quiere —un nombre solo, un apodo— y trabar el formulario por
-  // eso es perder a la persona por una regla que no le importa a nadie.
-  // `partirNombre` ya devuelve el apellido vacío y la tabla lo contempla.
-  if (!v.nombreCompleto.trim()) e.nombreCompleto = 'Escribí tu nombre';
+  if (!v.nombre.trim()) e.nombre = 'Escribí tu nombre';
+  if (!v.apellido.trim()) e.apellido = 'Escribí tu apellido';
 
   if (!v.email.trim()) e.email = 'Escribí tu correo';
   else if (!EMAIL_RE.test(v.email.trim())) e.email = 'Ese correo no parece válido';
@@ -122,10 +126,9 @@ export function Registro({ valores, onCambiar, onListo, onVolver, yaJugo }: Prop
         document.getElementById('email')?.focus();
         return;
       }
-      const { nombre, apellido } = partirNombre(valores.nombreCompleto);
       onListo({
-        nombre,
-        apellido,
+        nombre: valores.nombre.trim(),
+        apellido: valores.apellido.trim(),
         email: valores.email.trim().toLowerCase(),
         telefono: valores.telefono.trim(),
         profesion: valores.profesion.trim(),
@@ -153,14 +156,25 @@ export function Registro({ valores, onCambiar, onListo, onVolver, yaJugo }: Prop
             una sola cosa y no como cuatro controles sueltos sobre el fondo. */}
         <div className="tarjeta-formulario">
           <Campo
-            id="nombreCompleto"
-            label="Nombre y apellido"
-            placeholder="Ana Pérez"
-            value={valores.nombreCompleto}
-            onChange={(e) => set('nombreCompleto', e.target.value)}
-            onBlur={() => setTocado((t) => ({ ...t, nombreCompleto: true }))}
-            autoComplete="name"
-            error={errorDe('nombreCompleto')}
+            id="nombre"
+            label="Nombre"
+            placeholder="Ana"
+            value={valores.nombre}
+            onChange={(e) => set('nombre', e.target.value)}
+            onBlur={() => setTocado((t) => ({ ...t, nombre: true }))}
+            autoComplete="given-name"
+            error={errorDe('nombre')}
+          />
+
+          <Campo
+            id="apellido"
+            label="Apellido"
+            placeholder="Pérez"
+            value={valores.apellido}
+            onChange={(e) => set('apellido', e.target.value)}
+            onBlur={() => setTocado((t) => ({ ...t, apellido: true }))}
+            autoComplete="family-name"
+            error={errorDe('apellido')}
           />
 
           <Campo

@@ -41,28 +41,6 @@ export interface Round {
   ms: number;
 }
 
-/**
- * Parte el nombre completo por el **primer** espacio: la primera palabra es el
- * nombre y todo el resto el apellido.
- *
- * El formulario pide el nombre en un solo campo, pero `Player` los guarda
- * separados porque así los espera el CSV que exporta el admin y el schema de
- * la base de la fase 2.
- *
- * Es la lectura literal de "Nombre y apellido", y la que mejor funciona acá:
- * los apellidos dobles son comunes ("Ana Rodríguez Pérez" → Ana / Rodríguez
- * Pérez, y la tabla muestra "Ana R."). El caso que no resuelve bien es el
- * nombre compuesto ("María del Carmen Pérez" → María / del Carmen Pérez, y la
- * tabla muestra "María d."): se pierde prolijidad, no el dato — el nombre
- * completo se reconstruye siempre juntando las dos columnas del CSV.
- */
-export function partirNombre(completo: string): { nombre: string; apellido: string } {
-  const limpio = completo.trim().replace(/\s+/g, ' ');
-  const corte = limpio.indexOf(' ');
-  if (corte === -1) return { nombre: limpio, apellido: '' };
-  return { nombre: limpio.slice(0, corte), apellido: limpio.slice(corte + 1) };
-}
-
 /** Cuántos productos tiene una partida. */
 export const ROUNDS_PER_GAME = 5;
 
