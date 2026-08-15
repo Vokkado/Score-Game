@@ -3,9 +3,13 @@ import type { LeaderboardEntry } from './engine';
 
 const TIMEOUT_MS = 6000; // wifi de evento: no vale la pena esperar más antes de resignarse
 // Esto sí bloquea lo que se ve en pantalla (la tabla no se pinta hasta que
-// resuelve), a diferencia de syncGame que corre en segundo plano. Un timeout
-// largo acá se siente como que el juego se colgó.
-const TIMEOUT_LECTURA_MS = 3000;
+// resuelve), a diferencia de syncGame que corre en segundo plano. Antes eran
+// 3s: con wifi de evento eso cortaba antes de tiempo y hacía caer a la tabla
+// local (que puede tener datos viejos de pruebas en ese navegador) más
+// seguido de lo necesario. 6s, igual que el timeout de escritura, sigue
+// siendo corto para no sentirse colgado pero le da más margen a la red del
+// stand antes de resignarse.
+const TIMEOUT_LECTURA_MS = 6000;
 
 /**
  * Intenta subir una partida al backend. Falla en silencio ante cualquier
