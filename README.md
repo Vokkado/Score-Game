@@ -136,8 +136,8 @@ data/
   breakdowns.json     Desglose crudo de los 8 pasos del motor
   justifications.json Los párrafos escritos a mano, uno por producto
 public/
-  products/           Las 100 imágenes (no versionadas, se regeneran)
-  *.json              Copias que sirve Vite; la fuente es data/
+  products/           Las 100 imágenes, versionadas para que el deploy no dependa de correr scripts
+  *.json              Copias que sirve Vite; la fuente es data/, versionadas por el mismo motivo
 scripts/
   curate-products.js      Selección con filtros + cuotas + imprescindibles
   download-images.js      Bajada de imágenes desde S3
@@ -166,6 +166,11 @@ Todo es de sólo lectura sobre la base. Ningún script escribe en producción.
 **Ojo:** `merge-justifications.js` valida que cada párrafo caiga en el producto
 correcto y falla si la curación cambió el orden. Si eso pasa hay que reescribir
 los párrafos afectados en `justifications.json`, no forzar el merge.
+
+`public/products/` y `public/products.json` están versionados en git (a
+propósito: así el deploy no depende de correr nada). Si regenerás el pool,
+estos comandos los sobrescriben en el disco — no te olvides de commitear el
+resultado, si no el deploy va a seguir sirviendo el pool viejo.
 
 ## Comparar dos productos
 
