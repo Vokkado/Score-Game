@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { rankPlayers, type LeaderboardEntry } from '../game/engine';
-import { allGames } from '../game/storage';
+import type { LeaderboardEntry } from '../game/engine';
+import { cargarTabla } from '../game/leaderboard';
 import { TablaPosiciones } from '../componentes/TablaPosiciones';
 import { ChevronIzquierda, Trofeo } from '../componentes/Iconos';
 import logo from '../assets/icon.png';
@@ -17,11 +17,10 @@ import poster from '../assets/PREMIOS (1).png';
  * cada vez que se tocara una. Lo único que agrega el scoreboard es la
  * paginación, vía la prop `desde`.
  *
- * ⚠️ **Sólo ve las partidas del navegador donde corre.** Los datos viven en el
- * IndexedDB del dispositivo (ver `storage.ts`): si esto se abre en otra
- * computadora, la tabla aparece vacía. Hoy funciona como segunda ventana o
- * segundo monitor de la MISMA máquina que tiene el juego. Para ponerlo en un
- * dispositivo aparte hace falta el backend de sync de la fase 2.
+ * Lee la tabla vía `cargarTabla()` (DB primero, IndexedDB local si no hay
+ * red), así que ya puede vivir en un dispositivo distinto al del juego. Si el
+ * monitor pierde la conexión al backend, cae a mostrar sólo lo jugado en su
+ * propio navegador — mejor eso que una pantalla vacía.
  */
 
 /** Cada cuánto se relee IndexedDB. No hay eventos de cambio entre pestañas. */
@@ -46,21 +45,7 @@ export function Scoreboard({ onVolver }: { onVolver: () => void }) {
 
   // Relee sola: el monitor queda puesto y nadie va a recargarlo entre partidas.
   useEffect(() => {
-    const leer = () =>
-      allGames().then((partidas) =>
-        setTabla(
-          rankPlayers(
-            partidas.map((p) => ({
-              email: p.email,
-              nombre: p.nombre,
-              apellido: p.apellido,
-              points: p.points,
-              ms: p.ms,
-              playedAt: p.playedAt,
-            })),
-          ),
-        ),
-      );
+    const leer = () => cargarTabla().then(setTabla);
     leer();
     const id = setInterval(leer, REFRESCO_MS);
     return () => clearInterval(id);

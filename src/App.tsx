@@ -220,6 +220,7 @@ export function App() {
       <Resultado
         rounds={rounds}
         player={player!}
+        gameId={gameId}
         onSeguir={() => setFase({ t: 'encuesta' })}
       />
     );

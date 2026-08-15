@@ -21,8 +21,8 @@ import type { LeaderboardEntry } from '../game/engine';
 
 interface Props {
   entradas: LeaderboardEntry[];
-  /** Email del jugador actual, para resaltar su fila. */
-  emailPropio?: string;
+  /** Id de la partida del jugador actual, para resaltar su fila. */
+  idPropio?: string;
   titulo?: string;
   /**
    * Puesto del primer elemento de `entradas`, menos uno. Sólo lo usa el
@@ -34,7 +34,7 @@ interface Props {
 
 export function TablaPosiciones({
   entradas,
-  emailPropio,
+  idPropio,
   titulo = 'Tabla de posiciones',
   desde = 0,
 }: Props) {
@@ -51,10 +51,10 @@ export function TablaPosiciones({
         <div className="lista-posiciones">
           {entradas.map((e, i) => (
             <Fila
-              key={e.email}
+              key={e.id}
               puesto={desde + i + 1}
               entrada={e}
-              esPropio={e.email === emailPropio}
+              esPropio={e.id === idPropio}
             />
           ))}
         </div>

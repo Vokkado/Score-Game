@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { rankPlayers, type LeaderboardEntry } from '../game/engine';
-import { allGames } from '../game/storage';
+import type { LeaderboardEntry } from '../game/engine';
+import { cargarTabla } from '../game/leaderboard';
 import { TablaPosiciones } from '../componentes/TablaPosiciones';
 import { EncabezadoMarca } from '../componentes/EncabezadoMarca';
 import { EjemploInteractivo } from '../componentes/EjemploInteractivo';
@@ -14,22 +14,11 @@ export function Inicio({ onEmpezar, onScoreboard }: Props) {
   const [tabla, setTabla] = useState<LeaderboardEntry[]>([]);
 
   // La tabla se lee en cada vuelta al inicio: entre partida y partida cambia,
-  // y es lo que engancha a quien está mirando desde afuera del stand.
+  // y es lo que engancha a quien está mirando desde afuera del stand. Primero
+  // intenta la base (ve lo jugado en todos los dispositivos); si no hay red,
+  // cae sola a lo guardado en este navegador.
   useEffect(() => {
-    allGames().then((partidas) =>
-      setTabla(
-        rankPlayers(
-          partidas.map((p) => ({
-            email: p.email,
-            nombre: p.nombre,
-            apellido: p.apellido,
-            points: p.points,
-            ms: p.ms,
-            playedAt: p.playedAt,
-          })),
-        ),
-      ),
-    );
+    cargarTabla().then(setTabla);
   }, []);
 
   return (

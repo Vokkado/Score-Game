@@ -146,8 +146,8 @@ describe('pickRound', () => {
 });
 
 describe('rankPlayers', () => {
-  const entry = (email: string, points: number, ms: number, playedAt: number): LeaderboardEntry => ({
-    email,
+  const entry = (id: string, points: number, ms: number, playedAt: number): LeaderboardEntry => ({
+    id,
     nombre: 'N',
     apellido: 'A',
     points,
@@ -157,23 +157,23 @@ describe('rankPlayers', () => {
 
   it('ordena por puntos descendente', () => {
     const r = rankPlayers([entry('a', 300, 1000, 1), entry('b', 450, 9000, 2)]);
-    expect(r[0].email).toBe('b');
+    expect(r[0].id).toBe('b');
   });
 
   it('desempata por tiempo total', () => {
     const r = rankPlayers([entry('lento', 400, 9000, 1), entry('rapido', 400, 3000, 2)]);
-    expect(r[0].email).toBe('rapido');
+    expect(r[0].id).toBe('rapido');
   });
 
   it('desempata por orden de llegada cuando puntos y tiempo son iguales', () => {
     const r = rankPlayers([entry('segundo', 400, 5000, 99), entry('primero', 400, 5000, 1)]);
-    expect(r[0].email).toBe('primero');
+    expect(r[0].id).toBe('primero');
   });
 
   it('no muta el array original', () => {
     const original = [entry('a', 100, 1, 1), entry('b', 500, 1, 2)];
     rankPlayers(original);
-    expect(original[0].email).toBe('a');
+    expect(original[0].id).toBe('a');
   });
 });
 

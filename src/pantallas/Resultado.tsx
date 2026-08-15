@@ -1,16 +1,18 @@
 import { useEffect, useState } from 'react';
 import type { Player, Round } from '../game/engine';
 import { totalPoints, totalMs, rankPlayers, MAX_TOTAL, type LeaderboardEntry } from '../game/engine';
-import { allGames } from '../game/storage';
+import { cargarTabla } from '../game/leaderboard';
 import { TablaPosiciones } from '../componentes/TablaPosiciones';
 
 interface Props {
   rounds: Round[];
   player: Player;
+  /** Id de la partida en curso — todavía no está guardada ni sincronizada. */
+  gameId: string;
   onSeguir: () => void;
 }
 
-export function Resultado({ rounds, player, onSeguir }: Props) {
+export function Resultado({ rounds, player, gameId, onSeguir }: Props) {
   const puntos = totalPoints(rounds);
   const ms = totalMs(rounds);
   const [tabla, setTabla] = useState<LeaderboardEntry[]>([]);
@@ -18,28 +20,20 @@ export function Resultado({ rounds, player, onSeguir }: Props) {
   // La partida actual todavía no está guardada (se guarda al final de la
   // encuesta), así que se la agrega a mano para mostrar el puesto real.
   useEffect(() => {
-    allGames().then((games) => {
+    cargarTabla().then((previas) => {
       const mia: LeaderboardEntry = {
-        email: player.email,
+        id: gameId,
         nombre: player.nombre,
         apellido: player.apellido,
         points: puntos,
         ms,
         playedAt: Date.now(),
       };
-      const previas = games.map((g) => ({
-        email: g.email,
-        nombre: g.nombre,
-        apellido: g.apellido,
-        points: g.points,
-        ms: g.ms,
-        playedAt: g.playedAt,
-      }));
       setTabla(rankPlayers([...previas, mia]));
     });
-  }, [player, puntos, ms]);
+  }, [player, puntos, ms, gameId]);
 
-  const puesto = tabla.findIndex((e) => e.email === player.email) + 1;
+  const puesto = tabla.findIndex((e) => e.id === gameId) + 1;
   const aciertos = rounds.filter((r) => r.points >= 80).length;
 
   return (
@@ -69,7 +63,7 @@ export function Resultado({ rounds, player, onSeguir }: Props) {
 
       <div className="separador-tabla" />
 
-      <TablaPosiciones entradas={tabla} emailPropio={player.email} />
+      <TablaPosiciones entradas={tabla} idPropio={gameId} />
     </div>
   );
 }

@@ -265,7 +265,10 @@ export function totalMs(rounds: Round[]): number {
 }
 
 export interface LeaderboardEntry {
-  email: string;
+  // Antes era `email`: la tabla puede venir del backend público (sin auth) y
+  // el correo no tiene que viajar ahí, ni como key de React ni para resaltar
+  // la fila propia. `id` es el mismo en IndexedDB y en event_game.players.
+  id: string;
   nombre: string;
   apellido: string;
   points: number;
