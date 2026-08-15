@@ -13,12 +13,10 @@ build/
 .env.*
 !.env.example
 
-# Imágenes de productos: se regeneran con scripts/download-images.js
-# (~13MB desde S3, no tiene sentido versionarlas)
-public/products/
-
-# Copias de los datos para que Vite las sirva; la fuente es data/
-public/products.json
+# public/products/ y public/products.json se versionan a propósito: así el
+# deploy en Vercel no depende de correr scripts/download-images.js ni
+# merge-justifications.js a mano. Regenerarlos: npm run images && node
+# scripts/merge-justifications.js, y commitear el resultado.
 public/wildcards.json
 
 # Salidas intermedias de la curación (regenerables con los scripts)
