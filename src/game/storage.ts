@@ -12,17 +12,18 @@ const STORE_GAMES = 'games';
 
 /**
  * Las respuestas de la encuesta final. Las tres escalas van del 1 al 10 y hoy
- * son obligatorias, pero el tipo las deja anulables porque **las partidas
- * guardadas antes del 2026-08-14 no tienen `gusta` ni `utilidad`** — y el CSV
- * y la tabla tienen que poder leerlas igual.
+ * son obligatorias, pero el tipo las deja anulables: las preguntas cambiaron
+ * de forma dos veces el 2026-08-14 (§8q y §8r), y una partida guardada con el
+ * juego de la mañana no tiene estos campos. El CSV las tiene que poder leer
+ * igual, con la celda vacía.
  */
 export interface Survey {
-  /** Cuánto le gusta Vokkado. */
-  gusta: number | null;
-  /** Qué tan probable es que lo recomiende (el NPS de siempre). */
+  /** El puntaje que le pone a Vokkado, en general. */
+  general: number | null;
+  /** Qué tan de acuerdo está con los puntajes que vio en la partida. */
+  acuerdo: number | null;
+  /** Qué tan probable es que recomiende la app a un paciente. */
   nps: number | null;
-  /** Qué tan útil le resulta la herramienta para nutricionistas. */
-  utilidad: number | null;
   comentario: string;
 }
 
@@ -144,7 +145,7 @@ export function toCsv(games: StoredGame[]): string {
   const headers = [
     'nombre', 'apellido', 'correo', 'telefono', 'profesion', 'acepta_novedades',
     'puntos', 'segundos', 'fecha',
-    'le_gusta_1_10', 'recomendacion_1_10', 'utilidad_1_10',
+    'puntaje_a_vokkado_1_10', 'acuerdo_con_puntajes_1_10', 'recomendacion_1_10',
     'comentario', 'sincronizado',
   ];
   const esc = (v: unknown) => {
@@ -155,7 +156,7 @@ export function toCsv(games: StoredGame[]): string {
     [
       g.nombre, g.apellido, g.email, g.telefono, g.profesion, g.consent ? 'sí' : 'no',
       g.points, Math.round(g.ms / 1000), new Date(g.playedAt).toISOString(),
-      g.survey?.gusta ?? '', g.survey?.nps ?? '', g.survey?.utilidad ?? '',
+      g.survey?.general ?? '', g.survey?.acuerdo ?? '', g.survey?.nps ?? '',
       g.survey?.comentario ?? '', g.synced ? 'sí' : 'no',
     ].map(esc).join(';'),
   );

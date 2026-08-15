@@ -586,6 +586,15 @@ textarea:focus {
   border-color: var(--vk-error);
 }
 
+/* Aclaración bajo el label, antes del control: no es un error ni parte de la
+   pregunta, es contexto para poder contestarla. */
+.ayuda-campo {
+  font-size: var(--fs-caption);
+  color: var(--vk-texto-secundario);
+  margin: -4px 0 var(--sp-sm);
+  line-height: 1.4;
+}
+
 .mensaje-error {
   font-size: var(--fs-caption);
   color: var(--vk-error);

@@ -1106,6 +1106,60 @@ vacía marca las cuatro preguntas y no avanza; completada, en IndexedDB quedó
 `{gusta: 9, nps: 10, utilidad: 7, comentario: "…"}`. 32 tests en verde y build
 limpio.
 
+## 8r. Las preguntas de la encuesta, revisadas (2026-08-14)
+
+El usuario revisó las preguntas de §8q y detectó el problema de fondo: **le
+pedían a la persona que evalúe cosas que todavía no vivió.** Acaba de jugar
+dos minutos.
+
+| Antes | Problema | Ahora |
+|---|---|---|
+| ¿Cuánto te gusta Vokkado? | Recién lo conoce. Y no es accionable: si contesta 6, no sabés qué mejorar | **Ahora te toca a vos: ¿qué puntaje le ponés a Vokkado?** |
+| ¿Recomendarías Vokkado a un colega? | Bien planteada, pero vaga: ¿el juego o la app? | **¿…que le recomiendes la app de Vokkado a un paciente?** |
+| ¿Qué tan útil te resulta la herramienta para nutricionistas? | **Presupone que la usó.** Si no la vio, contesta cualquier cosa | **¿Qué tan de acuerdo estás con los puntajes que viste?** |
+| Sugerencias | Bien | Igual, + "si no la viste, pasá por el stand" |
+
+Los tres criterios que quedaron para cualquier pregunta futura:
+
+1. **Sólo sobre lo que vivió**: jugó cinco rondas y alguien del stand le contó
+   de la app. Nada más.
+2. **Intención antes que satisfacción** cuando el producto no se usó.
+3. **Accionable**: que la respuesta cambie alguna decisión.
+
+Dos detalles del resultado:
+
+- **"Ahora te toca a vos"** invierte el juego: se pasó cinco rondas poniéndole
+  puntaje a productos y ahora puntúa a Vokkado. Además evita repetir el
+  título de la pantalla, que ya dice "¿Qué te pareció?".
+- **La de acuerdo con los puntajes es la más valiosa del formulario** y no
+  estaba: el que contesta es nutricionista y acaba de ver ocho desgloses
+  reales. Es validación experta del motor de scoring, que es justo lo que
+  §6 lista como pendiente. Si el motor puntúa raro, acá es donde aparece.
+- Se descartó "¿querés que te contemos de la herramienta?" — el staff se lo
+  dice igual, no hace falta gastar una pregunta.
+
+`survey` quedó `{ general, acuerdo, nps, comentario }` (antes
+`{ gusta, nps, utilidad }`). Columnas del CSV: `puntaje_a_vokkado_1_10`,
+`acuerdo_con_puntajes_1_10`, `recomendacion_1_10`, `comentario`.
+
+Verificado jugando hasta el final: las cuatro preguntas con sus extremos
+correctos, y en IndexedDB quedó
+`{general: 8, acuerdo: 6, nps: 10, comentario: "…"}`. 32 tests en verde.
+
+### Pendientes que quedaron anotados, sin decidir
+
+1. **El comentario obligatorio es contraproducente.** Es el único campo que
+   exige escribir, con fila esperando. En la propia captura de prueba del
+   usuario decía "ASASAS": eso es lo que se va a recibir. Se recomendó dejarlo
+   opcional y mantener obligatorias las tres escalas; quedó sin decidir.
+2. **⚠️ Si alguien abandona la encuesta, se pierde la partida entera.**
+   `saveGame` corre recién al final del formulario (`App.tsx`, `guardar`), así
+   que nombre, correo, teléfono y puntaje se pierden si cierran la pantalla —
+   y esa persona podría volver a jugar con el mismo correo. Con dos preguntas
+   opcionales era poco probable; con cuatro obligatorias es cuestión de
+   tiempo. Se arregla guardando al llegar a Resultado y actualizando después
+   con la encuesta.
+
 ## 9. Dónde retomar
 
 **Orden acordado con el usuario (2026-08-13): primero todas las pantallas del
