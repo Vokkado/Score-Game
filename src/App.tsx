@@ -18,6 +18,7 @@ import { Feedback } from './pantallas/Feedback';
 import { Resultado } from './pantallas/Resultado';
 import { Encuesta } from './pantallas/Encuesta';
 import { Inicio } from './pantallas/Inicio';
+import { Exportar } from './pantallas/Exportar';
 
 type Fase =
   | { t: 'cargando' }
@@ -29,8 +30,13 @@ type Fase =
   | { t: 'encuesta' }
   | { t: 'gracias' };
 
-/** La única ruta que existe además del juego. */
 const RUTA_SCOREBOARD = '/scoreboard';
+/** Sin link en ningún lado — sólo para el equipo del stand. Ver `Exportar`. */
+const RUTA_EXPORTAR = '/exportar';
+
+/** Cada cuánto se reintenta lo pendiente de subir, además de al abrir la app
+ *  y al recuperar conexión (ver el `useEffect` de sync más abajo). */
+const REINTENTO_PENDIENTES_MS = 90_000;
 
 /**
  * Ruteo mínimo, sin librería: el juego tiene una sola pantalla aparte. Un
@@ -84,16 +90,40 @@ export function App() {
       .catch(() => setFase({ t: 'cargando' }));
   }, []);
 
-  // Reintenta lo que quedó pendiente de una sesión anterior sin red. Secuencial,
-  // no Promise.all: si hubo un apagón largo la cola puede ser grande, y no
-  // conviene abrir muchas conexiones a la vez sobre wifi débil de evento.
+  // Reintenta lo que quedó pendiente de subir. Secuencial, no Promise.all: si
+  // hubo un apagón largo la cola puede ser grande, y no conviene abrir muchas
+  // conexiones a la vez sobre wifi débil de evento.
+  //
+  // No alcanza con correr esto sólo al abrir la app: el iPad del stand queda
+  // en la misma pestaña TODO el día, sin recargar entre partidas — este
+  // `useEffect` corre una vez al montar y nunca más. Si a la partida #40 se
+  // le corta el wifi un instante, sin un reintento periódico esa partida
+  // queda pendiente hasta que alguien recargue la página a mano. Por eso acá
+  // hay tres disparadores: al abrir, cada REINTENTO_PENDIENTES_MS, y al
+  // recuperar conexión (evento `online`) — éste último para no esperar hasta
+  // el próximo tick del intervalo si el corte fue largo.
   useEffect(() => {
-    (async () => {
-      const pendientes = await pendingSync();
-      for (const g of pendientes) {
-        if (await syncGame(g)) await markSynced(g.id);
+    let corriendo = false; // evita que dos tandas se pisen si el intervalo dispara mientras la anterior sigue en curso
+    const reintentar = async () => {
+      if (corriendo) return;
+      corriendo = true;
+      try {
+        const pendientes = await pendingSync();
+        for (const g of pendientes) {
+          if (await syncGame(g)) await markSynced(g.id);
+        }
+      } finally {
+        corriendo = false;
       }
-    })();
+    };
+
+    reintentar();
+    const id = setInterval(reintentar, REINTENTO_PENDIENTES_MS);
+    window.addEventListener('online', reintentar);
+    return () => {
+      clearInterval(id);
+      window.removeEventListener('online', reintentar);
+    };
   }, []);
 
   const empezar = (p: Player) => {
@@ -163,11 +193,15 @@ export function App() {
     setFase({ t: 'gracias' });
   };
 
-  // El scoreboard va antes que todo: no depende del pool ni de la fase del
-  // juego, sólo lee las partidas guardadas. Así entra directo aunque
-  // `products.json` todavía no haya cargado.
+  // El scoreboard y el exportador van antes que todo: ninguno depende del
+  // pool ni de la fase del juego, sólo leen las partidas guardadas. Así
+  // entran directo aunque `products.json` todavía no haya cargado.
   if (ruta === RUTA_SCOREBOARD) {
     return <Scoreboard onVolver={() => ir('/')} />;
+  }
+
+  if (ruta === RUTA_EXPORTAR) {
+    return <Exportar onVolver={() => ir('/')} />;
   }
 
   if (fase.t === 'cargando') {
