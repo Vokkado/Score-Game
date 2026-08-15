@@ -60,8 +60,11 @@ export function Resultado({ rounds, player, onSeguir }: Props) {
       {/* El botón va antes de la tabla, igual que el CTA de Inicio: la tabla
           ahora muestra a todos los jugadores y crece sola durante el evento —
           dejarlo abajo obligaría a scrollear una lista larga para terminar. */}
-      <button className="primario grande" onClick={onSeguir}>
-        Última pregunta y listo
+      {/* "Última pregunta y listo" sonaba a trámite y no decía qué pasaba al
+          tocarlo. Éste dice qué se gana con seguir, que es lo que hace que
+          alguien no abandone justo acá. */}
+      <button className="primario grande boton-respira" onClick={onSeguir}>
+        Registrar mi puntaje
       </button>
 
       <div className="separador-tabla" />

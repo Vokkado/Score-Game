@@ -118,6 +118,11 @@
      AppInput:  height 46, borderRadius 10, borderWidth 1, paddingH 14
      AppCheckbox: borderRadius 10, borderWidth 2, padding 14, caja 22 radio 5  */
   --alto-boton: 52px;
+  /* El de los botones que arrancan algo (`.primario.grande`). No sale de la
+     app: acá se toca de parado y a veces con el dedo de otra persona en la
+     pantalla. Es un token porque el Feedback necesita el número para
+     reservarle el lugar al botón anclado abajo. */
+  --alto-boton-grande: 68px;
   --radio-boton: 12px;
   --alto-input: 46px;
   --radio-input: 10px;

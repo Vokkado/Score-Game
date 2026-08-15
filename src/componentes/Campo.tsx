@@ -23,7 +23,9 @@ const PLACEHOLDER_POR_DEFECTO = {
 const INPUT_MODE = {
   text: 'text',
   email: 'email',
-  tel: 'tel',
+  // `numeric` y no `tel`: el teclado de `tel` trae `+ * #` y paréntesis, que
+  // el campo filtra igual. Con `numeric` sólo aparecen los dígitos.
+  tel: 'numeric',
 } as const;
 
 export function Campo({ label, tipo = 'text', error, id, placeholder, ...props }: Props) {

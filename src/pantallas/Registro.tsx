@@ -57,8 +57,11 @@ type Errores = Partial<Record<CampoId, string>>;
 function validar(v: Borrador): Errores {
   const e: Errores = {};
 
-  if (!v.nombreCompleto.trim()) e.nombreCompleto = 'Escribí tu nombre y apellido';
-  else if (!partirNombre(v.nombreCompleto).apellido) e.nombreCompleto = 'Falta el apellido';
+  // Sólo que haya escrito algo. **No se exige apellido**: en un stand la gente
+  // pone lo que quiere —un nombre solo, un apodo— y trabar el formulario por
+  // eso es perder a la persona por una regla que no le importa a nadie.
+  // `partirNombre` ya devuelve el apellido vacío y la tabla lo contempla.
+  if (!v.nombreCompleto.trim()) e.nombreCompleto = 'Escribí tu nombre';
 
   if (!v.email.trim()) e.email = 'Escribí tu correo';
   else if (!EMAIL_RE.test(v.email.trim())) e.email = 'Ese correo no parece válido';
@@ -191,7 +194,10 @@ export function Registro({ valores, onCambiar, onListo, onVolver, yaJugo }: Prop
             label="Teléfono"
             tipo="tel"
             value={valores.telefono}
-            onChange={(e) => set('telefono', e.target.value)}
+            // Se filtra al escribir en vez de avisar después: el campo dejaba
+            // entrar letras, y un teléfono con letras no sirve para llamar a
+            // nadie. Cubre también el pegado desde el portapapeles.
+            onChange={(e) => set('telefono', e.target.value.replace(/\D/g, ''))}
             onBlur={() => setTocado((t) => ({ ...t, telefono: true }))}
             autoComplete="tel"
             error={errorDe('telefono')}

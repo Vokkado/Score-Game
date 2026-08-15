@@ -212,15 +212,16 @@ export function App() {
   }
 
   return (
-    <div className="pantalla">
+    <div className="pantalla pantalla-gracias">
       <div className="espaciador" />
       <h1 className="display">¡Gracias por jugar!</h1>
-      <p className="sub">
-        Tu resultado quedó registrado. Los ganadores se anuncian al cierre del evento.
-      </p>
+      <p className="gracias-texto">Tu resultado quedó registrado.</p>
+      <p className="gracias-hora">Los premios se entregan a partir de las 17:00 hs.</p>
       <div className="espaciador" />
+      {/* "Finalizar" y no "Que juegue otra persona": lo toca quien acaba de
+          jugar, no el siguiente, y desde su lugar lo que hace es terminar. */}
       <button
-        className="primario"
+        className="primario grande"
         onClick={() => {
           setPlayer(null);
           // Acá sí se borra el formulario: lo que sigue es otra persona, y sus
@@ -229,7 +230,7 @@ export function App() {
           setFase({ t: 'inicio' });
         }}
       >
-        Que juegue otra persona
+        Finalizar
       </button>
     </div>
   );

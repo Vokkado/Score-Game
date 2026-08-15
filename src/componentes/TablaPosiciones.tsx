@@ -24,12 +24,19 @@ interface Props {
   /** Email del jugador actual, para resaltar su fila. */
   emailPropio?: string;
   titulo?: string;
+  /**
+   * Puesto del primer elemento de `entradas`, menos uno. Sólo lo usa el
+   * scoreboard, que pasa una página de a diez y necesita que la segunda
+   * empiece en 11º y no otra vez en 1º.
+   */
+  desde?: number;
 }
 
 export function TablaPosiciones({
   entradas,
   emailPropio,
   titulo = 'Tabla de posiciones',
+  desde = 0,
 }: Props) {
   return (
     <div className="bloque-tabla">
@@ -43,7 +50,12 @@ export function TablaPosiciones({
       ) : (
         <div className="lista-posiciones">
           {entradas.map((e, i) => (
-            <Fila key={e.email} puesto={i + 1} entrada={e} esPropio={e.email === emailPropio} />
+            <Fila
+              key={e.email}
+              puesto={desde + i + 1}
+              entrada={e}
+              esPropio={e.email === emailPropio}
+            />
           ))}
         </div>
       )}
@@ -59,11 +71,17 @@ function metalDe(puesto: number): 'oro' | 'plata' | 'cobre' | '' {
   return '';
 }
 
-/** El premio de cada puesto, tal como se anuncia en el stand. */
+/**
+ * El premio de cada puesto. Los nombres son **los del póster** —CANGURO,
+ * CAMISETA, TOTE BAG— y en mayúsculas: es lo que la persona tiene colgado al
+ * lado mientras mira la tabla, y antes acá decía "bolsa", que no figura en
+ * ningún lado. Una sola función para las dos tablas (Inicio, Resultado y el
+ * scoreboard usan este mismo componente).
+ */
 function premioDe(puesto: number): string | null {
   if (puesto === 1) return '¿Se lleva el CANGURO?';
-  if (puesto === 2) return '¿Se lleva la camiseta?';
-  if (puesto === 3) return '¿Se lleva la bolsa?';
+  if (puesto === 2) return '¿Se lleva la CAMISETA?';
+  if (puesto === 3) return '¿Se lleva la TOTE BAG?';
   return null;
 }
 

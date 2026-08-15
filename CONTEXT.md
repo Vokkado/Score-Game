@@ -1160,6 +1160,243 @@ correctos, y en IndexedDB quedó
    tiempo. Se arregla guardando al llegar a Resultado y actualizando después
    con la encuesta.
 
+## 8s. Scoreboard: una sola tabla, no dos (2026-08-14)
+
+**La tabla del scoreboard era una copia paralela de la del juego.** Decía
+"1º Canguro" donde el juego dice "¿Se lleva el CANGURO?", con filas todas del
+mismo alto en vez de la escalera del podio de §8g. Dos implementaciones del
+mismo objeto: iban a divergir cada vez que se tocara una.
+
+Ahora `/scoreboard` renderiza **el componente `TablaPosiciones`**, el mismo que
+ve el jugador. Lo único que se le agregó es la prop `desde`, el offset de
+paginación, para que la segunda página empiece en 11º y no otra vez en 1º.
+Se borraron ~145 líneas de CSS: `.sb-lista`, `.sb-fila`, `.sb-puesto`,
+`.sb-quien`, `.sb-premio`, `.sb-pts`, `.sb-tabla-cabecera`, `.sb-vacio` y el
+`@keyframes sb-entrar`. Con ellas se fue también el invento de las filas
+estiradas de §8q: ahora toman su alto natural, que es justamente "respetar
+los tamaños" (medido: 92 / 81 / 69 / 53px del 1º al 4º, igual que en Inicio).
+
+**El fondo volvió al verde.** Se probó blanco y el usuario prefirió el verde:
+las filas del juego son tarjetas blancas y sobre verde resaltan más. Sólo se
+retoca el texto suelto de la tabla —el `h2` y "PUNTAJE"—, que en el juego va
+sobre fondo claro y acá quedaría ilegible.
+
+**El póster lleva marco blanco de 4px**, y no es decorativo: el fondo del
+póster es del mismo verde que la pantalla, así que sin borde se funde con
+ella.
+
+**El marco va pegado a la foto, no a su caja** — la primera versión no lo
+estaba y el usuario lo marcó. Con `object-fit: contain` sobre un `<img>`
+estirado por el flex, la caja medía 374×644 y la foto renderizada 374×529: el
+borde dibujaba un rectángulo con ~115px de aire repartido arriba y abajo, y se
+leía como el marco del contenedor. Ahora el `<img>` va dentro de
+`.sb-poster-wrap` (que se queda con el espacio sobrante) con `max-width` y
+`max-height` al 100% y las medidas en `auto`: la caja toma exactamente el
+tamaño de la foto ajustada. Verificado comparando proporciones: la caja del
+`<img>` sin el borde da 0,707 y el PNG natural 0,707.
+
+**El aviso de premios pasó arriba del póster**: es el dato con fecha de
+vencimiento, y abajo se leía como pie de figura.
+
+**Las filas medían el 70% del ancho** y con nombres cortos quedaba un renglón
+larguísimo con el puntaje perdido en la otra punta. El primer intento fue un
+`max-width` en `.bloque-tabla`: **mal**, porque achicó la tabla y el resto no
+creció para compensar — quedaron 280px de nada entre la tabla y el póster, y
+el usuario lo marcó enseguida.
+
+Lo correcto era la **grilla**, y llegó en dos pasos más:
+
+1. Columnas proporcionales (`1.15fr / 1fr`) en vez del techo fijo del lateral.
+   Resolvió el hueco del medio, pero apareció otro: el cartel azul ocupaba el
+   100% de su columna y **el póster no**, así que le sobresalía por los dos
+   costados (lo marcó el usuario con flechas en una captura).
+2. **El lateral se mide en `vh`, no en `vw`.** El póster es vertical: su alto
+   lo manda la pantalla y su ancho sale de ahí. Con la columna atada al alto
+   (`clamp(260px, 46vh, 560px)`), la foto llega justo a los bordes y **el
+   cartel mide exactamente lo mismo sin ninguna cuenta de por medio** —los dos
+   son el 100% de la columna. El 46vh sale de la proporción del PNG (0,707)
+   aplicada al alto libre; si cambia el póster o crece el cartel, hay que
+   recalcularlo.
+
+Eso dejó la fila en 65%, así que la primera columna pasó a `minmax(0, 52%)` y
+el cuerpo a `justify-content: center`: **lo que sobra se reparte a los
+costados, no entre las columnas**. Es la diferencia entre un margen —que se
+lee como decisión— y un hueco en el medio, que se lee como que algo se rompió.
+
+Medido en los tres viewports, con el mismo resultado en todos: fila en **50%**
+de la pantalla, foto y cartel **del mismo ancho y alineados** (414/414 a
+1440×900, 497/497 a 1920×1080, 346/346 a 942×752), márgenes laterales
+simétricos y sin scroll en ninguno.
+
+**El póster se iba 200px abajo de la pantalla** al ensanchar la columna: el
+`max-height: 100%` de la foto necesita un alto de referencia **definido**, y
+dentro de un flex el alto del contenedor se resuelve tarde, así que la imagen
+crecía por su ancho (878px de alto). Se resolvió con `position: relative` en el
+wrapper y la foto en `position: absolute; inset: 0; margin: auto` con las
+medidas en `auto`: se centra sola, respeta el máximo y **la caja del `<img>`
+sigue midiendo exactamente lo que la foto**, que es lo que mantiene el borde
+pegado. Ahora llena el alto disponible en los tres viewports probados.
+
+**La letra de la caja de premios subió** de `clamp(0.95rem…1.35rem)` a
+`clamp(1.15rem…1.9rem)` en la hora (30px a 1920) y de 1rem a 1,3rem en el
+resto: es el único texto que la gente lee a propósito —a qué hora volver— y
+estaba en tamaño de pie de página.
+
+**Se probó teñir las filas de verde y se volvió atrás.** La idea era que
+acompañaran el fondo, pero perdían el contraste que las hace legibles de
+lejos, que es todo el punto de esta pantalla. Quedaron blancas, idénticas a
+las del juego.
+
+**Los premios se llaman como en el póster:** CANGURO, CAMISETA y TOTE BAG, en
+mayúsculas. Antes el 3º decía "bolsa", que no figura en ningún lado — y el
+póster está colgado al lado de la pantalla. Se cambió en `premioDe()`, así que
+vale para las tres tablas (Inicio, Resultado y scoreboard).
+
+**Bug encontrado midiendo, no a ojo.** Con el fondo verde, las filas salían
+**blanco sobre blanco**: `.fila-posicion` pinta su tarjeta con
+`--vk-superficie` pero **no declaraba `color`**, así que lo heredaba — del
+body (oscuro) en el juego, y del `.scoreboard` (claro) acá. Se le puso
+`color: var(--vk-texto)` explícito. **Un componente que se usa sobre dos
+fondos distintos no puede depender del color ambiente**; en el juego el valor
+es idéntico al que ya heredaba, así que no cambió nada allá (confirmado: las
+tres primeras filas de Inicio siguen en `rgb(22,22,22)` sobre
+`rgb(252,252,252)`, con los mismos altos).
+
+## 8t. Ajustes finales de formulario y cierre (2026-08-15)
+
+**La escala de la encuesta se llena como un termómetro.** Al elegir 9 se
+pintan del 1 al 9, cada vez más intensos, y el 10 queda en blanco. La
+intensidad es relativa al valor **elegido** y no al 10 fijo, para que la
+respuesta quede siempre a fondo: con un 3, el 3 tiene que verse elegido y no
+un 30% desvaído. El color va en línea desde React porque es un valor distinto
+por botón —un degradé continuo, no diez clases— y usa
+`rgba(var(--vk-primary-dark-rgb), α)`. Se agregó `--vk-primary-dark-rgb` a
+`theme.css` con los canales sueltos: `color-mix()` sería más prolijo pero pide
+Safari 16.2 y el iPad del evento puede ser más viejo. **Si cambia el hex de
+`--vk-primary-dark`, hay que cambiar también esa variable.** El texto se
+aclara a partir del 55% de intensidad. Verificado: 0,27 → 1,00 creciente del 1
+al 9, el 10 sin pintar.
+
+**Se sacó la exigencia de apellido.** En un stand la gente pone lo que quiere
+—un nombre solo, un apodo— y trabar el formulario por eso es perder a la
+persona por una regla que no le importa a nadie. `partirNombre` ya devolvía el
+apellido vacío y `TablaPosiciones` ya contemplaba el caso (§8k): verificado
+end-to-end, "Solonombre" se guarda con `apellido: ""` y en la tabla aparece
+sin el punto suelto.
+
+**El teléfono filtra a dígitos al escribir**, en vez de avisar después: el
+campo dejaba entrar letras y un teléfono con letras no sirve para llamar a
+nadie. Cubre también el pegado. `inputMode` pasó de `tel` a `numeric` — el
+teclado de `tel` trae `+ * #` y paréntesis que el campo descarta igual.
+Verificado: `abc099def123456ghi` queda `099123456`.
+
+**Copy del cierre.** El botón de Resultado pasó de "Última pregunta y listo"
+—que sonaba a trámite y no decía qué pasaba al tocarlo— a **"Registrar mi
+puntaje"**, con el latido de `.boton-respira`. Y la pantalla de gracias quedó
+centrada (`.pantalla-gracias`), con "Tu resultado quedó registrado." y "Los
+premios se entregan a partir de las 17:00 hs." en dos líneas separadas, y el
+botón como **"Finalizar"** en tamaño grande: lo toca quien acaba de jugar, no
+el siguiente, y desde su lugar lo que hace es terminar.
+
+**El cartel azul y el póster, juntos pero no pegados.** El aire del medio era
+el `gap` del lateral más el centrado vertical de la foto; la foto pasó de
+`margin: auto` a `margin: 0 auto auto` (se ancla arriba y el sobrante queda
+abajo). La primera versión los dejó a 0px y el usuario pidió un respiro:
+quedó en `--sp-sm` (8px), con las dos esquinas redondeadas.
+
+**El cartel arranca a la altura de la primera fila**, no del borde de la
+pantalla: al lado del encabezado "TABLA DE POSICIONES" se veía descolgado, más
+arriba que todo lo demás. Es un `padding-top` en `.sb-lateral` calculado como
+la altura de ese encabezado (`--fs-section` × `--lh-body` + `--sp-sm`), así que
+escala junto con él. Verificado: 0px de diferencia contra el borde superior de
+la primera fila en cuatro viewports.
+
+**El ancho del lateral dejó de ser un `vh` pelado y pasó a un `calc`.** Al
+bajar el cartel, la foto perdió alto y con eso ancho, y dejaron de medir lo
+mismo. Midiendo el alto disponible en dos ventanas (860→432, 1080→696) sale
+que crece como `1,2·alto − 600`; por la proporción del PNG (0,707) queda
+`84,8vh − 424px`. Un `vh` fijo no podía funcionar: los costos fijos de arriba
+y abajo no escalan igual que la ventana, así que sobraba ancho en unas alturas
+y faltaba en otras.
+
+**Y apareció un lazo que hay que conocer:** el cartel angosto hace que su
+texto envuelva en más líneas → el cartel crece → la foto tiene menos alto →
+la foto se angosta → **dejan de coincidir**. Pasó exactamente eso a 860px
+(cartel 305, foto 286). Se cortó el subtítulo a una línea ("Acercate al stand
+para retirarlo"), que además repetía lo que dice el póster justo abajo. Con
+un texto que no envuelve, el alto del cartel es estable y la cuenta cierra.
+
+**Si se alarga ese texto, o cambia el póster, el encabezado o los tamaños, hay
+que volver a medir y recalcular el `calc`.** El síntoma es justamente que el
+cartel deja de medir lo mismo que la foto.
+
+Verificado en cuatro viewports —1366×768, 1440×900, 1900×860 y 1920×1080—:
+cartel y foto **del mismo ancho al píxel** (227/227, 339/339, 305/305,
+492/492), alineados con la primera fila, 8px de separación, fila en 50% y sin
+scroll en ninguno.
+
+## 8u. El botón que tapaba, y ajustes de color y copy (2026-08-15)
+
+### El botón de Feedback: tercer intento, y el bueno
+
+Lo reportó un compañero del usuario probando en el iPad: **el botón tapaba el
+desglose**. Las tres versiones y por qué fallaron las dos primeras:
+
+1. `position: sticky` (§8n) — flota **sobre** el contenido mientras se
+   scrollea. Resolvía que no quedara abajo del pliegue, pero tapando.
+2. `position: fixed` + `padding-bottom` en la página — despeja el **final**
+   del scroll, no el medio. Medido a media página: debajo del botón había
+   `.etiqueta-paso` en los tres puntos de su ancho.
+3. **La buena: que no compartan espacio.** `.pantalla-feedback` mide exacto el
+   alto de la ventana, el contenido scrollea dentro de `.fb-cuerpo` y el botón
+   es un hermano abajo, en el flujo normal. No hay forma de que se pisen
+   porque cada uno tiene su franja.
+
+**`flex: none` en `.pantalla-feedback` es imprescindible** y costó un intento:
+`.pantalla` trae `flex: 1`, o sea `flex-basis: 0%`, y en un contenedor columna
+eso le gana al `height`. Sin eso la pantalla seguía creciendo con el contenido,
+el scroll quedaba en la página y el botón terminaba fuera de la ventana.
+
+Verificado en iPad apaisado (1112×834) y vertical (834×1112): el scroll interno
+funciona, la página no scrollea, el botón siempre en pantalla y **debajo de él
+sólo el fondo**, también a media página. Se agregó `--alto-boton-grande` como
+token porque el alto del botón dejó de ser sólo cosmético.
+
+### Escala: dos colores fijos en vez del degradé
+
+El degradé de §8t (una intensidad por botón) se leía exagerado —diez tonos
+para una respuesta de un toque— y el elegido además se agrandaba. Ahora son
+dos colores fijos: los botones hasta el elegido en `--vk-primary-light` y el
+elegido en `--vk-primary-dark`, sin cambios de tamaño. Se quitó
+`--vk-primary-dark-rgb` de `theme.css`, que existía sólo para el degradé.
+
+**La lección de §8b apareció por tercera vez.** Medido en vivo, los botones
+daban blanco pese a tener las clases correctas: `background` tiene
+`transition` y el panel no compone frames, así que `getComputedStyle` lee el
+frame congelado. Confirmado con un nodo de prueba con `transition: none`:
+`lleno` → `rgb(184,196,69)`, `elegido` → `rgb(34,82,29)`. **Si un color no
+cambia bajo verificación por JS, mirar primero si esa propiedad tiene
+`transition`.**
+
+### Scoreboard a todo el ancho
+
+Se sacó el tope del 52% y el `justify-content: center` de §8s: a 1900px de
+ancho eso dejaba ~200px de verde a cada lado, que en el monitor del stand se
+ven como espacio desperdiciado y no como margen. La tabla ahora se queda con
+todo lo que no usa el lateral (`1fr`). Medido a 1900×860: márgenes de 36px
+—sólo el padding de la página—, fila al 78%, y el cartel y la foto siguen
+midiendo lo mismo (305/305), alineados con la primera fila y a 8px.
+
+Copy: el cartel dice "Acercate a esa hora al stand para retirarlo".
+
+### Pantalla de cierre
+
+Quedó: "¡Gracias por jugar!" grande en verde, y debajo "Tu resultado quedó
+registrado." y el horario, más chicos. Se probó al revés —la confirmación como
+título— y el usuario prefirió el agradecimiento arriba. `.display` viene con
+`margin: 0`, así que el título quedaba pegado al texto de abajo: se le agregó
+`sp-lg`.
+
 ## 9. Dónde retomar
 
 **Orden acordado con el usuario (2026-08-13): primero todas las pantallas del
