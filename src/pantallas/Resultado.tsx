@@ -16,6 +16,7 @@ export function Resultado({ rounds, player, gameId, onSeguir }: Props) {
   const puntos = totalPoints(rounds);
   const ms = totalMs(rounds);
   const [tabla, setTabla] = useState<LeaderboardEntry[]>([]);
+  const [cargando, setCargando] = useState(true);
 
   // La partida actual todavía no está guardada (se guarda al final de la
   // encuesta), así que se la agrega a mano para mostrar el puesto real.
@@ -30,6 +31,7 @@ export function Resultado({ rounds, player, gameId, onSeguir }: Props) {
         playedAt: Date.now(),
       };
       setTabla(rankPlayers([...previas, mia]));
+      setCargando(false);
     });
   }, [player, puntos, ms, gameId]);
 
@@ -63,7 +65,7 @@ export function Resultado({ rounds, player, gameId, onSeguir }: Props) {
 
       <div className="separador-tabla" />
 
-      <TablaPosiciones entradas={tabla} idPropio={gameId} />
+      <TablaPosiciones entradas={tabla} idPropio={gameId} cargando={cargando} />
     </div>
   );
 }

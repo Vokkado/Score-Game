@@ -42,10 +42,18 @@ const ROTACION_MS = 8000;
 export function Scoreboard({ onVolver }: { onVolver: () => void }) {
   const [tabla, setTabla] = useState<LeaderboardEntry[]>([]);
   const [pagina, setPagina] = useState(0);
+  const [cargando, setCargando] = useState(true);
 
-  // Relee sola: el monitor queda puesto y nadie va a recargarlo entre partidas.
+  // Relee sola: el monitor queda puesto y nadie va a recargarlo entre
+  // partidas. El esqueleto sólo se ve en la primera lectura — `setCargando`
+  // nunca vuelve a `true`, así que los sondeos siguientes actualizan la
+  // tabla en silencio en vez de taparla con el esqueleto cada 4s.
   useEffect(() => {
-    const leer = () => cargarTabla().then(setTabla);
+    const leer = () =>
+      cargarTabla().then((t) => {
+        setTabla(t);
+        setCargando(false);
+      });
     leer();
     const id = setInterval(leer, REFRESCO_MS);
     return () => clearInterval(id);
@@ -94,7 +102,7 @@ export function Scoreboard({ onVolver }: { onVolver: () => void }) {
 
       <div className="sb-cuerpo">
         <section className="sb-tabla">
-          <TablaPosiciones entradas={visibles} desde={desde} />
+          <TablaPosiciones entradas={visibles} desde={desde} cargando={cargando} />
 
           {paginas > 1 && (
             <div className="sb-paginas" aria-hidden="true">

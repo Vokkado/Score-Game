@@ -30,13 +30,23 @@ interface Props {
    * empiece en 11º y no otra vez en 1º.
    */
   desde?: number;
+  /**
+   * `cargarTabla()` primero intenta el backend (puede tardar hasta 3s con
+   * mala señal) antes de caer a lo local — sin esto, la tabla queda en
+   * blanco ("Todavía no jugó nadie") y de golpe aparece llena, que se lee
+   * como que el juego recién arrancó en vez de como que estaba cargando.
+   */
+  cargando?: boolean;
 }
+
+const PUESTOS_ESQUELETO = [1, 2, 3];
 
 export function TablaPosiciones({
   entradas,
   idPropio,
   titulo = 'Tabla de posiciones',
   desde = 0,
+  cargando = false,
 }: Props) {
   return (
     <div className="bloque-tabla">
@@ -45,7 +55,13 @@ export function TablaPosiciones({
         <span className="columna-puntaje">Puntaje</span>
       </div>
 
-      {entradas.length === 0 ? (
+      {cargando ? (
+        <div className="lista-posiciones" aria-busy="true" aria-live="polite">
+          {PUESTOS_ESQUELETO.map((p) => (
+            <FilaEsqueleto key={p} puesto={p} />
+          ))}
+        </div>
+      ) : entradas.length === 0 ? (
         <p className="vacio">Todavía no jugó nadie. Podés ser el primero.</p>
       ) : (
         <div className="lista-posiciones">
@@ -112,6 +128,23 @@ function Fila({
       </span>
       {premio && <span className={`premio-tag ${metal}`}>{premio}</span>}
       <span className="pts">{entrada.points}</span>
+    </div>
+  );
+}
+
+/**
+ * Misma forma que `Fila` (mismo alto por puesto, así la tabla real no salta
+ * de tamaño al reemplazar el esqueleto), pero con bloques grises en vez de
+ * texto. Sólo tres filas: alcanza para leerse como "está cargando" sin
+ * simular una lista larga que después se achica de golpe.
+ */
+function FilaEsqueleto({ puesto }: { puesto: number }) {
+  const metal = metalDe(puesto);
+  return (
+    <div className={`fila-posicion esqueleto ${metal}`}>
+      <span className="puesto-esqueleto" />
+      <span className="quien-esqueleto" />
+      <span className="pts-esqueleto" />
     </div>
   );
 }
