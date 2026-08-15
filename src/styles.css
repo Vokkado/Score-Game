@@ -1660,7 +1660,12 @@ input[type='range']::-moz-range-thumb {
 
    **Si cambia el póster, el encabezado o el alto del cartel, hay que volver a
    medir y recalcular.** El síntoma es que el cartel deja de medir lo mismo que
-   la foto. */
+   la foto.
+
+   El `* 0.7` de encima achica el resultado un 30% sin tocar la cuenta de
+   arriba: en el iPad del stand (pantalla angosta y alta) el póster a tamaño
+   completo se comía casi la mitad del ancho y le dejaba muy poco lugar a la
+   tabla. Si se vuelve a medir el póster, este factor se aplica después. */
 .sb-cuerpo {
   flex: 1;
   min-height: 0;
@@ -1670,7 +1675,7 @@ input[type='range']::-moz-range-thumb {
      `justify-content: center`: en una pantalla de 1900px eso eran 200px de
      verde a cada lado, que en el monitor del stand se ven como espacio
      desperdiciado y no como margen. */
-  grid-template-columns: minmax(0, 1fr) clamp(200px, calc(84.8vh - 424px), 620px);
+  grid-template-columns: minmax(0, 1fr) clamp(160px, calc((84.8vh - 424px) * 0.7), 440px);
   gap: clamp(16px, 2vw, 32px);
 }
 
@@ -1805,6 +1810,18 @@ input[type='range']::-moz-range-thumb {
 
   .sb-poster {
     max-height: 220px;
+  }
+}
+
+/* El scoreboard vive en un monitor de escritorio — ahí el chip de premio se
+   ve bien y se deja. Pero si alguien lo abre en una tablet vertical (el
+   ancho de un iPad en portrait, 768–834px), el chip compite por espacio con
+   el nombre y el puntaje y aprieta la fila. No es el uso previsto de esta
+   pantalla, pero que no se vea roto si pasa: se oculta sólo el chip, no el
+   resto de la fila. */
+@media (max-width: 900px) and (orientation: portrait) {
+  .scoreboard .premio-tag {
+    display: none;
   }
 }
 

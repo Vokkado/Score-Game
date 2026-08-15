@@ -93,6 +93,12 @@ function metalDe(puesto: number): 'oro' | 'plata' | 'cobre' | '' {
  * lado mientras mira la tabla, y antes acá decía "bolsa", que no figura en
  * ningún lado. Una sola función para las dos tablas (Inicio, Resultado y el
  * scoreboard usan este mismo componente).
+ *
+ * El chip se sigue renderizando siempre acá: en pantallas angostas
+ * (`.scoreboard` visto en un iPad vertical) se lo oculta por CSS
+ * (`.premio-tag` bajo el media query de `/scoreboard` en `styles.css`), no
+ * quitándolo del componente — en desktop, que es donde de verdad se usa el
+ * scoreboard, tiene que seguir viéndose.
  */
 function premioDe(puesto: number): string | null {
   if (puesto === 1) return '¿Se lleva el CANGURO?';
