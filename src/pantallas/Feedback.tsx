@@ -20,6 +20,10 @@ export function Feedback({ producto, round, esUltimo, onSeguir }: Props) {
 
   return (
     <div className="pantalla pantalla-feedback">
+      {/* Todo lo que se lee va adentro de su propia área de scroll, y el botón
+          queda afuera. Así el botón no puede taparlo en ningún momento: no
+          comparten espacio, cada uno tiene el suyo. */}
+      <div className="fb-cuerpo">
       {/* Foto cuadrada a la izquierda con el nombre y la marca al lado, en una
           sola fila. Apilados ocupaban tres bloques de alto para decir lo mismo,
           y acá el alto es escaso: abajo esperan la explicación y el desglose. */}
@@ -105,6 +109,8 @@ export function Feedback({ producto, round, esUltimo, onSeguir }: Props) {
           )}
         </div>
       )}
+
+      </div>
 
       <button className="primario grande" onClick={onSeguir}>
         {esUltimo ? 'Ver mi resultado' : 'Siguiente producto'}

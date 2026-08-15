@@ -1,15 +1,21 @@
 import { useEffect, useState } from 'react';
 import { rankPlayers, type LeaderboardEntry } from '../game/engine';
 import { allGames } from '../game/storage';
+import { TablaPosiciones } from '../componentes/TablaPosiciones';
 import { ChevronIzquierda, Trofeo } from '../componentes/Iconos';
 import logo from '../assets/icon.png';
 import poster from '../assets/PREMIOS (1).png';
 
 /**
  * Pantalla para el monitor del stand: queda puesta todo el día mostrando la
- * tabla de posiciones. Está pensada para mirarse **de lejos y de parado**, así
- * que va sobre fondo verde oscuro y con tipografía mucho más grande que el
- * resto del juego.
+ * tabla de posiciones.
+ *
+ * **La tabla es literalmente el mismo componente que usa el juego**
+ * (`TablaPosiciones`), no una copia parecida. La primera versión tenía su
+ * propio marcado y por eso decía "1º Canguro" donde el juego dice "¿Se lleva
+ * el CANGURO?", con otros tamaños de fila: dos tablas que iban a divergir sola
+ * cada vez que se tocara una. Lo único que agrega el scoreboard es la
+ * paginación, vía la prop `desde`.
  *
  * ⚠️ **Sólo ve las partidas del navegador donde corre.** Los datos viven en el
  * IndexedDB del dispositivo (ver `storage.ts`): si esto se abre en otra
@@ -27,14 +33,12 @@ const POR_PAGINA = 10;
 /** Cada cuánto pasa de página cuando hay más jugadores que los que entran. */
 const ROTACION_MS = 8000;
 
-/**
- * Piso de carriles de la grilla. Con dos jugadores a primera hora, repartir
- * los 800px entre dos filas daba dos barras gigantes; con este piso quedan
- * filas grandes pero creíbles, y el hueco de abajo se va llenando solo.
+/*
+ * Ya no viven acá el alto de fila ni los nombres de los premios: los pone
+ * `TablaPosiciones`, que es la misma tabla que ve el jugador. Las filas toman
+ * su alto natural (el podio más grande, el resto parejo) en vez de estirarse
+ * para llenar la pantalla.
  */
-const FILAS_MINIMAS = 6;
-
-const PREMIOS = ['1º Canguro', '2º Camiseta', '3º Tote bag'];
 
 export function Scoreboard({ onVolver }: { onVolver: () => void }) {
   const [tabla, setTabla] = useState<LeaderboardEntry[]>([]);
@@ -85,63 +89,27 @@ export function Scoreboard({ onVolver }: { onVolver: () => void }) {
         <img src={logo} alt="" className="sb-logo" />
         <span className="sb-marca">Vokkado</span>
         <span className="sb-titulo">
-          <Trofeo size={30} color="var(--vk-primary-light)" />
+          <Trofeo size={30} color="var(--vk-primary)" />
           Desafío del Puntaje
+        </span>
+
+        <span className="sb-cuenta">
+          {tabla.length === 0
+            ? 'Todavía no jugó nadie'
+            : `${tabla.length} ${tabla.length === 1 ? 'jugador' : 'jugadores'}`}
         </span>
 
         {/* Discreto a propósito: es la salida para el equipo, no un botón que
             deba llamar la atención en una pantalla que se exhibe todo el día. */}
         <button type="button" className="sb-volver" onClick={onVolver} aria-label="Volver al juego">
-          <ChevronIzquierda size={20} color="rgba(255,255,255,0.75)" />
+          <ChevronIzquierda size={20} color="var(--vk-texto-secundario)" />
           Volver al juego
         </button>
       </header>
 
       <div className="sb-cuerpo">
         <section className="sb-tabla">
-          <div className="sb-tabla-cabecera">
-            <h1>Tabla de posiciones</h1>
-            <span className="sb-cuenta">
-              {tabla.length === 0
-                ? 'Todavía no jugó nadie'
-                : `${tabla.length} ${tabla.length === 1 ? 'jugador' : 'jugadores'}`}
-            </span>
-          </div>
-
-          {tabla.length === 0 ? (
-            <p className="sb-vacio">Acercate al stand y sé el primero en jugar.</p>
-          ) : (
-            <div
-              className="sb-lista"
-              // Los carriles los fija el total, no la página: si los fijara la
-              // página, la última —siempre más corta— estiraría sus filas y la
-              // tabla cambiaría de aspecto en cada rotación.
-              style={
-                {
-                  '--filas': Math.max(
-                    FILAS_MINIMAS,
-                    Math.min(tabla.length, POR_PAGINA),
-                  ),
-                } as React.CSSProperties
-              }
-            >
-              {visibles.map((e, i) => {
-                const puesto = desde + i + 1;
-                const metal = puesto === 1 ? 'oro' : puesto === 2 ? 'plata' : puesto === 3 ? 'cobre' : '';
-                return (
-                  <div key={e.email} className={`sb-fila ${metal}`}>
-                    <span className={`sb-puesto ${metal}`}>{puesto}º</span>
-                    <span className="sb-quien">
-                      {e.nombre}
-                      {e.apellido ? ` ${e.apellido.charAt(0)}.` : ''}
-                    </span>
-                    {metal && <span className={`sb-premio ${metal}`}>{PREMIOS[puesto - 1]}</span>}
-                    <span className="sb-pts">{e.points}</span>
-                  </div>
-                );
-              })}
-            </div>
-          )}
+          <TablaPosiciones entradas={visibles} desde={desde} />
 
           {paginas > 1 && (
             <div className="sb-paginas" aria-hidden="true">
@@ -153,14 +121,27 @@ export function Scoreboard({ onVolver }: { onVolver: () => void }) {
         </section>
 
         <aside className="sb-lateral">
-          <img src={poster} alt="Premios: 1º canguro, 2º camiseta, 3º tote bag" className="sb-poster" />
-
+          {/* El horario va ARRIBA: es el dato con fecha de vencimiento, y el
+              póster ya se explica solo. Abajo quedaba como pie de figura. */}
           <div className="sb-premios">
             <p className="sb-premios-hora">Los premios se entregan a las 17:00 hs</p>
-            <p className="sb-premios-sub">
-              Acercate al stand para recibirlo. ¡Si no ganás igual te llevás un sticker por
-              participar y beneficios de Vokkado!
-            </p>
+            {/* Corto a propósito. Lo de los stickers y los beneficios ya lo
+                dice el póster acá abajo, y un párrafo largo cambia de alto
+                según el ancho del cartel — lo que a su vez le movía el alto
+                disponible a la foto y les rompía la coincidencia de ancho. */}
+            <p className="sb-premios-sub">Acercate a esa hora al stand para retirarlo.</p>
+          </div>
+
+          {/* El wrapper es el que se lleva el espacio sobrante; la imagen se
+              ajusta adentro y su caja queda del tamaño exacto de la foto, así
+              el marco blanco la abraza en vez de dibujar un rectángulo con
+              aire arriba y abajo. */}
+          <div className="sb-poster-wrap">
+            <img
+              src={poster}
+              alt="Premios: 1º canguro, 2º camiseta, 3º tote bag"
+              className="sb-poster"
+            />
           </div>
         </aside>
       </div>

@@ -252,9 +252,11 @@ input[type='range'].inerte {
 }
 
 /* Modificador de botón, no un estilo de Inicio: lo usan el CTA de Inicio y el
-   "Empezar" de Registro, los dos únicos botones que arrancan algo. */
+   "Empezar" de Registro, los dos únicos botones que arrancan algo.
+   El alto sale de un token porque `.pantalla-feedback` lo necesita para
+   reservarle el lugar al botón anclado. */
 .primario.grande {
-  min-height: 68px;
+  min-height: var(--alto-boton-grande);
   font-size: var(--fs-title);
 }
 
@@ -1115,23 +1117,46 @@ input[type='range']::-moz-range-thumb {
   font-size: var(--fs-title);
 }
 
-/* El botón de Feedback queda pegado al piso de la pantalla mientras se
-   scrollea, y aterriza en su lugar natural al final.
+/* Feedback: el contenido scrollea adentro y el botón vive afuera, abajo.
 
-   Esta pantalla no tiene un alto fijo: el párrafo de justificación y la
-   cantidad de pasos del desglose cambian por producto. Medido en una partida
-   real: con 5 pasos el botón cerraba en 1131px y con 8 en 1195px, contra un
-   viewport de 1112 — o sea que en 4 de 5 productos quedaba abajo del pliegue,
-   y en el peor caso por poco, que es la forma más traicionera: la pantalla
-   parece terminada y el botón está escondido. Con fila en el stand eso es
-   alguien trabado esperando que le digan qué hacer.
+   Por qué el botón está siempre a la vista: esta pantalla no tiene un alto
+   fijo —el párrafo y la cantidad de pasos del desglose cambian por producto—,
+   así que en las ventanas más bajas quedaba abajo del pliegue, y en el peor
+   caso por poco, que es la forma más traicionera: la pantalla parece terminada
+   y el botón está escondido.
 
-   `sticky` en vez de mover el botón más arriba: el orden de lectura
-   —explicación, después desglose, después seguir— es el que se aprobó. */
+   Se probaron dos formas antes de ésta y **las dos tapaban el desglose**
+   (reportado probando en el iPad): `sticky` flota sobre el contenido mientras
+   se scrollea, y `fixed` con `padding-bottom` en la página sólo despeja el
+   final del scroll — a media página seguía tapando (medido: sobre
+   `.etiqueta-paso` en los tres puntos del ancho del botón).
+
+   La única forma de que no lo tape nunca es que no compartan espacio: la
+   pantalla ocupa exactamente el alto de la ventana, el contenido scrollea
+   dentro de `.fb-cuerpo` y el botón es un hermano abajo. */
+.pantalla-feedback {
+  /* `flex: none` es imprescindible: `.pantalla` trae `flex: 1`, o sea
+     `flex-basis: 0%`, y en un contenedor columna eso le gana al `height`. Sin
+     esto la pantalla seguía creciendo con el contenido, el scroll quedaba en
+     la página y el botón terminaba fuera de la ventana. */
+  flex: none;
+  height: 100dvh;
+  overflow: hidden;
+  padding-bottom: calc(var(--sp-md) + env(safe-area-inset-bottom));
+}
+
+.fb-cuerpo {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  /* Aire entre el final del texto y el botón, para que no queden pegados
+     cuando el scroll llega abajo. */
+  padding-bottom: var(--sp-md);
+}
+
 .pantalla-feedback > .primario {
-  position: sticky;
-  bottom: var(--sp-md);
-  box-shadow: var(--sombra-lg);
+  flex-shrink: 0;
 }
 
 /* Pregunta que encabeza la explicación. Es el momento en que el juego deja de
@@ -1314,6 +1339,12 @@ input[type='range']::-moz-range-thumb {
   align-items: center;
   gap: var(--sp-md);
   background: var(--vk-superficie);
+  /* Explícito, no heredado: la tarjeta es blanca, así que el texto tiene que
+     ser oscuro **venga de donde venga**. En el juego heredaba bien del body,
+     pero en `/scoreboard` el contenedor es verde con texto claro y las filas
+     salían blanco sobre blanco — invisibles. Un componente que se usa en dos
+     fondos distintos no puede depender del color ambiente. */
+  color: var(--vk-texto);
   border: 1px solid var(--vk-borde);
   border-radius: var(--radio-tarjeta);
   padding: var(--sp-sm) var(--pad-input);
@@ -1437,20 +1468,63 @@ input[type='range']::-moz-range-thumb {
   border-radius: var(--radio-input);
 }
 
+.escala-puntos button {
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+/* Dos colores fijos, sin degradé y sin cambios de tamaño: los botones hasta el
+   elegido en verde claro y el elegido en el verde fuerte. Antes cada botón
+   tenía su propia intensidad y el elegido se agrandaba — demasiado ruido para
+   una respuesta de un toque. */
+.escala-puntos button.lleno {
+  background: var(--vk-primary-light);
+  border-color: var(--vk-primary-light);
+  color: var(--vk-titulo);
+}
+
 .escala-puntos button.elegido {
   background: var(--vk-primary-dark);
-  color: var(--vk-friendly-white);
   border-color: var(--vk-primary-dark);
-  /* Se agranda apenas: con diez botones angostos, sólo el color no basta para
-     ver de un vistazo cuál quedó elegido. */
-  transform: scale(1.06);
+  color: var(--vk-friendly-white);
+}
+
+/* ── Gracias (cierre de la partida) ──────────────────────────────────── */
+
+/* Todo centrado: es una pantalla de una sola cosa, sin nada que leer en
+   orden. El resto del juego alinea a la izquierda porque son formularios y
+   listas, acá no hay ninguna de las dos. */
+.pantalla-gracias {
+  text-align: center;
+}
+
+/* `.display` viene con `margin: 0`, así que el título quedaba pegado al texto
+   de abajo — se leían como un solo bloque en vez de título y confirmación. */
+.pantalla-gracias .display {
+  margin-bottom: var(--sp-lg);
+}
+
+.gracias-texto {
+  font-size: var(--fs-title);
+  font-weight: var(--peso-semibold);
+  color: var(--vk-texto);
+  margin: 0 0 var(--sp-sm);
+}
+
+.gracias-hora {
+  font-size: var(--fs-subtitle);
+  color: var(--vk-texto-secundario);
+  margin: 0;
 }
 
 /* ── Scoreboard (/scoreboard) ────────────────────────────────────────────
    La pantalla del monitor del stand. Está fuera de `.pantalla` a propósito:
-   no comparte ni el ancho máximo ni la escala tipográfica del juego, porque
-   no se mira a un brazo de distancia sino desde el otro lado del pasillo.
-   Fondo verde de marca para que se despegue de la pared y del iPad.         */
+   no comparte el ancho máximo del juego, porque acá conviven la tabla y el
+   póster en dos columnas.
+
+   **La tabla no tiene estilos propios**: es `TablaPosiciones`, el mismo
+   componente que ve el jugador, con las mismas filas y los mismos tamaños.
+   La primera versión tenía su copia (`.sb-fila`, `.sb-puesto`, `.sb-premio`,
+   `.sb-pts`, `.sb-lista`) y decía cosas distintas — se eliminó entera.       */
 
 .scoreboard {
   min-height: 100dvh;
@@ -1461,6 +1535,28 @@ input[type='range']::-moz-range-thumb {
   padding: clamp(12px, 2vh, 28px) clamp(12px, 2vw, 36px);
   gap: clamp(12px, 2vh, 24px);
 }
+
+/* La tabla es el MISMO componente del juego, con las filas idénticas: tarjeta
+   blanca y texto oscuro. Se probó teñirlas de verde para que acompañaran el
+   fondo y quedó peor —perdían el contraste que las hace legibles de lejos, que
+   es todo el punto de esta pantalla—, así que volvieron al blanco.
+
+   Lo único que se retoca es el texto suelto de la tabla, que en el juego va
+   sobre fondo claro y acá quedaría ilegible. */
+.scoreboard .cabecera-tabla h2 {
+  color: var(--vk-friendly-white);
+}
+
+.scoreboard .columna-puntaje,
+.scoreboard .vacio {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* La tabla llena su columna. El ancho de fila **se controla desde la grilla**
+   (`.sb-cuerpo`), no con un `max-width` acá: la primera versión le puso techo
+   a la tabla y el resto no creció para compensar, así que quedaron 280px de
+   nada entre la tabla y el póster. El ancho de una fila es el ancho de su
+   columna, y las columnas reparten el 100%. */
 
 .sb-cabecera {
   display: flex;
@@ -1492,8 +1588,15 @@ input[type='range']::-moz-range-thumb {
   letter-spacing: 0.08em;
 }
 
-.sb-volver {
+.sb-cuenta {
   margin-left: auto;
+  font-size: clamp(0.85rem, 1.1vw, 1.15rem);
+  color: var(--vk-primary-light);
+  font-weight: var(--peso-semibold);
+  white-space: nowrap;
+}
+
+.sb-volver {
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -1505,14 +1608,37 @@ input[type='range']::-moz-range-thumb {
   padding: 6px 14px 6px 8px;
 }
 
-/* Dos columnas: la tabla manda y el póster acompaña. `minmax(0, …)` en la
-   primera es lo que deja que la tabla se encoja en vez de empujar al póster
-   fuera de la pantalla. */
+/* Dos columnas que se reparten el ancho: la tabla algo más de la mitad y el
+   lateral el resto. Antes el lateral tenía un techo fijo de 380px y todo lo
+   que sobraba quedaba como hueco muerto en el medio.
+
+   **El lateral se mide en `vh`, no en `vw`, y no es un capricho.** El póster
+   es vertical: su alto lo manda la pantalla y su ancho sale de ahí. Si la
+   columna es más ancha que eso, la foto se queda corta y el cartel azul —que
+   sí ocupa el 100%— le sobresale por los dos costados. Con la columna atada
+   al alto, la foto llega justo a los bordes y **el cartel mide exactamente lo
+   mismo, sin ninguna cuenta de por medio**.
+
+   El `calc` no es un número mágico, es la cuenta despejada. Midiendo el alto
+   que le queda a la foto en dos ventanas distintas (860px → 432, 1080px → 696)
+   sale que crece como `1,2·alto − 600`; multiplicado por la proporción del PNG
+   (0,707) da el ancho que la foto puede usar: `84,8vh − 424px`. Un `vh` pelado
+   no alcanzaba porque los costos fijos de arriba y abajo no escalan igual que
+   la ventana, así que sobraba ancho en unas alturas y faltaba en otras.
+
+   **Si cambia el póster, el encabezado o el alto del cartel, hay que volver a
+   medir y recalcular.** El síntoma es que el cartel deja de medir lo mismo que
+   la foto. */
 .sb-cuerpo {
   flex: 1;
   min-height: 0;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) clamp(240px, 26vw, 380px);
+  /* La tabla se queda con TODO lo que no usa el lateral (`1fr`, sin techo).
+     Antes tenía un tope del 52% y el sobrante se repartía a los costados con
+     `justify-content: center`: en una pantalla de 1900px eso eran 200px de
+     verde a cada lado, que en el monitor del stand se ven como espacio
+     desperdiciado y no como margen. */
+  grid-template-columns: minmax(0, 1fr) clamp(200px, calc(84.8vh - 424px), 620px);
   gap: clamp(16px, 2vw, 32px);
 }
 
@@ -1522,150 +1648,10 @@ input[type='range']::-moz-range-thumb {
   min-height: 0;
 }
 
-.sb-tabla-cabecera {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--sp-md);
-  margin-bottom: clamp(8px, 1.5vh, 20px);
-}
-
-.sb-tabla-cabecera h1 {
-  margin: 0;
-  font-size: clamp(1.8rem, 3.4vw, 3.6rem);
-  font-weight: var(--peso-bold);
-  line-height: 1.1;
-}
-
-.sb-cuenta {
-  font-size: clamp(0.9rem, 1.2vw, 1.3rem);
-  color: var(--vk-primary-light);
-  font-weight: var(--peso-semibold);
-  white-space: nowrap;
-}
-
-.sb-vacio {
-  font-size: clamp(1.1rem, 1.8vw, 1.8rem);
-  opacity: 0.8;
-}
-
-/* Grilla de carriles iguales, no un flex-column: las filas se reparten el alto
-   disponible para que la tabla llene la pantalla y se lea de lejos, pero la
-   cantidad de carriles la fija React en `--filas` y **no** la cantidad de
-   filas de la página actual.
-
-   Con flex pasaba esto: la última página, que trae menos jugadores que las
-   demás, estiraba sus filas para ocupar todo (medido: 174px contra los ~70px
-   de la primera). Al rotar, la tabla parecía otra. Con carriles fijos, una
-   página incompleta deja el hueco abajo y las filas miden siempre igual.
-
-   El piso de `--filas` (ver `Scoreboard.tsx`) evita el otro extremo: con dos
-   jugadores a primera hora, dos filas de 400px de alto. */
-.sb-lista {
-  flex: 1;
-  min-height: 0;
-  display: grid;
-  grid-template-rows: repeat(var(--filas, 10), minmax(0, 1fr));
-  gap: clamp(4px, 0.8vh, 10px);
-}
-
-.sb-fila {
-  min-height: 0;
-  display: flex;
-  align-items: center;
-  gap: clamp(10px, 1.5vw, 24px);
-  padding: 0 clamp(12px, 1.5vw, 24px);
-  background: rgba(255, 255, 255, 0.07);
-  border-radius: var(--r-lg);
-  font-size: clamp(1rem, 2vw, 2.1rem);
-  /* Entra desde abajo cuando la tabla rota de página. */
-  animation: sb-entrar 0.35s ease both;
-}
-
-@keyframes sb-entrar {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-}
-
-.sb-fila.oro {
-  background: rgba(246, 221, 143, 0.16);
-  border: 1px solid rgba(246, 221, 143, 0.5);
-}
-
-.sb-fila.plata {
-  background: rgba(219, 225, 229, 0.13);
-  border: 1px solid rgba(219, 225, 229, 0.38);
-}
-
-.sb-fila.cobre {
-  background: rgba(233, 189, 151, 0.13);
-  border: 1px solid rgba(233, 189, 151, 0.38);
-}
-
-.sb-puesto {
-  font-weight: var(--peso-bold);
-  font-variant-numeric: tabular-nums;
-  min-width: 2.6ch;
-  opacity: 0.7;
-}
-
-.sb-puesto.oro {
-  color: #f6dd8f;
-  opacity: 1;
-}
-
-.sb-puesto.plata {
-  color: #dbe1e5;
-  opacity: 1;
-}
-
-.sb-puesto.cobre {
-  color: #e9bd97;
-  opacity: 1;
-}
-
-.sb-quien {
-  flex: 1;
-  min-width: 0;
-  font-weight: var(--peso-semibold);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.sb-premio {
-  font-size: clamp(0.7rem, 1vw, 1.05rem);
-  font-weight: var(--peso-bold);
-  padding: 5px 14px;
-  border-radius: var(--r-full);
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.sb-premio.oro {
-  background: #f6dd8f;
-  color: #6b4e00;
-}
-
-.sb-premio.plata {
-  background: #dbe1e5;
-  color: #3a444c;
-}
-
-.sb-premio.cobre {
-  background: #e9bd97;
-  color: #6b3a15;
-}
-
-.sb-pts {
-  font-weight: var(--peso-bold);
-  font-variant-numeric: tabular-nums;
-  color: var(--vk-primary-light);
-  min-width: 3.5ch;
-  text-align: right;
-}
+/* La cabecera y las filas las pone `TablaPosiciones`. Acá vivían
+   `.sb-tabla-cabecera`, `.sb-vacio`, `.sb-lista` y las seis reglas de
+   `.sb-fila`/`.sb-puesto`/`.sb-premio`/`.sb-pts`: una segunda tabla,
+   con otros textos y otros tamaños que la del juego. */
 
 .sb-paginas {
   display: flex;
@@ -1687,21 +1673,63 @@ input[type='range']::-moz-range-thumb {
   background: var(--vk-primary-light);
 }
 
+/* El cartel y el póster van juntos, con un respiro chico: pegados del todo se
+   leían como un solo bloque cortado al medio. El aire grande de antes era el
+   `gap` original más el centrado vertical de la foto; ahora el gap es mínimo
+   y la foto se ancla arriba.
+
+   El `padding-top` alinea el cartel con la PRIMERA FILA de la tabla, no con el
+   borde de la pantalla: al lado del encabezado "TABLA DE POSICIONES" el cartel
+   arrancaba más arriba que todo lo demás y se veía descolgado. Es la altura de
+   ese encabezado —una línea de `--fs-section` más su margen—, así que escala
+   junto con él. */
 .sb-lateral {
   display: flex;
   flex-direction: column;
-  gap: clamp(10px, 1.5vh, 18px);
+  gap: var(--sp-sm);
   min-height: 0;
+  padding-top: calc(var(--fs-section) * var(--lh-body) + var(--sp-sm));
 }
 
-/* `min-height: 0` + `object-fit: contain`: el póster es vertical y muy alto,
-   y sin eso estiraba la columna hasta desbordar la pantalla. */
-.sb-poster {
+/* El wrapper se queda con el espacio que sobra y la foto se posiciona contra
+   él. `position: relative` no es decorativo: el `max-height: 100%` de la foto
+   necesita un alto de referencia **definido**, y dentro de un flex el alto del
+   contenedor se resuelve tarde — sin esto la imagen crecía por su ancho hasta
+   878px de alto y se iba 200px abajo del borde de la pantalla. */
+.sb-poster-wrap {
   flex: 1;
   min-height: 0;
-  width: 100%;
-  object-fit: contain;
+  position: relative;
+}
+
+/* El marco va pegado a la FOTO, no a su caja.
+
+   Con `object-fit: contain` sobre un elemento estirado por el flex, la caja
+   del `<img>` medía 374×644 y la foto renderizada 374×529: el borde dibujaba
+   un rectángulo con ~115px de aire repartido arriba y abajo, y se leía como
+   el marco del contenedor y no de la imagen. Con `max-*: 100%` y las medidas
+   en `auto`, la caja del `<img>` toma exactamente el tamaño de la foto
+   ajustada, así que el borde la abraza.
+
+   El marco no es decorativo: **el fondo del póster es del mismo verde que
+   esta pantalla**, así que sin él la foto se funde y no se lee dónde termina. */
+.sb-poster {
+  /* `inset: 0` + `margin: auto` + medidas en `auto`: la foto se centra sola en
+     el hueco y la caja del `<img>` queda del tamaño exacto de la imagen, que
+     es lo que hace que el borde la abrace en vez de enmarcar el contenedor. */
+  position: absolute;
+  inset: 0;
+  /* Arriba pegado al cartel (`margin-top: 0`), centrado en horizontal y el
+     aire sobrante abajo. Con `margin: auto` a secas la foto se centraba en el
+     hueco y dejaba una franja verde entre ella y el cartel. */
+  margin: 0 auto auto;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  border: 4px solid var(--vk-white);
   border-radius: var(--r-lg);
+  box-shadow: var(--sombra-lg);
 }
 
 /* El recuadro celeste que se sacó de Inicio: acá es donde tiene sentido, en
@@ -1710,21 +1738,25 @@ input[type='range']::-moz-range-thumb {
   background: var(--vk-info-fondo);
   border: 1px solid var(--vk-info-borde);
   border-radius: var(--r-lg);
-  padding: clamp(10px, 1.5vh, 18px);
+  padding: clamp(14px, 2vh, 24px) clamp(16px, 1.6vw, 28px);
   color: var(--vk-info);
   flex-shrink: 0;
 }
 
+/* Bien grande: es el único texto de esta pantalla que la gente lee a
+   propósito —a qué hora tiene que volver— y estaba en letra chica de pie de
+   página. */
 .sb-premios-hora {
-  margin: 0 0 4px;
-  font-size: clamp(0.95rem, 1.3vw, 1.35rem);
+  margin: 0 0 var(--sp-sm);
+  font-size: clamp(1.15rem, 1.7vw, 1.9rem);
   font-weight: var(--peso-bold);
+  line-height: 1.2;
 }
 
 .sb-premios-sub {
   margin: 0;
-  font-size: clamp(0.75rem, 0.95vw, 1rem);
-  line-height: 1.4;
+  font-size: clamp(0.9rem, 1.15vw, 1.3rem);
+  line-height: 1.45;
 }
 
 /* Pantalla angosta (alguien abre /scoreboard en el celular): el póster pasa

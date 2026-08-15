@@ -20,6 +20,19 @@ interface Props {
 
 const VALORES = Array.from({ length: 10 }, (_, i) => i + 1);
 
+/**
+ * Se llenan todos los botones hasta el elegido, **todos del mismo verde
+ * claro**, y el elegido en el verde fuerte.
+ *
+ * La primera versión usaba un degradé con una intensidad distinta por botón:
+ * se leía exagerado, diez tonos para una sola respuesta. Dos colores fijos
+ * alcanzan para lo mismo — se ve hasta dónde llegaste y cuál elegiste.
+ */
+function claseDe(v: number, valor: number | null): string {
+  if (valor === null || v > valor) return '';
+  return v === valor ? 'elegido' : 'lleno';
+}
+
 export function EscalaPuntos({
   id,
   label,
@@ -38,7 +51,7 @@ export function EscalaPuntos({
           <button
             key={v}
             type="button"
-            className={valor === v ? 'elegido' : ''}
+            className={claseDe(v, valor)}
             onClick={() => onElegir(v)}
             role="radio"
             aria-checked={valor === v}
