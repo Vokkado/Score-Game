@@ -276,7 +276,7 @@ export function App() {
       <div className="espaciador" />
       <h1 className="display">¡Gracias por jugar!</h1>
       <p className="gracias-texto">Tu resultado quedó registrado.</p>
-      <p className="gracias-hora">Los premios se entregan a partir de las 17:00 hs.</p>
+      <p className="gracias-hora">El premio se entrega a partir de las 17:00 hs.</p>
       <div className="espaciador" />
       {/* "Finalizar" y no "Que juegue otra persona": lo toca quien acaba de
           jugar, no el siguiente, y desde su lugar lo que hace es terminar. */}

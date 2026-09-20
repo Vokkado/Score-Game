@@ -65,11 +65,15 @@ const rows = candidates.map((c) => {
   const d = b ? b.breakdown : {};
   const h = (b && b.highlights) || { excesses: [], beneficials: [] };
   const fmt = (n) => (n === undefined ? '' : Number(n).toFixed(1));
+  // Score y cuota salen de products.json, no de candidates.json: es lo que de
+  // verdad ve el jugador, ya con las correcciones de data/score-overrides.json
+  // aplicadas. Revisar contra el número viejo no tendría sentido.
+  const p = products.get(c.id) || {};
   return [
     '', // columna "ok" para que la marques a mano
-    c.score, c.name,
-    (products.get(c.id) || {}).justification || '',
-    c.brand, c.category, c.quota, c.category_avg, c.deviation,
+    p.score ?? c.score, c.name,
+    p.justification || '',
+    c.brand, c.category, p.quota || c.quota, c.category_avg, c.deviation,
     fmt(d.penaltyIngredientes), fmt(d.penaltyToxicidad), fmt(d.penaltyRedFlags),
     fmt(d.nutritionNegativeImpact), fmt(d.nutritionPositiveImpact),
     fmt(d.penaltyUltraProcessed), fmt(d.penaltyPobrezaNutricional), fmt(d.penaltyAmortiguacion),

@@ -19,7 +19,8 @@ interface Props {
  * **Las preguntas sólo hablan de lo que la persona vivió** (§8r): jugó cinco
  * rondas y alguien del stand le contó de la app. Preguntarle qué tan útil le
  * resulta la herramienta para nutricionistas, como en la primera versión, era
- * pedirle que evalúe algo que capaz ni vio.
+ * pedirle que evalúe algo que capaz ni vio. Por eso tampoco se menciona más en
+ * la pregunta abierta, que ahora dice sólo "la app" (§8w).
  */
 export function Encuesta({ onEnviar }: Props) {
   const [general, setGeneral] = useState<number | null>(null);
@@ -90,7 +91,7 @@ export function Encuesta({ onEnviar }: Props) {
 
       <EscalaPuntos
         id="p-nps"
-        label="Del 1 al 10, ¿qué tan probable es que le recomiendes la app de Vokkado a un paciente?"
+        label="Del 1 al 10, ¿qué tan probable es que uses la app de Vokkado en tu día a día?"
         extremoBajo="Nada probable"
         extremoAlto="Muy probable"
         valor={nps}
@@ -99,14 +100,7 @@ export function Encuesta({ onEnviar }: Props) {
       />
 
       <div className="campo">
-        <label htmlFor="comentario">
-          ¿Qué sugerencias tenés sobre la app o la herramienta para nutricionistas?
-        </label>
-        {/* En vez de dar por hecho que la vio —el error de la versión
-            anterior—, la invita a verla. */}
-        <p className="ayuda-campo">
-          Si todavía no la viste, pasá por el stand después de jugar y te la mostramos.
-        </p>
+        <label htmlFor="comentario">¿Qué sugerencias tenés sobre la app?</label>
         <textarea
           id="comentario"
           rows={3}

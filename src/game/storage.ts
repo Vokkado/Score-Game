@@ -22,7 +22,15 @@ export interface Survey {
   general: number | null;
   /** Qué tan de acuerdo está con los puntajes que vio en la partida. */
   acuerdo: number | null;
-  /** Qué tan probable es que recomiende la app a un paciente. */
+  /**
+   * Qué tan probable es que use la app en su día a día.
+   *
+   * Se sigue llamando `nps` porque así se llama la columna en
+   * `event_game.players` y el campo que valida el backend, que no se tocan.
+   * Hasta el 2026-09-19 la pregunta era "¿qué tan probable es que le
+   * recomiendes la app a un paciente?" (§8w): si alguien cruza datos de este
+   * evento con los de otro, no son la misma pregunta.
+   */
   nps: number | null;
   comentario: string;
 }
@@ -167,7 +175,7 @@ export function toCsv(games: StoredGame[]): string {
   const headers = [
     'nombre', 'apellido', 'correo', 'telefono', 'profesion', 'acepta_novedades',
     'puntos', 'segundos', 'fecha',
-    'puntaje_a_vokkado_1_10', 'acuerdo_con_puntajes_1_10', 'recomendacion_1_10',
+    'puntaje_a_vokkado_1_10', 'acuerdo_con_puntajes_1_10', 'usaria_la_app_1_10',
     'comentario', 'sincronizado',
   ];
   const esc = (v: unknown) => {

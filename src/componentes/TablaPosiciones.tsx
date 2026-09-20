@@ -88,11 +88,15 @@ function metalDe(puesto: number): 'oro' | 'plata' | 'cobre' | '' {
 }
 
 /**
- * El premio de cada puesto. Los nombres son **los del póster** —CANGURO,
- * CAMISETA, TOTE BAG— y en mayúsculas: es lo que la persona tiene colgado al
- * lado mientras mira la tabla, y antes acá decía "bolsa", que no figura en
- * ningún lado. Una sola función para las dos tablas (Inicio, Resultado y el
+ * El premio del primer puesto. El nombre es **el del póster** —PELUCHE— y en
+ * mayúsculas: es lo que la persona tiene colgado al lado mientras mira la
+ * tabla. Una sola función para las dos tablas (Inicio, Resultado y el
  * scoreboard usan este mismo componente).
+ *
+ * **Hay un solo premio por puesto, el del 1º.** Antes el 2º se llevaba una
+ * camiseta y el 3º una tote bag; el póster cambió a un único peluche, así que
+ * el 2º y el 3º ya no llevan chip. Siguen teniendo su fila de plata y cobre:
+ * eso marca el podio, no el premio.
  *
  * El chip se sigue renderizando siempre acá: en pantallas angostas
  * (`.scoreboard` visto en un iPad vertical) se lo oculta por CSS
@@ -101,9 +105,7 @@ function metalDe(puesto: number): 'oro' | 'plata' | 'cobre' | '' {
  * scoreboard, tiene que seguir viéndose.
  */
 function premioDe(puesto: number): string | null {
-  if (puesto === 1) return '¿Se lleva el CANGURO?';
-  if (puesto === 2) return '¿Se lleva la CAMISETA?';
-  if (puesto === 3) return '¿Se lleva la TOTE BAG?';
+  if (puesto === 1) return '¿Se lleva el PELUCHE?';
   return null;
 }
 

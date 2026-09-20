@@ -235,20 +235,13 @@ input[type='range'].inerte {
   flex-shrink: 0;
 }
 
-/* Fondo de cada chip según el metal — antes eran todos gris translúcido. */
+/* Fondo del chip. Sólo queda el de oro: desde que el premio es uno solo (el
+   peluche del 1º), el 2º y el 3º no renderizan chip — ver `premioDe` en
+   `TablaPosiciones.tsx`. Las variantes de plata y cobre se borraron porque ya
+   no podían matchear con nada. */
 .premio-tag.oro {
   background: #f6dd8f;
   color: #6b4e00;
-}
-
-.premio-tag.plata {
-  background: #dbe1e5;
-  color: #3a444c;
-}
-
-.premio-tag.cobre {
-  background: #e9bd97;
-  color: #6b3a15;
 }
 
 /* Modificador de botón, no un estilo de Inicio: lo usan el CTA de Inicio y el

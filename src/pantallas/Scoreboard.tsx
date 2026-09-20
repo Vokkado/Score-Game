@@ -13,7 +13,7 @@ import poster from '../assets/PREMIOS (1).png';
  * **La tabla es literalmente el mismo componente que usa el juego**
  * (`TablaPosiciones`), no una copia parecida. La primera versión tenía su
  * propio marcado y por eso decía "1º Canguro" donde el juego dice "¿Se lleva
- * el CANGURO?", con otros tamaños de fila: dos tablas que iban a divergir sola
+ * el PELUCHE?", con otros tamaños de fila: dos tablas que iban a divergir sola
  * cada vez que se tocara una. Lo único que agrega el scoreboard es la
  * paginación, vía la prop `desde`.
  *
@@ -117,7 +117,7 @@ export function Scoreboard({ onVolver }: { onVolver: () => void }) {
           {/* El horario va ARRIBA: es el dato con fecha de vencimiento, y el
               póster ya se explica solo. Abajo quedaba como pie de figura. */}
           <div className="sb-premios">
-            <p className="sb-premios-hora">Los premios se entregan a las 17:00 hs</p>
+            <p className="sb-premios-hora">El premio se entrega a las 17:00 hs</p>
             {/* Corto a propósito. Lo de los stickers y los beneficios ya lo
                 dice el póster acá abajo, y un párrafo largo cambia de alto
                 según el ancho del cartel — lo que a su vez le movía el alto
@@ -132,7 +132,7 @@ export function Scoreboard({ onVolver }: { onVolver: () => void }) {
           <div className="sb-poster-wrap">
             <img
               src={poster}
-              alt="Premios: 1º canguro, 2º camiseta, 3º tote bag"
+              alt="Jugá y ganá: el 1º puesto se lleva el peluche, y hay beneficios para todos los que participen"
               className="sb-poster"
             />
           </div>

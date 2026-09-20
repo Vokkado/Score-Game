@@ -1,0 +1,102 @@
+{
+  "_README": [
+    "Correcciones a mano sobre la salida del motor de scoring, por producto.",
+    "",
+    "Existe porque el motor V2.2 tiene tres casos mal resueltos, todos visibles",
+    "en los logs que guarda data/breakdowns.json:",
+    "",
+    "1. Cuando los carbohidratos superan el límite pero el producto no declara",
+    "   'Azúcares' por separado en la tabla nutricional, los marca como NEUTRAL",
+    "   EXCESO y los penaliza con CERO. En las cocoas eso deja pasar 75-80 g de",
+    "   carbohidratos cada 100 g sin costo, y encima les suma la fibra y la",
+    "   proteína del cacao: puntajes de 75-79 para productos que son, en peso,",
+    "   mayormente azúcar.",
+    "2. Lee los minerales declarados de un agua (calcio, magnesio, cloruros) y",
+    "   el dióxido de carbono de la carbonatación como aditivos cuestionables.",
+    "3. Le aplica 'pobreza nutricional' a un agua por no aportar nutrientes, que",
+    "   para un agua es al revés: es lo que se espera de ella.",
+    "",
+    "Esto NO arregla el motor: arregla lo que el juego le muestra a la gente en",
+    "el stand. El puntaje en la base sigue siendo el viejo hasta que se corrija",
+    "el motor del lado del Backend.",
+    "",
+    "Formato de cada entrada:",
+    "  score      el puntaje que se muestra (y contra el que se juega)",
+    "  quota      la cuota nueva, si el puntaje corregido la cambia",
+    "  engine     valores del motor a reemplazar, en sus propias unidades",
+    "             (positivos = penalización, igual que en breakdowns.json)",
+    "  excesses   los chips de exceso, que el motor dejó vacíos",
+    "  motivo     por qué",
+    "",
+    "merge-justifications.js aplica esto y verifica que el desglose siga dando",
+    "el puntaje: si no cierra, falla en vez de generar una pantalla que no suma."
+  ],
+
+  "d51ba8bf-ab4d-4f61-827e-51e90e54e014": {
+    "_nombre": "AGUA MINERAL MATUTINA CON GAS BOTELLA 2.25 LITROS",
+    "score": 100,
+    "quota": "agua_100",
+    "engine": {
+      "penaltyIngredientes": -0.9
+    },
+    "motivo": "El motor le descontaba 2,8 por el dióxido de carbono (INS 290, 6,5/10 como aditivo). Es la carbonatación, no un agregado: misma agua que la versión sin gas, que puntúa 100. Queda con el mismo desglose que su gemela sin gas."
+  },
+
+  "9f53f41f-96aa-4dc7-82f6-538914929486": {
+    "_nombre": "Agua Mineral Salus Con Gas Pack 4 U 2.25 L",
+    "score": 100,
+    "quota": "agua_100",
+    "engine": {
+      "penaltyIngredientes": 0,
+      "penaltyToxicidad": 0,
+      "penaltyRedFlags": 0,
+      "penaltyPobrezaNutricional": 0
+    },
+    "motivo": "Caía a 69 por dos errores encadenados: leyó el calcio, el magnesio y los dos cloruros de la etiqueta como aditivos cuestionables (-13,6 de ingredientes, -5,6 de toxicidad, -2,6 de alertas) cuando son los minerales del agua, y encima le aplicó -10 de pobreza nutricional. Penalizar a un agua por no aportar nutrientes es al revés. Queda el aporte de magnesio."
+  },
+
+  "43e05543-32a2-4ac9-9702-bdcf1ef3769a": {
+    "_nombre": "Vascolet Alimento Achocolatado 500 G",
+    "score": 35,
+    "quota": "sorpresa",
+    "engine": {
+      "nutritionNegativeImpact": 33.9,
+      "penaltyPobrezaNutricional": 15
+    },
+    "excesses": [
+      { "name": "Carbohidratos", "value": 80, "unit": "g" },
+      { "name": "Calorías", "value": 370, "unit": "kcal" }
+    ],
+    "motivo": "80 g de carbohidratos y 370 kcal cada 100 g, los dos por encima del límite del motor (60 g y 300 kcal) y los dos penalizados con cero."
+  },
+
+  "1d71a72e-fea7-4ce0-a7db-db8188939dcc": {
+    "_nombre": "Cocoa Copacabana Intenso 500 G",
+    "score": 35,
+    "quota": "sorpresa",
+    "engine": {
+      "nutritionNegativeImpact": 32.5,
+      "penaltyPobrezaNutricional": 15
+    },
+    "excesses": [
+      { "name": "Carbohidratos", "value": 75, "unit": "g" },
+      { "name": "Calorías", "value": 370, "unit": "kcal" }
+    ],
+    "motivo": "75 g de carbohidratos y 370 kcal cada 100 g. El motor sólo descontó 2,7 por el exceso."
+  },
+
+  "cf08e3d3-d992-4cdc-ac1a-efcbecbb15b6": {
+    "_nombre": "Cacao En Polvo Nestle© 200 G",
+    "score": 35,
+    "quota": "sorpresa",
+    "engine": {
+      "nutritionNegativeImpact": 33.6,
+      "penaltyPobrezaNutricional": 15
+    },
+    "excesses": [
+      { "name": "Carbohidratos", "value": 75, "unit": "g" },
+      { "name": "Calorías", "value": 390, "unit": "kcal" }
+    ],
+    "motivo": "75 g de carbohidratos y 390 kcal cada 100 g. El motor sólo descontó 4,0 por el exceso."
+  }
+}

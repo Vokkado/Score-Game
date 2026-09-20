@@ -292,7 +292,7 @@
   {
     "n": 59,
     "match": "AGUA MINERAL MATUTINA CON GAS",
-    "texto": "Agua mineral con bicarbonato de sodio y dióxido de carbono, este último el único ingrediente que descuenta algo. Sin azúcares ni calorías. Los tres puntos que la separan de la versión sin gas son exactamente la carbonatación."
+    "texto": "Agua mineral con bicarbonato de sodio y dióxido de carbono: la carbonatación no le agrega azúcar, calorías ni aditivos. No hay nada que penalizar, así que se queda con el mismo 100 que la versión sin gas."
   },
   {
     "n": 60,
@@ -337,17 +337,17 @@
   {
     "n": 68,
     "match": "Vascolet Alimento Achocolatado",
-    "texto": "El cacao en polvo aporta 7,5 g de fibra y 5,5 g de proteína por 100 g, y son los dos ingredientes principales junto con el azúcar. No está clasificado como ultraprocesado y solo arrastra un aromatizante. Bastante más arriba de lo que sugiere el envase."
+    "texto": "Ochenta gramos de carbohidratos cada 100 g: el azúcar es el primer ingrediente y el cacao viene después. La fibra y la proteína del cacao son reales, pero no alcanzan a compensar un polvo que es, en peso, mayormente azúcar. Se toma diluido en leche, pero el puntaje es del producto tal como viene en el envase."
   },
   {
     "n": 69,
     "match": "Cocoa Copacabana Intenso 500 G",
-    "texto": "El primer ingrediente es azúcar, pero el cacao aporta 14,5 g de fibra y 8 g de proteína por cada 100 g, valores que suman fuerte. Solo tres ingredientes, sin conservantes ni colorantes, y sin clasificación de ultraprocesado. El puntaje es del cacao, no del azúcar."
+    "texto": "El primer ingrediente es azúcar, y son 75 g de carbohidratos cada 100 g. El cacao aporta 14,5 g de fibra y 8 g de proteína —los mejores valores de las tres cocoas del juego— pero eso no da vuelta un polvo que es mayormente azúcar. Sin conservantes ni colorantes, y sin clasificación de ultraprocesado."
   },
   {
     "n": 70,
     "match": "Cacao En Polvo Nestle© 200 G",
-    "texto": "Mismo perfil que las otras cocoas: azúcar primero, cacao después y un aromatizante. La fibra y la proteína del cacao son lo que sostiene el puntaje. Sin conservantes, sin colorantes y sin clasificación de ultraprocesado."
+    "texto": "Mismo perfil que las otras cocoas: azúcar primero, cacao después y un aromatizante. Son 75 g de carbohidratos y 390 kcal cada 100 g. La fibra y la proteína del cacao suman, pero no alcanzan: lo que más hay en el envase es azúcar."
   },
   {
     "n": 71,
@@ -422,7 +422,7 @@
   {
     "n": 85,
     "match": "Agua Mineral Salus Con Gas Pack",
-    "texto": "Un agua mineralizada, no un agua mineral natural: la etiqueta declara calcio, magnesio y dos cloruros agregados. Esos aditivos son los que la separan de las aguas que puntúan 100. Aporta magnesio, pero poco."
+    "texto": "Un agua mineralizada: la etiqueta declara calcio, magnesio y dos cloruros, que son los minerales del agua y no azúcar ni aditivos. Sin calorías y sin azúcares, y encima aporta magnesio. El 100 de la escala, igual que el resto de las aguas."
   },
   {
     "n": 86,

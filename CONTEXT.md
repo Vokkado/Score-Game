@@ -1397,6 +1397,109 @@ título— y el usuario prefirió el agradecimiento arriba. `.display` viene con
 `margin: 0`, así que el título quedaba pegado al texto de abajo: se le agregó
 `sp-lg`.
 
+## 8v. Premio único y correcciones de puntaje (2026-09-19)
+
+### Un solo premio: el peluche
+
+El póster cambió (`src/assets/PREMIOS (1).png`, ya reemplazado por el usuario):
+ahora hay **un solo premio, el peluche del 1º**, más "beneficios para todos los
+que participen". Antes eran tres: canguro, camiseta y tote bag.
+
+En el código eso estaba escrito en cuatro lugares, todos actualizados:
+
+- `premioDe()` en `TablaPosiciones.tsx` — devolvía un chip para los puestos 1,
+  2 y 3; ahora sólo para el 1º, con el texto "¿Se lleva el PELUCHE?". Los
+  puestos 2 y 3 **siguen con su fila de plata y cobre**: eso marca el podio,
+  que no cambió, no el premio.
+- `.premio-tag.plata` y `.premio-tag.cobre` en `styles.css` — se borraron, ya
+  no podían matchear con nada.
+- El `alt` del póster en `Scoreboard.tsx`, que enumeraba los tres premios.
+- El copy del horario, en singular: "El premio se entrega a las 17:00 hs" en el
+  scoreboard y en la pantalla de cierre de `App.tsx`.
+
+### Las cocoas puntuaban 75-79 y era un error del motor
+
+Tres productos de "Bebidas calientes" —Vascolet, Cocoa Copacabana y Cacao en
+Polvo Nestlé— salían **79, 75 y 75**. Para un polvo que es mayormente azúcar
+eso es indefendible en un stand lleno de nutricionistas.
+
+La causa está en los logs del propio motor, en `data/breakdowns.json`:
+
+```
+ℹ️⚠️ Carbohidratos: valor=80.0000/100g | min=15.0000 limit=60.0000 → NEUTRAL EXCESO
+ℹ️⚠️ Valor energético (calorías): valor=370.0000/100g | limit=300.0000 → NEUTRAL EXCESO
+PASO 4 - Nutrition Facts: negativos=-0.00 positivos=+5.16 → +2.12
+```
+
+Cuando los carbohidratos pasan el límite pero el producto **no declara
+"Azúcares" por separado** en la tabla nutricional, el motor V2.2 los marca como
+exceso *neutro* y los penaliza con cero. Encima suma la fibra y la proteína del
+cacao como aportes buenos. Resultado: 80 g de carbohidratos sin costo y dos
+positivos a favor.
+
+**Esto no arregla el motor** —el puntaje en la base sigue siendo el viejo— sino
+lo que el juego muestra. La corrección vive en `data/score-overrides.json`, que
+`merge-justifications.js` aplica sobre los valores del motor **antes** de armar
+el desglose, y verifica que el desglose siga cerrando: si los pasos no suman el
+puntaje que se muestra, el script falla en vez de generar una pantalla donde la
+cuenta está a la vista y no da.
+
+Los tres quedaron en **35**, con el exceso de carbohidratos y calorías contado
+(-32,5 a -33,9, dentro del rango que el motor usa en otros productos: la
+hamburguesa Schneck lleva -38,3) y la pobreza nutricional subida de -5 a -15.
+Las justificaciones se reescribieron: las viejas argumentaban a favor del
+puntaje alto ("el puntaje es del cacao, no del azúcar").
+
+**Cambió la cuota de los tres, de `ancla_buena` a `sorpresa`.** No es una
+decisión nueva: es la regla que ya tiene `curate-products.js`
+(`deviation >= 20 → sorpresa`), y con 35 contra un promedio de categoría de 77
+la desviación es 42. La consecuencia es que ahora son "interesantes" y entran
+en la cuota de 2 por partida: el pool pasa de 44/56 a 47/53, y el ciclo de la
+bolsa de 18 a 17 partidas. Para revertirlo alcanza con sacar `quota` de las
+tres entradas del override.
+
+### Las aguas con gas tenían que ser 100, y no lo eran
+
+Las dos aguas sin gas del pool puntúan 100. Las dos con gas salían **97 y 69**,
+y son la misma bebida con burbujas. Otro par de errores del motor, también
+visibles en sus logs:
+
+- **Matutina con gas, 97.** El único descuento era -2,8 por el dióxido de
+  carbono, que el motor puntúa 6,5/10 como si fuera un aditivo cualquiera. Es
+  la carbonatación. Quedó con el mismo desglose que su gemela sin gas.
+- **Salus con gas, 69.** Dos errores encadenados. Leyó el calcio, el magnesio y
+  los dos cloruros que declara la etiqueta como aditivos cuestionables (-13,6
+  de ingredientes, -5,6 de toxicidad, -2,6 de alertas) cuando son los minerales
+  del agua. Y encima le aplicó **-10 de pobreza nutricional**: penalizar a un
+  agua por no aportar nutrientes es exactamente al revés. Le quedó el aporte de
+  magnesio, que es real.
+
+Las cuatro aguas quedaron en 100 y con cuota `agua_100`. La cuota de la Salus
+era `medio`, pero `medio` y `agua_100` son las dos "no interesantes", así que
+esto no movió la mezcla del sorteo.
+
+Para que esto entrara, la verificación de `merge-justifications.js` ahora
+contempla el recorte a 0-100 del motor: un desglose que suma 100,9 sigue siendo
+un 100 válido.
+
+## 8w. Dos preguntas de la encuesta, retocadas (2026-09-19)
+
+Siguen siendo cuatro y siguen siendo obligatorias. Cambió el texto de dos:
+
+- **La tercera escala** pasó de "¿qué tan probable es que le recomiendes la app
+  de Vokkado a un paciente?" a **"¿qué tan probable es que uses la app de
+  Vokkado en tu día a día?"**. Los extremos ("Nada probable" / "Muy probable")
+  siguen sirviendo. **Ya no es un NPS**, aunque el campo se siga llamando `nps`
+  en `Survey`, en `event_game.players` y en el validador del Backend: esos no
+  se tocaron. En el CSV la columna se renombró de `recomendacion_1_10` a
+  `usaria_la_app_1_10`, que es lo que de verdad mide ahora — si alguien cruza
+  estos datos con los de otro evento, no son la misma pregunta.
+- **La pregunta abierta** dice ahora sólo "¿Qué sugerencias tenés sobre la
+  app?". Se le sacó "o la herramienta para nutricionistas" **y el texto de
+  ayuda** que invitaba a pasar por el stand a verla: esa herramienta no se
+  muestra en este evento, así que nombrarla era pedir opinión sobre algo que
+  nadie vio. Es el mismo razonamiento de §8r, llevado hasta el final.
+
 ## 9. Dónde retomar
 
 **Orden acordado con el usuario (2026-08-13): primero todas las pantallas del

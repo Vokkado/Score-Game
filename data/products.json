@@ -2894,14 +2894,14 @@
     "name": "AGUA MINERAL MATUTINA CON GAS BOTELLA 2.25 LITROS",
     "brand": "MATUTINA",
     "category": "Aguas",
-    "score": 97,
+    "score": 100,
     "image": "d51ba8bf-ab4d-4f61-827e-51e90e54e014.jpg",
-    "quota": "ancla_buena",
-    "justification": "Agua mineral con bicarbonato de sodio y dióxido de carbono, este último el único ingrediente que descuenta algo. Sin azúcares ni calorías. Los tres puntos que la separan de la versión sin gas son exactamente la carbonatación.",
+    "quota": "agua_100",
+    "justification": "Agua mineral con bicarbonato de sodio y dióxido de carbono: la carbonatación no le agrega azúcar, calorías ni aditivos. No hay nada que penalizar, así que se queda con el mismo 100 que la versión sin gas.",
     "breakdown": [
       {
         "label": "Calidad de los ingredientes",
-        "value": -2.8
+        "value": 0.9
       }
     ],
     "excesses": [],
@@ -3259,10 +3259,10 @@
     "name": "Vascolet Alimento Achocolatado 500 G",
     "brand": "Vascolet",
     "category": "Bebidas calientes",
-    "score": 79,
+    "score": 35,
     "image": "43e05543-32a2-4ac9-9702-bdcf1ef3769a.jpg",
-    "quota": "ancla_buena",
-    "justification": "El cacao en polvo aporta 7,5 g de fibra y 5,5 g de proteína por 100 g, y son los dos ingredientes principales junto con el azúcar. No está clasificado como ultraprocesado y solo arrastra un aromatizante. Bastante más arriba de lo que sugiere el envase.",
+    "quota": "sorpresa",
+    "justification": "Ochenta gramos de carbohidratos cada 100 g: el azúcar es el primer ingrediente y el cacao viene después. La fibra y la proteína del cacao son reales, pero no alcanzan a compensar un polvo que es, en peso, mayormente azúcar. Se toma diluido en leche, pero el puntaje es del producto tal como viene en el envase.",
     "breakdown": [
       {
         "label": "Calidad de los ingredientes",
@@ -3277,15 +3277,30 @@
         "value": -1.8
       },
       {
+        "label": "Excesos",
+        "value": -33.9
+      },
+      {
         "label": "Aportes buenos",
         "value": 2.1
       },
       {
         "label": "Calorías vacías",
-        "value": -5
+        "value": -15
       }
     ],
-    "excesses": [],
+    "excesses": [
+      {
+        "name": "Carbohidratos",
+        "value": 80,
+        "unit": "g"
+      },
+      {
+        "name": "Calorías",
+        "value": 370,
+        "unit": "kcal"
+      }
+    ],
     "beneficials": [
       {
         "name": "Fibra alimentaria",
@@ -3304,10 +3319,10 @@
     "name": "Cocoa Copacabana Intenso 500 G",
     "brand": "Copacabana",
     "category": "Bebidas calientes",
-    "score": 75,
+    "score": 35,
     "image": "1d71a72e-fea7-4ce0-a7db-db8188939dcc.jpg",
-    "quota": "ancla_buena",
-    "justification": "El primer ingrediente es azúcar, pero el cacao aporta 14,5 g de fibra y 8 g de proteína por cada 100 g, valores que suman fuerte. Solo tres ingredientes, sin conservantes ni colorantes, y sin clasificación de ultraprocesado. El puntaje es del cacao, no del azúcar.",
+    "quota": "sorpresa",
+    "justification": "El primer ingrediente es azúcar, y son 75 g de carbohidratos cada 100 g. El cacao aporta 14,5 g de fibra y 8 g de proteína —los mejores valores de las tres cocoas del juego— pero eso no da vuelta un polvo que es mayormente azúcar. Sin conservantes ni colorantes, y sin clasificación de ultraprocesado.",
     "breakdown": [
       {
         "label": "Calidad de los ingredientes",
@@ -3323,7 +3338,7 @@
       },
       {
         "label": "Excesos",
-        "value": -2.7
+        "value": -32.5
       },
       {
         "label": "Aportes buenos",
@@ -3331,10 +3346,21 @@
       },
       {
         "label": "Calorías vacías",
-        "value": -5
+        "value": -15
       }
     ],
-    "excesses": [],
+    "excesses": [
+      {
+        "name": "Carbohidratos",
+        "value": 75,
+        "unit": "g"
+      },
+      {
+        "name": "Calorías",
+        "value": 370,
+        "unit": "kcal"
+      }
+    ],
     "beneficials": [
       {
         "name": "Fibra alimentaria",
@@ -3353,10 +3379,10 @@
     "name": "Cacao En Polvo Nestle© 200 G",
     "brand": "Nestle",
     "category": "Bebidas calientes",
-    "score": 75,
+    "score": 35,
     "image": "cf08e3d3-d992-4cdc-ac1a-efcbecbb15b6.jpg",
-    "quota": "ancla_buena",
-    "justification": "Mismo perfil que las otras cocoas: azúcar primero, cacao después y un aromatizante. La fibra y la proteína del cacao son lo que sostiene el puntaje. Sin conservantes, sin colorantes y sin clasificación de ultraprocesado.",
+    "quota": "sorpresa",
+    "justification": "Mismo perfil que las otras cocoas: azúcar primero, cacao después y un aromatizante. Son 75 g de carbohidratos y 390 kcal cada 100 g. La fibra y la proteína del cacao suman, pero no alcanzan: lo que más hay en el envase es azúcar.",
     "breakdown": [
       {
         "label": "Calidad de los ingredientes",
@@ -3372,7 +3398,7 @@
       },
       {
         "label": "Excesos",
-        "value": -4
+        "value": -33.6
       },
       {
         "label": "Aportes buenos",
@@ -3380,10 +3406,21 @@
       },
       {
         "label": "Calorías vacías",
-        "value": -5
+        "value": -15
       }
     ],
-    "excesses": [],
+    "excesses": [
+      {
+        "name": "Carbohidratos",
+        "value": 75,
+        "unit": "g"
+      },
+      {
+        "name": "Calorías",
+        "value": 390,
+        "unit": "kcal"
+      }
+    ],
     "beneficials": [
       {
         "name": "Fibra alimentaria",
@@ -4159,30 +4196,14 @@
     "name": "Agua Mineral Salus Con Gas Pack 4 U 2.25 L",
     "brand": "Salus",
     "category": "Aguas",
-    "score": 69,
+    "score": 100,
     "image": "9f53f41f-96aa-4dc7-82f6-538914929486.jpg",
-    "quota": "medio",
-    "justification": "Un agua mineralizada, no un agua mineral natural: la etiqueta declara calcio, magnesio y dos cloruros agregados. Esos aditivos son los que la separan de las aguas que puntúan 100. Aporta magnesio, pero poco.",
+    "quota": "agua_100",
+    "justification": "Un agua mineralizada: la etiqueta declara calcio, magnesio y dos cloruros, que son los minerales del agua y no azúcar ni aditivos. Sin calorías y sin azúcares, y encima aporta magnesio. El 100 de la escala, igual que el resto de las aguas.",
     "breakdown": [
-      {
-        "label": "Calidad de los ingredientes",
-        "value": -13.6
-      },
-      {
-        "label": "Ingredientes cuestionados",
-        "value": -5.6
-      },
-      {
-        "label": "Alertas puntuales",
-        "value": -2.6
-      },
       {
         "label": "Aportes buenos",
         "value": 0.5
-      },
-      {
-        "label": "Calorías vacías",
-        "value": -10
       }
     ],
     "excesses": [],
