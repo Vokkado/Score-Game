@@ -76,9 +76,9 @@ export function Encuesta({ onEnviar }: Props) {
         error={err(faltaGeneral)}
       />
 
-      {/* La que más le sirve al producto: el que contesta es nutricionista y
-          acaba de ver ocho desgloses reales. Si el motor puntúa raro, acá es
-          donde va a aparecer. */}
+      {/* La que más le sirve al producto: quien contesta acaba de ver cinco
+          desgloses reales. Si el motor puntúa raro, acá es donde va a
+          aparecer. */}
       <EscalaPuntos
         id="p-acuerdo"
         label="Del 1 al 10, ¿qué tan de acuerdo estás con los puntajes que viste?"

@@ -1500,6 +1500,55 @@ Siguen siendo cuatro y siguen siendo obligatorias. Cambió el texto de dos:
   muestra en este evento, así que nombrarla era pedir opinión sobre algo que
   nadie vio. Es el mismo razonamiento de §8r, llevado hasta el final.
 
+## 8x. El evento cambió de público: celíacos (2026-09-20)
+
+El evento donde se juega pasó a estar enfocado en personas celíacas, no en
+nutricionistas. Eso no cambió el juego —el Score mide calidad nutricional, no
+gluten— pero sí dos textos que daban por sentado el público anterior:
+
+- **El placeholder de "Profesión o institución"**, en `Registro.tsx`, decía
+  "Nutricionista, Facultad, consultorio…". Lo ve todo el mundo antes de la
+  primera ronda, y le sugiere que la respuesta esperada es una profesión de
+  salud cuando la mayoría va a ser gente celíaca o familiares. Quedó en
+  "A qué te dedicás", que no sugiere nada. El label no cambió.
+- La pregunta abierta de la encuesta, en §8w.
+
+### Se evaluó cambiar el pool de productos, y se decidió que no
+
+Se revisó la base de dev buscando productos sin TACC. El hallazgo, para que no
+se vuelva a investigar desde cero:
+
+- De 25.443 productos, sólo **582 están validados** y 540 tienen score e
+  imagen. Ese es el universo real del pool.
+- Con ficha de alérgenos cargada y sin trigo/avena/cebada/centeno hay **92
+  productos**, de los cuales 19 ya están en el juego. Los 73 restantes son
+  helados, golosinas, embutidos, refrescos y aderezos: productos que son sin
+  gluten **por naturaleza**, no reemplazos sin TACC. Y puntúan bajo y parejo
+  (golosinas 12-51, helados 25-51, embutidos 22-28, refrescos todos 26):
+  meterlos aplastaría el rango y adivinar dejaría de tener gracia.
+- **No hay premezclas, pastas, panes ni galletitas sin TACC en la base.** Lo
+  único que aparece buscando arroz, mandioca, almidón o quinoa son las dos
+  galletas de arroz y la polenta, que ya están en el pool.
+- El único reemplazo sin gluten de verdad es **"Galleta Rellena Oreo Sin
+  Gluten", que puntúa 16 — igual que la Oreo común, que también puntúa 16.**
+  Es el mejor dato del evento y no necesita entrar al pool: es una frase para
+  el guión del stand. El sin TACC resuelve la seguridad, no la calidad.
+
+**No se puso ningún sello de "apto para celíacos", ni se va a poner.** En esta
+base `product_allergens.presence` sólo puede valer `CONTAINS` o `MAY_CONTAIN`:
+no existe un valor que diga "libre de". Lo máximo que se sabe de un producto es
+que *no declara* trigo, y 246 de los 540 usables no tienen ficha de alérgenos
+cargada. En un stand de celíacos, la diferencia entre "no declara" y "es apto"
+no es un matiz — y el juego no es el lugar para una afirmación de seguridad.
+Para eso está la app, que sí tiene el sistema de restricciones con `GLUTEN`.
+
+**Ojo para el futuro:** el script que genera los desgloses de los 8 pasos
+(`Backend/scripts/scoregame-breakdowns.ts`, el que menciona el README) **no
+existe en el repo del Backend y nunca se commiteó** — verificado en todo el
+historial de git. Agregar un producto nuevo al pool hoy significa reescribirlo
+contra el scoring service, o aceptar que ese producto entre sin desglose (la
+pantalla de Feedback esconde la sección entera si `breakdown` viene vacío).
+
 ## 9. Dónde retomar
 
 **Orden acordado con el usuario (2026-08-13): primero todas las pantallas del

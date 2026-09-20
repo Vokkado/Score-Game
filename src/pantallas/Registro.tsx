@@ -196,7 +196,11 @@ export function Registro({ valores, onCambiar, onListo, onVolver, yaJugo }: Prop
           <Campo
             id="profesion"
             label="Profesión o institución"
-            placeholder="Nutricionista, Facultad, consultorio…"
+            // Neutro a propósito: el ejemplo anterior era "Nutricionista,
+            // Facultad, consultorio…", que en un evento de celíacos le sugiere
+            // a la gente una respuesta que no es la suya — la mayoría no viene
+            // por su profesión. Ver §8x.
+            placeholder="A qué te dedicás"
             value={valores.profesion}
             onChange={(e) => set('profesion', e.target.value)}
             onBlur={() => setTocado((t) => ({ ...t, profesion: true }))}
