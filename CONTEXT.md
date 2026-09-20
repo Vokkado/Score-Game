@@ -1506,11 +1506,13 @@ El evento donde se juega pasó a estar enfocado en personas celíacas, no en
 nutricionistas. Eso no cambió el juego —el Score mide calidad nutricional, no
 gluten— pero sí dos textos que daban por sentado el público anterior:
 
-- **El placeholder de "Profesión o institución"**, en `Registro.tsx`, decía
-  "Nutricionista, Facultad, consultorio…". Lo ve todo el mundo antes de la
-  primera ronda, y le sugiere que la respuesta esperada es una profesión de
-  salud cuando la mayoría va a ser gente celíaca o familiares. Quedó en
-  "A qué te dedicás", que no sugiere nada. El label no cambió.
+- **El campo de profesión**, en `Registro.tsx`. Lo ve todo el mundo antes de la
+  primera ronda. El label decía "Profesión o institución" —que da por hecho que
+  la persona tiene una— y el placeholder ofrecía "Nutricionista, Facultad,
+  consultorio…", que en un evento de celíacos le sugiere una respuesta que no
+  es la suya: la mayoría no viene por su profesión. Quedó con la pregunta en el
+  label (**"A qué te dedicás"**) y el ejemplo en el placeholder (**"Tu
+  profesión o actividad actual"**), que es donde va cada cosa.
 - La pregunta abierta de la encuesta, en §8w.
 
 ### Se evaluó cambiar el pool de productos, y se decidió que no

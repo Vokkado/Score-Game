@@ -195,12 +195,14 @@ export function Registro({ valores, onCambiar, onListo, onVolver, yaJugo }: Prop
 
           <Campo
             id="profesion"
-            label="Profesión o institución"
-            // Neutro a propósito: el ejemplo anterior era "Nutricionista,
-            // Facultad, consultorio…", que en un evento de celíacos le sugiere
-            // a la gente una respuesta que no es la suya — la mayoría no viene
-            // por su profesión. Ver §8x.
-            placeholder="A qué te dedicás"
+            // La pregunta va en el label y el ejemplo en el placeholder, que es
+            // donde va cada cosa. Antes el label era "Profesión o institución"
+            // —que da por hecho que la persona tiene una— y el placeholder
+            // ofrecía "Nutricionista, Facultad, consultorio…", que en un evento
+            // de celíacos le sugiere a la gente una respuesta que no es la
+            // suya: la mayoría no viene por su profesión. Ver §8x.
+            label="A qué te dedicás"
+            placeholder="Tu profesión o actividad actual"
             value={valores.profesion}
             onChange={(e) => set('profesion', e.target.value)}
             onBlur={() => setTocado((t) => ({ ...t, profesion: true }))}
