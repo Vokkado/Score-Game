@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { listarEventos, crearEvento, mostrarEvento, type Evento } from '../game/eventos';
 import { Encabezado } from '../componentes/Encabezado';
-import { Calendario } from '../componentes/Iconos';
+import { Calendario, ChevronAbajo } from '../componentes/Iconos';
 
 /** Hoy en YYYY-MM-DD, en la hora del iPad. No `toISOString()`: ese es UTC, y
  *  de noche en Uruguay ya da el día siguiente. */
@@ -83,29 +83,36 @@ export function Eventos({ onVolver }: { onVolver: () => void }) {
         ) : eventos.length === 0 ? (
           <p className="sub">Todavía no hay eventos.</p>
         ) : (
-          <ul className="lista-eventos">
-            {eventos.map((e) => (
-              <li key={e.id} className={e.mostrando ? 'evento mostrando' : 'evento'}>
-                <div className="evento-datos">
-                  <strong>{e.nombre}</strong>
-                  <span className="leyenda">
-                    {aDiaMesAnio(e.fecha)} · {e.partidas} {e.partidas === 1 ? 'partida' : 'partidas'}
-                  </span>
-                </div>
-                {e.mostrando ? (
-                  <span className="etiqueta-chica">En pantalla</span>
-                ) : (
-                  <button
-                    className="evento-mostrar"
-                    disabled={ocupado}
-                    onClick={() => correr(() => mostrarEvento(e.id))}
-                  >
-                    Mostrar
-                  </button>
-                )}
-              </li>
-            ))}
-          </ul>
+          <div className="tarjeta-formulario">
+            <div className="campo">
+              <label htmlFor="evento-mostrando">Evento en pantalla</label>
+              <div className="campo-con-icono">
+                {/* Elegir otro lo marca al toque. Queda en el valor viejo hasta
+                    que el servidor confirma y se recarga la lista. */}
+                <select
+                  id="evento-mostrando"
+                  disabled={ocupado}
+                  value={eventos.find((e) => e.mostrando)?.id ?? ''}
+                  onChange={(ev) => correr(() => mostrarEvento(ev.target.value))}
+                >
+                  {!eventos.some((e) => e.mostrando) && (
+                    <option value="" disabled>
+                      Ninguno (el ranking está vacío)
+                    </option>
+                  )}
+                  {eventos.map((e) => (
+                    <option key={e.id} value={e.id}>
+                      {e.nombre} · {aDiaMesAnio(e.fecha)} · {e.partidas}{' '}
+                      {e.partidas === 1 ? 'partida' : 'partidas'}
+                    </option>
+                  ))}
+                </select>
+                <span className="icono-campo">
+                  <ChevronAbajo color="var(--vk-texto-secundario)" />
+                </span>
+              </div>
+            </div>
+          </div>
         )}
 
         <form
@@ -117,7 +124,7 @@ export function Eventos({ onVolver }: { onVolver: () => void }) {
           }}
         >
           <div className="campo">
-            <label htmlFor="evento-nombre">Nombre del evento</label>
+            <label htmlFor="evento-nombre">Nombre del evento nuevo</label>
             <input
               id="evento-nombre"
               type="text"
@@ -133,7 +140,7 @@ export function Eventos({ onVolver }: { onVolver: () => void }) {
                 del navegador (mm/dd/aaaa en inglés) y no se puede forzar. Por
                 eso va transparente ENCIMA de un texto en dd/mm/aaaa: se ve el
                 texto, y el toque cae en el nativo y abre su calendario. */}
-            <div className="campo-fecha">
+            <div className="campo-con-icono">
               <input
                 type="text"
                 readOnly
@@ -142,7 +149,7 @@ export function Eventos({ onVolver }: { onVolver: () => void }) {
                 placeholder="dd/mm/aaaa"
                 value={fecha ? aDiaMesAnio(fecha) : ''}
               />
-              <span className="icono-fecha">
+              <span className="icono-campo">
                 <Calendario color="var(--vk-texto-secundario)" />
               </span>
               <input

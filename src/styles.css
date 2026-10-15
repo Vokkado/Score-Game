@@ -579,71 +579,48 @@ textarea:focus {
 
 /* ── Eventos (ruta oculta /eventos) ──────────────────────────────────── */
 
-.lista-eventos {
-  list-style: none;
-  margin: 0 0 var(--sp-lg);
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-sm);
-}
-
-.evento {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-md);
-  background: var(--vk-superficie);
+/* El desplegable del evento en pantalla, con la misma pinta que los inputs.
+   `appearance: none` saca la flecha nativa (en Safari del iPad es un
+   botón gris que no combina); la reemplaza el ícono de `.icono-campo`. */
+.campo select {
+  width: 100%;
+  font-family: inherit;
+  font-size: max(16px, var(--fs-subtitle)); /* < 16px y Safari hace zoom, ver .campo input */
+  color: var(--vk-texto);
+  background: var(--vk-fondo);
   border: 1px solid var(--vk-borde);
-  border-radius: var(--radio-tarjeta);
-  padding: var(--sp-sm) var(--sp-md);
+  border-radius: var(--radio-input);
+  padding: 0 var(--pad-input);
+  height: max(var(--alto-input), 3em);
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
 }
 
-/* El que está en pantalla se distingue por el borde, no sólo por la
-   etiqueta: es lo primero que hay que poder ver de un vistazo. */
-.evento.mostrando {
+.campo select:focus {
+  outline: none;
   border-color: var(--vk-primary-dark);
 }
 
-.evento-datos {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-xs);
-  color: var(--vk-texto);
-}
-
-.evento-mostrar {
-  background: transparent;
-  color: var(--vk-primary-dark);
-  border: 1px solid var(--vk-primary-dark);
-  border-radius: var(--radio-boton);
-  min-height: 40px;
-  padding: 0 var(--sp-md);
-  font-size: var(--fs-body);
-  font-weight: var(--peso-semibold);
-}
-
-.evento-mostrar:disabled {
+.campo select:disabled {
   opacity: 0.6;
   cursor: default;
 }
 
-/* Texto en dd/mm/aaaa con el `type="date"` nativo transparente encima (ver
-   Eventos.tsx). El foco lo tiene el nativo, así que el borde de foco se
-   pinta en el texto con :focus-within. */
-.campo-fecha {
+/* Campo con un ícono a la derecha (flecha del desplegable, calendario). */
+.campo-con-icono {
   position: relative;
 }
 
-/* Lugar para el ícono, así una fecha larga no le pasa por debajo. */
-.campo-fecha input {
+/* Lugar para el ícono, así un texto largo no le pasa por debajo. */
+.campo-con-icono input,
+.campo-con-icono select {
   padding-right: calc(var(--pad-input) + 28px);
 }
 
 /* Sin eventos de puntero: el toque sobre el ícono tiene que caer en el
-   nativo de encima y abrir el calendario. */
-.icono-fecha {
+   campo y abrirlo. */
+.icono-campo {
   position: absolute;
   right: var(--pad-input);
   top: 50%;
@@ -652,14 +629,17 @@ textarea:focus {
   pointer-events: none;
 }
 
-.campo-fecha .fecha-nativa {
+/* Fecha: texto en dd/mm/aaaa con el `type="date"` nativo transparente encima
+   (ver Eventos.tsx). El foco lo tiene el nativo, así que el borde de foco se
+   pinta en el texto con :focus-within. */
+.campo-con-icono .fecha-nativa {
   position: absolute;
   inset: 0;
   opacity: 0;
   cursor: pointer;
 }
 
-.campo-fecha:focus-within input {
+.campo-con-icono:focus-within input {
   border-color: var(--vk-primary-dark);
 }
 

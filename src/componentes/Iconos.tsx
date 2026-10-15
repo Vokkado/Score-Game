@@ -27,6 +27,22 @@ export function ChevronIzquierda({ size = 22, color = 'currentColor' }: Props) {
   );
 }
 
+/** Ionicons `chevron-down`: la flecha de los desplegables. */
+export function ChevronAbajo({ size = 20, color = 'currentColor' }: Props) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 512 512" aria-hidden="true">
+      <path
+        fill="none"
+        stroke={color}
+        strokeWidth={48}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="m112 184 144 144 144-144"
+      />
+    </svg>
+  );
+}
+
 /** Ionicons `calendar-outline` (sin los puntitos de los días): el del campo de fecha de `/eventos`. */
 export function Calendario({ size = 20, color = 'currentColor' }: Props) {
   return (
