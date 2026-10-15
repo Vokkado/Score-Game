@@ -19,6 +19,7 @@ import { Resultado } from './pantallas/Resultado';
 import { Encuesta } from './pantallas/Encuesta';
 import { Inicio } from './pantallas/Inicio';
 import { Exportar } from './pantallas/Exportar';
+import { Eventos } from './pantallas/Eventos';
 
 type Fase =
   | { t: 'cargando' }
@@ -33,6 +34,8 @@ type Fase =
 const RUTA_SCOREBOARD = '/scoreboard';
 /** Sin link en ningún lado — sólo para el equipo del stand. Ver `Exportar`. */
 const RUTA_EXPORTAR = '/exportar';
+/** Ídem: crear eventos y elegir cuál muestra el ranking. Ver `Eventos`. */
+const RUTA_EVENTOS = '/eventos';
 
 /** Cada cuánto se reintenta lo pendiente de subir, además de al abrir la app
  *  y al recuperar conexión (ver el `useEffect` de sync más abajo). */
@@ -202,6 +205,10 @@ export function App() {
 
   if (ruta === RUTA_EXPORTAR) {
     return <Exportar onVolver={() => ir('/')} />;
+  }
+
+  if (ruta === RUTA_EVENTOS) {
+    return <Eventos onVolver={() => ir('/')} />;
   }
 
   if (fase.t === 'cargando') {

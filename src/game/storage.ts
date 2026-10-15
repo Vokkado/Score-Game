@@ -137,6 +137,21 @@ export function guardarBolsa(ids: string[]): void {
   }
 }
 
+/**
+ * Vacía este dispositivo para arrancar un evento nuevo: las partidas y la
+ * bolsa del sorteo. Sin esto `findByEmail` no deja volver a jugar a quien ya
+ * jugó en este iPad en un evento anterior. Quien llama tiene que asegurarse
+ * de que no quede nada sin subir — acá no se chequea.
+ */
+export async function clearDevice(): Promise<void> {
+  await tx('readwrite', (s) => s.clear());
+  try {
+    localStorage.removeItem(CLAVE_BOLSA);
+  } catch {
+    /* ídem leerBolsa */
+  }
+}
+
 export async function pendingSync(): Promise<StoredGame[]> {
   const games = await allGames();
   return games.filter((g) => !g.synced);

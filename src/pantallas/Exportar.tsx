@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { allGames, downloadCsv, type StoredGame } from '../game/storage';
+import { allGames, clearDevice, downloadCsv, type StoredGame } from '../game/storage';
 import { Encabezado } from '../componentes/Encabezado';
 
 /**
@@ -44,6 +44,20 @@ export function Exportar({ onVolver }: { onVolver: () => void }) {
               onClick={() => downloadCsv(games)}
             >
               Descargar CSV
+            </button>
+
+            {/* Para arrancar un evento nuevo. Bloqueado mientras quede algo sin
+                subir: borrarlo acá sería perderlo para siempre. */}
+            <button
+              className="secundario"
+              disabled={games.length === 0 || pendientes > 0}
+              onClick={async () => {
+                if (!window.confirm('Se borran las partidas guardadas en este dispositivo (ya están en el servidor). ¿Seguir?')) return;
+                await clearDevice();
+                setGames([]);
+              }}
+            >
+              Vaciar este dispositivo
             </button>
           </>
         )}

@@ -27,6 +27,18 @@ export function ChevronIzquierda({ size = 22, color = 'currentColor' }: Props) {
   );
 }
 
+/** Ionicons `calendar-outline` (sin los puntitos de los días): el del campo de fecha de `/eventos`. */
+export function Calendario({ size = 20, color = 'currentColor' }: Props) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 512 512" aria-hidden="true">
+      <g fill="none" stroke={color} strokeWidth={32} strokeLinecap="round" strokeLinejoin="round">
+        <rect x="48" y="80" width="416" height="384" rx="48" />
+        <path d="M128 48v32M384 48v32M464 160H48" />
+      </g>
+    </svg>
+  );
+}
+
 /** Ionicons `checkmark`, el del AppCheckbox. */
 export function Tilde({ size = 14, color = 'currentColor' }: Props) {
   return (

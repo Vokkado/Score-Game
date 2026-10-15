@@ -577,6 +577,92 @@ textarea:focus {
   border-color: var(--vk-primary-dark);
 }
 
+/* ── Eventos (ruta oculta /eventos) ──────────────────────────────────── */
+
+.lista-eventos {
+  list-style: none;
+  margin: 0 0 var(--sp-lg);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+}
+
+.evento {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-md);
+  background: var(--vk-superficie);
+  border: 1px solid var(--vk-borde);
+  border-radius: var(--radio-tarjeta);
+  padding: var(--sp-sm) var(--sp-md);
+}
+
+/* El que está en pantalla se distingue por el borde, no sólo por la
+   etiqueta: es lo primero que hay que poder ver de un vistazo. */
+.evento.mostrando {
+  border-color: var(--vk-primary-dark);
+}
+
+.evento-datos {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-xs);
+  color: var(--vk-texto);
+}
+
+.evento-mostrar {
+  background: transparent;
+  color: var(--vk-primary-dark);
+  border: 1px solid var(--vk-primary-dark);
+  border-radius: var(--radio-boton);
+  min-height: 40px;
+  padding: 0 var(--sp-md);
+  font-size: var(--fs-body);
+  font-weight: var(--peso-semibold);
+}
+
+.evento-mostrar:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* Texto en dd/mm/aaaa con el `type="date"` nativo transparente encima (ver
+   Eventos.tsx). El foco lo tiene el nativo, así que el borde de foco se
+   pinta en el texto con :focus-within. */
+.campo-fecha {
+  position: relative;
+}
+
+/* Lugar para el ícono, así una fecha larga no le pasa por debajo. */
+.campo-fecha input {
+  padding-right: calc(var(--pad-input) + 28px);
+}
+
+/* Sin eventos de puntero: el toque sobre el ícono tiene que caer en el
+   nativo de encima y abrir el calendario. */
+.icono-fecha {
+  position: absolute;
+  right: var(--pad-input);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  pointer-events: none;
+}
+
+.campo-fecha .fecha-nativa {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.campo-fecha:focus-within input {
+  border-color: var(--vk-primary-dark);
+}
+
 .campo input.con-error {
   border-color: var(--vk-error);
 }
