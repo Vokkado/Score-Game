@@ -43,11 +43,12 @@ export async function syncGame(game: StoredGame): Promise<boolean> {
 
 /**
  * Trae la tabla de posiciones del backend (todos los dispositivos, no sólo
- * este navegador). `null` ante cualquier problema — sin red, sin backend
- * configurado, respuesta no-2xx — para que quien llama sepa que tiene que
- * caer a IndexedDB local en vez de mostrar una tabla vacía por error.
+ * este navegador) y si el evento en pantalla tiene premio. `null` ante
+ * cualquier problema — sin red, sin backend configurado, respuesta no-2xx —
+ * para que quien llama sepa que tiene que caer a IndexedDB local en vez de
+ * mostrar una tabla vacía por error.
  */
-export async function fetchLeaderboard(): Promise<LeaderboardEntry[] | null> {
+export async function fetchLeaderboard(): Promise<{ entradas: LeaderboardEntry[]; premio: boolean } | null> {
   const base = import.meta.env.VITE_API_URL;
   if (!base) return null;
 
@@ -57,7 +58,9 @@ export async function fetchLeaderboard(): Promise<LeaderboardEntry[] | null> {
     const res = await fetch(`${base}/api/event-game/leaderboard`, { signal: controller.signal });
     if (!res.ok) return null;
     const json = await res.json();
-    return Array.isArray(json?.data) ? (json.data as LeaderboardEntry[]) : null;
+    if (!Array.isArray(json?.data)) return null;
+    // `=== true`: un backend viejo que no manda `premio` cuenta como sin premio.
+    return { entradas: json.data as LeaderboardEntry[], premio: json.premio === true };
   } catch {
     return null;
   } finally {

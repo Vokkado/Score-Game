@@ -37,6 +37,12 @@ interface Props {
    * como que el juego recién arrancó en vez de como que estaba cargando.
    */
   cargando?: boolean;
+  /**
+   * Si el evento en pantalla tiene premio (de `cargarTabla()`). Sin premio no
+   * se muestra el chip del 1º puesto. Obligatoria a propósito: que ninguna
+   * pantalla nueva se olvide de pasarla y anuncie un premio que no hay.
+   */
+  premio: boolean;
 }
 
 const PUESTOS_ESQUELETO = [1, 2, 3];
@@ -47,6 +53,7 @@ export function TablaPosiciones({
   titulo = 'Tabla de posiciones',
   desde = 0,
   cargando = false,
+  premio,
 }: Props) {
   return (
     <div className="bloque-tabla">
@@ -71,6 +78,7 @@ export function TablaPosiciones({
               puesto={desde + i + 1}
               entrada={e}
               esPropio={e.id === idPropio}
+              premio={premio}
             />
           ))}
         </div>
@@ -113,12 +121,14 @@ function Fila({
   puesto,
   entrada,
   esPropio,
+  premio: hayPremio,
 }: {
   puesto: number;
   entrada: LeaderboardEntry;
   esPropio: boolean;
+  premio: boolean;
 }) {
-  const premio = premioDe(puesto);
+  const premio = hayPremio ? premioDe(puesto) : null;
   // El tamaño de fila y el color van juntos ahora: 1º oro y el más grande,
   // 2º plata un escalón menos, 3º cobre otro escalón menos. De 4º en
   // adelante todas iguales — más chicas, pero no minúsculas — porque ya no

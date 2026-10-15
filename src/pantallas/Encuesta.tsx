@@ -8,13 +8,17 @@ interface Props {
 }
 
 /**
- * Encuesta final. Tres escalas y un comentario, **todo obligatorio**.
+ * Encuesta final. Tres escalas, **todas obligatorias**.
  *
  * Antes eran dos preguntas y había un botón de "Prefiero no contestar": se
  * sacó a pedido del usuario. El razonamiento original —con fila en el stand,
  * cualquier cosa más larga la abandona la mayoría— sigue siendo cierto, así
- * que las tres escalas se responden de un toque cada una y lo único que hay
- * que escribir es el comentario final.
+ * que las tres escalas se responden de un toque cada una.
+ *
+ * Hubo una cuarta, el comentario libre ("¿Qué sugerencias tenés sobre la
+ * app?"), que se sacó de la pantalla a pedido del usuario. El campo
+ * `comentario` sigue viajando, vacío, porque el backend y la columna lo
+ * esperan.
  *
  * **Las preguntas sólo hablan de lo que la persona vivió** (§8r): jugó cinco
  * rondas y alguien del stand le contó de la app. Preguntarle qué tan útil le
@@ -26,34 +30,25 @@ export function Encuesta({ onEnviar }: Props) {
   const [general, setGeneral] = useState<number | null>(null);
   const [acuerdo, setAcuerdo] = useState<number | null>(null);
   const [nps, setNps] = useState<number | null>(null);
-  const [comentario, setComentario] = useState('');
   const [intento, setIntento] = useState(false);
   const [enviando, setEnviando] = useState(false);
 
   const faltaGeneral = general === null;
   const faltaAcuerdo = acuerdo === null;
   const faltaNps = nps === null;
-  const faltaComentario = comentario.trim().length === 0;
-  const faltan = faltaGeneral || faltaAcuerdo || faltaNps || faltaComentario;
+  const faltan = faltaGeneral || faltaAcuerdo || faltaNps;
 
   const enviar = () => {
     setIntento(true);
     if (faltan) {
-      // Al primero que falta, igual que en el registro: con cuatro preguntas,
+      // Al primero que falta, igual que en el registro: con tres preguntas,
       // "revisá lo que está en rojo" no alcanza si quedó fuera de pantalla.
-      const primero = faltaGeneral
-        ? 'p-general'
-        : faltaAcuerdo
-          ? 'p-acuerdo'
-          : faltaNps
-            ? 'p-nps'
-            : 'comentario';
+      const primero = faltaGeneral ? 'p-general' : faltaAcuerdo ? 'p-acuerdo' : 'p-nps';
       document.getElementById(primero)?.scrollIntoView({ block: 'center', behavior: 'smooth' });
-      if (primero === 'comentario') document.getElementById('comentario')?.focus();
       return;
     }
     setEnviando(true);
-    onEnviar({ general, acuerdo, nps, comentario: comentario.trim() });
+    onEnviar({ general, acuerdo, nps, comentario: '' });
   };
 
   const err = (falta: boolean) => (intento && falta ? 'Elegí un valor del 1 al 10' : undefined);
@@ -61,7 +56,7 @@ export function Encuesta({ onEnviar }: Props) {
   return (
     <div className="pantalla pantalla-encuesta">
       <h1>¿Qué te pareció?</h1>
-      <p className="sub">Cuatro preguntas rápidas y terminamos.</p>
+      <p className="sub">Tres preguntas rápidas y terminamos.</p>
 
       {/* Se pasó cinco rondas puntuando productos: ahora le toca puntuar a
           Vokkado. Además de la simetría, así la pregunta no repite el título
@@ -99,22 +94,6 @@ export function Encuesta({ onEnviar }: Props) {
         error={err(faltaNps)}
       />
 
-      <div className="campo">
-        <label htmlFor="comentario">¿Qué sugerencias tenés sobre la app?</label>
-        <textarea
-          id="comentario"
-          rows={3}
-          value={comentario}
-          onChange={(e) => setComentario(e.target.value)}
-          placeholder="Lo que se te ocurra: nos sirve todo"
-          aria-invalid={intento && faltaComentario ? true : undefined}
-          className={intento && faltaComentario ? 'con-error' : ''}
-        />
-        {intento && faltaComentario && (
-          <p className="mensaje-error">Contanos algo, aunque sea corto</p>
-        )}
-      </div>
-
       <div className="aviso-info">
         <Info size={24} color="var(--vk-info)" />
         <p>
@@ -125,7 +104,7 @@ export function Encuesta({ onEnviar }: Props) {
 
       {intento && faltan && (
         <p className="aviso-faltan" role="alert">
-          Faltan respuestas: son cuatro y todas cuentan.
+          Faltan respuestas: son tres y todas cuentan.
         </p>
       )}
 

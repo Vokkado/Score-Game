@@ -1738,6 +1738,12 @@ input[type='range']::-moz-range-thumb {
   gap: clamp(16px, 2vw, 32px);
 }
 
+/* Evento sin premio: no hay lateral (póster ni horario), la tabla se queda
+   con todo el ancho en vez de dejar la columna vacía. */
+.sb-cuerpo.sin-premio {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .sb-tabla {
   display: flex;
   flex-direction: column;

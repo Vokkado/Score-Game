@@ -27,16 +27,23 @@ function desdeLocal(games: StoredGame[]): LeaderboardEntry[] {
  * el resto de la red ande bien — nadie se entera hasta que se corte todo.
  * Se compara por `id` (el mismo en IndexedDB y en el backend) para no
  * duplicar la fila una vez que el sync termine de subirla.
+ *
+ * `premio`: si el evento en pantalla tiene premio. **Sin conexión es
+ * `false`** (decisión explícita): no se anuncia un premio que no se puede
+ * confirmar.
  */
-export async function cargarTabla(): Promise<LeaderboardEntry[]> {
+export async function cargarTabla(): Promise<{ entradas: LeaderboardEntry[]; premio: boolean }> {
   const remoto = await fetchLeaderboard();
   if (!remoto) {
     const locales = await allGames();
-    return rankPlayers(desdeLocal(locales));
+    return { entradas: rankPlayers(desdeLocal(locales)), premio: false };
   }
 
   const locales = await allGames();
-  const idsRemotos = new Set(remoto.map((e) => e.id));
+  const idsRemotos = new Set(remoto.entradas.map((e) => e.id));
   const pendientes = locales.filter((g) => !g.synced && !idsRemotos.has(g.id));
-  return rankPlayers([...remoto, ...desdeLocal(pendientes)]);
+  return {
+    entradas: rankPlayers([...remoto.entradas, ...desdeLocal(pendientes)]),
+    premio: remoto.premio,
+  };
 }

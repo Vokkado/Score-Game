@@ -13,6 +13,7 @@ interface Props {
 export function Inicio({ onEmpezar, onScoreboard }: Props) {
   const [tabla, setTabla] = useState<LeaderboardEntry[]>([]);
   const [cargando, setCargando] = useState(true);
+  const [premio, setPremio] = useState(false);
 
   // La tabla se lee en cada vuelta al inicio: entre partida y partida cambia,
   // y es lo que engancha a quien está mirando desde afuera del stand. Primero
@@ -20,7 +21,8 @@ export function Inicio({ onEmpezar, onScoreboard }: Props) {
   // cae sola a lo guardado en este navegador.
   useEffect(() => {
     cargarTabla().then((t) => {
-      setTabla(t);
+      setTabla(t.entradas);
+      setPremio(t.premio);
       setCargando(false);
     });
   }, []);
@@ -47,7 +49,7 @@ export function Inicio({ onEmpezar, onScoreboard }: Props) {
 
         <div className="separador-tabla" />
 
-        <TablaPosiciones entradas={tabla} cargando={cargando} />
+        <TablaPosiciones entradas={tabla} cargando={cargando} premio={premio} />
       </div>
     </>
   );

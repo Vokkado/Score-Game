@@ -80,6 +80,9 @@ export function App() {
   const [indice, setIndice] = useState(0);
   const [rounds, setRounds] = useState<Round[]>([]);
   const [gameId, setGameId] = useState<string>('');
+  // Si el evento tiene premio, para el aviso de la pantalla final. Lo trae
+  // Resultado junto con la tabla; sin conexión queda en false.
+  const [premio, setPremio] = useState(false);
 
   // Los datos van en el bundle. Si esto falla, el juego no arranca — mejor que
   // arranque a medias y falle en pleno stand.
@@ -270,6 +273,7 @@ export function App() {
         player={player!}
         gameId={gameId}
         onSeguir={() => setFase({ t: 'encuesta' })}
+        onPremio={setPremio}
       />
     );
   }
@@ -283,7 +287,7 @@ export function App() {
       <div className="espaciador" />
       <h1 className="display">¡Gracias por jugar!</h1>
       <p className="gracias-texto">Tu resultado quedó registrado.</p>
-      <p className="gracias-hora">El premio se entrega a partir de las 17:00 hs.</p>
+      {premio && <p className="gracias-hora">El premio se entrega a partir de las 17:00 hs.</p>}
       <div className="espaciador" />
       {/* "Finalizar" y no "Que juegue otra persona": lo toca quien acaba de
           jugar, no el siguiente, y desde su lugar lo que hace es terminar. */}

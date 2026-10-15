@@ -10,18 +10,23 @@ interface Props {
   /** Id de la partida en curso — todavía no está guardada ni sincronizada. */
   gameId: string;
   onSeguir: () => void;
+  /** Avisa si el evento tiene premio: App lo usa en la pantalla final. */
+  onPremio: (premio: boolean) => void;
 }
 
-export function Resultado({ rounds, player, gameId, onSeguir }: Props) {
+export function Resultado({ rounds, player, gameId, onSeguir, onPremio }: Props) {
   const puntos = totalPoints(rounds);
   const ms = totalMs(rounds);
   const [tabla, setTabla] = useState<LeaderboardEntry[]>([]);
   const [cargando, setCargando] = useState(true);
+  const [premio, setPremio] = useState(false);
 
   // La partida actual todavía no está guardada (se guarda al final de la
   // encuesta), así que se la agrega a mano para mostrar el puesto real.
   useEffect(() => {
-    cargarTabla().then((previas) => {
+    cargarTabla().then(({ entradas: previas, premio: hay }) => {
+      setPremio(hay);
+      onPremio(hay);
       const mia: LeaderboardEntry = {
         id: gameId,
         nombre: player.nombre,
@@ -33,6 +38,8 @@ export function Resultado({ rounds, player, gameId, onSeguir }: Props) {
       setTabla(rankPlayers([...previas, mia]));
       setCargando(false);
     });
+    // Sin `onPremio` en las dependencias: App le pasa un setState, que es
+    // estable — sumarlo sólo invitaría a recargar la tabla de más.
   }, [player, puntos, ms, gameId]);
 
   const puesto = tabla.findIndex((e) => e.id === gameId) + 1;
@@ -65,7 +72,7 @@ export function Resultado({ rounds, player, gameId, onSeguir }: Props) {
 
       <div className="separador-tabla" />
 
-      <TablaPosiciones entradas={tabla} idPropio={gameId} cargando={cargando} />
+      <TablaPosiciones entradas={tabla} idPropio={gameId} cargando={cargando} premio={premio} />
     </div>
   );
 }

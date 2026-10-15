@@ -12,6 +12,7 @@ export interface Evento {
   /** YYYY-MM-DD */
   fecha: string;
   mostrando: boolean;
+  hayPremio: boolean;
   partidas: number;
 }
 
@@ -40,3 +41,6 @@ export const crearEvento = (nombre: string, fecha: string) =>
 
 export const mostrarEvento = (id: string) =>
   pedir<void>(`/events/${id}/mostrar`, { method: 'PUT' });
+
+export const cambiarPremio = (id: string, hayPremio: boolean) =>
+  pedir<void>(`/events/${id}/premio`, { method: 'PUT', body: JSON.stringify({ hayPremio }) });

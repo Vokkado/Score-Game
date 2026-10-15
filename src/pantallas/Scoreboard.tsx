@@ -43,6 +43,9 @@ export function Scoreboard({ onVolver }: { onVolver: () => void }) {
   const [tabla, setTabla] = useState<LeaderboardEntry[]>([]);
   const [pagina, setPagina] = useState(0);
   const [cargando, setCargando] = useState(true);
+  // Sin premio (o sin conexión, ver `cargarTabla`) no se muestran ni el
+  // horario ni el póster, y la tabla ocupa todo el ancho.
+  const [premio, setPremio] = useState(false);
 
   // Relee sola: el monitor queda puesto y nadie va a recargarlo entre
   // partidas. El esqueleto sólo se ve en la primera lectura — `setCargando`
@@ -51,7 +54,8 @@ export function Scoreboard({ onVolver }: { onVolver: () => void }) {
   useEffect(() => {
     const leer = () =>
       cargarTabla().then((t) => {
-        setTabla(t);
+        setTabla(t.entradas);
+        setPremio(t.premio);
         setCargando(false);
       });
     leer();
@@ -100,9 +104,9 @@ export function Scoreboard({ onVolver }: { onVolver: () => void }) {
         </button>
       </header>
 
-      <div className="sb-cuerpo">
+      <div className={premio ? 'sb-cuerpo' : 'sb-cuerpo sin-premio'}>
         <section className="sb-tabla">
-          <TablaPosiciones entradas={visibles} desde={desde} cargando={cargando} />
+          <TablaPosiciones entradas={visibles} desde={desde} cargando={cargando} premio={premio} />
 
           {paginas > 1 && (
             <div className="sb-paginas" aria-hidden="true">
@@ -113,30 +117,32 @@ export function Scoreboard({ onVolver }: { onVolver: () => void }) {
           )}
         </section>
 
-        <aside className="sb-lateral">
-          {/* El horario va ARRIBA: es el dato con fecha de vencimiento, y el
-              póster ya se explica solo. Abajo quedaba como pie de figura. */}
-          <div className="sb-premios">
-            <p className="sb-premios-hora">El premio se entrega a las 17:00 hs</p>
-            {/* Corto a propósito. Lo de los stickers y los beneficios ya lo
-                dice el póster acá abajo, y un párrafo largo cambia de alto
-                según el ancho del cartel — lo que a su vez le movía el alto
-                disponible a la foto y les rompía la coincidencia de ancho. */}
-            <p className="sb-premios-sub">Acercate a esa hora al stand para retirarlo.</p>
-          </div>
+        {premio && (
+          <aside className="sb-lateral">
+            {/* El horario va ARRIBA: es el dato con fecha de vencimiento, y el
+                póster ya se explica solo. Abajo quedaba como pie de figura. */}
+            <div className="sb-premios">
+              <p className="sb-premios-hora">El premio se entrega a las 17:00 hs</p>
+              {/* Corto a propósito. Lo de los stickers y los beneficios ya lo
+                  dice el póster acá abajo, y un párrafo largo cambia de alto
+                  según el ancho del cartel — lo que a su vez le movía el alto
+                  disponible a la foto y les rompía la coincidencia de ancho. */}
+              <p className="sb-premios-sub">Acercate a esa hora al stand para retirarlo.</p>
+            </div>
 
-          {/* El wrapper es el que se lleva el espacio sobrante; la imagen se
-              ajusta adentro y su caja queda del tamaño exacto de la foto, así
-              el marco blanco la abraza en vez de dibujar un rectángulo con
-              aire arriba y abajo. */}
-          <div className="sb-poster-wrap">
-            <img
-              src={poster}
-              alt="Jugá y ganá: el 1º puesto se lleva el peluche, y hay beneficios para todos los que participen"
-              className="sb-poster"
-            />
-          </div>
-        </aside>
+            {/* El wrapper es el que se lleva el espacio sobrante; la imagen se
+                ajusta adentro y su caja queda del tamaño exacto de la foto, así
+                el marco blanco la abraza en vez de dibujar un rectángulo con
+                aire arriba y abajo. */}
+            <div className="sb-poster-wrap">
+              <img
+                src={poster}
+                alt="Jugá y ganá: el 1º puesto se lleva el peluche, y hay beneficios para todos los que participen"
+                className="sb-poster"
+              />
+            </div>
+          </aside>
+        )}
       </div>
     </div>
   );

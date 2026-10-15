@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { listarEventos, crearEvento, mostrarEvento, type Evento } from '../game/eventos';
+import { listarEventos, crearEvento, mostrarEvento, cambiarPremio, type Evento } from '../game/eventos';
 import { Encabezado } from '../componentes/Encabezado';
+import { Casilla } from '../componentes/Casilla';
 import { Calendario, ChevronAbajo } from '../componentes/Iconos';
 
 /** Hoy en YYYY-MM-DD, en la hora del iPad. No `toISOString()`: ese es UTC, y
@@ -33,6 +34,7 @@ export function Eventos({ onVolver }: { onVolver: () => void }) {
   const [ocupado, setOcupado] = useState(false);
   const [nombre, setNombre] = useState('');
   const [fecha, setFecha] = useState(hoy);
+  const mostrando = eventos?.find((e) => e.mostrando);
 
   const recargar = () =>
     listarEventos()
@@ -92,10 +94,10 @@ export function Eventos({ onVolver }: { onVolver: () => void }) {
                 <select
                   id="evento-mostrando"
                   disabled={ocupado}
-                  value={eventos.find((e) => e.mostrando)?.id ?? ''}
+                  value={mostrando?.id ?? ''}
                   onChange={(ev) => correr(() => mostrarEvento(ev.target.value))}
                 >
-                  {!eventos.some((e) => e.mostrando) && (
+                  {!mostrando && (
                     <option value="" disabled>
                       Ninguno (el ranking está vacío)
                     </option>
@@ -112,6 +114,20 @@ export function Eventos({ onVolver }: { onVolver: () => void }) {
                 </span>
               </div>
             </div>
+
+            {/* Del evento en pantalla, que es el único cuyo premio se ve.
+                Sin premio el juego oculta el póster, el horario de entrega,
+                el chip del 1º puesto y el aviso de la pantalla final. */}
+            {mostrando && (
+              <Casilla
+                label="Hay premio"
+                descripcion="Muestra el póster, el horario de entrega y el premio del 1º puesto."
+                marcada={mostrando.hayPremio}
+                onCambiar={() => {
+                  if (!ocupado) correr(() => cambiarPremio(mostrando.id, !mostrando.hayPremio));
+                }}
+              />
+            )}
           </div>
         )}
 
